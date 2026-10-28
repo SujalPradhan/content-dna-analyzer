@@ -6,64 +6,100 @@
 <title>Content DNA Analyzer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/app.css">
+<link rel="stylesheet" href="assets/app.css">
 </head>
 <body>
 <header class="bar">
-  <a class="brand" href="/"><span class="dot"></span>Content DNA</a>
-  <nav aria-label="Main"><a class="active" href="/">Analyzer</a><a href="/story">Data story</a><a href="/docs">API</a></nav>
+  <a class="brand" href="./"><span class="dot"></span>Content DNA</a>
+  <nav aria-label="Main"><a class="active" href="./">Analyzer</a><a id="nav-story" href="story/">Data story</a><a id="nav-docs" href="docs">API</a></nav>
 </header>
+
 <main class="app">
   <aside class="side">
-    <section class="panel">
-      <h2>Analyze a video</h2>
-      <div class="tabs" role="tablist">
-        <button role="tab" aria-selected="true" data-tab="url" id="tab-url">YouTube URL</button>
-        <button role="tab" aria-selected="false" data-tab="file" id="tab-file">Upload</button>
-      </div>
-      <form id="form">
-        <label class="f" id="f-url">Public YouTube URL
-          <input id="url" type="url" placeholder="https://www.youtube.com/watch?v=…" autocomplete="off">
-        </label>
-        <label class="f" id="f-file" hidden>Video file (up to 256 MiB)
+    <form id="form" class="panel flow">
+      <section class="step">
+        <h2><span class="n">1</span>Video</h2>
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" aria-selected="true" data-tab="demo">Demo</button>
+          <button type="button" role="tab" aria-selected="false" data-tab="file">Upload</button>
+          <button type="button" role="tab" aria-selected="false" data-tab="url">YouTube</button>
+        </div>
+        <div id="f-demo" class="demos" role="radiogroup" aria-label="Demo videos"></div>
+        <label class="f" id="f-file" hidden>Video file <span class="hint" id="upload-hint"></span>
           <input id="file" type="file" accept="video/*">
         </label>
-        <label class="f">Genre
-          <select id="genre">
-            <option value="auto">Detect automatically</option>
-            <option value="ad">Ad</option><option value="cooking">Cooking</option><option value="explainer">Explainer</option>
-            <option value="shorts">Short</option><option value="tech_review">Tech review</option><option value="vlog">Vlog</option>
-          </select>
+        <label class="f" id="f-url" hidden>Public YouTube URL
+          <input id="url" type="url" placeholder="https://www.youtube.com/watch?v=…" autocomplete="off">
         </label>
-        <p class="hint" id="genre-hint">Detection uses the video's measured structure.</p>
-        <div class="row2">
-          <label class="f">Start (s)<input id="start" type="number" min="0" step="1" value="0"></label>
-          <label class="f">Length (s)<input id="seconds" type="number" min="5" max="900" step="1" value="900"></label>
+      </section>
+
+      <section class="step">
+        <h2><span class="n">2</span>Target</h2>
+        <div class="chips" id="genres" role="radiogroup" aria-label="Target genre"></div>
+        <div class="seg" id="goals" role="radiogroup" aria-label="Goal">
+          <button type="button" data-goal="retention">Retention</button>
+          <button type="button" data-goal="virality">Reach &amp; sharing</button>
+          <button type="button" data-goal="both" aria-checked="true">Both</button>
         </div>
-        <label class="check"><input id="crit" type="checkbox" checked> Write the critique (Claude, about $0.05)</label>
+      </section>
+
+      <section class="step">
+        <h2><span class="n">3</span>Parameters <span class="count" id="pcount"></span></h2>
+        <p class="hint">Researched drivers of retention and reach. <a href="#" id="p-all">All</a> · <a href="#" id="p-none">None</a></p>
+        <div id="params" class="params"></div>
+      </section>
+
+      <section class="step">
+        <label class="check"><input id="crit" type="checkbox" checked> Write focused fixes with Claude <span class="hint">(~$0.05, ~40 s)</span></label>
+        <label class="f" id="f-code" hidden>Demo access code<input id="code" type="password" autocomplete="off"></label>
         <button class="go" type="submit" id="go">Analyze</button>
-      </form>
-      <div id="job" class="job" hidden></div>
-    </section>
-    <section class="panel">
-      <h2>Library</h2>
-      <input id="q" class="search" type="search" placeholder="Filter videos" aria-label="Filter videos">
-      <div id="lib" class="lib"></div>
-    </section>
+        <div id="job" class="job" hidden></div>
+      </section>
+    </form>
   </aside>
+
   <section class="main">
     <div id="empty" class="empty">
-      <p class="eyebrow">A creative fingerprint for any video</p>
-      <h1>See how a video is built, moment by moment.</h1>
-      <p>Pick a video from the library or analyze a new one. Every recommendation names its moment, its basis and whether its evidence checked out against the measurements. The player stays in sync with the measured timeline: story beats, what's on screen, every cut, speech and loudness. Click anywhere on the timeline, or on a recommendation's timestamp, to jump there.</p>
+      <p class="eyebrow">Content DNA Analyzer</p>
+      <h1>Find where your video loses people, and what to fix.</h1>
+      <ol class="how">
+        <li><b>Pick a video</b> a demo, your file, or a YouTube link</li>
+        <li><b>Pick the target</b> genre and goal</li>
+        <li><b>Pick parameters</b> each one researched and sourced</li>
+      </ol>
+      <p>You get a scorecard per parameter, timestamped pain points on the timeline, every shot frame by frame, and fixes that cite the measurements. Checks are guidance and heuristics to test, not predicted views.</p>
     </div>
+
     <div id="view" hidden>
-      <div id="explorer"></div>
+      <div class="rhead">
+        <div><p class="eyebrow" id="r-eyebrow"></p><h1 id="r-title"></h1></div>
+        <div class="tally" id="tally"></div>
+      </div>
+
+
+      <section class="block">
+        <h2>Scorecard</h2>
+        <div id="cards" class="cards"></div>
+      </section>
+
+      <section class="block">
+        <h2>Pain points on the timeline</h2>
+        <p class="hint">Red marks are pain points. Click anywhere to jump; the player follows.</p>
+        <div id="explorer"></div>
+      </section>
+
+      <section class="block">
+        <h2>Frame by frame</h2>
+        <p class="hint">One frame per shot. Red = a pain point falls in that shot. Click a frame to jump there.</p>
+        <div id="frames" class="frames"></div>
+      </section>
+
       <p class="links" id="links"></p>
     </div>
   </section>
 </main>
-<script src="/assets/explorer.js"></script>
-<script src="/assets/app.js"></script>
+<script src="assets/config.js"></script>
+<script src="assets/explorer.js"></script>
+<script src="assets/app.js"></script>
 </body>
 </html>

@@ -9,19 +9,32 @@ uv run dna analyze "https://www.youtube.com/watch?v=jNQXAC9IVRw" --category vlog
 open data/videos/jNQXAC9IVRw/report.html
 ```
 
-## API and web app
+## The product flow
+
+1. **Video**: a ready-made demo, your own file, or a YouTube link.
+2. **Target**: the genre you are making it for, and the goal (retention, reach and sharing, or both).
+3. **Parameters**: pick from 16 researched drivers of retention and reach (`data/parameters.json`, written up with sources in `docs/parameters.md`), e.g. hook visual change, time to first voice, dead air, pacing, on-screen text, CTA timing, length fit, loop ending.
+
+The result is a **scorecard** (each parameter: problem / watch / good, with the measured value, the target, and whether that target is *sourced*, a *heuristic*, or the target genre's *corpus range*), **pain points pinned to the timeline**, a **frame-by-frame** strip (one keyframe per shot, red where a pain point falls) and, optionally, **fixes written by Claude** that focus on your goal and parameters and cite measured evidence. Checks are guidance to test, not predicted performance.
 
 ```
 uv run dna serve            # http://127.0.0.1:8001 — analyzer app at /, data story at /story, OpenAPI docs at /docs
+open "http://127.0.0.1:8001/#demo=s83EB_OtaEo&goal=both"   # deep link: opens a demo's scorecard (no LLM cost)
 ```
 
 | Method | Path | Body / result |
 |---|---|---|
-| POST | `/api/analyze` | `{"url": "<YouTube URL>", "genre": "auto" \| "ad" \| "cooking" \| "explainer" \| "shorts" \| "tech_review" \| "vlog", "start": 0, "seconds": 900, "critique": true}` → `202 {"job_id", "poll"}` |
-| POST | `/api/analyze/upload` | multipart: `file` (≤ 256 MiB, streamed), `genre`, `start`, `seconds`, `critique` → `202 {"job_id", "poll"}` |
-| GET | `/api/jobs/{job_id}` | `status` (queued/running/done/error), `stage`, and when done `result` = the full report |
-| GET | `/api/videos` · `/api/videos/{id}` | library · one report: fingerprint, cuts, loudness (1 s), transcript, visual formats, structure, recommendations with evidence checks |
+| POST | `/api/analyze` | `{"url", "genre": "auto" \| "ad" \| "cooking" \| "explainer" \| "shorts" \| "tech_review" \| "vlog", "goal": "retention" \| "virality" \| "both", "parameters": [ids], "start": 0, "seconds": 900, "critique": true}` → `202 {"job_id", "poll"}` |
+| POST | `/api/analyze/upload` | multipart: `file`, `genre`, `goal`, `parameters` (comma-separated), `start`, `seconds`, `critique` → `202` |
+| POST | `/api/videos/{id}/rerun` | re-score an analysed video for another genre / goal / parameters; `critique: true` adds focused fixes (~$0.05) |
+| GET | `/api/jobs/{job_id}` | `status`, `stage`, and when done `result` = report + `scorecard` |
+| GET | `/api/parameters` | the researched parameters, goals, evidence strength, genres, sources |
+| GET | `/api/videos/{id}/scorecard?genre=&goal=&params=` | parameter checks + timestamped pain points (free, instant) |
+| GET | `/api/videos/{id}/frames` | one keyframe per shot with the pain points inside it |
+| GET | `/api/demos` · `/api/videos` · `/api/videos/{id}` | demo videos · library · full report |
 | GET | `/api/genres` | genres and how reliable `"auto"` is |
+
+`POST` endpoints spend LLM credit; when `DNA_ACCESS_CODE` is set they require the header `X-Access-Code`.
 
 ```
 curl -s -X POST localhost:8001/api/analyze -H 'Content-Type: application/json' \
@@ -34,6 +47,13 @@ Jobs are saved to `data/jobs/` (a restarted server reports interrupted jobs inst
 **Genre.** Pass it when you know it; it sets which peers the critique compares against. With `"auto"`, vertical videos ≤ 60 s are Shorts. Everything else is matched to the nearest genre centroid of the 35-video corpus fingerprints, and the response includes the confidence and all scores. Leave-one-out accuracy is **69%** (chance 17%); see `results/eval/genre_eval.json` for per-genre recall. Ad-hoc analyses never change the corpus statistics or benchmarks.
 
 **Explorer.** The app (and the story at `/story`) syncs a player (YouTube IFrame API for YouTube sources, HTML5 video for uploads) with the analysis lanes: story beats, visual format, cuts, speech, loudness and numbered recommendation pins. Click the timeline or any timestamp to jump the video. On claude.ai the YouTube embed is blocked, so the published story falls back to timestamp links.
+
+## Deploy
+
+- **API + app** on Google Cloud Run: `./scripts/deploy_cloudrun.sh` stores `API_KEY` (from `.env`) and a generated demo access code in Secret Manager, builds with Cloud Build and deploys one instance that scales to zero. It prints the URL and the access code.
+- **Front end + data story** on GitHub Pages: `.github/workflows/pages.yml` publishes `/` (analyzer) and `/story/` on every push, pointing the front end at the repository variable `DNA_API_URL`.
+
+Deployed limits: uploads ≤ 30 MB (Cloud Run request cap), a $15 LLM budget guard, and new analyses live on the instance's disk until it is recycled. YouTube may refuse downloads from cloud IPs; the demos and uploads do not depend on it.
 
 ## How it works
 

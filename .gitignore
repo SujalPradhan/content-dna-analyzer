@@ -20,3 +20,13 @@ data/uploads/
 data/jobs/
 data/videos/*/playback.mp4
 results/server.log
+# frames for the three demo videos are committed so a fresh deployment can run the demo
+!data/videos/s83EB_OtaEo/keyframes/
+!data/videos/s83EB_OtaEo/hook/
+!data/videos/Ml9Ojbl2uaw/keyframes/
+!data/videos/Ml9Ojbl2uaw/hook/
+!data/videos/KWuFpi7j4_0/keyframes/
+!data/videos/KWuFpi7j4_0/hook/
+data/videos/*/scorecard.json
+data/videos/*/critique_focus.json
+site/

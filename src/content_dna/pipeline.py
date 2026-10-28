@@ -93,7 +93,8 @@ def percentiles_for(fp: dict, category: str) -> dict:
     return out
 
 
-def run_critique(video_id: str, use_cache: bool = True, model: str = "claude-sonnet-5") -> dict:
+def run_critique(video_id: str, use_cache: bool = True, model: str = "claude-sonnet-5", focus: str | None = None,
+                 category: str | None = None) -> dict:
     workdir = ingest.VIDEOS / video_id
     feats = json.loads((workdir / "features.json").read_text())
     src = ingest.load(video_id)
@@ -101,10 +102,12 @@ def run_critique(video_id: str, use_cache: bool = True, model: str = "claude-son
     aud = json.loads((workdir / "audio.json").read_text())
     per = json.loads((workdir / "perception.json").read_text())
     bench = json.loads(BENCH.read_text()) if BENCH.exists() else None
-    pct = percentiles_for(feats["fingerprint"], feats["category"])
-    res = critique.analyse(src, feats["fingerprint"], feats["bins"], aud, per, vis, feats["category"], bench, pct,
-                           model=model, use_cache=use_cache)
-    name = "critique.json" if use_cache else f"critique_rerun_{model}.json"
+    cat = category or feats["category"]
+    pct = percentiles_for(feats["fingerprint"], cat)
+    res = critique.analyse(src, feats["fingerprint"], feats["bins"], aud, per, vis, cat, bench, pct,
+                           model=model, use_cache=use_cache, focus=focus)
+    # a goal-focused critique never overwrites the corpus critique the evaluation was run on
+    name = "critique_focus.json" if focus else "critique.json" if use_cache else f"critique_rerun_{model}.json"
     (workdir / name).write_text(json.dumps(res, indent=1))
     return res
 

@@ -1,0 +1,40 @@
+# Publishes the analyzer front end (/) and the data story (/story/) to GitHub Pages.
+# The front end calls the Cloud Run API set in the repository variable DNA_API_URL.
+name: Pages
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build site
+        env:
+          DNA_API_URL: ${{ vars.DNA_API_URL }}
+        run: |
+          mkdir -p site/assets site/story
+          cp web/index.html site/index.html
+          cp web/app.css web/app.js web/explorer.js site/assets/
+          printf "window.DNA_API = '%s';\n" "$DNA_API_URL" > site/assets/config.js
+          sed -i "s|href=\"docs\"|href=\"$DNA_API_URL/docs\"|" site/index.html
+          { echo "<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'></head><body style='margin:0;background:#0f1215'>";
+            cat story/standalone.html; echo "</body></html>"; } > site/story/index.html
+          touch site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

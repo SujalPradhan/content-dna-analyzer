@@ -240,8 +240,10 @@ def validate(result: dict, fp: dict, bins: list, aud: dict, per: dict, vis: dict
 
 
 def analyse(src, fp, bins, aud, per, vis, category, benchmarks=None, percentiles=None, model="claude-sonnet-5",
-            use_cache=True) -> dict:
+            use_cache=True, focus: str | None = None) -> dict:
     content = build_user_content(src, fp, bins, aud, per, category, percentiles)
+    if focus:  # the creator's goal and chosen parameters go after the cached system prompt
+        content.append({"type": "text", "text": focus})
     result = llm.claude_json(system_prompt(benchmarks), content, SCHEMA, model=model, max_tokens=12000,
                              effort="medium", stage="critique", video_id=src.video_id, use_cache=use_cache)
     result["grounding"] = validate(result, fp, bins, aud, per, vis)

@@ -159,11 +159,15 @@ font-family:var(--font-anthropic-sans,system-ui,sans-serif);color:var(--dx-ink)}
     const W = Math.max(320, lanesWrap.clientWidth || root.clientWidth || 800);
     const mL = W < 520 ? 70 : 104, mR = 10, laneH = 22, gap = 8;
     const lanes = [['Structure', 'structure'], ['Visual format', 'format'], ['Cuts', 'cuts'], ['Speech', 'speech'], ['Loudness', 'loud'], ['Fixes', 'recs']];
+    const pains = v.pain_points || null;  // from the scorecard: timestamped problems found by the detectors
+    if (pains) lanes.splice(5, 0, ['Pain points', 'pain']);
+    const li = (key) => lanes.findIndex((l) => l[1] === key);
+    const painAt = (t) => (pains || []).filter((p) => p.t - 0.5 <= t && t <= (p.t_end ?? p.t) + 0.5);
     const H = lanes.length * (laneH + gap) + 22;
     const x = (t) => mL + (Math.min(dur, Math.max(0, t)) / dur) * (W - mL - mR);
     const ns = 'http://www.w3.org/2000/svg';
     const S = (tag, a) => { const n = document.createElementNS(ns, tag); for (const k in a) n.setAttribute(k, a[k]); return n; };
-    const svg = S('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Timeline of structure, visual format, cuts, speech, loudness and recommendations' });
+    const svg = S('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Timeline of structure, visual format, cuts, speech, loudness, pain points and recommendations' });
     lanesWrap.prepend(svg);
     const y = (i) => i * (laneH + gap);
     lanes.forEach(([name], i) => {
@@ -186,11 +190,15 @@ font-family:var(--font-anthropic-sans,system-ui,sans-serif);color:var(--dx-ink)}
       let d = `M${x(L.t[0])},${y(4) + laneH}`; L.t.forEach((t, k) => { d += `L${x(t)},${yv(L.db[k])}`; }); d += `L${x(L.t[L.t.length - 1])},${y(4) + laneH}Z`;
       svg.append(S('path', { d, fill: varc(box, '--dx-r3'), 'fill-opacity': .55 }));
     }
+    (pains || []).forEach((p) => {
+      const x0 = x(p.t), w = Math.max(6, x(p.t_end ?? p.t) - x0);
+      svg.append(S('rect', { x: x0, y: y(li('pain')) + 3, width: w, height: laneH - 6, rx: 3, fill: varc(box, '--dx-bad'), 'fill-opacity': .8 }));
+    });
     const recs = c.recommendations || [];
     recs.forEach((r, k) => {
       const cx = x(r.t);
-      svg.append(S('circle', { cx, cy: y(5) + laneH / 2, r: 8, fill: varc(box, r.priority === 'high' ? '--dx-r1' : r.priority === 'medium' ? '--dx-r6' : '--dx-r0') }));
-      const t = S('text', { x: cx, y: y(5) + laneH / 2 + 4, 'text-anchor': 'middle', style: 'fill:#fff;font-weight:700;font-size:10px' }); t.textContent = k + 1; svg.append(t);
+      svg.append(S('circle', { cx, cy: y(li('recs')) + laneH / 2, r: 8, fill: varc(box, r.priority === 'high' ? '--dx-r1' : r.priority === 'medium' ? '--dx-r6' : '--dx-r0') }));
+      const t = S('text', { x: cx, y: y(li('recs')) + laneH / 2 + 4, 'text-anchor': 'middle', style: 'fill:#fff;font-weight:700;font-size:10px' }); t.textContent = k + 1; svg.append(t);
     });
     const axisY = lanes.length * (laneH + gap) + 12;
     for (let k = 0; k <= 6; k++) { const t = (dur * k) / 6; const tx = S('text', { x: x(t), y: axisY, 'text-anchor': k === 0 ? 'start' : k === 6 ? 'end' : 'middle' }); tx.textContent = mmss(t); svg.append(tx); }
@@ -199,7 +207,8 @@ font-family:var(--font-anthropic-sans,system-ui,sans-serif);color:var(--dx-ink)}
     svg.addEventListener('pointermove', (ev) => {
       const t = tAt(ev); const s = at(struct, t); const f = at(v.formats || [], t); const sp = at(v.transcript || [], t, 's', 'e');
       tip.replaceChildren(...[el('div', { class: 't' }, mmss(t) + (s ? ` · ${(ROLE[s.role] || [s.role])[0]}` : '')),
-        f ? el('div', {}, (FMT[f.format] || [f.format])[0]) : null, sp ? el('div', {}, `“${sp.text.slice(0, 90)}${sp.text.length > 90 ? '…' : ''}”`) : null].filter(Boolean));
+        f ? el('div', {}, (FMT[f.format] || [f.format])[0]) : null, sp ? el('div', {}, `“${sp.text.slice(0, 90)}${sp.text.length > 90 ? '…' : ''}”`) : null,
+        ...painAt(t).slice(0, 2).map((p) => el('div', { style: 'color:var(--dx-bad)' }, `⚠ ${p.description}`))].filter(Boolean));
       tip.hidden = false; const r = lanesWrap.getBoundingClientRect(); let lx = ev.clientX - r.left + 12; if (lx + 240 > r.width) lx = ev.clientX - r.left - 252;
       tip.style.left = Math.max(0, lx) + 'px'; tip.style.top = (ev.clientY - r.top + 14) + 'px';
     });
@@ -246,7 +255,8 @@ font-family:var(--font-anthropic-sans,system-ui,sans-serif);color:var(--dx-ink)}
         el('div', { class: 'row' }, el('span', { class: 'k' }, 'Story beat'), s ? `${(ROLE[s.role] || [s.role])[0]} — ${s.label}` : '—'),
         el('div', { class: 'row' }, el('span', { class: 'k' }, 'On screen'), f ? `${(FMT[f.format] || [f.format])[0]}${f.on_screen_text ? ` · “${f.on_screen_text}”` : ''}` : '—'),
         el('div', { class: 'row' }, el('span', { class: 'k' }, 'Said'), sp ? `“${sp.text}”` : 'No speech here'),
-        near.length ? el('div', { class: 'row' }, el('span', { class: 'k' }, 'Recommendation'), near.map(([r, k]) => `#${k + 1} ${r.title}`).join('; ')) : null].filter(Boolean));
+        near.length ? el('div', { class: 'row' }, el('span', { class: 'k' }, 'Recommendation'), near.map(([r, k]) => `#${k + 1} ${r.title}`).join('; ')) : null,
+        painAt(t).length ? el('div', { class: 'row', style: 'color:var(--dx-bad)' }, el('span', { class: 'k' }, 'Pain point'), painAt(t).map((p) => p.description).join('; ')) : null].filter(Boolean));
     }
     setTime(0);
     return { seek, setTime };
