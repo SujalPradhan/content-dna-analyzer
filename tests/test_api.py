@@ -75,5 +75,6 @@ def test_frames_mark_pain_points_per_shot():
 def test_spending_endpoints_need_the_access_code(monkeypatch):
     from content_dna import server
     monkeypatch.setattr(server, "ACCESS_CODE", "secret")
-    assert client.post("/api/videos/s83EB_OtaEo/rerun", json={}).status_code == 401
+    assert client.post("/api/videos/s83EB_OtaEo/rerun", json={"critique": True}).status_code == 401
+    assert client.post("/api/videos/s83EB_OtaEo/rerun", json={"critique": False}).status_code == 202  # re-scoring is free
     assert client.post("/api/analyze", json={"url": "https://youtu.be/x"}).status_code == 401

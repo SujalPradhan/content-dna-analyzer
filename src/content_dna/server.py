@@ -192,9 +192,11 @@ def analyze(req: AnalyzeRequest):
     return _new_job(req.url, req.genre, req.critique, req.start, req.seconds, goal=req.goal, params=_check_params(req.parameters))
 
 
-@app.post("/api/videos/{video_id}/rerun", status_code=202, dependencies=[Depends(require_code)],
+@app.post("/api/videos/{video_id}/rerun", status_code=202,
           summary="Re-score an analysed video for a target genre, goal and parameters (optionally a focused critique)")
-def rerun(video_id: str, req: RerunRequest):
+def rerun(video_id: str, req: RerunRequest, x_access_code: Annotated[str | None, Header()] = None):
+    if req.critique:  # re-scoring is free; only the critique spends LLM credit
+        require_code(x_access_code)
     video_id = _safe_id(video_id)
     if not (ingest.VIDEOS / video_id / "features.json").exists():
         raise HTTPException(404, "unknown video")
