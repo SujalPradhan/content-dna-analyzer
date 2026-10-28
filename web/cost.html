@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cost and Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/app.css">
+<style>
+/* Stage colours: validated categorical slots (dark surface), ordered so neighbours in a stack stay distinguishable. */
+:root { --st-download: #9085e9; --st-local: #c98500; --st-whisper: #3987e5; --st-perception: #d95926; --st-critique: #199e70; }
+.cost { max-width: 64rem; margin: 0 auto; padding: 1.5rem max(16px, 2.5vw) 3rem; display: grid; gap: 1.25rem; }
+.cost h1 { font-family: var(--font-anthropic-serif); font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.15; margin: 0; }
+.cost h2 { font-size: 16px; margin: 0 0 .25rem; }
+.lede { color: var(--color-fg-muted); margin: .4rem 0 0; max-width: 46rem; }
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .75rem; }
+@media (max-width: 760px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tile { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: 12px; padding: .9rem 1rem; display: grid; gap: .15rem; }
+.tile .len { font-size: 13px; color: var(--color-fg-muted); font-weight: 600; }
+.tile .big { font-family: var(--font-anthropic-serif); font-size: 1.9rem; font-weight: 700; line-height: 1.1; }
+.tile .big small { font-size: 1rem; color: var(--color-fg-muted); font-weight: 500; }
+.tile .sub { font-size: 12.5px; color: var(--color-fg-muted); }
+.legend { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-size: 12.5px; color: var(--color-fg-muted); margin: .4rem 0 .8rem; }
+.legend span { display: inline-flex; align-items: center; gap: .4rem; }
+.legend i { width: .7rem; height: .7rem; border-radius: 3px; }
+.rows { display: grid; gap: .55rem; }
+.row { display: grid; grid-template-columns: 3.6rem minmax(0, 1fr) 4.6rem; gap: .6rem; align-items: center; font-size: 13px; }
+.row .lab { color: var(--color-fg-muted); font-weight: 600; }
+.row .val { text-align: right; font-variant-numeric: tabular-nums; }
+.track { display: flex; gap: 2px; height: 1.1rem; }
+.seg { height: 100%; min-width: 2px; cursor: default; }
+.seg:first-child { border-radius: 4px 0 0 4px; } .seg:last-child { border-radius: 0 4px 4px 0; } .seg:only-child { border-radius: 4px; }
+.seg:hover { filter: brightness(1.2); }
+.axis { display: grid; grid-template-columns: 3.6rem minmax(0, 1fr) 4.6rem; gap: .6rem; font-size: 11px; color: var(--color-fg-muted); margin-top: .3rem; }
+.axis div { display: flex; justify-content: space-between; border-top: 1px solid var(--color-border-line); padding-top: .2rem; }
+.tip { position: fixed; pointer-events: none; z-index: 20; background: var(--cds-surface-popover); border: 1px solid var(--color-border-line); border-radius: 8px; padding: .45rem .6rem; font-size: 12.5px; max-width: 16rem; box-shadow: 0 6px 20px #0008; }
+.tip b { display: block; }
+.scatter { width: 100%; height: auto; display: block; }
+.scatter text { fill: var(--color-fg-muted); font-size: 12px; font-family: var(--font-anthropic-sans); }
+.scatter .grid { stroke: var(--color-border-line); }
+.scatter circle { fill: var(--accent); stroke: var(--color-panel); stroke-width: 2; }
+.scatter circle:hover { r: 7; }
+.scatter .fit { stroke: var(--color-fg); stroke-width: 2; stroke-dasharray: 5 4; fill: none; opacity: .7; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th, td { text-align: left; padding: .45rem .5rem; border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+th { font-size: 12px; color: var(--color-fg-muted); font-weight: 600; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.wrap { overflow-x: auto; }
+.cost > * { min-width: 0; }
+.notes { overflow-wrap: anywhere; font-size: 13px; color: var(--color-fg-muted); margin: 0; padding-left: 1.1rem; display: grid; gap: .3rem; }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+@media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+.toggle { margin-left: auto; font: inherit; font-size: 12px; background: none; border: 1px solid var(--color-border-line); color: var(--color-fg-muted); border-radius: 6px; padding: .2rem .55rem; cursor: pointer; }
+.head { display: flex; align-items: baseline; gap: .6rem; }
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../"><span class="dot"></span>Content DNA</a>
+  <nav aria-label="Main"><a href="../">Analyzer</a><a href="../story/">Data story</a><a class="active" href="./">Cost &amp; time</a><a id="nav-docs" href="../docs">API</a></nav>
+</header>
+
+<main class="cost">
+  <section>
+    <h1>What one analysis costs, and how long it takes</h1>
+    <p class="lede" id="lede">Loading measurements…</p>
+  </section>
+
+  <section class="tiles" id="tiles" aria-label="Measured runs by video length"></section>
+
+  <section class="two">
+    <div class="panel">
+      <div class="head"><h2>Where the money goes</h2></div>
+      <p class="hint">Measured runs, fixes on. Only the three model calls cost money.</p>
+      <div class="legend" id="leg-cost"></div>
+      <div class="rows" id="bars-cost"></div>
+      <div class="axis" id="axis-cost"></div>
+    </div>
+    <div class="panel">
+      <div class="head"><h2>Where the time goes</h2></div>
+      <p class="hint">Wall time of each stage in the same runs.</p>
+      <div class="legend" id="leg-time"></div>
+      <div class="rows" id="bars-time"></div>
+      <div class="axis" id="axis-time"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="head"><h2>Cost across the 36 corpus videos</h2><button class="toggle" id="tbl-toggle" type="button" aria-expanded="false">Show table</button></div>
+    <p class="hint" id="scatter-hint"></p>
+    <svg class="scatter" id="scatter" viewBox="0 0 720 260" role="img" aria-label="Cost per video against length for the corpus videos"></svg>
+    <div class="wrap" id="corpus-table" hidden></div>
+  </section>
+
+  <section class="panel">
+    <h2>Estimate for any length</h2>
+    <p class="hint">From the line fitted to the 36 corpus videos. Fixes are optional in the analyzer.</p>
+    <div class="wrap"><table id="estimate"></table></div>
+  </section>
+
+  <section class="panel">
+    <h2>Models and prices</h2>
+    <div class="wrap"><table id="prices"></table></div>
+  </section>
+
+  <section class="panel">
+    <h2>How these were measured</h2>
+    <ul class="notes" id="notes"></ul>
+  </section>
+</main>
+<div class="tip" id="tip" hidden></div>
+<script src="../assets/config.js"></script>
+<script>
+(async () => {
+  const $ = id => document.getElementById(id);
+  const API = (window.DNA_API || '').replace(/\/$/, '');
+  if (API) $('nav-docs').href = API + '/docs';
+  const d = await (await fetch('../assets/cost.json')).json();
+
+  // Stages in stack order; the paid ones are keyed like the ledger.
+  const TIME = [
+    { key: 'download', label: 'Download + cut', color: 'var(--st-download)', of: t => t['download'] || 0 },
+    { key: 'local', label: 'Local signals (shots, motion, fingerprint, scorecard)', color: 'var(--st-local)',
+      of: t => (t['visual signals'] || 0) + (t['fingerprint'] || 0) + (t['scorecard'] || 0) + (t['done'] || 0) },
+    { key: 'whisper', label: 'Audio + transcript (whisper-1)', color: 'var(--st-whisper)', of: t => t['audio + transcript'] || 0 },
+    { key: 'perception', label: 'Vision timeline (gemini-3.5-flash)', color: 'var(--st-perception)', of: t => t['vision timeline'] || 0 },
+    { key: 'critique', label: 'Fixes (claude-sonnet-5)', color: 'var(--st-critique)', of: t => t['critique'] || 0 },
+  ];
+  const COST = TIME.filter(s => d.stages[s.key]).map(s => ({ ...s, label: d.stages[s.key] }));
+  const usd = v => v < 0.01 ? '$' + v.toFixed(4) : v < 1 ? '$' + v.toFixed(3) : '$' + v.toFixed(2);
+  const secs = v => v < 60 ? Math.round(v) + ' s' : Math.floor(v / 60) + ' min ' + String(Math.round(v % 60)).padStart(2, '0') + ' s';
+  const len = s => s < 60 ? s + ' s' : (s / 60) + ' min';
+  const el = (tag, attrs = {}, ...kids) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) k === 'style' ? n.style.cssText = v : n.setAttribute(k, v);
+    n.append(...kids.flat());
+    return n;
+  };
+  const svgEl = (tag, attrs = {}) => {
+    const n = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+    return n;
+  };
+
+  const tip = $('tip');
+  const showTip = (e, html) => { tip.innerHTML = html; tip.hidden = false; moveTip(e); };
+  const moveTip = e => {
+    const r = tip.getBoundingClientRect();
+    tip.style.left = Math.min(e.clientX + 14, innerWidth - r.width - 8) + 'px';
+    tip.style.top = Math.max(8, e.clientY - r.height - 12) + 'px';
+  };
+  const hideTip = () => { tip.hidden = true; };
+  const hover = (node, html) => {
+    node.addEventListener('pointerenter', e => showTip(e, html));
+    node.addEventListener('pointermove', moveTip);
+    node.addEventListener('pointerleave', hideTip);
+  };
+
+  const runs = d.runs.map(r => {
+    const cost = Object.fromEntries(COST.map(s => [s.key, r.cost[s.key] || 0]));
+    const time = Object.fromEntries(TIME.map(s => [s.key, s.of(r.timings)]));
+    return { ...r, costBy: cost, timeBy: time,
+             total: Object.values(cost).reduce((a, b) => a + b, 0), totalTime: Object.values(time).reduce((a, b) => a + b, 0) };
+  });
+  const m = d.model, fixed = k => m[k].fixed, per = k => m[k].per_min;
+  const est = (min, withFix) => COST.filter(s => withFix || s.key !== 'critique')
+    .reduce((a, s) => a + Math.max(0, fixed(s.key) + per(s.key) * min), 0);
+
+  const r10 = runs[runs.length - 1];
+  $('lede').textContent = runs.length
+    ? `Measured end to end on fresh videos, no caches. A ${len(r10.seconds)} video costs ${usd(r10.total)} and takes ${secs(r10.totalTime)} with fixes; a ${len(runs[0].seconds)} one costs ${usd(runs[0].total)}. The fixes are a near-fixed few cents, so short videos pay mostly for them; the transcript grows with every minute. Most of the time is spent waiting on the models.`
+    : 'No measured runs yet: run scripts/benchmark_cost_time.py.';
+
+  for (const r of runs) {
+    const fix = r.costBy.critique || 0;
+    $('tiles').append(el('div', { class: 'tile' },
+      el('span', { class: 'len' }, len(r.seconds) + ' video'),
+      el('span', { class: 'big' }, usd(r.total)),
+      el('span', { class: 'sub' }, `${usd(r.total - fix)} without fixes`),
+      el('span', { class: 'big' }, secs(r.totalTime).replace(/ (min|s)/g, (_, u) => ' ' + u)),
+      el('span', { class: 'sub' }, `${secs(r.totalTime - (r.timeBy.critique || 0))} without fixes`)));
+  }
+
+  const legend = (id, stages) => $(id).append(...stages.map(s => el('span', {}, el('i', { style: `background:${s.color}` }), s.label)));
+  const bars = (id, axisId, stages, by, total, fmt) => {
+    const max = Math.max(...runs.map(total));
+    const step = fmt === secs ? [15, 30, 60, 120, 300].find(s => s >= max / 4) : niceStep(max);
+    const top = Math.ceil(max / step) * step;
+    for (const r of runs) {
+      const track = el('div', { class: 'track' });
+      for (const s of stages) {
+        const v = r[by][s.key];
+        if (!v) continue;
+        const seg = el('div', { class: 'seg', style: `width:${(v / top) * 100}%;background:${s.color}` });
+        hover(seg, `<b>${len(r.seconds)} video · ${s.label}</b>${fmt(v)} of ${fmt(total(r))} (${Math.round(v / total(r) * 100)}%)`);
+        track.append(seg);
+      }
+      $(id).append(el('div', { class: 'row' }, el('span', { class: 'lab' }, len(r.seconds)), track, el('span', { class: 'val' }, fmt(total(r)))));
+    }
+    const ticks = [];
+    for (let v = 0; v <= top + 1e-9; v += step) ticks.push(el('span', {}, fmt === usd ? '$' + +v.toFixed(3) : secs(v)));
+    $(axisId).append(el('span'), el('div', {}, ticks), el('span'));
+  };
+  function niceStep(max) {
+    const raw = max / 4, p = 10 ** Math.floor(Math.log10(raw));
+    return [1, 2, 2.5, 5, 10].map(k => k * p).find(s => s >= raw);
+  }
+  legend('leg-cost', COST);
+  legend('leg-time', TIME);
+  bars('bars-cost', 'axis-cost', COST, 'costBy', r => r.total, usd);
+  bars('bars-time', 'axis-time', TIME, 'timeBy', r => r.totalTime, secs);
+
+  // Scatter: per-video total cost (one call per stage) against analysed length, with the fitted line.
+  const pts = d.corpus.map(p => ({ ...p, total: COST.reduce((a, s) => a + p[s.key], 0) }));
+  $('scatter-hint').textContent = `Each dot is one corpus video: one transcript, one vision pass and one fixes call, from the usage ledger. Dashed line: fitted estimate, about ${usd(est(0, true))} plus ${usd(COST.reduce((a, s) => a + per(s.key), 0))} per minute.`;
+  const svg = $('scatter'), W = 720, H = 260, L = 46, R = 12, T = 10, B = 30;
+  const xMax = 15, yMax = Math.ceil(Math.max(...pts.map(p => p.total)) / 0.05) * 0.05;
+  const X = v => L + v / xMax * (W - L - R), Y = v => H - B - v / yMax * (H - T - B);
+  for (let v = 0; v <= yMax + 1e-9; v += 0.05) {
+    svg.append(svgEl('line', { class: 'grid', x1: L, x2: W - R, y1: Y(v), y2: Y(v) }));
+    const t = svgEl('text', { x: L - 6, y: Y(v) + 4, 'text-anchor': 'end' }); t.textContent = '$' + v.toFixed(2); svg.append(t);
+  }
+  for (const v of [0, 1, 5, 10, 15]) {
+    const t = svgEl('text', { x: X(v), y: H - B + 16, 'text-anchor': v === 15 ? 'end' : 'middle' }); t.textContent = v + (v === 15 ? ' min' : ''); svg.append(t);
+  }
+  svg.append(svgEl('path', { class: 'fit', d: `M${X(0)},${Y(est(0, true))} L${X(xMax)},${Y(est(xMax, true))}` }));
+  for (const p of pts) {
+    const c = svgEl('circle', { cx: X(p.minutes), cy: Y(p.total), r: 5 });
+    hover(c, `<b>${p.video_id}</b>${p.minutes.toFixed(1)} min · ${usd(p.total)}<br>transcript ${usd(p.whisper)} · vision ${usd(p.perception)} · fixes ${usd(p.critique)}`);
+    svg.append(c);
+  }
+  const ct = $('corpus-table');
+  ct.append(el('table', {}, el('thead', {}, el('tr', {}, el('th', {}, 'Video'), el('th', { class: 'n' }, 'Minutes'),
+    ...COST.map(s => el('th', { class: 'n' }, s.label.split(' (')[0])), el('th', { class: 'n' }, 'Total'))),
+    el('tbody', {}, pts.map(p => el('tr', {}, el('td', {}, p.video_id), el('td', { class: 'n' }, p.minutes.toFixed(2)),
+      ...COST.map(s => el('td', { class: 'n' }, usd(p[s.key]))), el('td', { class: 'n' }, usd(p.total)))))));
+  $('tbl-toggle').addEventListener('click', e => {
+    ct.hidden = !ct.hidden;
+    e.target.textContent = ct.hidden ? 'Show table' : 'Hide table';
+    e.target.setAttribute('aria-expanded', String(!ct.hidden));
+  });
+
+  const lens = [30, 60, 180, 300, 600, 900];
+  $('estimate').append(el('thead', {}, el('tr', {}, el('th', {}, 'Video length'), el('th', { class: 'n' }, 'Without fixes'),
+    el('th', { class: 'n' }, 'With fixes'), el('th', { class: 'n' }, 'Runs per $1'))),
+    el('tbody', {}, lens.map(s => el('tr', {}, el('td', {}, len(s) + (s === 900 ? ' (the maximum)' : '')),
+      el('td', { class: 'n' }, usd(est(s / 60, false))), el('td', { class: 'n' }, usd(est(s / 60, true))),
+      el('td', { class: 'n' }, String(Math.floor(1 / est(s / 60, true))))))));
+
+  const P = d.prices;
+  const price = k => P[k].per_min ? `$${P[k].per_min} per audio minute`
+    : `$${P[k].in} in · $${P[k].out} out per 1M tokens (cached input $${P[k].cache_read})`;
+  $('prices').append(el('thead', {}, el('tr', {}, el('th', {}, 'Model'), el('th', {}, 'Job'), el('th', {}, 'Price'))),
+    el('tbody', {}, [
+      ['whisper-1', 'Word-timed transcript', 'Billed per minute of audio, so cost grows exactly with length; level with the fixes by about 10 minutes.'],
+      ['gemini-3.5-flash', 'Watches the video (1 frame/s, low resolution) for shots, text, faces, hook', 'Grows with length, but slower than the transcript: long videos are sampled at a lower frame rate.'],
+      ['claude-sonnet-5', 'Writes the timestamped fixes from the measured signals', 'Mostly fixed: the rubric and corpus table are prompt-cached, and the per-video summary is compact.'],
+    ].map(([k, job, why]) => el('tr', {}, el('td', {}, el('b', {}, k)), el('td', {}, job, el('br'), el('small', { class: 'hint' }, why)), el('td', {}, price(k))))));
+
+  $('notes').append(...[
+    `Timed runs: the analyzer's own job runner, with fixes on, on the first ${runs.map(r => len(r.seconds)).join(', ')} of ${d.source}, each window never analysed before, so no cache helped. Measured ${d.generated} on ${d.machine}.`,
+    'Cost per run is what the run wrote to the usage ledger; token counts come from the model responses.',
+    'Claude’s rubric is prompt-cached for 5 minutes. The first run after a quiet spell pays to write that cache (the 30 s run here did), so back-to-back runs are a few cents cheaper.',
+    'Claude and Whisper prices are published rates. LLM Foundry does not publish Gemini prices, so the Gemini figure is an estimate of the public list price.',
+    'Local signals (shot detection, motion, loudness, scorecard) run on the machine and cost nothing beyond compute, a few seconds even at 10 minutes.',
+    'Download fetches the whole YouTube video at 480p before cutting the window, so it takes about the same time for any window length (and depends on the network). The 30 s run was the first of the batch and also paid the cold start.',
+    'The public demo admits a run only if a worst-case $0.20 fits the day’s $1 budget, so a long video never stops halfway. Up to 15 minutes are analysed per video.',
+  ].map(t => el('li', {}, t)));
+})();
+</script>
+</body>
+</html>

@@ -197,3 +197,15 @@ ts,video_id,stage,model,in,out,cache_read,cache_write,usd
 1793173217,s83EB_OtaEo,critique,claude-sonnet-5,6216,2902,0,8263,0.062109
 1793173263,Ml9Ojbl2uaw,critique,claude-sonnet-5,6630,4542,8263,0,0.060333
 1793173290,KWuFpi7j4_0,critique,claude-sonnet-5,4212,2398,8263,0,0.034057
+1793206863,3B3B9eSgMV0@0-30,whisper,whisper-1,0,0,0,0,0.003000
+1793206870,3B3B9eSgMV0@0-30,perception,gemini-3.5-flash,2967,712,0,0,0.003619
+1793206919,3B3B9eSgMV0@0-30,critique,claude-sonnet-5,4193,4512,0,8263,0.074163
+1793206941,3B3B9eSgMV0@0-60,whisper,whisper-1,0,0,0,0,0.006000
+1793206951,3B3B9eSgMV0@0-60,perception,gemini-3.5-flash,5697,1331,0,0,0.006842
+1793206995,3B3B9eSgMV0@0-60,critique,claude-sonnet-5,5502,4190,8263,0,0.054557
+1793207033,3B3B9eSgMV0@0-300,whisper,whisper-1,0,0,0,0,0.030000
+1793207058,3B3B9eSgMV0@0-300,perception,gemini-3.5-flash,27538,1951,0,0,0.019622
+1793207093,3B3B9eSgMV0@0-300,critique,claude-sonnet-5,9075,3213,8263,0,0.051933
+1793207158,3B3B9eSgMV0@0-600,whisper,whisper-1,0,0,0,0,0.060000
+1793207180,3B3B9eSgMV0@0-600,perception,gemini-3.5-flash,28629,3036,26209,0,0.024733
+1793207215,3B3B9eSgMV0@0-600,critique,claude-sonnet-5,14342,3466,8263,0,0.064997

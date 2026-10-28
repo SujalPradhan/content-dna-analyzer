@@ -1,4 +1,4 @@
-# Publishes the analyzer front end (/) and the data story (/story/) to GitHub Pages.
+# Publishes the analyzer front end (/), the data story (/story/) and the cost page (/cost/) to GitHub Pages.
 # The front end calls the Cloud Run API set in the repository variable DNA_API_URL.
 name: Pages
 on:
@@ -24,9 +24,10 @@ jobs:
         env:
           DNA_API_URL: ${{ vars.DNA_API_URL }}
         run: |
-          mkdir -p site/assets site/story
+          mkdir -p site/assets site/story site/cost
           cp web/index.html site/index.html
-          cp web/app.css web/app.js web/explorer.js site/assets/
+          cp web/cost.html site/cost/index.html   # measured cost and time (scripts/benchmark_cost_time.py)
+          cp web/app.css web/app.js web/explorer.js web/cost.json site/assets/
           cp -r web/demo site/assets/demo   # static demo results (scripts/build_static_demos.py)
           printf "window.DNA_API = '%s';\n" "$DNA_API_URL" > site/assets/config.js
           sed -i "s|href=\"docs\"|href=\"$DNA_API_URL/docs\"|" site/index.html

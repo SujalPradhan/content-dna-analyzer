@@ -87,6 +87,8 @@ Each video costs about $0.05–0.12 end to end (extraction about $0.03–0.10, c
 - Compact inputs: the LLM sees per-bin tables, not raw curves.
 - A ledger at `results/usage.csv` and a hard budget stop (`DNA_BUDGET_USD`, default $10). `uv run dna spend` shows the running total.
 
+The **Cost & time** page (`/cost/`) shows measured cost and wall time per stage for 30 s, 1, 5 and 10 min videos, plus a per-minute estimate fitted to the corpus ledger. Every job also records `timings` (seconds per stage) in `GET /api/jobs/{id}`.
+
 ## Commands
 | command | what it does |
 |---|---|
@@ -97,6 +99,7 @@ Each video costs about $0.05–0.12 end to end (extraction about $0.03–0.10, c
 | `python analysis/analyze_corpus.py` | hypothesis tests, archetypes, energy arcs → `results/stats.json` |
 | `python analysis/eval_shots.py` | shot-detector precision/recall vs manual labels |
 | `python analysis/eval_critique.py` | grounding, ablation vs transcript-only baseline, blind judge, stability |
+| `python scripts/benchmark_cost_time.py [--no-runs]` | timed fresh runs at 30 s / 1 / 5 / 10 min plus the ledger cost fit → `web/cost.json` (about $0.40) |
 | `uv run pytest` | offline tests (synthetic clip with known cuts and silence; validator; API) |
 | `python analysis/build_standalone.py` | rebuild the story page (`story/standalone.html`, `story/index.built.html`) |
 

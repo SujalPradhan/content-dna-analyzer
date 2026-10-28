@@ -14,7 +14,7 @@ GET  /api/videos           analysed library;   GET /api/videos/{id}  full report
 GET  /api/genres           genres + how well 'auto' works (leave-one-out accuracy)
 Spending (new analyses, critiques) is admitted up front by quota.py (DNA_DAILY_VIDEOS, DNA_DAILY_BUDGET_USD) plus
 DNA_PAID_PER_IP_HOUR, so an admitted run always finishes; a private deployment can set DNA_ACCESS_CODE instead.
-GET  /                     analyzer app;  /story  data story;  /reports/{id}  per-video HTML report
+GET  /                     analyzer app;  /story  data story;  /cost  cost and time per video length;  /reports/{id}  per-video HTML report
 """
 from __future__ import annotations
 
@@ -132,7 +132,12 @@ def _save(job_id: str) -> None:
 
 def _set(job_id: str, **kw):
     with _lock:
-        _jobs[job_id].update(kw, updated=time.time())
+        job, now = _jobs[job_id], time.time()
+        if kw.get("stage") and kw["stage"] != job.get("stage"):  # wall time of the stage that just ended
+            if job.get("stage") not in (None, "queued") and job.get("stage_started"):
+                job.setdefault("timings", {})[job["stage"]] = round(now - job["stage_started"], 2)
+            job["stage_started"] = now
+        job.update(kw, updated=now)
         _save(job_id)
     if kw.get("status") in ("done", "error"):
         _settle(_jobs[job_id])
@@ -284,7 +289,7 @@ def get_job(job_id: str):
         raise HTTPException(404, "unknown job")
     job = _jobs.get(job_id)
     if job:
-        return {k: v for k, v in job.items() if k not in ("ip", "quota_day", "settled")}  # never echo visitors' addresses
+        return {k: v for k, v in job.items() if k not in ("ip", "quota_day", "settled", "stage_started")}  # never echo visitors' addresses
     p = JOBS / f"{job_id}.json"  # survives server restarts
     if not p.exists():
         raise HTTPException(404, "unknown job")
@@ -466,6 +471,12 @@ def spend():
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 def index():
     return FileResponse(WEB / "index.html")
+
+
+@app.get("/cost/", response_class=HTMLResponse, include_in_schema=False)
+@app.get("/cost", response_class=HTMLResponse, include_in_schema=False)
+def cost_page():
+    return FileResponse(WEB / "cost.html")
 
 
 @app.get("/story/", response_class=HTMLResponse, include_in_schema=False)

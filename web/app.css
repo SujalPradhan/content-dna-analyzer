@@ -17,6 +17,7 @@ a { color: inherit; }
 .brand { font-family: var(--font-anthropic-serif); font-weight: 700; letter-spacing: .02em; text-decoration: none; display: flex; align-items: center; gap: .5rem; }
 .brand .dot { width: .8rem; height: .8rem; border-radius: 3px; background: linear-gradient(135deg, var(--genre-ad) 0 33%, var(--genre-shorts) 33% 66%, var(--genre-explainer) 66%); }
 nav { display: flex; gap: 1.1rem; font-size: 14px; }
+@media (max-width: 560px) { .bar { flex-wrap: wrap; row-gap: .4rem; } nav { gap: .8rem; font-size: 13px; flex-wrap: wrap; } }
 nav a { text-decoration: none; color: var(--color-fg-muted); } nav a.active { color: var(--accent); } nav a:hover { color: var(--color-fg); }
 .app { display: grid; grid-template-columns: minmax(0, 23rem) minmax(0, 1fr); gap: 1.25rem; padding: 1.25rem max(16px, 2.5vw); max-width: 100rem; margin: 0 auto; align-items: start; }
 @media (max-width: 960px) { .app { grid-template-columns: 1fr; } }

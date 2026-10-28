@@ -111,3 +111,18 @@ def test_quota_reserves_worst_case_cost_up_front(monkeypatch, tmp_path):
         quota.admit()  # a third could overrun mid-way, so it is refused before it starts
     quota.settle(a, 0.05)  # real cost far below the reservation frees room
     quota.admit()
+
+
+def test_jobs_record_wall_time_per_stage_and_cost_page_is_served(monkeypatch, tmp_path):
+    from content_dna import server
+    monkeypatch.setattr(server, "JOBS", tmp_path)
+    server._jobs["tstage"] = {"job_id": "tstage", "status": "queued", "stage": "queued", "created": time.time()}
+    server._set("tstage", status="running", stage="download")
+    server._set("tstage", stage="visual signals")
+    server._set("tstage", stage="visual signals")  # same stage again does not restart its clock
+    server._set("tstage", status="done", stage="done")
+    job = client.get("/api/jobs/tstage").json()
+    assert set(job["timings"]) == {"download", "visual signals"} and "stage_started" not in job
+    assert all(v >= 0 for v in job["timings"].values())
+    del server._jobs["tstage"]
+    assert "Where the time goes" in client.get("/cost").text
