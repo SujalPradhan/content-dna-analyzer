@@ -19,7 +19,7 @@ The result is a **scorecard** (each parameter: problem / watch / good, with the 
 
 ```
 uv run dna serve            # http://127.0.0.1:8001 — analyzer app at /, data story at /story, OpenAPI docs at /docs
-open "http://127.0.0.1:8001/#demo=s83EB_OtaEo&goal=both"   # deep link: opens a demo's scorecard (no LLM cost)
+open "http://127.0.0.1:8001/#demo=s83EB_OtaEo&goal=both"   # deep link: opens a demo's results (its fixes are pre-generated)
 ```
 
 | Method | Path | Body / result |

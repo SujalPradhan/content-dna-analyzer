@@ -15,3 +15,5 @@ data/videos/*/critique_focus.json
 results/server.log
 site/
 Dockerfile.local
+# the server keeps its own spend ledger (caps count only what it spent)
+results/usage.csv

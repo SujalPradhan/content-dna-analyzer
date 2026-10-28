@@ -14,3 +14,5 @@ data/videos/*/scorecard.json
 data/videos/*/critique_focus.json
 results/server.log
 site/
+# the server keeps its own spend ledger (caps count only what it spent)
+results/usage.csv

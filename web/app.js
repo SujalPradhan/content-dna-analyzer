@@ -197,12 +197,13 @@
       demos = d; catalogue = cat.parameters; catalogue.forEach((p) => selected.add(p.id));
       demoId = demos[0]?.video_id; genre = demos[0]?.genre || 'auto';
       drawDemos(); drawGenres(); drawParams();
-      // deep link for presenting: #demo=<id>&genre=<g>&goal=<goal> opens that demo's scorecard (no paid critique)
+      // deep link for presenting: #demo=<id>&genre=<g>&goal=<goal>[&fixes=0] opens that demo's results; the demos' default
+      // fixes are pre-generated, so they come back instantly and free
       const h = new URLSearchParams(location.hash.slice(1));
       if (h.get('demo') && demos.some((x) => x.video_id === h.get('demo'))) {
         demoId = h.get('demo'); genre = GENRE[h.get('genre')] ? h.get('genre') : demos.find((x) => x.video_id === demoId).genre;
         if (GOAL[h.get('goal')]) { goal = h.get('goal'); document.querySelectorAll('#goals button').forEach((x) => x.setAttribute('aria-checked', String(x.dataset.goal === goal))); }
-        $('crit').checked = false; drawDemos(); drawGenres(); drawParams();
+        $('crit').checked = h.get('fixes') !== '0'; drawDemos(); drawGenres(); drawParams();
         $('form').requestSubmit();
       }
     } catch (err) {
