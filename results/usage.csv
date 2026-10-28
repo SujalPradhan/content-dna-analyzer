@@ -191,3 +191,9 @@ ts,video_id,stage,model,in,out,cache_read,cache_write,usd
 1793154702,Ml9Ojbl2uaw@60-120,critique,claude-sonnet-5,3361,2554,0,8263,0.052920
 1793154706,021e5a18_clip_b9933c,whisper,whisper-1,0,0,0,0,0.000595
 1793154711,021e5a18_clip_b9933c,perception,gemini-3.5-flash,762,305,0,0,0.001296
+1793172838,999deeac_zoo_4b65d5,whisper,whisper-1,0,0,0,0,0.001901
+1793172843,999deeac_zoo_4b65d5,perception,gemini-3.5-flash,1908,241,0,0,0.001677
+1793172867,999deeac_zoo_4b65d5,critique,claude-sonnet-5,2937,2231,0,8263,0.048842
+1793173217,s83EB_OtaEo,critique,claude-sonnet-5,6216,2902,0,8263,0.062109
+1793173263,Ml9Ojbl2uaw,critique,claude-sonnet-5,6630,4542,8263,0,0.060333
+1793173290,KWuFpi7j4_0,critique,claude-sonnet-5,4212,2398,8263,0,0.034057

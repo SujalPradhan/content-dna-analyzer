@@ -41,6 +41,7 @@ PRICES = {
 }
 
 BUDGET_USD = float(os.environ.get("DNA_BUDGET_USD", "10"))
+DAILY_BUDGET_USD = float(os.environ.get("DNA_DAILY_BUDGET_USD", "0"))  # 0 = no daily cap (public demos set one)
 
 
 class BudgetExceeded(RuntimeError):
@@ -75,10 +76,20 @@ def _cache_put(key: str, value) -> None:
 
 
 def spent_usd() -> float:
+    return spent_since(0)
+
+
+def spent_since(ts: float, video_id: str | None = None) -> float:
+    """Estimated spend recorded at or after unix time ts (optionally for one video). Cache hits record nothing."""
     if not LEDGER.exists():
         return 0.0
     with LEDGER.open() as f:
-        return sum(float(r["usd"]) for r in csv.DictReader(f))
+        return sum(float(r["usd"]) for r in csv.DictReader(f)
+                   if int(r["ts"]) >= ts and (video_id is None or r["video_id"] == video_id))
+
+
+def spent_today() -> float:
+    return spent_since(time.time() // 86400 * 86400)  # since 00:00 UTC
 
 
 def _record(stage: str, model: str, usage: dict, usd: float, video_id: str = "") -> None:
@@ -96,6 +107,8 @@ def _record(stage: str, model: str, usage: dict, usd: float, video_id: str = "")
 def _guard() -> None:
     if spent_usd() >= BUDGET_USD:
         raise BudgetExceeded(f"Estimated spend {spent_usd():.2f} >= budget {BUDGET_USD:.2f} USD")
+    if DAILY_BUDGET_USD and spent_today() >= DAILY_BUDGET_USD:
+        raise BudgetExceeded(f"Today's analysis budget (${DAILY_BUDGET_USD:.2f}) is used up; demos still work")
 
 
 def _cost(model: str, u: dict) -> float:

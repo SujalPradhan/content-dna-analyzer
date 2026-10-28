@@ -34,7 +34,7 @@ open "http://127.0.0.1:8001/#demo=s83EB_OtaEo&goal=both"   # deep link: opens a 
 | GET | `/api/demos` · `/api/videos` · `/api/videos/{id}` | demo videos · library · full report |
 | GET | `/api/genres` | genres and how reliable `"auto"` is |
 
-`POST` endpoints spend LLM credit; when `DNA_ACCESS_CODE` is set they require the header `X-Access-Code`.
+New analyses and critiques spend LLM credit. The public demo caps that per day (`DNA_DAILY_BUDGET_USD`) and per visitor (`DNA_PAID_PER_IP_HOUR`, counting only runs that actually spent); the demo videos' fixes ship pre-generated in the LLM cache, so presenting them is free and instant. A private deployment can set `DNA_ACCESS_CODE` to require the header `X-Access-Code` instead.
 
 ```
 curl -s -X POST localhost:8001/api/analyze -H 'Content-Type: application/json' \
@@ -50,10 +50,10 @@ Jobs are saved to `data/jobs/` (a restarted server reports interrupted jobs inst
 
 ## Deploy
 
-- **API + app** on Google Cloud Run: `./scripts/deploy_cloudrun.sh` stores `API_KEY` (from `.env`) and a generated demo access code in Secret Manager, builds with Cloud Build and deploys one instance that scales to zero. It prints the URL and the access code.
+- **API + app** on Google Cloud Run: `./scripts/deploy_cloudrun.sh` stores `API_KEY` (from `.env`) in Secret Manager, builds with Cloud Build and deploys one instance that scales to zero, with a $1/day and 3-runs-per-visitor-per-hour cap (override with `DAILY_BUDGET=` / `PER_HOUR=`).
 - **Front end + data story** on GitHub Pages: `.github/workflows/pages.yml` publishes `/` (analyzer) and `/story/` on every push, pointing the front end at the repository variable `DNA_API_URL`.
 
-Deployed limits: uploads ≤ 30 MB (Cloud Run request cap), a $15 LLM budget guard, and new analyses live on the instance's disk until it is recycled. YouTube may refuse downloads from cloud IPs; the demos and uploads do not depend on it.
+Deployed limits: uploads ≤ 30 MB (Cloud Run request cap), the daily and per-visitor caps above, a $15 overall budget guard, and new analyses live on the instance's disk until it is recycled. YouTube may refuse downloads from cloud IPs; the demos and uploads do not depend on it.
 
 ## How it works
 

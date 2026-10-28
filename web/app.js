@@ -193,6 +193,7 @@
       const [cfg, d, cat] = await Promise.all([api('/api/config'), api('/api/demos'), api('/api/parameters')]);
       if (cfg.access_code_required && !store.get('dna-code')) $('f-code').hidden = false;
       $('upload-hint').textContent = `(up to ${cfg.max_upload_mb} MB)`;
+      if (cfg.paid_per_visitor_per_hour) $('crit-hint').textContent = `(~40 s · demos are instant · new runs: ${cfg.paid_per_visitor_per_hour}/hour per visitor)`;
       demos = d; catalogue = cat.parameters; catalogue.forEach((p) => selected.add(p.id));
       demoId = demos[0]?.video_id; genre = demos[0]?.genre || 'auto';
       drawDemos(); drawGenres(); drawParams();

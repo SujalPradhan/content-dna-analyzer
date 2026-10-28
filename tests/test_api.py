@@ -1,6 +1,7 @@
 """API tests against the analysed corpus on disk. No analysis jobs are started, so no API cost."""
 import json
 import math
+import time
 
 import pytest
 from fastapi.testclient import TestClient
@@ -78,3 +79,17 @@ def test_spending_endpoints_need_the_access_code(monkeypatch):
     assert client.post("/api/videos/s83EB_OtaEo/rerun", json={"critique": True}).status_code == 401
     assert client.post("/api/videos/s83EB_OtaEo/rerun", json={"critique": False}).status_code == 202  # re-scoring is free
     assert client.post("/api/analyze", json={"url": "https://youtu.be/x"}).status_code == 401
+
+
+def test_public_demo_caps_spending_per_visitor_and_per_day(monkeypatch):
+    from content_dna import llm, server
+    monkeypatch.setattr(server, "ACCESS_CODE", None)
+    monkeypatch.setattr(server, "PAID_PER_IP_HOUR", 1)
+    monkeypatch.setitem(server._paid_hits, "testclient", [time.time()])  # this visitor already spent once this hour
+    assert client.post("/api/videos/s83EB_OtaEo/rerun", json={"critique": True}).status_code == 429
+    assert client.post("/api/videos/s83EB_OtaEo/rerun", json={"critique": False}).status_code == 202
+    monkeypatch.setitem(server._paid_hits, "testclient", [])
+    monkeypatch.setattr(llm, "DAILY_BUDGET_USD", 0.01)
+    monkeypatch.setattr(llm, "spent_today", lambda: 1.0)
+    r = client.post("/api/analyze", json={"url": "https://youtu.be/x"})
+    assert r.status_code == 429 and "Today" in r.json()["detail"]

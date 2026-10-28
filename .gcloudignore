@@ -4,7 +4,6 @@
 **/__pycache__/
 .pytest_cache/
 data/raw/
-data/cache/
 data/uploads/
 data/jobs/
 data/videos/*/audio.mp3
