@@ -7,8 +7,17 @@
   const EVIDENCE = { 'platform-official': ['Platform guidance', 'ev-a'], experimental: ['Experiment', 'ev-b'], observational: ['Observational', 'ev-c'], practitioner: ['Practitioner', 'ev-d'] };
   const STATUS = { problem: ['✕', 'Problem'], watch: ['!', 'Watch'], good: ['✓', 'Good'], unmeasured: ['–', 'Not measurable'] };
   const RUN_STAGES = ['download', 'visual signals', 'audio + transcript', 'vision timeline', 'fingerprint', 'scorecard', 'critique'];
-  const RERUN_STAGES = ['scorecard', 'critique'];
-  let mode = 'demo', demoId = null, genre = null, goal = 'both', catalogue = [], selected = new Set(), demos = [], ex = null, last = null;
+  let mode = 'demo', demoId = null, genre = null, goal = 'both', catalogue = [], selected = new Set(), demos = [], ex = null, last = null, apiReady = false;
+
+  // Demos are static files baked by scripts/build_static_demos.py: no API, LLM call or compute. Each parameter is scored
+  // independently, so the goal and parameter choice is a filter over the stored per-genre scorecard.
+  const demoCache = {};
+  const loadDemo = async (id) => demoCache[id] ||= await (await fetch(`assets/demo/${id}.json`)).json();
+  function filterCard(card, params, g) {
+    const ps = card.parameters.filter((p) => params.includes(p.id) && (g === 'both' || p.goal === g || p.goal === 'both'));
+    const counts = { problem: 0, watch: 0, good: 0, unmeasured: 0 }; ps.forEach((p) => { counts[p.status] += 1; });
+    return { ...card, goal: g, parameters: ps, counts, pain_points: ps.flatMap((p) => p.flags).sort((a, b) => a.t - b.t) };
+  }
 
   const store = { get: (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) { /* private mode */ } } };
   const el = (tag, attrs = {}, ...kids) => {
@@ -35,6 +44,7 @@
     mode = b.dataset.tab;
     document.querySelectorAll('.tabs button').forEach((x) => x.setAttribute('aria-selected', String(x === b)));
     $('f-demo').hidden = mode !== 'demo'; $('f-file').hidden = mode !== 'file'; $('f-url').hidden = mode !== 'url';
+    $('crit-row').hidden = mode === 'demo'; $('demo-note').hidden = mode !== 'demo'; $('api-note').hidden = mode === 'demo' || apiReady;
     if (mode !== 'demo' && genre === null) genre = 'auto';
     drawGenres(); drawParams();
   }));
@@ -103,8 +113,10 @@
       let job, stages = RUN_STAGES;
       if (mode === 'demo') {
         if (!demoId) throw new Error('Pick a demo video first.');
-        stages = RERUN_STAGES;
-        job = await api(`/api/videos/${demoId}/rerun`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ genre, goal, parameters: params, critique }) });
+        const d = await loadDemo(demoId);
+        $('go').disabled = false; $('job').hidden = true;
+        show({ ...d.report, scorecard: filterCard(d.scorecards[genre], params, goal), staticShots: d.shots, fixesFor: d.fixes_for }, params);
+        return;
       } else if (mode === 'file') {
         const f = $('file').files[0]; if (!f) throw new Error('Choose a video file first.');
         const fd = new FormData(); fd.append('file', f); fd.append('genre', genre || 'auto'); fd.append('goal', goal); fd.append('parameters', params.join(',')); fd.append('critique', String(critique));
@@ -134,15 +146,18 @@
     last = { r, params };
     const sc = r.scorecard;
     $('empty').hidden = true; $('view').hidden = false;
-    $('r-eyebrow').textContent = `${GENRE[sc.genre] || sc.genre} · ${GOAL[sc.goal]} · ${sc.parameters.length} parameters`;
+    const ff = r.fixesFor, other = ff && (ff.genre !== sc.genre || ff.goal !== sc.goal);
+    $('r-eyebrow').textContent = `${GENRE[sc.genre] || sc.genre} · ${GOAL[sc.goal]} · ${sc.parameters.length} parameters${other ? ` · fixes written for ${GENRE[ff.genre]}, ${GOAL[ff.goal].toLowerCase()}` : ''}`;
     $('r-title').textContent = r.title || r.video_id;
     $('tally').replaceChildren(...['problem', 'watch', 'good'].map((k) => el('div', { class: `t t-${k}` }, el('b', {}, sc.counts[k] || 0), STATUS[k][1])));
     const v = { ...r, pain_points: sc.pain_points, media_url: r.media_url ? API + r.media_url : null };
     ex = DNAExplorer.render($('explorer'), v, { player: true, compact: true });
     drawCards(sc);
-    drawFrames(r.video_id, sc, params);
+    drawFrames(r, sc, params);
     const links = $('links'); links.replaceChildren();
-    links.append(el('a', { href: `${API}/api/videos/${r.video_id}/scorecard?genre=${sc.genre}&goal=${sc.goal}&params=${params.join(',')}`, target: '_blank', rel: 'noopener' }, 'Scorecard JSON ↗'),
+    if (r.staticShots) links.append(el('a', { href: `assets/demo/${r.video_id}.json`, target: '_blank', rel: 'noopener' }, 'Demo data JSON ↗'),
+      el('a', { href: `${API}/docs`, target: '_blank', rel: 'noopener' }, 'API docs ↗'));
+    else links.append(el('a', { href: `${API}/api/videos/${r.video_id}/scorecard?genre=${sc.genre}&goal=${sc.goal}&params=${params.join(',')}`, target: '_blank', rel: 'noopener' }, 'Scorecard JSON ↗'),
       el('a', { href: `${API}/api/videos/${r.video_id}`, target: '_blank', rel: 'noopener' }, 'Full report JSON ↗'),
       el('a', { href: `${API}/docs`, target: '_blank', rel: 'noopener' }, 'API docs ↗'));
     $('view').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -173,41 +188,59 @@
     });
   }
 
-  async function drawFrames(id, sc, params) {
-    const box = $('frames'); box.replaceChildren(el('p', { class: 'hint' }, 'Loading frames…'));
-    try {
-      const f = await api(`/api/videos/${id}/frames?genre=${sc.genre}&goal=${sc.goal}&params=${params.join(',')}`);
-      box.replaceChildren(...f.shots.map((s) => {
+  function drawFrames(r, sc, params) {
+    if (r.staticShots) {  // demo: frames are static files, pain points matched to shots here
+      renderShots(r.staticShots.map((s) => ({ ...s, pain_points: sc.pain_points.filter((p) => p.t < s.end && (p.t_end ?? p.t + 0.5) > s.start) })), '');
+      return;
+    }
+    $('frames').replaceChildren(el('p', { class: 'hint' }, 'Loading frames…'));
+    api(`/api/videos/${r.video_id}/frames?genre=${sc.genre}&goal=${sc.goal}&params=${params.join(',')}`)
+      .then((f) => renderShots(f.shots, API)).catch((err) => $('frames').replaceChildren(el('p', { class: 'err' }, err.message)));
+  }
+  function renderShots(shots, base) {
+    const box = $('frames');
+    box.replaceChildren(...shots.map((s) => {
         const bad = s.pain_points.length > 0;
         return el('button', { type: 'button', class: `fr${bad ? ' bad' : ''}`, title: bad ? s.pain_points.map((p) => p.description).join('\n') : `Shot ${s.shot + 1}`, onclick: () => jump(s.start) },
-          s.image ? el('img', { src: API + s.image, alt: `Shot ${s.shot + 1} at ${mmss(s.start)}`, loading: 'lazy' }) : el('div', { class: 'noimg' }, 'no frame'),
+          s.image ? el('img', { src: base + s.image, alt: `Shot ${s.shot + 1} at ${mmss(s.start)}`, loading: 'lazy' }) : el('div', { class: 'noimg' }, 'no frame'),
           el('span', { class: 'cap' }, `${mmss(s.start)} · ${s.length.toFixed(1)} s`, bad ? el('b', {}, ` ⚠ ${s.pain_points[0].description}`) : null));
-      }));
-    } catch (err) { box.replaceChildren(el('p', { class: 'err' }, err.message)); }
+    }));
   }
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => last && show(last.r, last.params), 300); });
 
   // ---------------------------------------------------------------- boot
-  (async () => {
+  // The demo flow runs from static files; the API is only needed for uploads and YouTube links, so connect to it in the
+  // background and keep retrying while a scaled-to-zero server wakes up.
+  async function connectApi(tries = 0) {
     try {
-      const [cfg, d, cat] = await Promise.all([api('/api/config'), api('/api/demos'), api('/api/parameters')]);
+      const cfg = await api('/api/config');
+      apiReady = true; $('api-note').hidden = true;
       if (cfg.access_code_required && !store.get('dna-code')) $('f-code').hidden = false;
       $('upload-hint').textContent = `(up to ${cfg.max_upload_mb} MB)`;
-      if (cfg.paid_per_visitor_per_hour) $('crit-hint').textContent = `(~40 s · demos are instant · new runs: ${cfg.paid_per_visitor_per_hour}/hour per visitor)`;
-      demos = d; catalogue = cat.parameters; catalogue.forEach((p) => selected.add(p.id));
+      if (cfg.paid_per_visitor_per_hour) $('crit-hint').textContent = `(~1–2 min · ${cfg.paid_per_visitor_per_hour} new videos per hour per visitor)`;
+    } catch (err) {
+      $('api-note').textContent = tries < 12 ? 'Waking up the analysis server for uploads and YouTube links…' : 'The analysis server is unavailable right now. The demos still work.';
+      $('api-note').hidden = mode === 'demo';
+      if (tries < 12) setTimeout(() => connectApi(tries + 1), 5000);
+    }
+  }
+  (async () => {
+    try {
+      const idx = await (await fetch('assets/demo/index.json')).json();
+      demos = idx.demos; catalogue = idx.parameters; catalogue.forEach((p) => selected.add(p.id));
       demoId = demos[0]?.video_id; genre = demos[0]?.genre || 'auto';
       drawDemos(); drawGenres(); drawParams();
-      // deep link for presenting: #demo=<id>&genre=<g>&goal=<goal>[&fixes=0] opens that demo's results; the demos' default
-      // fixes are pre-generated, so they come back instantly and free
+      // deep link for presenting: #demo=<id>&genre=<g>&goal=<goal> opens that demo's results straight away
       const h = new URLSearchParams(location.hash.slice(1));
       if (h.get('demo') && demos.some((x) => x.video_id === h.get('demo'))) {
         demoId = h.get('demo'); genre = GENRE[h.get('genre')] ? h.get('genre') : demos.find((x) => x.video_id === demoId).genre;
         if (GOAL[h.get('goal')]) { goal = h.get('goal'); document.querySelectorAll('#goals button').forEach((x) => x.setAttribute('aria-checked', String(x.dataset.goal === goal))); }
-        $('crit').checked = h.get('fixes') !== '0'; drawDemos(); drawGenres(); drawParams();
+        drawDemos(); drawGenres(); drawParams();
         $('form').requestSubmit();
       }
     } catch (err) {
-      $('job').hidden = false; $('job').replaceChildren(el('div', { class: 'err' }, `Can't reach the analysis API${API ? ' at ' + API : ''}: ${err.message}. It may be waking up; reload in a minute.`));
+      $('job').hidden = false; $('job').replaceChildren(el('div', { class: 'err' }, `Couldn't load the demo data: ${err.message}`));
     }
+    connectApi();
   })();
 })();

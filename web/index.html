@@ -25,6 +25,7 @@
           <button type="button" role="tab" aria-selected="false" data-tab="url">YouTube</button>
         </div>
         <div id="f-demo" class="demos" role="radiogroup" aria-label="Demo videos"></div>
+        <p class="hint" id="api-note" hidden></p>
         <label class="f" id="f-file" hidden>Video file <span class="hint" id="upload-hint"></span>
           <input id="file" type="file" accept="video/*">
         </label>
@@ -50,7 +51,8 @@
       </section>
 
       <section class="step">
-        <label class="check"><input id="crit" type="checkbox" checked> Write focused fixes with Claude <span class="hint" id="crit-hint">(~$0.05, ~40 s)</span></label>
+        <p class="hint" id="demo-note">Demo results are pre-computed: instant, no server or API calls.</p>
+        <label class="check" id="crit-row" hidden><input id="crit" type="checkbox" checked> Write focused fixes with Claude <span class="hint" id="crit-hint">(~$0.05, ~40 s)</span></label>
         <label class="f" id="f-code" hidden>Demo access code<input id="code" type="password" autocomplete="off"></label>
         <button class="go" type="submit" id="go">Analyze</button>
         <div id="job" class="job" hidden></div>

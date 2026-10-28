@@ -27,6 +27,7 @@ jobs:
           mkdir -p site/assets site/story
           cp web/index.html site/index.html
           cp web/app.css web/app.js web/explorer.js site/assets/
+          cp -r web/demo site/assets/demo   # static demo results (scripts/build_static_demos.py)
           printf "window.DNA_API = '%s';\n" "$DNA_API_URL" > site/assets/config.js
           sed -i "s|href=\"docs\"|href=\"$DNA_API_URL/docs\"|" site/index.html
           { echo "<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'></head><body style='margin:0;background:#0f1215'>";

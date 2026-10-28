@@ -15,6 +15,8 @@ open data/videos/jNQXAC9IVRw/report.html
 2. **Target**: the genre you are making it for, and the goal (retention, reach and sharing, or both).
 3. **Parameters**: pick from 16 researched drivers of retention and reach (`data/parameters.json`, written up with sources in `docs/parameters.md`), e.g. hook visual change, time to first voice, dead air, pacing, on-screen text, CTA timing, length fit, loop ending.
 
+The three **demos are static**: `scripts/build_static_demos.py` bakes their reports, per-genre scorecards, frames and pre-generated fixes into `web/demo/`, so the demo flow needs no server, API call or compute (rerun it after changing the scorecard or critique). Uploads and YouTube links use the API.
+
 The result is a **scorecard** (each parameter: problem / watch / good, with the measured value, the target, and whether that target is *sourced*, a *heuristic*, or the target genre's *corpus range*), **pain points pinned to the timeline**, a **frame-by-frame** strip (one keyframe per shot, red where a pain point falls) and, optionally, **fixes written by Claude** that focus on your goal and parameters and cite measured evidence. Checks are guidance to test, not predicted performance.
 
 ```
