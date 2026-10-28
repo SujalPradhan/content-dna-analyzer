@@ -1,0 +1,519 @@
+{
+ "summary": "This weekend vlog opens with a near-silent, music-only montage and text overlay before settling into a loosely-cut, narration-driven structure: long talking-head segments alternate with extended b-roll stretches of travel, arrival, and cabin exploration. Cuts are sparse and shots run very long for the category, while speech is dense and fast once it begins, with a single mid-video CTA rather than one near the end as is typical for vlogs.",
+ "dna_tags": [
+  "music-only cold open",
+  "slow-cut travel diary",
+  "talking-head narration",
+  "mid-video soft CTA",
+  "low-saturation home-shot look"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 11.4,
+   "role": "hook",
+   "label": "Music-led montage of brushes/packing with title card overlay"
+  },
+  {
+   "start_s": 11.4,
+   "end_s": 121.3,
+   "role": "intro_setup",
+   "label": "Silent-narration b-roll of cleaning/packing under music"
+  },
+  {
+   "start_s": 121.3,
+   "end_s": 258.8,
+   "role": "main_content",
+   "label": "Talking-head explainer about the weekend plans and Sovereign Hill"
+  },
+  {
+   "start_s": 258.8,
+   "end_s": 357.2,
+   "role": "main_content",
+   "label": "Driving/goodbye b-roll with sparse speech and long pauses"
+  },
+  {
+   "start_s": 357.2,
+   "end_s": 471.9,
+   "role": "main_content",
+   "label": "Arrival at cabin, room allocation, family banter"
+  },
+  {
+   "start_s": 471.9,
+   "end_s": 551.4,
+   "role": "demonstration",
+   "label": "Cabin tour and facilities walk-through"
+  },
+  {
+   "start_s": 551.4,
+   "end_s": 598.2,
+   "role": "main_content",
+   "label": "Getting ready for dinner, casual conversation"
+  },
+  {
+   "start_s": 598.2,
+   "end_s": 630.7,
+   "role": "outro",
+   "label": "Thanks-for-watching card and social handles"
+  }
+ ],
+ "hook": {
+  "what_happens": "A silent montage of makeup brushes and packing items plays under music for about 10 seconds before any speech, with a 'WEEKEND VLOG' title card appearing at 4.2s.",
+  "promise": "Implicit promise of a weekend of cleaning, organising and travel, as stated on the title card.",
+  "strengths": [
+   "Title card clearly sets viewer expectations for the video's three-part theme (cleaning, organising, travel)",
+   "Visual motion from packing/brush close-ups gives some kinetic interest before speech starts"
+  ],
+  "weaknesses": [
+   "Zero cuts in the first 15 seconds versus a typical vlog hook of 5-7, so the opening feels static",
+   "No spoken word until 10.04s, delaying the creator's direct address and context"
+  ]
+ },
+ "devices": [
+  {
+   "name": "direct-address greeting",
+   "t_s": 121.2,
+   "quote": "Hey friends, welcome to the weekend vlog"
+  },
+  {
+   "name": "live-research authenticity beat",
+   "t_s": 176.2,
+   "quote": "I'm going to look up exactly what it is"
+  },
+  {
+   "name": "watch-next card reference",
+   "t_s": 163.3,
+   "quote": "I'll add a card to that one"
+  },
+  {
+   "name": "on-screen text punctuation gag",
+   "t_s": 504.1,
+   "quote": "OR NOT!!!!!"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 121.2,
+   "point": "High use of direct address and conversational framing invites the viewer into the trip from the moment speech begins.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Hey friends, welcome to the weekend vlog"
+    },
+    {
+     "kind": "metric",
+     "ref": "you_rate",
+     "value": "3.82"
+    }
+   ]
+  },
+  {
+   "t_s": 176.2,
+   "point": "Unscripted, searching-for-information moment ('let me Google it') adds a candid, unpolished authenticity that suits the vlog format.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "I'm going to Google it... it recreates the 1850s gold rush boom town"
+    }
+   ]
+  },
+  {
+   "t_s": 357.2,
+   "point": "Sustained speech coverage keeps the arrival and cabin-tour stretch narrated rather than silent, aiding viewer orientation.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.657"
+    },
+    {
+     "kind": "visual",
+     "ref": "357.2",
+     "value": "talking_head segment, face visible, narrating arrival"
+    }
+   ]
+  },
+  {
+   "t_s": 123.4,
+   "point": "Fast, information-dense speaking rate once dialogue starts efficiently delivers trip context in a single talking-head block.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "119.5"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:120.0",
+     "value": "168"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Add motion/cuts to the opening 10 seconds",
+   "t_start_s": 0.0,
+   "t_end_s": 11.4,
+   "observation": "The hook has 0 cuts and no spoken word until 10.04s, both far below category norms, making the opening feel inert before the vlog actually begins.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "0"
+    },
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "10.04"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "close-up b-roll of makeup brushes, no face or speech"
+    }
+   ],
+   "recommendation": "Test trimming the silent brush/packing shots or intercutting a quick spoken teaser line earlier so viewers hear the creator's voice sooner.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Reconsider placing the only CTA at 26% of runtime",
+   "t_start_s": 163.6,
+   "t_end_s": 163.6,
+   "observation": "The single watch-next card appears at roughly a quarter of the way through, whereas vlogs in this corpus typically place their first CTA near the end (p50 ~94% of runtime).",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.259"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "I'll add a card to that one"
+    }
+   ],
+   "recommendation": "Test adding a second reminder or end-screen CTA near the outro (598-630s) so the call to action isn't only delivered mid-video and forgotten.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 163.66,
+   "t_in_range": true
+  },
+  {
+   "title": "Tighten the low-speech travel/pause stretch",
+   "t_start_s": 280.0,
+   "t_end_s": 340.0,
+   "observation": "Several consecutive bins show near-zero words per minute (12, 24, 3 wpm) alongside long pauses, creating a quiet gap in an otherwise narration-heavy video.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:280.0",
+     "value": "12.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:320.0",
+     "value": "24.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "long_pauses_per_min",
+     "value": "2.0"
+    }
+   ],
+   "recommendation": "Test trimming or compressing this stretch, or adding brief narration/text overlay over the driving b-roll to maintain narrative continuity.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 280.1,
+   "t_in_range": true
+  },
+  {
+   "title": "Very long median shot length versus category",
+   "t_start_s": 0.0,
+   "t_end_s": 630.7,
+   "observation": "Median shot length of 28.1s sits at the 92nd percentile for vlogs, and overall cut rate (1.81/min) is at the 8th percentile, giving long uninterrupted takes throughout.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "median_shot_s",
+     "value": "28.1"
+    },
+    {
+     "kind": "metric",
+     "ref": "shots_per_min",
+     "value": "1.81"
+    }
+   ],
+   "recommendation": "Test breaking up some of the longest talking-head takes (e.g. 155.7-258.8s) with occasional cutaway b-roll to vary visual rhythm, while keeping the calm vlog pace.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Pacing accelerates sharply in the second half",
+   "t_start_s": 400.0,
+   "t_end_s": 550.0,
+   "observation": "Pacing trend of 1.62 (92nd percentile) shows cut rate rising in the back half versus the front, the opposite of the typical vlog pattern of easing pacing (corpus median 0.89), with clusters of cuts appearing at bins 400-420 and 500-550.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "pacing_trend",
+     "value": "1.62"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:400.0",
+     "value": "3"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:520.0",
+     "value": "2"
+    }
+   ],
+   "recommendation": "Test redistributing some cuts earlier in the video (e.g. during the 0-120s packing montage) so pacing feels more even across the runtime.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 399.82,
+   "t_in_range": true
+  },
+  {
+   "title": "Low colour saturation versus category look",
+   "t_start_s": 0.0,
+   "t_end_s": 630.7,
+   "observation": "Colourfulness mean of 25.7 is at the 8th percentile for vlogs, giving the footage a notably desaturated, flat appearance compared to peers.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "25.7"
+    }
+   ],
+   "recommendation": "Test a color-grading pass to lift saturation slightly, particularly in the home and cabin interior shots, to see if it changes the visual feel.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 21,
+  "evidence_verified": 18,
+  "evidence_rate": 0.857,
+  "recs": 6,
+  "recs_grounded": 6,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    14,
+    16
+   ],
+   "quote": [
+    2,
+    3
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "10.04",
+    "verified": true,
+    "note": "actual=10.04"
+   },
+   {
+    "owner": "rec0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "close-up b-roll of makeup brushes, no face or speech",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.259",
+    "verified": true,
+    "note": "actual=0.259"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "I'll add a card to that one",
+    "verified": true,
+    "note": "match=1.00 at 163.34"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:280.0",
+    "value": "12.0",
+    "verified": true,
+    "note": "bin={'start': 280.0, 'end': 300.0, 'cuts': 0, 'wpm': 12.0, 'loud_db': -15.8, 'motion': 0.163}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:320.0",
+    "value": "24.0",
+    "verified": false,
+    "note": "bin={'start': 320.0, 'end': 340.0, 'cuts': 0, 'wpm': 3.0, 'loud_db': -18.1, 'motion': 0.148}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "long_pauses_per_min",
+    "value": "2.0",
+    "verified": true,
+    "note": "actual=2.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "median_shot_s",
+    "value": "28.1",
+    "verified": true,
+    "note": "actual=28.1"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "shots_per_min",
+    "value": "1.81",
+    "verified": true,
+    "note": "actual=1.81"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "pacing_trend",
+    "value": "1.62",
+    "verified": true,
+    "note": "actual=1.62"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:400.0",
+    "value": "3",
+    "verified": true,
+    "note": "bin={'start': 400.0, 'end': 420.0, 'cuts': 3, 'wpm': 165.0, 'loud_db': -21.7, 'motion': 0.135}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:520.0",
+    "value": "2",
+    "verified": false,
+    "note": "bin={'start': 520.0, 'end': 540.0, 'cuts': 1, 'wpm': 171.0, 'loud_db': -21.4, 'motion': 0.17}"
+   },
+   {
+    "owner": "rec5",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "25.7",
+    "verified": true,
+    "note": "actual=25.7"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Hey friends, welcome to the weekend vlog",
+    "verified": true,
+    "note": "match=1.00 at 121.16"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "you_rate",
+    "value": "3.82",
+    "verified": true,
+    "note": "actual=3.82"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "I'm going to Google it... it recreates the 1850s gold rush boom town",
+    "verified": false,
+    "note": "match=0.12 at 184.44 (2 fragments)"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.657",
+    "verified": true,
+    "note": "actual=0.657"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "357.2",
+    "value": "talking_head segment, face visible, narrating arrival",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "119.5",
+    "verified": true,
+    "note": "actual=119.5"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "bin:120.0",
+    "value": "168",
+    "verified": true,
+    "note": "bin={'start': 120.0, 'end': 140.0, 'cuts': 0, 'wpm': 168.0, 'loud_db': -23.2, 'motion': 0.045}"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 21,
+  "evidence_verified": 18,
+  "evidence_rate": 0.857,
+  "recs": 6,
+  "recs_grounded": 6,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    14,
+    16
+   ],
+   "quote": [
+    2,
+    3
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  }
+ }
+}

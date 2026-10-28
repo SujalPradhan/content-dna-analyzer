@@ -1,0 +1,334 @@
+{
+ "summary": "A single uninterrupted 19-second talking-head shot: the creator stands in front of an elephant enclosure, states his observation about elephant trunks, and signs off. There are zero cuts, zero on-screen text, and no formal structure beyond a three-beat spoken arc (intro, fact, closing line), making the video function more like a raw personal recording than an edited piece of content.",
+ "dna_tags": [
+  "single unedited take",
+  "raw outdoor vlog",
+  "direct-to-camera address",
+  "no-edit documentary style",
+  "minimal-production monologue"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 5.0,
+   "role": "hook",
+   "label": "Greeting and scene-setting in front of elephants"
+  },
+  {
+   "start_s": 5.0,
+   "end_s": 13.8,
+   "role": "main_content",
+   "label": "States the 'cool thing' about elephant trunks"
+  },
+  {
+   "start_s": 13.8,
+   "end_s": 19.1,
+   "role": "outro",
+   "label": "Abrupt sign-off, 'that's pretty much all there is to say'"
+  }
+ ],
+ "hook": {
+  "what_happens": "The speaker appears in a static single shot in front of an elephant enclosure and immediately states where he is, with speech starting at 1.0s.",
+  "promise": "He implies he will reveal something 'cool' about the elephants, setting up a small payoff.",
+  "strengths": [
+   "Speech begins almost instantly (time_to_first_word_s: 1.0), minimizing dead air before content starts.",
+   "Hook word rate (hook_wpm: 112.0) is close to his overall speaking rate (wpm: 116.5), so the opening doesn't feel artificially sped up or slowed down."
+  ],
+  "weaknesses": [
+   "No cuts in the first 15 seconds (hook_cuts: 0) and no visual format changes (format_switches_per_min: 0.0), so there is no edited pacing to sustain visual interest.",
+   "No on-screen text in the first 3 seconds (hook_text_overlay: 0.0) to reinforce the topic or location."
+  ]
+ },
+ "devices": [
+  {
+   "name": "direct scene-setting address",
+   "t_s": 1.0,
+   "quote": "Alright, so here we are in front of the elephants."
+  },
+  {
+   "name": "casual button/tag phrase",
+   "t_s": 12.9,
+   "quote": "And that's cool."
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 1.0,
+   "point": "Minimal delay before spoken content starts, keeping the opening tight despite no edits.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "1.0"
+    },
+    {
+     "kind": "quote",
+     "ref": "1.0",
+     "value": "Alright, so here we are in front of the elephants."
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "The video commits fully to one consistent static format (single long take) rather than mixing inconsistent visual styles.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "shots_per_min",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "median_shot_s",
+     "value": "18.93"
+    }
+   ]
+  },
+  {
+   "t_s": 5.0,
+   "point": "Speaking rate varies naturally across the short runtime rather than staying robotically flat, giving a conversational rhythm.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:5.0",
+     "value": "156.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:10.0",
+     "value": "60.0"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "No visual variation during the single long take",
+   "t_start_s": 0.0,
+   "t_end_s": 19.1,
+   "observation": "The entire video is one static talking-head shot with zero cuts and zero format switches, which is consistent with an unedited recording rather than a produced piece.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "shots_per_min",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "0.0"
+    }
+   ],
+   "recommendation": "If re-approaching this kind of clip for a produced video, test inserting a single cutaway (e.g., closer shot of the elephant's trunk) around 7-10s when the trunk fact is mentioned, to visually match the described subject.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Long pause and wpm dip mid-video",
+   "t_start_s": 10.0,
+   "t_end_s": 15.0,
+   "observation": "Words-per-minute drops sharply to 60 in the 10-15s bin versus 156 in the preceding bin, and long pauses occur at a rate of 6.29 per minute overall.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:10.0",
+     "value": "60.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "long_pauses_per_min",
+     "value": "6.29"
+    }
+   ],
+   "recommendation": "Consider trimming the pause around 13-15s between 'And that's cool.' and the closing line to tighten the transition into the outro, if testing a more edited cut of similar footage.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 10.0,
+   "t_in_range": true
+  },
+  {
+   "title": "No call to action anywhere in the video",
+   "t_start_s": 0.0,
+   "t_end_s": 19.1,
+   "observation": "cta_count is 0 and first_cta_pos is undefined (NaN), meaning there is no explicit direction given to the viewer at any point.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "NaN"
+    }
+   ],
+   "recommendation": "For future similar short clips, test adding one simple verbal or on-screen closing cue (e.g., a sign-off phrase or subscribe mention) near the 16-19s mark where the video currently ends.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Abrupt ending without recap of the stated 'cool thing'",
+   "t_start_s": 16.7,
+   "t_end_s": 18.5,
+   "observation": "The video ends with 'And that's pretty much all there is to say' immediately after the trunk comment, without reinforcing or expanding on the promised 'cool thing.'",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "16.7",
+     "value": "And that's pretty much all there is to say."
+    },
+    {
+     "kind": "quote",
+     "ref": "5.5",
+     "value": "The cool thing about these guys is that they have really, really, really long trunks."
+    }
+   ],
+   "recommendation": "If restructuring similar content, test briefly restating the specific detail (the trunk length) in the closing line instead of a generic wrap-up, to close the loop opened by the 'cool thing' setup.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 16.72,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 14,
+  "evidence_verified": 13,
+  "evidence_rate": 0.929,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    10,
+    11
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "shots_per_min",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:10.0",
+    "value": "60.0",
+    "verified": true,
+    "note": "bin={'start': 10.0, 'end': 15.0, 'cuts': 0, 'wpm': 60.0, 'loud_db': -22.1, 'motion': 0.08}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "long_pauses_per_min",
+    "value": "6.29",
+    "verified": true,
+    "note": "actual=6.29"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "NaN",
+    "verified": false,
+    "note": "unknown metric"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "16.7",
+    "value": "And that's pretty much all there is to say.",
+    "verified": true,
+    "note": "match=0.90 at 13.52"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "5.5",
+    "value": "The cool thing about these guys is that they have really, really, really long trunks.",
+    "verified": true,
+    "note": "match=1.00 at 5.46"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "1.0",
+    "value": "Alright, so here we are in front of the elephants.",
+    "verified": true,
+    "note": "match=1.00 at 1.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "shots_per_min",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "median_shot_s",
+    "value": "18.93",
+    "verified": true,
+    "note": "actual=18.93"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "bin:5.0",
+    "value": "156.0",
+    "verified": true,
+    "note": "bin={'start': 5.0, 'end': 10.0, 'cuts': 0, 'wpm': 156.0, 'loud_db': -21.5, 'motion': 0.091}"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "bin:10.0",
+    "value": "60.0",
+    "verified": true,
+    "note": "bin={'start': 10.0, 'end': 15.0, 'cuts': 0, 'wpm': 60.0, 'loud_db': -22.1, 'motion': 0.08}"
+   }
+  ]
+ }
+}

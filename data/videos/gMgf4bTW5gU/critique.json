@@ -1,0 +1,413 @@
+{
+ "summary": "A silent, music-driven overhead cooking demo that builds a tortilla wrap step by step through close-up b-roll, relying entirely on visuals, on-screen text, and rising motion/energy to carry pacing rather than narration. The structure is a single continuous b-roll segment with sporadic cut clusters timed to key assembly moments and a late CTA push near the end.",
+ "dna_tags": [
+  "silent b-roll recipe",
+  "overhead food assembly",
+  "music-driven pacing",
+  "no-narration shorts",
+  "text-overlay CTA",
+  "ingredient reveal sequence"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 8.8,
+   "role": "hook",
+   "label": "Tortilla sliced and first toppings placed, no text yet"
+  },
+  {
+   "start_s": 8.8,
+   "end_s": 25.0,
+   "role": "intro_setup",
+   "label": "'like' overlay appears, cheese and toppings added"
+  },
+  {
+   "start_s": 25.0,
+   "end_s": 45.0,
+   "role": "main_content",
+   "label": "Patty added, wrap assembly continues"
+  },
+  {
+   "start_s": 45.0,
+   "end_s": 58.7,
+   "role": "payoff_reveal",
+   "label": "Final wrap shown, motion spikes, subscribe CTA at 52s"
+  }
+ ],
+ "hook": {
+  "what_happens": "A tortilla is sliced with a pizza cutter and toppings (pepper, tomato, cheese) are placed in quick succession across the first 15 seconds, with no spoken words or text overlay until 8.8s.",
+  "promise": "A fast, visually satisfying wrap-building hack worth watching to completion.",
+  "strengths": [
+   "Immediate action without a verbal preamble, aligning with action_visual hook_type noted in the vision data",
+   "Hook motion ratio 0.76 and 3 cuts in first 15s still produce a visually layered sequence of ingredients stacking"
+  ],
+  "weaknesses": [
+   "hook_wpm is 0.0 (17th pct in shorts) and time_to_first_word_s is null, meaning there is no verbal hook promise at all",
+   "hook_text_overlay is 0 (33rd pct), so viewers get no textual cue of what's being made until the 'like' overlay at 8.8s, which is a CTA, not context"
+  ]
+ },
+ "devices": [
+  {
+   "name": "silent build-up montage",
+   "t_s": 0.0,
+   "quote": ""
+  },
+  {
+   "name": "on-screen CTA overlay",
+   "t_s": 8.8,
+   "quote": "like"
+  },
+  {
+   "name": "overhead reveal shots",
+   "t_s": 6.2,
+   "quote": ""
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "The video opens directly on food action (slicing tortilla) rather than a verbal setup, matching the fast-start convention common in shorts.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "A tortilla being sliced with a pizza cutter on a wooden cutting board"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "t_s": 58.7,
+   "point": "Duration sits at the 92nd percentile for shorts, giving more time than typical shorts to show a full multi-step assembly without feeling rushed.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "duration_s",
+     "value": "58.7"
+    }
+   ]
+  },
+  {
+   "t_s": 45.0,
+   "point": "Motion and loudness both climb in the final third, creating an energetic close that visually signals the wrap is nearing completion.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:45.0",
+     "value": "motion 0.17, loud_db -19.4"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:50.0",
+     "value": "motion 0.216, loud_db -19.2"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "Brightness and motion are both near the top of the category (92nd percentile each), giving the close-up food shots a clean, lively look.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "brightness_mean",
+     "value": "0.545"
+    },
+    {
+     "kind": "metric",
+     "ref": "motion_mean",
+     "value": "0.1256"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Add a text hook in the opening 3 seconds",
+   "t_start_s": 0.0,
+   "t_end_s": 3.0,
+   "observation": "hook_text_overlay is 0 and no overlay appears until 8.8s ('like'), so the first thing viewers read is a CTA rather than what's being made.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "0.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "8.8",
+     "value": "on-screen text 'like' appears"
+    }
+   ],
+   "recommendation": "Test placing a short title-style text overlay (e.g. naming the dish) within the first 3 seconds, before the 'like' prompt, so viewers know the payoff they're building toward.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Move the 'like' CTA later or soften its early placement",
+   "t_start_s": 8.8,
+   "t_end_s": 8.8,
+   "observation": "first_cta_pos is 0.136 (12th pct in category), meaning the like prompt lands very early, before the full wrap concept is shown.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.136"
+    },
+    {
+     "kind": "visual",
+     "ref": "8.8",
+     "value": "text overlay 'like' shown over partially assembled wrap"
+    }
+   ],
+   "recommendation": "Consider testing a delayed first CTA, after more of the build is visible, so the ask follows demonstrated value rather than preceding it.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 8.8,
+   "t_in_range": true
+  },
+  {
+   "title": "Address flat pacing in the middle section (30-45s)",
+   "t_start_s": 30.0,
+   "t_end_s": 45.0,
+   "observation": "Bins from 30-45s show zero cuts and declining motion (0.067, 0.077) compared to surrounding sections, creating a lull between two more dynamic stretches.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:30.0",
+     "value": "cuts 0, motion 0.067"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:35.0",
+     "value": "cuts 0, motion 0.077"
+    }
+   ],
+   "recommendation": "Test trimming or adding a cutaway/close-up cut within the 30-45s stretch to keep visual rhythm consistent with the rest of the video's pacing.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 29.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Consider a brief verbal or captioned step-by-step guide",
+   "t_start_s": 0.0,
+   "t_end_s": 58.7,
+   "observation": "wpm and speech_coverage are both 0.0 (8th percentile), so the entire recipe relies on visuals alone with no spoken or captioned instructions for quantities or steps.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.0"
+    }
+   ],
+   "recommendation": "Test adding brief ingredient/step captions at key moments (e.g. when cheese, patty are added) so viewers can replicate the recipe without guessing quantities.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Vary shot length to reduce abrupt pacing swings",
+   "t_start_s": 0.0,
+   "t_end_s": 58.7,
+   "observation": "shot_len_cv is 1.09, sitting at the 92nd percentile in category, indicating unusually high variability in shot lengths compared to peers.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "shot_len_cv",
+     "value": "1.09"
+    }
+   ],
+   "recommendation": "Test smoothing transitions between very short and very long shots so the cut rhythm feels less uneven across the runtime.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 16,
+  "evidence_verified": 14,
+  "evidence_rate": 0.875,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    13,
+    13
+   ],
+   "quote": [
+    0,
+    0
+   ],
+   "visual": [
+    1,
+    3
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "visual",
+    "ref": "8.8",
+    "value": "on-screen text 'like' appears",
+    "verified": false,
+    "note": "no segment at ref"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.136",
+    "verified": true,
+    "note": "actual=0.136"
+   },
+   {
+    "owner": "rec1",
+    "kind": "visual",
+    "ref": "8.8",
+    "value": "text overlay 'like' shown over partially assembled wrap",
+    "verified": false,
+    "note": "no segment at ref"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:30.0",
+    "value": "cuts 0, motion 0.067",
+    "verified": true,
+    "note": "bin={'start': 30.0, 'end': 35.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -22.5, 'motion': 0.067}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:35.0",
+    "value": "cuts 0, motion 0.077",
+    "verified": true,
+    "note": "bin={'start': 35.0, 'end': 40.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -23.5, 'motion': 0.077}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "shot_len_cv",
+    "value": "1.09",
+    "verified": true,
+    "note": "actual=1.09"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "A tortilla being sliced with a pizza cutter on a wooden cutting board",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "3",
+    "verified": true,
+    "note": "actual=3.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "duration_s",
+    "value": "58.7",
+    "verified": true,
+    "note": "actual=58.7"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "bin:45.0",
+    "value": "motion 0.17, loud_db -19.4",
+    "verified": true,
+    "note": "bin={'start': 45.0, 'end': 50.0, 'cuts': 1, 'wpm': 0.0, 'loud_db': -19.4, 'motion': 0.17}"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "bin:50.0",
+    "value": "motion 0.216, loud_db -19.2",
+    "verified": true,
+    "note": "bin={'start': 50.0, 'end': 55.0, 'cuts': 2, 'wpm': 0.0, 'loud_db': -19.2, 'motion': 0.216}"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "brightness_mean",
+    "value": "0.545",
+    "verified": true,
+    "note": "actual=0.545"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "motion_mean",
+    "value": "0.1256",
+    "verified": true,
+    "note": "actual=0.1256"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 16,
+  "evidence_verified": 10,
+  "evidence_rate": 0.625,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    9,
+    13
+   ],
+   "quote": [
+    0,
+    0
+   ],
+   "visual": [
+    1,
+    3
+   ]
+  }
+ }
+}

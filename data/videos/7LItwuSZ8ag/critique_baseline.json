@@ -1,0 +1,456 @@
+{
+ "summary": "This is an animated educational video for Class 6 science that teaches measurement of length and motion through a sequence of short dramatized scenes (tailor measuring cloth, hand-span measurement, ancient Indian units) followed by direct instructional segments on SI units, measurement technique, reference points, and types of motion. It ends with a quick recap and a subscribe call-to-action.",
+ "dna_tags": [
+  "educational animation",
+  "curriculum-based science",
+  "narrative-to-lecture hybrid",
+  "Indian measurement history",
+  "step-by-step instruction",
+  "classroom recap"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 19.9,
+   "role": "hook",
+   "label": "Tailor scene introduces measuring cloth and the idea of different tools/units"
+  },
+  {
+   "start_s": 20.1,
+   "end_s": 40.2,
+   "role": "context",
+   "label": "Hand-span variability demonstrates need for standard units"
+  },
+  {
+   "start_s": 40.3,
+   "end_s": 59.2,
+   "role": "context",
+   "label": "History of Indian measurement units leading to SI adoption"
+  },
+  {
+   "start_s": 59.7,
+   "end_s": 96.9,
+   "role": "main_content",
+   "label": "SI units of length, conversions, and common usage"
+  },
+  {
+   "start_s": 97.4,
+   "end_s": 133.8,
+   "role": "demonstration",
+   "label": "Correct measurement technique, parallax error, broken scale method, accessibility"
+  },
+  {
+   "start_s": 134.8,
+   "end_s": 153.5,
+   "role": "main_content",
+   "label": "Unit-writing conventions and measuring curves with thread"
+  },
+  {
+   "start_s": 154.0,
+   "end_s": 183.1,
+   "role": "demonstration",
+   "label": "Reference point concept via school/garden and bus-to-Delhi examples"
+  },
+  {
+   "start_s": 185.5,
+   "end_s": 227.7,
+   "role": "main_content",
+   "label": "Motion types: rest/motion, linear, circular, oscillatory, periodic"
+  },
+  {
+   "start_s": 228.3,
+   "end_s": 237.8,
+   "role": "recap",
+   "label": "Summary of lesson points"
+  },
+  {
+   "start_s": 237.8,
+   "end_s": 245.6,
+   "role": "cta",
+   "label": "Thanks, subscribe/like/share, outro"
+  }
+ ],
+ "hook": {
+  "what_happens": "A child asks for cloth to be measured for a school uniform, and the tailor measures it with a metal rod, immediately introducing the concept of measurement tools.",
+  "promise": "Implicitly promises to explain how measurement works and why standard units matter.",
+  "strengths": [
+   "Uses a relatable everyday scenario (getting a uniform made) to open the topic",
+   "Introduces conflict naturally (different hand-span counts) which sets up the lesson's core question"
+  ],
+  "weaknesses": [
+   "No explicit statement of what the video will teach or why it matters, relying entirely on the narrative to imply the topic",
+   "Takes nearly 20 seconds before the central problem (varying measurements) is stated"
+  ]
+ },
+ "devices": [
+  {
+   "name": "dramatized scenario",
+   "t_s": 0.0,
+   "quote": "Mother, I need cloth for my new school uniform."
+  },
+  {
+   "name": "relatable comparison",
+   "t_s": 154.0,
+   "quote": "The school is closer."
+  },
+  {
+   "name": "direct address recap",
+   "t_s": 228.3,
+   "quote": "Today we learned how to measure accurately,"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 21.7,
+   "point": "Uses concrete, varied character responses to show why non-standard units fail.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "I got 6 hand spans."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Mine is only 5."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "I counted 7."
+    }
+   ]
+  },
+  {
+   "t_s": 154.0,
+   "point": "Uses a second relatable disagreement scenario to introduce the reference point concept before formal definition.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "The school is closer."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "No, the garden is closer."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Everyone is correct because each is measuring from a different place."
+    }
+   ]
+  },
+  {
+   "t_s": 130.3,
+   "point": "Includes an accessibility note broadening the topic beyond rote measurement instruction.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Students with visual impairment use rulers with raised markings."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Science should be accessible to everyone."
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "State the learning objective earlier",
+   "t_start_s": 0.0,
+   "t_end_s": 19.9,
+   "observation": "The video opens with a dramatized scene but never explicitly tells the viewer what topic or skills the video will cover until well into the content.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Mother, I need cloth for my new school uniform."
+    }
+   ],
+   "recommendation": "Consider adding a brief line stating the lesson's goal (e.g., measuring length and understanding motion) near the start so viewers know what to expect.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Smooth the transition between narrative and instructional tone",
+   "t_start_s": 40.3,
+   "t_end_s": 59.2,
+   "observation": "The video shifts abruptly from character dialogue to a narrator-style historical lecture about Angula, Dhanusa, and Yojana without a clear bridging sentence.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Ancient units included Angula, Dhanusa and Yojana."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "The SI unit of length is the meter."
+    }
+   ],
+   "recommendation": "A connecting sentence explaining why the story leads into this history could make the shift feel less sudden.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 40.32,
+   "t_in_range": true
+  },
+  {
+   "title": "Clarify the motion section's connection to the measurement theme",
+   "t_start_s": 185.5,
+   "t_end_s": 227.7,
+   "observation": "The video moves from measurement/reference points directly into motion types (linear, circular, oscillatory, periodic) without explicitly linking why motion is being discussed after a lesson on measuring length.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Delhi is the reference point."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Motion in a straight line is called linear motion."
+    }
+   ],
+   "recommendation": "Adding a short transitional line connecting reference points to describing motion could help viewers see the logical link between the two topics.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 185.52,
+   "t_in_range": true
+  },
+  {
+   "title": "Expand on the parallax error explanation",
+   "t_start_s": 112.2,
+   "t_end_s": 119.5,
+   "observation": "The parallax error concept is introduced with only two short lines and no visual description accompanying the audio to clarify what 'directly above the reading' means in practice.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Keep your eye directly above the reading."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "This avoids parallax error."
+    }
+   ],
+   "recommendation": "Consider giving a slightly longer explanation or example to reinforce this concept given its technical nature.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 112.18,
+   "t_in_range": true
+  },
+  {
+   "title": "Reinforce the broken scale calculation example",
+   "t_start_s": 120.0,
+   "t_end_s": 129.7,
+   "observation": "The broken-scale measurement method is explained quickly with one numeric example, which may be hard to follow without repetition or a visual pause.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Subtract the starting reading from the ending reading."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Here, 10.4, 9.4 centimeters."
+    }
+   ],
+   "recommendation": "Consider walking through the subtraction step more explicitly, e.g., stating the final result value verbally.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 120.04,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 17,
+  "evidence_verified": 16,
+  "evidence_rate": 0.941,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    16,
+    17
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Mother, I need cloth for my new school uniform.",
+    "verified": true,
+    "note": "match=1.00 at 0.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Ancient units included Angula, Dhanusa and Yojana.",
+    "verified": true,
+    "note": "match=1.00 at 44.58"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "The SI unit of length is the meter.",
+    "verified": true,
+    "note": "match=1.00 at 59.74"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "Delhi is the reference point.",
+    "verified": true,
+    "note": "match=1.00 at 181.9"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "Motion in a straight line is called linear motion.",
+    "verified": true,
+    "note": "match=1.00 at 195.04"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Keep your eye directly above the reading.",
+    "verified": true,
+    "note": "match=1.00 at 112.18"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "This avoids parallax error.",
+    "verified": true,
+    "note": "match=1.00 at 117.64"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "",
+    "value": "Subtract the starting reading from the ending reading.",
+    "verified": true,
+    "note": "match=1.00 at 124.36"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "",
+    "value": "Here, 10.4, 9.4 centimeters.",
+    "verified": false,
+    "note": "match=0.25 at 125.38"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "I got 6 hand spans.",
+    "verified": true,
+    "note": "match=1.00 at 21.66"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Mine is only 5.",
+    "verified": true,
+    "note": "match=1.00 at 23.44"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "I counted 7.",
+    "verified": true,
+    "note": "match=1.00 at 24.62"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "The school is closer.",
+    "verified": true,
+    "note": "match=1.00 at 153.96"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "No, the garden is closer.",
+    "verified": true,
+    "note": "match=1.00 at 155.64"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Everyone is correct because each is measuring from a different place.",
+    "verified": true,
+    "note": "match=1.00 at 157.98"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "Students with visual impairment use rulers with raised markings.",
+    "verified": true,
+    "note": "match=1.00 at 130.34"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "Science should be accessible to everyone.",
+    "verified": true,
+    "note": "match=1.00 at 134.8"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 17,
+  "evidence_verified": 16,
+  "evidence_rate": 0.941,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    16,
+    17
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  }
+ }
+}

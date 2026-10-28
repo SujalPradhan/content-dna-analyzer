@@ -1,0 +1,344 @@
+{
+ "summary": "This Hindi-language travel vlog follows a weekend trip from Delhi to a less-touristy spot near Mussoorie (Jharipani), structured as a chronological day-by-day diary covering the drive, a crowded highway food stop, two separate stays at Vivara properties, meals, and misty mountain views, ending with a wrap-up recommendation. The construction leans on a strong contrarian hook ('skip Mall Road') and heavy property/food showcasing rather than plot tension.",
+ "dna_tags": [
+  "travel vlog",
+  "Mussoorie",
+  "hidden gem",
+  "property tour",
+  "Hindi vlog",
+  "weekend trip"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 17.9,
+   "role": "hook",
+   "label": "Contrarian pitch: skip Mall Road crowds for a hidden spot"
+  },
+  {
+   "start_s": 18.3,
+   "end_s": 50.5,
+   "role": "intro_setup",
+   "label": "Introducing friends and delayed departure"
+  },
+  {
+   "start_s": 51.2,
+   "end_s": 152.2,
+   "role": "context",
+   "label": "Highway drive, food stop crowd commentary"
+  },
+  {
+   "start_s": 152.9,
+   "end_s": 205.3,
+   "role": "main_content",
+   "label": "Break and arrival at Jharipani"
+  },
+  {
+   "start_s": 206.4,
+   "end_s": 271.7,
+   "role": "demonstration",
+   "label": "Vivara Escape property tour and weather"
+  },
+  {
+   "start_s": 272.3,
+   "end_s": 356.4,
+   "role": "main_content",
+   "label": "Day one wrap, breakfast, move to second property"
+  },
+  {
+   "start_s": 360.4,
+   "end_s": 441.2,
+   "role": "demonstration",
+   "label": "Vivara Cottage tour, horror vibes joke, momo food stop"
+  },
+  {
+   "start_s": 443.7,
+   "end_s": 491.5,
+   "role": "main_content",
+   "label": "Morning view and final moments"
+  },
+  {
+   "start_s": 492.4,
+   "end_s": 518.7,
+   "role": "recap",
+   "label": "Checkout reflection and trip verdict"
+  },
+  {
+   "start_s": 506.4,
+   "end_s": 518.7,
+   "role": "cta",
+   "label": "Recommendation to skip Mall Road, check Vivara Cottages link"
+  }
+ ],
+ "hook": {
+  "what_happens": "Creator opens by contrasting the crowded Mall Road experience with their own choice to go 8km down to a quiet spot with just mountains, clouds and themselves.",
+  "promise": "An underrated, less crowded alternative near Mussoorie away from tourist crowds.",
+  "strengths": [
+   "Clear contrarian framing against a well-known crowded landmark",
+   "Sets an emotional payoff ('sukoon' vs 'bheed') that is echoed again at the end"
+  ],
+  "weaknesses": [
+   "The hook's promised quiet solitude is undercut almost immediately by footage of a crowded highway food stop",
+   "Takes until 9:1s to reveal the actual destination name"
+  ]
+ },
+ "devices": [
+  {
+   "name": "contrast framing",
+   "t_s": 0.0,
+   "quote": "\u0939\u0930 \u0915\u094b\u0908 \u092e\u0938\u0942\u0930\u0940 \u092e\u0947\u0902 \u091c\u093e\u0915\u0947 \u092e\u0949\u0932 \u0930\u094b\u0921 \u092a\u0947 \u092d\u0940\u0921 \u092e\u0947\u0902 \u0927\u0915\u094d\u0915\u0947 \u0916\u093e\u0924\u093e \u0939\u0948"
+  },
+  {
+   "name": "direct address/question hook",
+   "t_s": 61.1,
+   "quote": "\u092d\u093e\u0935\u0928\u093e \u0928\u0947 \u092f\u0939 \u092a\u0942\u0930\u0940 \u0938\u0941\u0932\u094d\u091c\u093e \u0932\u093f\u092f\u093e \u0939\u0948 \u0915\u093f \u092f\u0939\u093e\u0901 \u092a\u0947 \u0907\u0924\u0928\u0940 \u092d\u0940\u0921 \u0915\u094d\u092f\u094b\u0902 \u0939\u0948 \u092d\u0940\u0921 \u0926\u093f\u0916\u093e \u0924\u094c \u090f\u0915 \u092c\u093e\u0930\u0940 \u0926\u0947\u0916\u094b"
+  },
+  {
+   "name": "callback to opening promise",
+   "t_s": 517.0,
+   "quote": "\u0924\u0941\u092e\u094d\u0939\u0947\u0902 \u092d\u0940\u0930 \u0928\u0939\u0940\u0902 \u0938\u0941\u0915\u0942\u0928 \u092e\u093f\u0932\u0947\u0917\u093e"
+  },
+  {
+   "name": "comment bait",
+   "t_s": 466.6,
+   "quote": "\u0924\u094b \u091c\u0932\u094d\u0926\u0940 \u0938\u0947 \u0915\u092e\u0947\u0902\u091f \u0915\u0930 \u0926\u0947\u0928\u093e"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Opens with a sharp, relatable contrast that immediately differentiates the destination from typical Mussoorie content.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u0939\u0930 \u0915\u094b\u0908 \u092e\u0938\u0942\u0930\u0940 \u092e\u0947\u0902 \u091c\u093e\u0915\u0947 \u092e\u0949\u0932 \u0930\u094b\u0921 \u092a\u0947 \u092d\u0940\u0921 \u092e\u0947\u0902 \u0927\u0915\u094d\u0915\u0947 \u0916\u093e\u0924\u093e \u0939\u0948"
+    }
+   ]
+  },
+  {
+   "t_s": 206.4,
+   "point": "Gives a thorough, practical walkthrough of the stay property that doubles as useful trip-planning content.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u0924\u094b \u092f\u0939 \u0939\u0948 \u0939\u092e\u093e\u0930\u093e \u0906\u091c \u0915\u0930 \u0938\u094d\u091f\u0947\u0907 \u0907\u0928 \u0935\u093f\u0935\u093e\u0930\u093e \u0907\u0938\u0915\u0947\u092c \u0914\u0930 \u090f\u0902\u0921\u094d\u0930\u0940 \u0915\u0930\u0924\u0947 \u0939\u0940 \u0939\u092e\u0915\u094b \u0939\u093e\u0901 \u092a\u0947 \u092e\u093f\u0932\u0924\u093e \u0939\u0948 \u092f\u0939 \u092c\u0921\u093c\u093e \u0938\u093e \u0932\u093f\u0935\u093f\u0902\u0917 \u0930\u0942\u092e"
+    }
+   ]
+  },
+  {
+   "t_s": 506.4,
+   "point": "Closes by directly looping back to the opening promise, reinforcing the video's thesis and giving a clear actionable suggestion to viewers.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u0924\u094b \u090f\u0915 \u092c\u0930 \u092e\u0949\u0932 \u0932\u094b\u0921 \u0938\u094d\u0915\u093f\u092a \u0915\u0930\u0915\u0947 \u091c\u0939\u0930\u0940 \u092a\u093e\u0928\u0940 \u0938\u093e\u0907\u0921 \u0906\u0909"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Clarify the crowded highway stop against the 'escape the crowd' promise",
+   "t_start_s": 61.1,
+   "t_end_s": 92.4,
+   "observation": "Right after promising a crowd-free trip, the vlog spends a long stretch showing a very crowded highway food stop with commentary about wedding guests and photographers, which contradicts the opening hook's tone.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u0925\u094b\u0921\u093c\u0947 \u0915\u092e \u0907\u0902\u0938\u093e\u0928 \u0926\u093f\u0916 \u0930\u0939\u0947 \u0939\u0948\u0902 \u0935\u093e\u092a\u093f\u0938 \u0938\u0947 \u092f\u0939 \u092e\u0941\u091d \u0915\u093e\u0928 \u0939\u0948"
+    }
+   ],
+   "recommendation": "Consider framing this segment explicitly as the 'before' contrast to the quiet destination, so viewers understand it supports rather than undercuts the hook.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 61.08,
+   "t_in_range": true
+  },
+  {
+   "title": "Fix repeated/garbled line about reaching Vivara Cottage",
+   "t_start_s": 354.7,
+   "t_end_s": 419.8,
+   "observation": "The exact same sentence about reaching the next Vivara stay after eating Maggi paratha is repeated multiple times (354.7, 380.2, 418.1), including with blank gaps, suggesting an editing or audio issue.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u092e\u0948\u0917\u093c\u0940 \u092a\u0930\u093e\u091f\u093e \u0916\u093e\u0928\u0947 \u0915\u0947 \u092c\u093e\u0926 \u0939\u092e \u0932\u094b\u0917 \u092a\u0939\u0941\u0901\u091a \u0935\u0947 \u0905\u092a\u0928\u0947 \u0928\u0947\u0915\u094d\u0938 \u091f\u0947\u0935 \u0935\u093f\u0935\u093e\u0930\u093e \u0915\u0949\u0930\u094d\u091f\u0947\u091c \u092e\u0947\u0902"
+    }
+   ],
+   "recommendation": "Trim or consolidate this repeated line so the narration doesn't loop on the same sentence multiple times.",
+   "basis": "internal_inconsistency",
+   "priority": "high",
+   "t_snapped_s": 354.74,
+   "t_in_range": true
+  },
+  {
+   "title": "Address choppy transcript gaps during key moments",
+   "t_start_s": 117.3,
+   "t_end_s": 122.3,
+   "observation": "There are several blank or near-blank segments in the middle of scenes (e.g., 117.3-117.7, 419.8-421.4) that break narrative flow.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u092a\u0921\u093c\u093f\u092f\u0947 \u092c\u0922\u093c\u093e \u091c\u093e\u090f\u0901"
+    }
+   ],
+   "recommendation": "Review these gap points to ensure smoother narration continuity through these cut points.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 117.66,
+   "t_in_range": true
+  },
+  {
+   "title": "Resolve ambiguous 'horror vibes' remark about the second cottage",
+   "t_start_s": 419.8,
+   "t_end_s": 430.8,
+   "observation": "The creator calls the second property 'problematic' and says it gives 'horror vibes' if you're alone, which sits oddly against the earlier positive property tour without further explanation.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u0916\u0949\u0930\u0930 \u0935\u0948\u092c\u094d\u0938 \u0926\u0947 \u0930\u0939\u0947 \u0939\u0948"
+    }
+   ],
+   "recommendation": "Consider briefly explaining what specifically felt off about the property so the remark doesn't feel like an unexplained aside.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 419.76,
+   "t_in_range": true
+  },
+  {
+   "title": "Streamline the delayed-departure explanation",
+   "t_start_s": 29.3,
+   "t_end_s": 48.2,
+   "observation": "The creator mentions leaving late due to unspecified 'circumstances' and promises to explain later, but no clear follow-up resolution of this thread is given in the transcript.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u0924\u094b \u092b\u093f\u0930 \u0909\u0938\u0915\u0940 \u0916\u093e\u0928\u0947 \u092e\u0948\u0902 \u0906\u092a\u0915\u094b \u0905\u0930\u093e\u092e \u0938\u0947 \u092c\u0924\u093e\u0913\u0902\u0917\u0940"
+    }
+   ],
+   "recommendation": "If the explanation was cut, consider either delivering it or removing the promise so the narrative doesn't leave an open thread.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 29.32,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 8,
+  "evidence_verified": 7,
+  "evidence_rate": 0.875,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    7,
+    8
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u0925\u094b\u0921\u093c\u0947 \u0915\u092e \u0907\u0902\u0938\u093e\u0928 \u0926\u093f\u0916 \u0930\u0939\u0947 \u0939\u0948\u0902 \u0935\u093e\u092a\u093f\u0938 \u0938\u0947 \u092f\u0939 \u092e\u0941\u091d \u0915\u093e\u0928 \u0939\u0948",
+    "verified": false,
+    "note": "match=0.50 at 100.42"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u092e\u0948\u0917\u093c\u0940 \u092a\u0930\u093e\u091f\u093e \u0916\u093e\u0928\u0947 \u0915\u0947 \u092c\u093e\u0926 \u0939\u092e \u0932\u094b\u0917 \u092a\u0939\u0941\u0901\u091a \u0935\u0947 \u0905\u092a\u0928\u0947 \u0928\u0947\u0915\u094d\u0938 \u091f\u0947\u0935 \u0935\u093f\u0935\u093e\u0930\u093e \u0915\u0949\u0930\u094d\u091f\u0947\u091c \u092e\u0947\u0902",
+    "verified": true,
+    "note": "match=1.00 at 350.72"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u092a\u0921\u093c\u093f\u092f\u0947 \u092c\u0922\u093c\u093e \u091c\u093e\u090f\u0901",
+    "verified": true,
+    "note": "match=1.00 at 117.66"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u0916\u0949\u0930\u0930 \u0935\u0948\u092c\u094d\u0938 \u0926\u0947 \u0930\u0939\u0947 \u0939\u0948",
+    "verified": true,
+    "note": "match=1.00 at 427.14"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u0924\u094b \u092b\u093f\u0930 \u0909\u0938\u0915\u0940 \u0916\u093e\u0928\u0947 \u092e\u0948\u0902 \u0906\u092a\u0915\u094b \u0905\u0930\u093e\u092e \u0938\u0947 \u092c\u0924\u093e\u0913\u0902\u0917\u0940",
+    "verified": true,
+    "note": "match=1.00 at 42.74"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u0939\u0930 \u0915\u094b\u0908 \u092e\u0938\u0942\u0930\u0940 \u092e\u0947\u0902 \u091c\u093e\u0915\u0947 \u092e\u0949\u0932 \u0930\u094b\u0921 \u092a\u0947 \u092d\u0940\u0921 \u092e\u0947\u0902 \u0927\u0915\u094d\u0915\u0947 \u0916\u093e\u0924\u093e \u0939\u0948",
+    "verified": true,
+    "note": "match=1.00 at 0.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u0924\u094b \u092f\u0939 \u0939\u0948 \u0939\u092e\u093e\u0930\u093e \u0906\u091c \u0915\u0930 \u0938\u094d\u091f\u0947\u0907 \u0907\u0928 \u0935\u093f\u0935\u093e\u0930\u093e \u0907\u0938\u0915\u0947\u092c \u0914\u0930 \u090f\u0902\u0921\u094d\u0930\u0940 \u0915\u0930\u0924\u0947 \u0939\u0940 \u0939\u092e\u0915\u094b \u0939\u093e\u0901 \u092a\u0947 \u092e\u093f\u0932\u0924\u093e \u0939\u0948 \u092f\u0939 \u092c\u0921\u093c\u093e \u0938\u093e \u0932\u093f\u0935\u093f\u0902\u0917 \u0930\u0942\u092e",
+    "verified": true,
+    "note": "match=1.00 at 206.44"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u0924\u094b \u090f\u0915 \u092c\u0930 \u092e\u0949\u0932 \u0932\u094b\u0921 \u0938\u094d\u0915\u093f\u092a \u0915\u0930\u0915\u0947 \u091c\u0939\u0930\u0940 \u092a\u093e\u0928\u0940 \u0938\u093e\u0907\u0921 \u0906\u0909",
+    "verified": true,
+    "note": "match=1.00 at 509.22"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 8,
+  "evidence_verified": 7,
+  "evidence_rate": 0.875,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    7,
+    8
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  }
+ }
+}

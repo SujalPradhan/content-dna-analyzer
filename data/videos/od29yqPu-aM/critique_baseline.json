@@ -1,0 +1,104 @@
+{
+ "summary": "This recipe video is structured as a typical no-oil, no-flour breakfast demonstration, promising a healthy 3-ingredient dish suitable for lunch boxes or easy dinners. Without transcript text provided, the construction can only be inferred from the title and duration, suggesting a standard setup-demonstration-payoff format common to short cooking videos.",
+ "dna_tags": [
+  "recipe",
+  "healthy-eating",
+  "no-oil",
+  "no-flour",
+  "lunch-box",
+  "quick-meal"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 15,
+   "role": "hook",
+   "label": "Title card / promise of 3-ingredient healthy recipe"
+  },
+  {
+   "start_s": 15,
+   "end_s": 40,
+   "role": "intro_setup",
+   "label": "Ingredient introduction"
+  },
+  {
+   "start_s": 40,
+   "end_s": 220,
+   "role": "demonstration",
+   "label": "Step-by-step cooking process"
+  },
+  {
+   "start_s": 220,
+   "end_s": 260,
+   "role": "payoff_reveal",
+   "label": "Final dish reveal"
+  },
+  {
+   "start_s": 260,
+   "end_s": 289.2,
+   "role": "outro",
+   "label": "Closing remarks / serving suggestion"
+  }
+ ],
+ "hook": {
+  "what_happens": "The video opens with the title promising a healthy breakfast made with only 3 ingredients and no oil, flour, or maida.",
+  "promise": "A quick, healthy recipe suitable for lunch boxes and easy dinners with minimal ingredients.",
+  "strengths": [
+   "Clear value proposition in the title targeting health-conscious viewers",
+   "Specifies dietary restrictions (no oil, no flour) which narrows audience intent"
+  ],
+  "weaknesses": [
+   "No transcript available to verify if the opening visuals or narration reinforce the title's promise within the first few seconds"
+  ]
+ },
+ "devices": [],
+ "strengths": [
+  {
+   "t_s": 0,
+   "point": "Title clearly signals a health-focused, restriction-based recipe which sets viewer expectations",
+   "evidence": []
+  },
+  {
+   "t_s": 40,
+   "point": "Likely structured as a demonstration-heavy video given the long runtime dedicated to cooking steps",
+   "evidence": []
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Transcript unavailable for detailed analysis",
+   "t_start_s": 0,
+   "t_end_s": 289.2,
+   "observation": "No transcript text was provided, which limits the ability to assess pacing, verbal hooks, or specific claims made during the video.",
+   "evidence": [],
+   "recommendation": "Ensure transcript data is captured and provided for future analysis to allow grounded, timestamp-specific feedback on hook strength, ingredient explanation clarity, and demonstration pacing.",
+   "basis": "craft_heuristic",
+   "priority": "high",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 0,
+  "evidence_verified": 0,
+  "evidence_rate": null,
+  "recs": 1,
+  "recs_grounded": 0,
+  "rec_grounded_rate": 0.0,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    0,
+    0
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  },
+  "checks": []
+ }
+}

@@ -1,0 +1,494 @@
+{
+ "summary": "This 98\u2011second Uber Eats Super Bowl spot is built as a mock\u2011documentary sketch: McConaughey narrates a rapid\u2011fire series of punny 'football conspiracy' vignettes (bacon, cheese, buffalo wings, appliances) before a meta fourth\u2011wall break reveals he's pitching the bit to an unseen director, closing on a single brand tagline and CTA. Pacing is driven almost entirely by dense, fast dialogue and frequent visual-format switches rather than camera motion, with nearly all screen time keeping McConaughey's face in frame.",
+ "dna_tags": [
+  "celebrity-led mockumentary sketch",
+  "pun-chain vignette structure",
+  "fourth-wall meta twist",
+  "talking-head-anchored ad",
+  "single late-payoff CTA",
+  "sepia period b-roll inserts"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 6.0,
+   "role": "hook",
+   "label": "McConaughey's bold 'Foodball League' claim"
+  },
+  {
+   "start_s": 6.0,
+   "end_s": 16.1,
+   "role": "intro_setup",
+   "label": "Conspiracy premise introduced, first bacon pun"
+  },
+  {
+   "start_s": 16.1,
+   "end_s": 43.0,
+   "role": "main_content",
+   "label": "Vignette montage: packers, cheeseheads, Buffalo wings"
+  },
+  {
+   "start_s": 43.0,
+   "end_s": 53.0,
+   "role": "context",
+   "label": "Talking-head recap beat"
+  },
+  {
+   "start_s": 53.0,
+   "end_s": 63.1,
+   "role": "main_content",
+   "label": "More vignettes: appliances, Omaha steak gag"
+  },
+  {
+   "start_s": 63.1,
+   "end_s": 80.1,
+   "role": "payoff_reveal",
+   "label": "Meta break \u2014 McConaughey pitches the bit to 'Greta'"
+  },
+  {
+   "start_s": 80.1,
+   "end_s": 93.8,
+   "role": "recap",
+   "label": "Resolution dialogue, bacon callback"
+  },
+  {
+   "start_s": 93.8,
+   "end_s": 97.8,
+   "role": "cta",
+   "label": "End card and tagline with Uber Eats CTA"
+  }
+ ],
+ "hook": {
+  "what_happens": "McConaughey, in a suit, stands praying in a boardroom with a city skyline, then delivers a deadpan, punning claim that the NFL is secretly the 'National Foodball League.'",
+  "promise": "A comedic conspiracy theory that football exists to make people hungry, setting up a string of food-pun vignettes.",
+  "strengths": [
+   "Immediate verbal hook with no dead air (time_to_first_word_s = 0.0, pct 25 \u2014 speech starts instantly)",
+   "Very high hook_wpm (200, pct 92 in category) signals fast comedic delivery from the first line",
+   "Strong star-driven visual hook: a recognizable face in an unusual, slightly absurd pose (praying in a boardroom) with no on-screen text to distract"
+  ],
+  "weaknesses": [
+   "hook_cuts is only 7 (pct 25 vs ad category), fewer cuts than typical fast ads, so the visual hook relies almost entirely on McConaughey's delivery rather than editing rhythm"
+  ]
+ },
+ "devices": [
+  {
+   "name": "running pun chain",
+   "t_s": 0.0,
+   "quote": "the National Football League, or should I call it the National Foodball League?"
+  },
+  {
+   "name": "vignette callback structure",
+   "t_s": 17.8,
+   "quote": "Coach, how come we only play on Sundays?"
+  },
+  {
+   "name": "fourth-wall meta break",
+   "t_s": 77.9,
+   "quote": "Matthew? Matthew!"
+  },
+  {
+   "name": "closing CTA tagline",
+   "t_s": 95.2,
+   "quote": "When football makes you hungry, order Uber Eats."
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Speech-forward delivery sustains comedic density throughout, well above typical pacing for the ad category.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "157.7"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_wpm",
+     "value": "200.0"
+    }
+   ]
+  },
+  {
+   "t_s": 43.0,
+   "point": "McConaughey's face/voice anchors nearly the entire runtime, leveraging star power for continuity across the sketch.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "face_share",
+     "value": "0.959"
+    },
+    {
+     "kind": "metric",
+     "ref": "talking_head_share",
+     "value": "0.467"
+    }
+   ]
+  },
+  {
+   "t_s": 30.9,
+   "point": "Frequent format switching between talking-head and b-roll/text overlays keeps each pun vignette visually distinct.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "4.3"
+    },
+    {
+     "kind": "visual",
+     "ref": "30.9",
+     "value": "On-screen text 'AVAILABLE ONLY RIGHT HERE IN BUFFALO, N.Y.' over Buffalo wings b-roll"
+    }
+   ]
+  },
+  {
+   "t_s": 95.2,
+   "point": "Single, clearly placed CTA ties the entire premise back to the brand at the very end, matching the reveal structure of the sketch.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.977"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "When football makes you hungry, order Uber Eats."
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Low motion despite high-energy dialogue",
+   "t_start_s": 10.0,
+   "t_end_s": 43.0,
+   "observation": "Overall motion_mean sits at the 8th percentile for ad category even though the vignette sequence is meant to feel brisk and comedic; several b-roll segments (e.g., 30.9-43.0s) are visually static while dialogue pace is fast.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "motion_mean",
+     "value": "0.0694"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:30.0",
+     "value": "motion 0.043"
+    }
+   ],
+   "recommendation": "Test adding more camera movement or dynamic b-roll cuts during the vignette montage (10-43s) to visually match the rapid verbal joke pace.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 9.96,
+   "t_in_range": true
+  },
+  {
+   "title": "Cut-rate spike coincides with a wpm drop at the meta break",
+   "t_start_s": 75.0,
+   "t_end_s": 80.0,
+   "observation": "The 75-80s bin shows 9 cuts (highest of any bin) but wpm falls to 48, the lowest in the video, right as the fourth-wall break begins \u2014 the editing rhythm and dialogue pace move in opposite directions at this pivotal reveal.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:75.0",
+     "value": "cuts 9, wpm 48.0"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Matthew? Matthew! Yeah, hey. Sorry, sorry."
+    }
+   ],
+   "recommendation": "Consider smoothing the cut rate or adding a connecting line during 75-80s so the visual pacing doesn't spike just as speech nearly stops, to test whether the reveal reads more clearly.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 75.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Single CTA arrives extremely late for a 98-second ad",
+   "t_start_s": 95.2,
+   "t_end_s": 97.8,
+   "observation": "first_cta_pos is 0.977 (pct 90 in category), and cta_count is only 1 \u2014 for a spot nearly twice the typical 30s ad duration, the brand/product message is withheld until the final 2.6 seconds.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.977"
+    },
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "1"
+    },
+    {
+     "kind": "metric",
+     "ref": "duration_s",
+     "value": "97.8"
+    }
+   ],
+   "recommendation": "Test inserting a brief mid-roll brand mention or visual cue (e.g., logo in the Buffalo wings b-roll around 30-43s) to reinforce the sponsor earlier without breaking the comedic flow.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 95.18,
+   "t_in_range": true
+  },
+  {
+   "title": "Low non-speech audio share despite 'prominent' music tag",
+   "t_start_s": 0.0,
+   "t_end_s": 97.8,
+   "observation": "nonspeech_audio_share is 0.102 (pct 25 for ad category), lower than most ads even though the vision model notes music presence as prominent \u2014 the score may be under-supporting the comedic timing beats.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "nonspeech_audio_share",
+     "value": "0.102"
+    },
+    {
+     "kind": "visual",
+     "ref": "overall",
+     "value": "music_presence: prominent"
+    }
+   ],
+   "recommendation": "Test raising music/SFX presence during punchline beats (e.g., 'Bacon. Bacon.' at 13.4s or 'Omaha! Steak.' at 58.8s) to see if it sharpens comedic timing.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Desaturated, dim visual palette throughout",
+   "t_start_s": 0.0,
+   "t_end_s": 97.8,
+   "observation": "brightness_mean (0.252, pct 25) and colorfulness_mean (25.0, pct 8) are both low relative to the ad category, giving the whole spot a muted, period-film look that may reduce visual contrast with the comedic tone.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "brightness_mean",
+     "value": "0.252"
+    },
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "25.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "11.2",
+     "value": "Sepia-toned vintage football scene with players in white uniforms"
+    }
+   ],
+   "recommendation": "If the muted look is intentional for the 'old-timey conspiracy' vignettes, consider contrasting it with brighter, more saturated grading in the present-day talking-head segments (e.g., 0-6s, 43-53s) to visually separate timelines.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 20,
+  "evidence_verified": 19,
+  "evidence_rate": 0.95,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    15,
+    15
+   ],
+   "quote": [
+    2,
+    2
+   ],
+   "visual": [
+    2,
+    3
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "motion_mean",
+    "value": "0.0694",
+    "verified": true,
+    "note": "actual=0.0694"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:30.0",
+    "value": "motion 0.043",
+    "verified": true,
+    "note": "bin={'start': 30.0, 'end': 35.0, 'cuts': 3, 'wpm': 204.0, 'loud_db': -20.7, 'motion': 0.043}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:75.0",
+    "value": "cuts 9, wpm 48.0",
+    "verified": true,
+    "note": "bin={'start': 75.0, 'end': 80.0, 'cuts': 9, 'wpm': 48.0, 'loud_db': -14.5, 'motion': 0.131}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Matthew? Matthew! Yeah, hey. Sorry, sorry.",
+    "verified": true,
+    "note": "match=1.00 at 77.88"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.977",
+    "verified": true,
+    "note": "actual=0.977"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "1",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "duration_s",
+    "value": "97.8",
+    "verified": true,
+    "note": "actual=97.8"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "nonspeech_audio_share",
+    "value": "0.102",
+    "verified": true,
+    "note": "actual=0.102"
+   },
+   {
+    "owner": "rec3",
+    "kind": "visual",
+    "ref": "overall",
+    "value": "music_presence: prominent",
+    "verified": false,
+    "note": "no segment at ref"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "brightness_mean",
+    "value": "0.252",
+    "verified": true,
+    "note": "actual=0.252"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "25.0",
+    "verified": true,
+    "note": "actual=25.0"
+   },
+   {
+    "owner": "rec4",
+    "kind": "visual",
+    "ref": "11.2",
+    "value": "Sepia-toned vintage football scene with players in white uniforms",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "157.7",
+    "verified": true,
+    "note": "actual=157.7"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_wpm",
+    "value": "200.0",
+    "verified": true,
+    "note": "actual=200.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "face_share",
+    "value": "0.959",
+    "verified": true,
+    "note": "actual=0.959"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "talking_head_share",
+    "value": "0.467",
+    "verified": true,
+    "note": "actual=0.467"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "4.3",
+    "verified": true,
+    "note": "actual=4.3"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "30.9",
+    "value": "On-screen text 'AVAILABLE ONLY RIGHT HERE IN BUFFALO, N.Y.' over Buffalo wings b-roll",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.977",
+    "verified": true,
+    "note": "actual=0.977"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "When football makes you hungry, order Uber Eats.",
+    "verified": true,
+    "note": "match=1.00 at 95.18"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 20,
+  "evidence_verified": 17,
+  "evidence_rate": 0.85,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    13,
+    15
+   ],
+   "quote": [
+    2,
+    2
+   ],
+   "visual": [
+    2,
+    3
+   ]
+  }
+ }
+}

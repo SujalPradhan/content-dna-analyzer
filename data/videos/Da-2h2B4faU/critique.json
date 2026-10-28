@@ -1,0 +1,448 @@
+{
+ "summary": "This is a single continuous animated explainer (no detected hard cuts across 8 minutes) built entirely around voice-over narration and a recurring 'humans tell stories about reality' framing. Pacing is carried by speech rhythm and rhetorical questions rather than visual cuts, with a late, single CTA appended after a sponsor credit at the very end.",
+ "dna_tags": [
+  "continuous-animation explainer",
+  "question-driven narration",
+  "no-cut visual flow",
+  "dense scientific analogy",
+  "single late CTA",
+  "story-as-metaphor framing"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 33.0,
+   "role": "hook",
+   "label": "Box opens, 'what is the true nature of the universe' question, sets up String Theory as a misunderstood story"
+  },
+  {
+   "start_s": 33.0,
+   "end_s": 47.0,
+   "role": "intro_setup",
+   "label": "Silent/transitional beat before diving into particle physics"
+  },
+  {
+   "start_s": 47.0,
+   "end_s": 145.0,
+   "role": "context",
+   "label": "From atoms to elementary particles, explaining why we can't 'see' particles"
+  },
+  {
+   "start_s": 145.0,
+   "end_s": 230.0,
+   "role": "main_content",
+   "label": "Uncertainty principle and the invented 'point particle' story, quantum field theory"
+  },
+  {
+   "start_s": 230.0,
+   "end_s": 295.0,
+   "role": "main_content",
+   "label": "The gravity problem and why it resists unification with quantum mechanics"
+  },
+  {
+   "start_s": 295.0,
+   "end_s": 360.0,
+   "role": "demonstration",
+   "label": "String theory introduced as vibrating strings generating particles"
+  },
+  {
+   "start_s": 360.0,
+   "end_s": 447.0,
+   "role": "payoff_reveal",
+   "label": "Critique of string theory's lack of proof, then reframing as a 'useful story' via the rowing-boat/cruise-ship analogy"
+  },
+  {
+   "start_s": 447.0,
+   "end_s": 458.0,
+   "role": "recap",
+   "label": "Closing thesis: we keep inventing stories until we know the truth"
+  },
+  {
+   "start_s": 458.0,
+   "end_s": 465.0,
+   "role": "sponsor_ad_read",
+   "label": "Thanks to Swiss National Science Foundation and scientific advisor"
+  },
+  {
+   "start_s": 465.0,
+   "end_s": 471.0,
+   "role": "cta",
+   "label": "Patreon support mention"
+  },
+  {
+   "start_s": 471.0,
+   "end_s": 480.0,
+   "role": "outro",
+   "label": "Silent outro card (loudness drops to -29.6dB, wpm 0)"
+  }
+ ],
+ "hook": {
+  "what_happens": "A box labeled 'UNIVERSE STUFF' opens over a blue background while the narrator asks 'What is the true nature of the universe?', then the visuals morph into a cosmic starfield and a toy-like planetary model as the narrator frames all science as human 'stories'.",
+  "promise": "The video promises to explain String Theory as a famous, controversial and misunderstood 'story about the nature of everything' and answer whether it is correct or something to discard.",
+  "strengths": [
+   "Opens with a direct philosophical question rather than a scene-setting shot, consistent with hook_type 'question'",
+   "hook_motion is 1.71x the video's own average (pct_in_category 90), giving the opening a visibly more dynamic/morphing feel than the rest of the runtime",
+   "Text overlay appears within the first 3 seconds (hook_text_overlay=1), reinforcing the written premise alongside narration"
+  ],
+  "weaknesses": [
+   "hook_cuts is 0 (pct_in_category 10) \u2014 despite constant visual morphing, no hard shot changes are registered in the first 15s, which is unusually static for the explainer category benchmark (median 2 cuts)",
+   "hook_wpm of 152 sits at the low end for the explainer category's hook benchmark (p25 156, p75 188), meaning the opening is delivered more slowly than peers despite the urgent question framing"
+  ]
+ },
+ "devices": [
+  {
+   "name": "rhetorical_question",
+   "t_s": 1.4,
+   "quote": "What is the true nature of the universe?"
+  },
+  {
+   "name": "callback_motif",
+   "t_s": 4.8,
+   "quote": "humans come up with stories to describe the world"
+  },
+  {
+   "name": "analogy",
+   "t_s": 392.4,
+   "quote": "Imagine that you want to build a cruise ship, but you only have blueprints for a small rowing boat"
+  },
+  {
+   "name": "rhetorical_question",
+   "t_s": 150.5,
+   "quote": "So what does a particle look like then?"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Highly saturated, distinctive color palette sets this explainer apart visually from typical science content.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "103.6"
+    }
+   ]
+  },
+  {
+   "t_s": 1.4,
+   "point": "The hook opens on a direct, stakes-setting question rather than exposition, giving immediate narrative direction.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "What is the true nature of the universe?"
+    },
+    {
+     "kind": "visual",
+     "ref": "1.2",
+     "value": "Cardboard box labeled 'UNIVERSE STUFF' on blue background"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "Frequent rhetorical questions throughout sustain a conversational, curiosity-driven tone atypical for the density of the subject matter.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "questions_per_min",
+     "value": "1.0"
+    }
+   ]
+  },
+  {
+   "t_s": 392.4,
+   "point": "A concrete, everyday analogy (rowing boat vs cruise ship) is used to make an abstract point about string theory's partial usefulness, aiding comprehension at a conceptually dense moment.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Imagine that you want to build a cruise ship, but you only have blueprints for a small rowing boat"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Long silent gap right after the hook",
+   "t_start_s": 38.1,
+   "t_end_s": 47.3,
+   "observation": "After the hook's final line at 38.1s, there is roughly a 9-second stretch with no speech before narration resumes at 47.3s, and the 40-50s bin shows wpm dropping to 48 versus 144-168 in surrounding bins.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:40.0",
+     "value": "48.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "long_pauses_per_min",
+     "value": "0.62"
+    }
+   ],
+   "recommendation": "Consider whether this pause is intentional pacing or a transition that could be tightened or bridged with a visual beat, since it interrupts momentum right after the hook's question is posed.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 37.52,
+   "t_in_range": true
+  },
+  {
+   "title": "Zero detected hook cuts despite morphing visuals",
+   "t_start_s": 0.0,
+   "t_end_s": 15.0,
+   "observation": "hook_cuts is measured at 0, the lowest percentile (10) for the explainer category, while hook_motion is elevated (1.71x average), suggesting movement is continuous/morphing rather than cut-driven.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "0"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "1.71"
+    }
+   ],
+   "recommendation": "If testing variants, try inserting one or two discrete visual changes in the first 15 seconds to see whether a more punctuated opening affects viewer engagement with the premise.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "On-screen text used once then dropped entirely",
+   "t_start_s": 0.0,
+   "t_end_s": 480.0,
+   "observation": "hook_text_overlay is true in the first 3 seconds, but text_overlay_share across the whole video is 0.0 (pct 10), meaning on-screen text is essentially never used again despite dense technical terms like 'Heisenberg Uncertainty Principle' and 'quantum field theory' being introduced verbally only.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.0"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "The Heisenberg Uncertainty Principle, the basis of all quantum physics"
+    }
+   ],
+   "recommendation": "Test adding brief on-screen labels for key technical terms as they're introduced, since the hook already demonstrates text overlay is part of the visual toolkit.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Single CTA placed at the very end, after sponsor credit",
+   "t_start_s": 458.2,
+   "t_end_s": 471.0,
+   "observation": "first_cta_pos is 0.981 of runtime (pct 88 for explainer category), appearing only after the sponsor acknowledgment and essentially as the last spoken/visual element before a silent outro.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.981"
+    },
+    {
+     "kind": "visual",
+     "ref": "471.0",
+     "value": "CTA text 'Support us on Patreon'"
+    }
+   ],
+   "recommendation": "If measuring viewer follow-through on the CTA, test surfacing it slightly earlier or pairing it with a verbal mention rather than placing it in the silent post-narration segment.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 458.2,
+   "t_in_range": true
+  },
+  {
+   "title": "Wide swings in speaking rate across dense technical passages",
+   "t_start_s": 130.0,
+   "t_end_s": 220.0,
+   "observation": "Words-per-minute within bins ranges from 228 (130-140s) down to 78 (210-220s) in a short span, a larger spread than the steadier pacing seen in most other sections of the video.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:130.0",
+     "value": "228.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:210.0",
+     "value": "78.0"
+    }
+   ],
+   "recommendation": "Consider whether the fastest passages (e.g., around 130-140s covering quantum field theory precision) would benefit from a brief pacing adjustment or added visual pause, since this is where information density is highest.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 130.08,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 15,
+  "evidence_verified": 14,
+  "evidence_rate": 0.933,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    10,
+    10
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    1,
+    2
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:40.0",
+    "value": "48.0",
+    "verified": true,
+    "note": "bin={'start': 40.0, 'end': 50.0, 'cuts': 0, 'wpm': 48.0, 'loud_db': -17.0, 'motion': 0.083}"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "long_pauses_per_min",
+    "value": "0.62",
+    "verified": true,
+    "note": "actual=0.62"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "1.71",
+    "verified": true,
+    "note": "actual=1.71"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "The Heisenberg Uncertainty Principle, the basis of all quantum physics",
+    "verified": true,
+    "note": "match=1.00 at 145.66"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.981",
+    "verified": true,
+    "note": "actual=0.981"
+   },
+   {
+    "owner": "rec3",
+    "kind": "visual",
+    "ref": "471.0",
+    "value": "CTA text 'Support us on Patreon'",
+    "verified": false,
+    "note": "no segment at ref"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:130.0",
+    "value": "228.0",
+    "verified": true,
+    "note": "bin={'start': 130.0, 'end': 140.0, 'cuts': 0, 'wpm': 228.0, 'loud_db': -13.2, 'motion': 0.068}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:210.0",
+    "value": "78.0",
+    "verified": true,
+    "note": "bin={'start': 210.0, 'end': 220.0, 'cuts': 0, 'wpm': 78.0, 'loud_db': -13.6, 'motion': 0.052}"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "103.6",
+    "verified": true,
+    "note": "actual=103.6"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "What is the true nature of the universe?",
+    "verified": true,
+    "note": "match=1.00 at 1.44"
+   },
+   {
+    "owner": "str1",
+    "kind": "visual",
+    "ref": "1.2",
+    "value": "Cardboard box labeled 'UNIVERSE STUFF' on blue background",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "questions_per_min",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Imagine that you want to build a cruise ship, but you only have blueprints for a small rowing boat",
+    "verified": true,
+    "note": "match=1.00 at 392.36"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 15,
+  "evidence_verified": 14,
+  "evidence_rate": 0.933,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    10,
+    10
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    1,
+    2
+   ]
+  }
+ }
+}

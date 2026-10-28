@@ -1,0 +1,370 @@
+{
+ "summary": "Jamie Oliver cooks alongside his son Buddy to demonstrate making fresh egg pasta from scratch, moving from mixing dough through kneading, rolling into sheets, and cutting into multiple pasta shapes (tagliolini, tagliatelle, lasagna, cannelloni, farfalle). The video is built as a single continuous demonstration with minimal cuts, relying on simple ratios, casual father-son dialogue, and visual progression of the dough transforming at each stage.",
+ "dna_tags": [
+  "family cooking",
+  "simple ratios",
+  "hands-on demonstration",
+  "kid co-host",
+  "pasta shapes",
+  "no-frills technique"
+ ],
+ "structure": [
+  {
+   "start_s": 2.8,
+   "end_s": 16.0,
+   "role": "hook",
+   "label": "Introducing the project with Buddy and the two core ingredients"
+  },
+  {
+   "start_s": 16.3,
+   "end_s": 40.8,
+   "role": "intro_setup",
+   "label": "Explaining the simple egg-to-flour ratio"
+  },
+  {
+   "start_s": 41.0,
+   "end_s": 62.4,
+   "role": "demonstration",
+   "label": "Bringing dough together and kneading with fork then hands"
+  },
+  {
+   "start_s": 62.4,
+   "end_s": 96.5,
+   "role": "demonstration",
+   "label": "Kneading to elastic dough and resting"
+  },
+  {
+   "start_s": 96.6,
+   "end_s": 124.7,
+   "role": "demonstration",
+   "label": "Rolling dough into sheets with pasta machine"
+  },
+  {
+   "start_s": 124.8,
+   "end_s": 160.0,
+   "role": "main_content",
+   "label": "Discussing shapes and starting to cut farfalle"
+  },
+  {
+   "start_s": 161.6,
+   "end_s": 207.4,
+   "role": "demonstration",
+   "label": "Cutting tagliolini and tagliatelle, explaining sauce pairing"
+  },
+  {
+   "start_s": 208.5,
+   "end_s": 249.8,
+   "role": "demonstration",
+   "label": "Making lasagna sheets, cannelloni, and farfalle"
+  },
+  {
+   "start_s": 249.8,
+   "end_s": 261.3,
+   "role": "recap",
+   "label": "Wrap-up celebrating the finished homemade pasta and fun with Buddy"
+  }
+ ],
+ "hook": {
+  "what_happens": "Jamie introduces himself and Buddy as making pasta sheets, immediately naming the two core ingredients: flour and moisture/egg.",
+  "promise": "That pasta-making is simple, fun, and accessible using just flour and egg in a basic ratio.",
+  "strengths": [
+   "Opens with a clear, concrete activity ('making some pasta, sheets of pasta') rather than a vague tease",
+   "States the core simplicity thesis ('two primary ingredients') within the first 10 seconds"
+  ],
+  "weaknesses": [
+   "No visual payoff teased (e.g., finished dish not shown upfront) to create curiosity about the end result",
+   "Relies on narration alone without stating why the viewer should care beyond general cooking joy"
+  ]
+ },
+ "devices": [
+  {
+   "name": "call-and-response with child co-host",
+   "t_s": 28.1,
+   "quote": "How many eggs do we need, Buds? One."
+  },
+  {
+   "name": "direct address simplicity claim",
+   "t_s": 35.2,
+   "quote": "Making pasta is child's play. It really is."
+  },
+  {
+   "name": "cutaway to pre-made example",
+   "t_s": 92.5,
+   "quote": "And look, here's some we made earlier."
+  },
+  {
+   "name": "rhetorical question to viewer/co-host",
+   "t_s": 119.8,
+   "quote": "What do you love most about making pasta?"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 22.1,
+   "point": "Establishes a clear, memorable ratio that frames the whole video as achievable.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "a hundred grams of flour, one egg"
+    }
+   ]
+  },
+  {
+   "t_s": 35.2,
+   "point": "Reinforces accessibility and low barrier to entry explicitly.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Making pasta is child's play. It really is. Flour and eggs."
+    }
+   ]
+  },
+  {
+   "t_s": 124.8,
+   "point": "Involves Buddy's own voice to add authentic, unscripted charm and kid appeal.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "You can make it into different shapes, and you can play with it."
+    }
+   ]
+  },
+  {
+   "t_s": 196.2,
+   "point": "Explains functional differences between pasta shapes, adding educational value beyond just technique.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "every shape of pasta holds the sauce in a different way"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Clarify final plated result earlier",
+   "t_start_s": 2.8,
+   "t_end_s": 16.0,
+   "observation": "The video opens describing the process but never shows or previews a finished, sauced plate of pasta at the start.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "we're making some pasta. Sheets of pasta."
+    }
+   ],
+   "recommendation": "Consider showing a quick glimpse of the finished dish near the opening lines to frame what viewers are working toward.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 2.82,
+   "t_in_range": true
+  },
+  {
+   "title": "Tighten the shape-cutting section",
+   "t_start_s": 161.6,
+   "t_end_s": 249.8,
+   "observation": "Multiple pasta shapes (tagliolini, tagliatelle, lasagna, cannelloni, farfalle) are demonstrated in quick succession with similar narration patterns, which could read as repetitive.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "So, in we go with the tagliatelle, slightly thicker."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "We could roll it up with some filling and make like a little cannelloni, like that."
+    }
+   ],
+   "recommendation": "Consider varying the narration pacing or adding a distinct visual marker between each shape transition so each feels like its own beat.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 161.56,
+   "t_in_range": true
+  },
+  {
+   "title": "Resolve mid-dialogue ambiguity during farfalle cutting",
+   "t_start_s": 233.1,
+   "t_end_s": 249.8,
+   "observation": "The transcript shows an unclear exchange ('it won't take a little bit... Oh, that's how you do it') that suggests a moment of fumbling or unclear instruction.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "it won't take a little bit. And we're going to take this like that and we're going to just pinch it, like that. Oh, that's how you do it."
+    }
+   ],
+   "recommendation": "Consider clarifying the verbal instruction during the pinch-and-fold farfalle step so viewers can follow the technique without ambiguity.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 233.12,
+   "t_in_range": true
+  },
+  {
+   "title": "Add explicit resting time guidance consistency",
+   "t_start_s": 86.7,
+   "t_end_s": 96.5,
+   "observation": "The resting instruction is brief and only mentioned once, while other steps like kneading get repeated emphasis.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Now, we let that rest for just five or ten minutes."
+    }
+   ],
+   "recommendation": "Consider giving the resting step a similarly clear callback later or on-screen reinforcement so it doesn't get lost next to the more visually engaging kneading and cutting steps.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 86.74,
+   "t_in_range": true
+  },
+  {
+   "title": "Strengthen the closing statement with a clearer takeaway",
+   "t_start_s": 249.8,
+   "t_end_s": 261.3,
+   "observation": "The ending reiterates fun and shape variety but doesn't restate the core ratio or technique for viewers who want a quick recap.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "I mean, there's so many shapes you can do, and it's really good fun."
+    }
+   ],
+   "recommendation": "Consider briefly restating the simple flour-to-egg ratio in the closing lines as a memorable final takeaway.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 249.76,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 10,
+  "evidence_verified": 9,
+  "evidence_rate": 0.9,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    9,
+    10
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "",
+    "value": "we're making some pasta. Sheets of pasta.",
+    "verified": true,
+    "note": "match=1.00 at 5.6"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "So, in we go with the tagliatelle, slightly thicker.",
+    "verified": true,
+    "note": "match=1.00 at 193.42"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "We could roll it up with some filling and make like a little cannelloni, like that.",
+    "verified": true,
+    "note": "match=1.00 at 213.74"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "it won't take a little bit. And we're going to take this like that and we're going to just pinch it, like that. Oh, that's how you do it.",
+    "verified": true,
+    "note": "match=1.00 at 232.3"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Now, we let that rest for just five or ten minutes.",
+    "verified": true,
+    "note": "match=1.00 at 91.6"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "",
+    "value": "I mean, there's so many shapes you can do, and it's really good fun.",
+    "verified": true,
+    "note": "match=1.00 at 257.36"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "a hundred grams of flour, one egg",
+    "verified": false,
+    "note": "match=0.71 at 31.82"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Making pasta is child's play. It really is. Flour and eggs.",
+    "verified": true,
+    "note": "match=1.00 at 35.2"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "You can make it into different shapes, and you can play with it.",
+    "verified": true,
+    "note": "match=1.00 at 124.78"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "every shape of pasta holds the sauce in a different way",
+    "verified": true,
+    "note": "match=1.00 at 197.2"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 10,
+  "evidence_verified": 9,
+  "evidence_rate": 0.9,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    9,
+    10
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  }
+ }
+}

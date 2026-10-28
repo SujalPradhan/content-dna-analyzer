@@ -1,0 +1,500 @@
+{
+ "summary": "A talking-head explainer that opens with a direct problem/question hook and a bullet-point text overlay, then alternates rapidly between the presenter, screen recordings and graphic-text cards to walk through WordPress concepts chapter by chapter. The video leans on near-constant narration (almost no silence), tight audio dynamics and frequent visual-format switching rather than motion or color to keep the long, information-dense explainer moving.",
+ "dna_tags": [
+  "question-led explainer hook",
+  "roadmap-preview overlay",
+  "screen-recording + talking-head hybrid",
+  "chapter-structured teaching",
+  "dense wall-to-wall narration",
+  "embedded sponsor CTA"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 8.5,
+   "role": "hook",
+   "label": "Problem question + on-screen roadmap bullets"
+  },
+  {
+   "start_s": 8.5,
+   "end_s": 23.7,
+   "role": "intro_setup",
+   "label": "Verbal promise of what the video covers"
+  },
+  {
+   "start_s": 23.7,
+   "end_s": 79.0,
+   "role": "main_content",
+   "label": "What is WordPress / CMS explanation"
+  },
+  {
+   "start_s": 79.0,
+   "end_s": 139.1,
+   "role": "main_content",
+   "label": "Themes and plugins"
+  },
+  {
+   "start_s": 139.1,
+   "end_s": 277.1,
+   "role": "main_content",
+   "label": "WordPress.com vs WordPress.org + hosting CTA"
+  },
+  {
+   "start_s": 277.1,
+   "end_s": 380.1,
+   "role": "main_content",
+   "label": "WordPress vs Wix/Squarespace comparison"
+  },
+  {
+   "start_s": 380.1,
+   "end_s": 458.7,
+   "role": "demonstration",
+   "label": "How to create a WordPress website walkthrough"
+  },
+  {
+   "start_s": 458.7,
+   "end_s": 474.2,
+   "role": "cta",
+   "label": "Watch-next prompt and sign-off"
+  }
+ ],
+ "hook": {
+  "what_happens": "Presenter speaks directly to camera asking if the viewer has heard of WordPress but doesn't know what it is, then a graphic-text card lists the three questions the video will answer (What is it? How does it work? Should I use it?).",
+  "promise": "To explain WordPress for complete beginners, cover WordPress.com vs .org, and show how to build a WordPress site from scratch.",
+  "strengths": [
+   "Opens with word 0 (time_to_first_word_s=0.0) so there is no dead air before the hook lands",
+   "The spoken promise is immediately mirrored by an on-screen bullet list, reinforcing the roadmap visually as well as verbally",
+   "hook_wpm of 176 (pct50 for explainers) keeps the setup brisk without feeling rushed"
+  ],
+  "weaknesses": [
+   "hook_text_overlay is 0 at the true first 3 seconds (pct20 vs category, where median explainer uses text overlay from frame one) \u2014 the bullet card only appears at 2.8s, missing a chance to visually brand the promise the instant the video starts",
+   "hook_motion is 1.27x baseline, slightly elevated, but hook_cuts is only 2, which is below category p75 of 2, so the opening is visually static relative to the energetic verbal pacing"
+  ]
+ },
+ "devices": [
+  {
+   "name": "stacked question list as roadmap",
+   "t_s": 6.2,
+   "quote": "What is it? How does it work? Should I use it?"
+  },
+  {
+   "name": "direct-address problem framing",
+   "t_s": 0.0,
+   "quote": "So you've heard about WordPress, but you have no idea what it is, how it works"
+  },
+  {
+   "name": "numbered-list structuring",
+   "t_s": 315.4,
+   "quote": "However, it also comes with three main disadvantages"
+  },
+  {
+   "name": "embedded sponsor CTA with discount code",
+   "t_s": 411.6,
+   "quote": "if you sign up using my referral link and enter the code medicsmedia"
+  },
+  {
+   "name": "watch-next end-card bridge",
+   "t_s": 458.5,
+   "quote": "then watch this video next, where I walk you through the entire process step by step"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "The hook's verbal promise (explain WordPress, cover .com vs .org, show how to build a site) is delivered in the exact same order as the video's chapters, so the structure fulfills its own setup.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "We'll also cover the difference between WordPress.com and WordPress.org and how to actually create a WordPress website from scratch"
+    },
+    {
+     "kind": "visual",
+     "ref": "139.1",
+     "value": "chapter card reading 'Wordpress.com vs Wordpress.org' appears exactly where promised"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "Speech is essentially continuous across the whole runtime, which suits a dense teaching format and avoids dead air for a 474s explainer.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.977"
+    },
+    {
+     "kind": "metric",
+     "ref": "long_pauses_per_min",
+     "value": "0.0"
+    }
+   ]
+  },
+  {
+   "t_s": 37.3,
+   "point": "Visual format is switched very frequently between talking-head, screen recording, b-roll and graphic-text cards, giving an otherwise static presenter video more surface variety.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "7.34"
+    },
+    {
+     "kind": "visual",
+     "ref": "37.3",
+     "value": "cut from talking head to screen_recording of a WordPress dashboard"
+    }
+   ]
+  },
+  {
+   "t_s": 268.0,
+   "point": "CTAs are placed contextually right after the topic that motivates them (hosting discussion), rather than bunched at the end only.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "You'll find a good hosting provider that I personally use and recommend in the video description"
+    },
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.565"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Add text overlay from frame one",
+   "t_start_s": 0.0,
+   "t_end_s": 2.8,
+   "observation": "The opening 2.8s is pure talking head with no on-screen text, and hook_text_overlay is recorded as 0, while explainer-category videos typically show text overlay already at 0.5-1.0 in the first 3s.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "0.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "talking head frame with no overlay text"
+    }
+   ],
+   "recommendation": "Test bringing the 'What is it? How does it work?' bullet card in at 0s instead of 2.8s, or overlay the title on the very first frame, so the visual promise appears simultaneously with the verbal one.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Break up long static screen-recording stretches",
+   "t_start_s": 160.0,
+   "t_end_s": 180.0,
+   "observation": "Several 10-20s bins have zero cuts and near-zero motion while the topic (WordPress.com pricing) is one of the more complex, confusion-prone parts of the video.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:160.0",
+     "value": "cuts: 0, motion: 0.005"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:170.0",
+     "value": "cuts: 0, motion: 0.029"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:330.0",
+     "value": "cuts: 0, motion: 0.008"
+    }
+   ],
+   "recommendation": "Insert a cutaway, zoom, or annotated highlight on the pricing graphic during these static stretches so the densest explanatory sections get a matching visual beat rather than a long unbroken screen-recording hold.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 160.04,
+   "t_in_range": true
+  },
+  {
+   "title": "Widen the loudness dynamic range",
+   "t_start_s": 0.0,
+   "t_end_s": 474.2,
+   "observation": "Loudness range is only 4.7dB across the whole video, well below the category p25 of 6.5dB, meaning there is almost no audio emphasis variation between calm explanation and key points like the pricing reveal or the three-disadvantages list.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "loudness_range_db",
+     "value": "4.7"
+    },
+    {
+     "kind": "metric",
+     "ref": "loudness_db",
+     "value": "-12.5"
+    }
+   ],
+   "recommendation": "Consider light music swells or slightly raised vocal emphasis at key reveal moments (e.g. the $40/month WordPress.com cost at 204s, or the three disadvantages at 315s) to create audible contrast around the most important claims.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Reconsider CTA density",
+   "t_start_s": 268.0,
+   "t_end_s": 467.0,
+   "observation": "Four explicit CTAs are packed into the video (hosting link, watch-next card, referral code, final watch-next), which sits at the top of the category's distribution (p75 = 3 CTAs).",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "4"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "You'll find the link down below in the video description"
+    }
+   ],
+   "recommendation": "Test consolidating the hosting-related CTA (268s) and the referral-code CTA (413s) into a single, combined callout instead of repeating the same sponsor twice, to see if the pitch feels less repetitive.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 268.22,
+   "t_in_range": true
+  },
+  {
+   "title": "Add color/visual variety to offset muted palette",
+   "t_start_s": 0.0,
+   "t_end_s": 474.2,
+   "observation": "Colorfulness (36.1) and motion_mean (0.0526) both sit at the 10th percentile for the category, giving the video a comparatively flat, low-energy visual texture despite the brisk 160.7wpm narration.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "36.1"
+    },
+    {
+     "kind": "metric",
+     "ref": "motion_mean",
+     "value": "0.0526"
+    },
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "160.7"
+    }
+   ],
+   "recommendation": "Where b-roll or graphic cards are used (e.g. 64.7s, 99.9s), test more saturated backgrounds or brief animated highlights so the visual energy better matches the fast spoken pace.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 20,
+  "evidence_verified": 19,
+  "evidence_rate": 0.95,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    14,
+    14
+   ],
+   "quote": [
+    2,
+    3
+   ],
+   "visual": [
+    3,
+    3
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "talking head frame with no overlay text",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:160.0",
+    "value": "cuts: 0, motion: 0.005",
+    "verified": true,
+    "note": "bin={'start': 160.0, 'end': 170.0, 'cuts': 0, 'wpm': 168.0, 'loud_db': -12.3, 'motion': 0.005}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:170.0",
+    "value": "cuts: 0, motion: 0.029",
+    "verified": true,
+    "note": "bin={'start': 170.0, 'end': 180.0, 'cuts': 0, 'wpm': 138.0, 'loud_db': -12.1, 'motion': 0.029}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:330.0",
+    "value": "cuts: 0, motion: 0.008",
+    "verified": true,
+    "note": "bin={'start': 330.0, 'end': 340.0, 'cuts': 0, 'wpm': 162.0, 'loud_db': -12.8, 'motion': 0.008}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "loudness_range_db",
+    "value": "4.7",
+    "verified": true,
+    "note": "actual=4.7"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "loudness_db",
+    "value": "-12.5",
+    "verified": true,
+    "note": "actual=-12.5"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "4",
+    "verified": true,
+    "note": "actual=4.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "You'll find the link down below in the video description",
+    "verified": true,
+    "note": "match=1.00 at 418.26"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "36.1",
+    "verified": true,
+    "note": "actual=36.1"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "motion_mean",
+    "value": "0.0526",
+    "verified": true,
+    "note": "actual=0.0526"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "160.7",
+    "verified": true,
+    "note": "actual=160.6"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "We'll also cover the difference between WordPress.com and WordPress.org and how to actually create a WordPress website from scratch",
+    "verified": false,
+    "note": "match=0.26 at 2.24"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "139.1",
+    "value": "chapter card reading 'Wordpress.com vs Wordpress.org' appears exactly where promised",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.977",
+    "verified": true,
+    "note": "actual=0.977"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "long_pauses_per_min",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "7.34",
+    "verified": true,
+    "note": "actual=7.34"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "37.3",
+    "value": "cut from talking head to screen_recording of a WordPress dashboard",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "You'll find a good hosting provider that I personally use and recommend in the video description",
+    "verified": true,
+    "note": "match=1.00 at 263.98"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.565",
+    "verified": true,
+    "note": "actual=0.565"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 20,
+  "evidence_verified": 16,
+  "evidence_rate": 0.8,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    11,
+    14
+   ],
+   "quote": [
+    2,
+    3
+   ],
+   "visual": [
+    3,
+    3
+   ]
+  }
+ }
+}

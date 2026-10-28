@@ -1,0 +1,48 @@
+{
+ "tolerance_s": 1.0,
+ "per_video": [
+  {
+   "video_id": "3B3B9eSgMV0",
+   "style": "spec-review explainer (stock b-roll + slides)",
+   "manual": 12,
+   "detected": 11,
+   "tp": 11,
+   "precision": 1.0,
+   "recall": 0.92
+  },
+  {
+   "video_id": "KWuFpi7j4_0",
+   "style": "AI-generated tech Short with morph transitions + motion graphics",
+   "manual": 20,
+   "detected": 9,
+   "tp": 7,
+   "precision": 0.78,
+   "recall": 0.35
+  },
+  {
+   "video_id": "s83EB_OtaEo",
+   "style": "Super Bowl ad (cinematic, fast cutting)",
+   "manual": 28,
+   "detected": 35,
+   "tp": 26,
+   "precision": 0.74,
+   "recall": 0.93
+  },
+  {
+   "video_id": "g47HHqldL1s",
+   "style": "aesthetic travel vlog (hard cuts ~2.3 s)",
+   "manual": 25,
+   "detected": 27,
+   "tp": 24,
+   "precision": 0.89,
+   "recall": 0.96
+  }
+ ],
+ "pooled": {
+  "precision": 0.829,
+  "recall": 0.8,
+  "tp": 68,
+  "manual": 85,
+  "detected": 82
+ }
+}

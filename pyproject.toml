@@ -1,0 +1,39 @@
+[project]
+name = "content-dna"
+version = "0.1.0"
+description = "Content DNA Analyzer: creative fingerprints and evidence-backed critique for videos"
+readme = "README.md"
+authors = [
+    { name = "SujalPradhan", email = "23f2004759@ds.study.iitm.ac.in" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=2.3.0",
+    "fastapi>=0.162.0",
+    "librosa>=0.11.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.4.6",
+    "pandas>=3.1.0",
+    "pydantic>=2.14.1",
+    "python-dotenv>=1.2.4",
+    "python-multipart>=0.0.32",
+    "requests>=2.34.2",
+    "scenedetect[opencv-headless]>=0.7.2",
+    "scikit-learn>=1.9.1",
+    "scipy>=1.17.1",
+    "uvicorn[standard]>=0.54.0",
+    "yt-dlp>=2026.10.26",
+]
+
+[project.scripts]
+dna = "content_dna:main"
+
+[build-system]
+requires = ["uv_build>=0.9.30,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.1.1",
+]

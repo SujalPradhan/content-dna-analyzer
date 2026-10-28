@@ -1,0 +1,17 @@
+{
+ "full": {
+  "specificity": 5,
+  "accuracy": 5,
+  "actionability": 5,
+  "insight": 5
+ },
+ "baseline": {
+  "specificity": 2,
+  "accuracy": 3,
+  "actionability": 2,
+  "insight": 1
+ },
+ "winner": "full",
+ "reason": "Critique B engages directly with the measured data (motion drops, loudness taper, format switches, colorfulness, energy slope) with concrete timestamps and actionable fixes, and explains why the silent b-roll construction works. Critique A punts on nearly everything citing missing transcript, offering generic placeholder advice without referencing any of the rich visual/audio metrics available.",
+ "full_was": "B"
+}

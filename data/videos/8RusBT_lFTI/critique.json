@@ -1,0 +1,486 @@
+{
+ "summary": "A Hindi-language travel vlog built around a fast, problem/solution hook (crowded Mall Road vs. hidden Jharipani) followed by long, dialogue-heavy talking-head segments interspersed with scenic b-roll and two property tours. Pacing is driven almost entirely by speech rather than cuts: shot rate is mid-pack for the category, but speech coverage and talking-head share are unusually high while b-roll and non-speech audio are unusually low, and loudness trails off sharply over the runtime.",
+ "dna_tags": [
+  "problem-solution hook",
+  "single-camera talking-head vlog",
+  "multi-day property tour",
+  "dialogue-driven pacing",
+  "CTA-at-the-end structure"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 9.0,
+   "role": "hook",
+   "label": "Crowd problem statement + bird b-roll + title card"
+  },
+  {
+   "start_s": 9.0,
+   "end_s": 18.0,
+   "role": "intro_setup",
+   "label": "Channel welcome and trip naming"
+  },
+  {
+   "start_s": 18.0,
+   "end_s": 51.0,
+   "role": "context",
+   "label": "Friend introductions, departure delay explained"
+  },
+  {
+   "start_s": 51.0,
+   "end_s": 164.0,
+   "role": "context",
+   "label": "Highway drive, crowded food-stop detour"
+  },
+  {
+   "start_s": 164.0,
+   "end_s": 245.7,
+   "role": "main_content",
+   "label": "Arrival at Jharipani, scenic b-roll"
+  },
+  {
+   "start_s": 245.7,
+   "end_s": 350.2,
+   "role": "demonstration",
+   "label": "Vivara Escape property walkthrough + balcony weather"
+  },
+  {
+   "start_s": 350.2,
+   "end_s": 429.1,
+   "role": "demonstration",
+   "label": "Second cottage (Vivara Cottage) tour"
+  },
+  {
+   "start_s": 429.1,
+   "end_s": 467.8,
+   "role": "main_content",
+   "label": "Local food stop, momos, comment CTA"
+  },
+  {
+   "start_s": 467.8,
+   "end_s": 506.8,
+   "role": "payoff_reveal",
+   "label": "Misty sunrise view from balcony"
+  },
+  {
+   "start_s": 506.8,
+   "end_s": 519.0,
+   "role": "outro",
+   "label": "Checkout recap, closing CTA and sign-off"
+  }
+ ],
+ "hook": {
+  "what_happens": "Two birds on a bare branch open the video while the narrator states that everyone gets crowded on Mall Road, then promises an alternative found 8km away; a title card names the destination (Jharipani) before cutting to a car-window shot of hair blowing in the wind.",
+  "promise": "A hidden, uncrowded alternative to Mussoorie's touristy Mall Road.",
+  "strengths": [
+   "Clear problem/solution framing stated in the very first line",
+   "Rapid verbal delivery front-loads the premise before visuals catch up"
+  ],
+  "weaknesses": [
+   "hook_motion is 0.68 (8th pct for vlog), i.e. the opening visuals (birds, static branch) are calmer than the rest of the video despite very fast speech",
+   "No on-screen text until 6.8s, after the spoken hook has already passed (hook_text_overlay=0)"
+  ]
+ },
+ "devices": [
+  {
+   "name": "problem_statement_hook",
+   "t_s": 0.0,
+   "quote": "\u0939\u0930 \u0915\u094b\u0908 \u092e\u0938\u0942\u0930\u0940 \u092e\u0947\u0902 \u091c\u093e\u0915\u0947 \u092e\u0949\u0932 \u0930\u094b\u0921 \u092a\u0947 \u092d\u0940\u0921 \u092e\u0947\u0902 \u0927\u0915\u094d\u0915\u0947 \u0916\u093e\u0924\u093e \u0939\u0948"
+  },
+  {
+   "name": "direct_address_intro",
+   "t_s": 9.1,
+   "quote": "Welcome to my channel, \u092e\u0948\u0902 \u0939\u0942\u0901 \u092d\u093e\u0935\u0928\u093e"
+  },
+  {
+   "name": "comment_cta",
+   "t_s": 465.0,
+   "quote": "\u0905\u0917\u0930 \u0906\u092a \u0932\u094b\u0917\u094b\u0902 \u0915\u094b \u092d\u0940 \u0916\u093e\u0928\u0947 \u0939\u0948 \u0924\u094b \u091c\u0932\u094d\u0926\u0940 \u0938\u0947 \u0915\u092e\u0947\u0902\u091f \u0915\u0930 \u0926\u0947\u0928\u093e"
+  },
+  {
+   "name": "link_cta",
+   "t_s": 513.8,
+   "quote": "\u0935\u093f\u0935\u093e\u0930\u093e \u0915\u0949\u091f\u0947\u091c\u094d\u091c\u093f\u0938 \u091a\u0947\u0915 \u0915\u0930 \u0932\u0947\u0928\u093e \u092e\u0948\u0902 \u0932\u093f\u0902\u0915 \u0921\u093f\u0938\u0915\u094d\u0930\u093f\u092a\u094d\u0937\u093f\u0928 \u092e\u0947\u0902 \u0922\u093e\u0932 \u0926\u0942\u0901\u0917\u0940"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Opens with an explicit contrast-driven premise rather than generic travel footage, giving the viewer an immediate reason to keep watching.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u0939\u0930 \u0915\u094b\u0908 \u092e\u0938\u0942\u0930\u0940 \u092e\u0947\u0902 \u091c\u093e\u0915\u0947 \u092e\u0949\u0932 \u0930\u094b\u0921 \u092a\u0947 \u092d\u0940\u0921 \u092e\u0947\u0902 \u0927\u0915\u094d\u0915\u0947 \u0916\u093e\u0924\u093e \u0939\u0948"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_wpm",
+     "value": "232.0"
+    }
+   ]
+  },
+  {
+   "t_s": 18.0,
+   "point": "Very high speech coverage and talking-head share keep the vlogger as a constant narrative anchor rather than relying on silent b-roll montage, atypical for the category but consistent with a conversational travel-diary style.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.666"
+    },
+    {
+     "kind": "metric",
+     "ref": "talking_head_share",
+     "value": "0.601"
+    }
+   ]
+  },
+  {
+   "t_s": 513.8,
+   "point": "Closes with a clear, concrete call to action (link to the property) paired with a comment-bait CTA earlier, giving the video two distinct conversion moments.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "2"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u0935\u093f\u0935\u093e\u0930\u093e \u0915\u0949\u091f\u0947\u091c\u094d\u091c\u093f\u0938 \u091a\u0947\u0915 \u0915\u0930 \u0932\u0947\u0928\u093e \u092e\u0948\u0902 \u0932\u093f\u0902\u0915 \u0921\u093f\u0938\u0915\u094d\u0930\u093f\u092a\u094d\u0937\u093f\u0928 \u092e\u0947\u0902 \u0922\u093e\u0932 \u0926\u0942\u0901\u0917\u0940"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Fill extended silent/dead-air stretches",
+   "t_start_s": 250.0,
+   "t_end_s": 320.0,
+   "observation": "Several consecutive timeline bins show 0 wpm (e.g. 250-260s, 300-310s, 310-320s, 390-410s, 440-450s), and long_pauses_per_min sits at 2.31, the 75th percentile for the category, meaning gaps are more frequent than most peer vlogs.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "long_pauses_per_min",
+     "value": "2.31"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:300.0",
+     "value": "wpm 0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:390.0",
+     "value": "wpm 0.0"
+    }
+   ],
+   "recommendation": "Trim or compress the longest silent stretches, or overlay ambient commentary/music during the quiet b-roll moments so pacing doesn't stall for 10-20s at a time.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 250.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Break up long uninterrupted talking-head stretches with cutaways",
+   "t_start_s": 18.0,
+   "t_end_s": 350.0,
+   "observation": "Talking-head share is 0.601 (92nd percentile) while b-roll share is only 0.394 (8th percentile) for the vlog category, and several single talking-head segments run 30-40s uninterrupted (e.g. 18.0-51.0s, 96.0-133.0s, 272.3-300.8s).",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "talking_head_share",
+     "value": "0.601"
+    },
+    {
+     "kind": "metric",
+     "ref": "broll_share",
+     "value": "0.394"
+    },
+    {
+     "kind": "visual",
+     "ref": "18.0",
+     "value": "talking_head segment lasting 18.0-51.0s"
+    }
+   ],
+   "recommendation": "Intercut more scenic/location b-roll (misty hills, highway shots, property details) into the longer monologue sections to vary the visual texture without changing the spoken content.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 18.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Even out the steep loudness decline across the runtime",
+   "t_start_s": 0.0,
+   "t_end_s": 519.0,
+   "observation": "energy_slope is -13.39, the 8th percentile for vlogs, and loudness drops from roughly -23dB early on to below -40dB in later bins (e.g. bin 450-460s at -41.7dB), indicating a pronounced fade rather than a stable mix.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "-13.39"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:450.0",
+     "value": "loud_db -41.7"
+    },
+    {
+     "kind": "metric",
+     "ref": "loudness_db",
+     "value": "-24.7"
+    }
+   ],
+   "recommendation": "Normalize/level audio in post so dialogue volume stays consistent from start to finish, and consider adding a light background music bed (nonspeech_audio_share is only 0.285, 8th percentile) to mask outdoor wind noise variance.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "high",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Remove duplicated line used as a repeated bridge",
+   "t_start_s": 350.7,
+   "t_end_s": 418.1,
+   "observation": "The same sentence about eating Maggi-paratha and arriving at the next Vivara property appears verbatim at three separate timestamps (350.7s, 380.2s, 418.1s), suggesting a repeated or misplaced clip in the edit.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u092e\u0948\u0917\u093c\u0940 \u092a\u0930\u093e\u091f\u093e \u0916\u093e\u0928\u0947 \u0915\u0947 \u092c\u093e\u0926 \u0939\u092e \u0932\u094b\u0917 \u092a\u0939\u0941\u0901\u091a \u0935\u0947 \u0905\u092a\u0928\u0947 \u0928\u0947\u0915\u094d\u0938 \u091f\u0947\u0935 \u0935\u093f\u0935\u093e\u0930\u093e \u0915\u0949\u0930\u094d\u091f\u0947\u091c \u092e\u0947\u0902"
+    }
+   ],
+   "recommendation": "Review the edit around the second-property transition and remove the duplicate instances of this line, keeping only one clean transition statement.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 350.72,
+   "t_in_range": true
+  },
+  {
+   "title": "Match opening visual energy to the fast-talking hook",
+   "t_start_s": 0.0,
+   "t_end_s": 15.0,
+   "observation": "hook_wpm is 232 (92nd percentile, very fast delivery) but hook_motion is only 0.68 (8th percentile), meaning the opening visuals (static birds, slow pans) move far less than the verbal pace suggests.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_wpm",
+     "value": "232.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "0.68"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "Two birds sitting on a bare tree branch against a pale sky"
+    }
+   ],
+   "recommendation": "Consider pairing the rapid-fire opening narration with a quicker-cut or higher-motion visual (e.g. the car-window wind shot already used at 11-14s) earlier in the hook so pacing feels unified across audio and image.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 19,
+  "evidence_verified": 19,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    14,
+    14
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "long_pauses_per_min",
+    "value": "2.31",
+    "verified": true,
+    "note": "actual=2.31"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:300.0",
+    "value": "wpm 0.0",
+    "verified": true,
+    "note": "bin={'start': 300.0, 'end': 310.0, 'cuts': 1, 'wpm': 0.0, 'loud_db': -21.2, 'motion': 0.082}"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:390.0",
+    "value": "wpm 0.0",
+    "verified": true,
+    "note": "bin={'start': 390.0, 'end': 400.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -30.0, 'motion': 0.139}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "talking_head_share",
+    "value": "0.601",
+    "verified": true,
+    "note": "actual=0.601"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "broll_share",
+    "value": "0.394",
+    "verified": true,
+    "note": "actual=0.394"
+   },
+   {
+    "owner": "rec1",
+    "kind": "visual",
+    "ref": "18.0",
+    "value": "talking_head segment lasting 18.0-51.0s",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "-13.39",
+    "verified": true,
+    "note": "actual=-13.39"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:450.0",
+    "value": "loud_db -41.7",
+    "verified": true,
+    "note": "bin={'start': 450.0, 'end': 460.0, 'cuts': 1, 'wpm': 24.0, 'loud_db': -41.7, 'motion': 0.147}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "loudness_db",
+    "value": "-24.7",
+    "verified": true,
+    "note": "actual=-24.7"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u092e\u0948\u0917\u093c\u0940 \u092a\u0930\u093e\u091f\u093e \u0916\u093e\u0928\u0947 \u0915\u0947 \u092c\u093e\u0926 \u0939\u092e \u0932\u094b\u0917 \u092a\u0939\u0941\u0901\u091a \u0935\u0947 \u0905\u092a\u0928\u0947 \u0928\u0947\u0915\u094d\u0938 \u091f\u0947\u0935 \u0935\u093f\u0935\u093e\u0930\u093e \u0915\u0949\u0930\u094d\u091f\u0947\u091c \u092e\u0947\u0902",
+    "verified": true,
+    "note": "match=1.00 at 350.72"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "hook_wpm",
+    "value": "232.0",
+    "verified": true,
+    "note": "actual=232.0"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "0.68",
+    "verified": true,
+    "note": "actual=0.68"
+   },
+   {
+    "owner": "rec4",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "Two birds sitting on a bare tree branch against a pale sky",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u0939\u0930 \u0915\u094b\u0908 \u092e\u0938\u0942\u0930\u0940 \u092e\u0947\u0902 \u091c\u093e\u0915\u0947 \u092e\u0949\u0932 \u0930\u094b\u0921 \u092a\u0947 \u092d\u0940\u0921 \u092e\u0947\u0902 \u0927\u0915\u094d\u0915\u0947 \u0916\u093e\u0924\u093e \u0939\u0948",
+    "verified": true,
+    "note": "match=1.00 at 0.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_wpm",
+    "value": "232.0",
+    "verified": true,
+    "note": "actual=232.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.666",
+    "verified": true,
+    "note": "actual=0.666"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "talking_head_share",
+    "value": "0.601",
+    "verified": true,
+    "note": "actual=0.601"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "2",
+    "verified": true,
+    "note": "actual=2.0"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u0935\u093f\u0935\u093e\u0930\u093e \u0915\u0949\u091f\u0947\u091c\u094d\u091c\u093f\u0938 \u091a\u0947\u0915 \u0915\u0930 \u0932\u0947\u0928\u093e \u092e\u0948\u0902 \u0932\u093f\u0902\u0915 \u0921\u093f\u0938\u0915\u094d\u0930\u093f\u092a\u094d\u0937\u093f\u0928 \u092e\u0947\u0902 \u0922\u093e\u0932 \u0926\u0942\u0901\u0917\u0940",
+    "verified": true,
+    "note": "match=1.00 at 512.18"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 19,
+  "evidence_verified": 13,
+  "evidence_rate": 0.684,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    11,
+    14
+   ],
+   "quote": [
+    0,
+    3
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  }
+ }
+}

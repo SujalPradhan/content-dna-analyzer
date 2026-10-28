@@ -1,0 +1,475 @@
+{
+ "summary": "A long-form tech review built as a single continuous monologue over cutaways: a bold-claim cold open gives way to a structured five-pillar argument, then a deep dive into camera/computational photography, all held together by Marques's face-to-camera delivery rather than rapid editing. Pacing is driven more by talking density (188 wpm, 95% speech coverage) than by visual cuts, which ebb and flow unevenly across the runtime.",
+ "dna_tags": [
+  "bold-claim cold open",
+  "framework-driven essay",
+  "talking-head-led tech review",
+  "spec-overlay b-roll",
+  "dense high-wpm narration"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 19.4,
+   "role": "hook",
+   "label": "Animated logo bump into bold claim and phone reveal"
+  },
+  {
+   "start_s": 19.4,
+   "end_s": 106.3,
+   "role": "intro_setup",
+   "label": "Oppo Find X9 Ultra specs and 'peak slab phone' thesis"
+  },
+  {
+   "start_s": 106.3,
+   "end_s": 324,
+   "role": "main_content",
+   "label": "Five pillars framework (display, battery, performance, build)"
+  },
+  {
+   "start_s": 324,
+   "end_s": 508,
+   "role": "main_content",
+   "label": "Camera evolution and megapixel/sensor breakdown"
+  },
+  {
+   "start_s": 508,
+   "end_s": 638,
+   "role": "main_content",
+   "label": "Computational photography vs. Hasselblad comparison"
+  },
+  {
+   "start_s": 638,
+   "end_s": 777,
+   "role": "demonstration",
+   "label": "Versatility vs optics, lens attachments, iPad/laptop analogy"
+  },
+  {
+   "start_s": 777,
+   "end_s": 796.7,
+   "role": "cta",
+   "label": "Autofocus channel plug, subscribe, sign-off"
+  }
+ ],
+ "hook": {
+  "what_happens": "A brief animated logo transition cuts straight to Marques holding the phone and declaring a sweeping claim, then quickly moves into b-roll of the device and spec text overlays.",
+  "promise": "That smartphone design has effectively hit a ceiling ('peak slab phone') and he will explain why using a defined framework.",
+  "strengths": [
+   "Declarative, opinionated opening line delivered before any brand/product framing",
+   "Text overlay on screen within the first 3 seconds reinforcing the claim",
+   "Product reveal and key specs land within the first 20 seconds"
+  ],
+  "weaknesses": [
+   "hook_motion (1.62) sits below the tech_review category median (1.66), so the opening isn't especially kinetic despite the bold verbal claim",
+   "Only 4 hook cuts in 15s, roughly category median, which combined with below-median motion makes the visual energy of the hook slightly understated relative to the strength of the verbal hook"
+  ]
+ },
+ "devices": [
+  {
+   "name": "bold_claim open",
+   "t_s": 1.3,
+   "quote": "So, this is peak slab phone."
+  },
+  {
+   "name": "recurring framework motif",
+   "t_s": 106.1,
+   "quote": "great display, great battery, great build, great performance, and great cameras"
+  },
+  {
+   "name": "analogy",
+   "t_s": 595.4,
+   "quote": "it's like that self-moving basketball hoop that Stuff Made Here"
+  },
+  {
+   "name": "analogy",
+   "t_s": 702.0,
+   "quote": "all the parallels of when someone tries to turn their iPad into a laptop"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 106.3,
+   "point": "A clear repeated five-pillar framework structures a 13-minute monologue so the argument stays legible.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "106.3",
+     "value": "Graphics_text segment listing 'GREAT DISPLAY GREAT BATTERY GREAT BUILD GREAT PERFORMANCE GREAT CAMERAS'"
+    },
+    {
+     "kind": "quote",
+     "ref": "106.1",
+     "value": "great display, great battery, great build, great performance, and great cameras"
+    }
+   ]
+  },
+  {
+   "t_s": 0,
+   "point": "Face-on-camera presence is extremely consistent, keeping a single trusted narrator anchoring a dense, information-heavy script.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "face_share",
+     "value": "0.816"
+    },
+    {
+     "kind": "metric",
+     "ref": "talking_head_share",
+     "value": "0.471"
+    }
+   ]
+  },
+  {
+   "t_s": 19.4,
+   "point": "Colorful, well-lit product/graphics inserts (spec overlays, camera close-ups) break up the talking head without derailing pacing.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "46.3"
+    },
+    {
+     "kind": "visual",
+     "ref": "19.4",
+     "value": "product_closeup with on-screen text 'Snapdragon 8 Elite Gen 5 7,050mAh Battery 6.82\" LTPO AMOLED'"
+    }
+   ]
+  },
+  {
+   "t_s": 432.8,
+   "point": "CTA count is generous and spread rather than crammed at the end, mixing subtle (subscribe cushion) and explicit (comment ask) prompts across the runtime.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "5"
+    },
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.271"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Flat visual stretch around 100-140s",
+   "t_start_s": 100,
+   "t_end_s": 140,
+   "observation": "During the framework setup, cut rate collapses to near zero and motion drops well below the video's own average right as the core thesis is introduced.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:100.0",
+     "value": "cuts:1, motion:0.04"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:120.0",
+     "value": "cuts:0, motion:0.037"
+    }
+   ],
+   "recommendation": "Consider inserting a short cutaway or reframe around 110-135s so the pillar introduction doesn't visually flatline exactly when the central argument is being laid out.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 100.12,
+   "t_in_range": true
+  },
+  {
+   "title": "Below-category motion across static monologue stretches",
+   "t_start_s": 551.8,
+   "t_end_s": 595.7,
+   "observation": "Overall motion_mean sits at the 25th percentile for tech_review, and several long talking-head blocks (e.g. the ~44s stretch here) run with minimal camera or subject movement.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "motion_mean",
+     "value": "0.0565"
+    },
+    {
+     "kind": "visual",
+     "ref": "551.8",
+     "value": "talking_head segment lasting until 595.7 with no format switch"
+    }
+   ],
+   "recommendation": "Test breaking the longest single talking-head blocks with a cutaway, camera angle change, or product insert roughly every 20-30s to keep visual variety closer to the format's typical rhythm.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 551.88,
+   "t_in_range": true
+  },
+  {
+   "title": "Very low pause rate across 13 minutes of dense narration",
+   "t_start_s": 0,
+   "t_end_s": 796.7,
+   "observation": "Long pauses are rare (0.15/min) and speech covers 95.5% of runtime at a fast 188 wpm, leaving almost no breathing room between dense technical claims.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "long_pauses_per_min",
+     "value": "0.15"
+    },
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.955"
+    },
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "188.3"
+    }
+   ],
+   "recommendation": "Consider testing a deliberate beat of silence or visual-only moment after major reveals (e.g. after the 200MP camera specs around 440s) to let dense information land before moving on.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Low screen/graphics share despite spec-heavy content",
+   "t_start_s": 205.7,
+   "t_end_s": 467.8,
+   "observation": "screen_share is at the 25th percentile for the category even though the script repeatedly cites precise numeric specs (battery mAh, megapixel counts, sensor sizes) that could be reinforced visually.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "screen_share",
+     "value": "0.033"
+    },
+    {
+     "kind": "quote",
+     "ref": "432.7",
+     "value": "200 megapixel main camera with the biggest 200 megapixel sensor we've ever seen"
+    }
+   ],
+   "recommendation": "Consider adding more on-screen spec graphics at moments where multiple numbers are rattled off verbally (e.g. the 432-467s camera-spec passage) to match numeric density with visual reinforcement.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 205.6,
+   "t_in_range": true
+  },
+  {
+   "title": "CTA graphic repeats without verbal pairing",
+   "t_start_s": 185.9,
+   "t_end_s": 307.1,
+   "observation": "The five-pillar graphic text reappears multiple times (185.9s, 277.8s, 304.2s) as a silent on-screen recap, while the only spoken CTAs land later (344s, 358s), creating a gap between visual and verbal calls to action.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "277.8",
+     "value": "graphics_text segment repeating 'GREAT DISPLAY GREAT BATTERY GREAT BUILD GREAT PERFORMANCE GREAT CAMERAS'"
+    },
+    {
+     "kind": "quote",
+     "ref": "343.7",
+     "value": "maybe leave a like or comment on this video if you want to see like a long form breakdown"
+    }
+   ],
+   "recommendation": "Consider pairing at least one of the repeated pillar-recap graphics with a brief verbal nudge toward subscribing or commenting, so visual and spoken prompts reinforce each other rather than appearing separately.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 186.64,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 19,
+  "evidence_verified": 18,
+  "evidence_rate": 0.947,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    12
+   ],
+   "quote": [
+    2,
+    3
+   ],
+   "visual": [
+    4,
+    4
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:100.0",
+    "value": "cuts:1, motion:0.04",
+    "verified": true,
+    "note": "bin={'start': 100.0, 'end': 120.0, 'cuts': 1, 'wpm': 192.0, 'loud_db': -18.9, 'motion': 0.04}"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:120.0",
+    "value": "cuts:0, motion:0.037",
+    "verified": true,
+    "note": "bin={'start': 120.0, 'end': 140.0, 'cuts': 0, 'wpm': 186.0, 'loud_db': -19.5, 'motion': 0.037}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "motion_mean",
+    "value": "0.0565",
+    "verified": true,
+    "note": "actual=0.0565"
+   },
+   {
+    "owner": "rec1",
+    "kind": "visual",
+    "ref": "551.8",
+    "value": "talking_head segment lasting until 595.7 with no format switch",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "long_pauses_per_min",
+    "value": "0.15",
+    "verified": true,
+    "note": "actual=0.15"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.955",
+    "verified": true,
+    "note": "actual=0.955"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "188.3",
+    "verified": true,
+    "note": "actual=188.2"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "screen_share",
+    "value": "0.033",
+    "verified": true,
+    "note": "actual=0.033"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "432.7",
+    "value": "200 megapixel main camera with the biggest 200 megapixel sensor we've ever seen",
+    "verified": true,
+    "note": "match=1.00 at 432.74"
+   },
+   {
+    "owner": "rec4",
+    "kind": "visual",
+    "ref": "277.8",
+    "value": "graphics_text segment repeating 'GREAT DISPLAY GREAT BATTERY GREAT BUILD GREAT PERFORMANCE GREAT CAMERAS'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "343.7",
+    "value": "maybe leave a like or comment on this video if you want to see like a long form breakdown",
+    "verified": false,
+    "note": "match=0.21 at 265.42"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "106.3",
+    "value": "Graphics_text segment listing 'GREAT DISPLAY GREAT BATTERY GREAT BUILD GREAT PERFORMANCE GREAT CAMERAS'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "106.1",
+    "value": "great display, great battery, great build, great performance, and great cameras",
+    "verified": true,
+    "note": "match=1.00 at 108.22"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "face_share",
+    "value": "0.816",
+    "verified": true,
+    "note": "actual=0.816"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "talking_head_share",
+    "value": "0.471",
+    "verified": true,
+    "note": "actual=0.471"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "46.3",
+    "verified": true,
+    "note": "actual=46.3"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "19.4",
+    "value": "product_closeup with on-screen text 'Snapdragon 8 Elite Gen 5 7,050mAh Battery 6.82\" LTPO AMOLED'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "5",
+    "verified": true,
+    "note": "actual=5.0"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.271",
+    "verified": true,
+    "note": "actual=0.271"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 19,
+  "evidence_verified": 16,
+  "evidence_rate": 0.842,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    10,
+    12
+   ],
+   "quote": [
+    2,
+    3
+   ],
+   "visual": [
+    4,
+    4
+   ]
+  }
+ }
+}

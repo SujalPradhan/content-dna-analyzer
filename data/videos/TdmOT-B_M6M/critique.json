@@ -1,0 +1,471 @@
+{
+ "summary": "This is a long-form Hindi tech review of the HP OmniBook 5 built as a rapid-cut, graphics-heavy spec walkthrough: a fast-cut direct-address hook leads into an embedded HP collaboration/ad-read, then a long run of talking-head segments intercut with product close-ups, on-screen text callouts and b-roll demonstrating build, specs, display and battery, before all calls-to-action are stacked at the very end. Cutting is unusually fast and format-switching is unusually high for a 9-minute tech_review, while speech coverage is lower than peers due to several long silent b-roll stretches.",
+ "dna_tags": [
+  "spec-sheet product review",
+  "rapid-cut hook",
+  "on-screen-text spec callouts",
+  "embedded brand collaboration",
+  "b-roll heavy demonstration",
+  "back-loaded CTA cluster"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 13.9,
+   "role": "hook",
+   "label": "Direct-address problem statement to college students, rapid cuts"
+  },
+  {
+   "start_s": 13.9,
+   "end_s": 52.7,
+   "role": "sponsor_ad_read",
+   "label": "HP collaboration disclosure and OmniBook series pitch"
+  },
+  {
+   "start_s": 52.7,
+   "end_s": 149.0,
+   "role": "main_content",
+   "label": "Build, design, ports and keyboard"
+  },
+  {
+   "start_s": 149.0,
+   "end_s": 373.0,
+   "role": "main_content",
+   "label": "Specs: CPU/RAM/storage, AI features, software bundle, gaming"
+  },
+  {
+   "start_s": 373.0,
+   "end_s": 455.0,
+   "role": "demonstration",
+   "label": "Display and battery testing"
+  },
+  {
+   "start_s": 455.0,
+   "end_s": 479.0,
+   "role": "demonstration",
+   "label": "Webcam and mic test"
+  },
+  {
+   "start_s": 479.0,
+   "end_s": 521.8,
+   "role": "payoff_reveal",
+   "label": "Pricing, offers, cashback, warranty breakdown"
+  },
+  {
+   "start_s": 521.8,
+   "end_s": 542.3,
+   "role": "cta",
+   "label": "Link, comment, subscribe stack"
+  }
+ ],
+ "hook": {
+  "what_happens": "Host speaks directly to camera in front of a laptop, gesturing energetically, with a bold 'THIN & LIGHT' text overlay flashing in and multiple quick cuts and b-roll inserts within the first 14 seconds.",
+  "promise": "Promises that by the end of the video the viewer will know everything needed before buying this laptop, especially for students.",
+  "strengths": [
+   "Very high hook cut count (13 cuts in first 15s, 92nd percentile) keeps visual novelty high",
+   "Text overlay present in first 3s (hook_text_overlay=1, 75th percentile), reinforcing the thin-and-light claim visually",
+   "Hook motion is well above the video average (hook_motion=2.23, 75th percentile), signalling energy early"
+  ],
+  "weaknesses": [
+   "Hook speaking rate (hook_wpm=136) sits only at the 17th percentile for tech_review, slower than typical category hooks (median 162 wpm), so the verbal promise lands less punchily than the visual cutting suggests",
+   "The hook immediately rolls into a sponsor/collaboration mention (13.9-52.7s) before any concrete product proof, delaying the 'what's in it for me' payoff"
+  ]
+ },
+ "devices": [
+  {
+   "name": "direct address / problem statement",
+   "t_s": 0.0,
+   "quote": "\u092c\u093e\u0908 \u0915\u0949\u0932\u0947\u091c\u093f\u0938 \u0916\u0941\u0932\u0928\u0947 \u0935\u093e\u0932\u0947 \u0939\u0948\u0902 \u0914\u0930 \u0905\u0917\u0930 \u0906\u092a \u0905\u092a\u0928\u0947 \u0932\u093f\u090f \u090f\u0915 \u0925\u093f\u0928\u0930\u094d\u0932\u093e\u0907\u091f \u0932\u093e\u092a\u094d\u091f\u0949\u092a \u0926\u0947\u0916 \u0930\u0939\u0947 \u0939\u094b"
+  },
+  {
+   "name": "on-screen text pattern interrupt",
+   "t_s": 3.8,
+   "quote": "THIN & LIGHT"
+  },
+  {
+   "name": "end-loaded CTA stacking",
+   "t_s": 528.0,
+   "quote": "Check out link in description"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Hook uses an unusually high number of cuts to sustain visual interest in the opening seconds, well above typical tech_review hooks.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "13"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "Host talking in front of camera with graphic sketch background and laptop on table, THIN & LIGHT text overlay"
+    }
+   ]
+  },
+  {
+   "t_s": 149.0,
+   "point": "Format switching is kept high through the dense spec section, alternating talking head with product close-ups and graphics_text callouts for each spec, which matches the heavy numeric content being delivered.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "9.51"
+    },
+    {
+     "kind": "visual",
+     "ref": "165.5",
+     "value": "product_closeup showing '16.0 GB 45 TOPS Copilot+PC' text overlay"
+    }
+   ]
+  },
+  {
+   "t_s": 373.0,
+   "point": "Text overlays are used consistently to reinforce spoken specs (display, battery, pricing), giving viewers a readable anchor for numbers spoken quickly in Hindi.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.5"
+    },
+    {
+     "kind": "visual",
+     "ref": "388.0",
+     "value": "graphics_text segment reading '100% of sRGB, 100% of P3, 300.9 nits'"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "All three CTAs are clustered in the final 15 seconds",
+   "t_start_s": 521.8,
+   "t_end_s": 542.3,
+   "observation": "first_cta_pos is 0.974 of runtime (92nd percentile), meaning none of the three CTAs appear until the video is almost over, despite the video running over 9 minutes.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.974"
+    },
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "3"
+    },
+    {
+     "kind": "quote",
+     "ref": "528.0",
+     "value": "Check out link in description"
+    }
+   ],
+   "recommendation": "Consider testing a lightweight mid-video CTA reminder (e.g. around the pricing/offers chapter at ~480s or even earlier after the design section) so viewers who drop off before the end still encounter a call to action.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "high",
+   "t_snapped_s": 521.74,
+   "t_in_range": true
+  },
+  {
+   "title": "A full spec explanation is repeated almost verbatim mid-video",
+   "t_start_s": 194.7,
+   "t_end_s": 226.1,
+   "observation": "The transcript shows the same RAM/Type-C accessory explanation appearing twice, once at 194.7-196.1s and again nearly identically at 224.7-226.1s, suggesting a duplicated take was left in the edit.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "194.7",
+     "value": "16 GB LPDDR5X \u0914\u0928 \u092c\u094b\u0930\u094d\u0921 \u0930\u093e\u092e \u092e\u093f\u0932 \u091c\u093e\u0924\u0940 \u0939\u0948 \u090f\u091f-\u092c\u094b\u0930\u094d\u0921-\u092a\u094b\u0930-\u090f\u091f \u092e\u0947\u0917\u093e \u091f\u094d\u0930\u093e\u0902\u0938\u092b\u0930 \u0938\u0947\u0915\u0940\u0921 \u0938\u094d\u092a\u0940\u0921 \u0935\u093e\u0932\u0940"
+    },
+    {
+     "kind": "quote",
+     "ref": "224.7",
+     "value": "\u0905\u0917\u0930 \u0906\u091c\u0915\u0932 \u091c\u093c\u093e\u0926\u093e \u0924\u0930 \u090f\u0915\u094d\u0938\u0947\u0938\u093f\u0930\u0940\u091c \u091f\u093e\u0907\u092a-\u0938\u0940 \u0915\u0940 \u091c\u093c\u0930\u093e\u092c \u0936\u093f\u092b\u094d\u092b\u093c \u0939\u094b \u0930\u0939\u0940 \u0939\u0948 \u0924\u094b \u0905\u0930\u093e\u092e \u0938\u0947 \u0915\u0941\u091b \u092d\u0940 \u0932\u0917\u093e\u0928\u093e \u0932\u093e\u092a\u094d\u091f\u0949 \u092c\u093e\u0917\u0940 \u0907\u0938\u0915\u0947 \u0932\u093f\u090f 16 GB LPDDR5X \u0914\u0928 \u092c\u094b\u0930\u094d\u0921 \u0930\u093e\u092e \u092e\u093f\u0932 \u091c\u093e\u0924\u0940 \u0939\u0948"
+    }
+   ],
+   "recommendation": "Cut the duplicated sentence during editing review; keep only one clean pass through the RAM/connectivity spec to avoid viewers feeling the video is looping on itself.",
+   "basis": "internal_inconsistency",
+   "priority": "high",
+   "t_snapped_s": 194.68,
+   "t_in_range": true
+  },
+  {
+   "title": "Long silent b-roll stretches lower overall speech coverage",
+   "t_start_s": 150.0,
+   "t_end_s": 190.0,
+   "observation": "Several consecutive 10s bins show 0 wpm (e.g. 150-160, 160-170, 170-180, 180-190), and overall speech_coverage sits at 0.696, well below the tech_review category median of 0.956.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.696"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:150.0",
+     "value": "wpm 0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:170.0",
+     "value": "wpm 0.0"
+    }
+   ],
+   "recommendation": "For the silent b-roll stretches during spec close-ups, consider layering short narrated callouts or a brief text summary so information keeps flowing rather than pausing speech for several seconds at a time.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 149.77,
+   "t_in_range": true
+  },
+  {
+   "title": "Overall loudness sits well below peer tech reviews",
+   "t_start_s": 0.0,
+   "t_end_s": 542.3,
+   "observation": "Mean loudness is -22.9 dBFS, at the 8th percentile for tech_review, versus a category median around -21.35 dBFS, meaning the track plays noticeably quieter than most comparable videos.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "loudness_db",
+     "value": "-22.9"
+    }
+   ],
+   "recommendation": "Test raising the overall mix loudness closer to the category norm so playback volume is more consistent with other tech reviews viewers may be switching between.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Median shot length is extremely short for a long spec-dense review",
+   "t_start_s": 0.0,
+   "t_end_s": 542.3,
+   "observation": "median_shot_s is 2.44s, at only the 8th percentile for tech_review, where peers typically hold shots for 3-12s while explaining technical details.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "median_shot_s",
+     "value": "2.44"
+    },
+    {
+     "kind": "metric",
+     "ref": "shots_per_min",
+     "value": "19.92"
+    }
+   ],
+   "recommendation": "During the denser technical explanations (e.g. ports/RAM/Copilot+ features around 125-230s), consider holding shots slightly longer to let viewers absorb spoken numbers instead of cutting away almost every two seconds.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Sponsor collaboration is folded into the hook without a clear break",
+   "t_start_s": 13.9,
+   "t_end_s": 52.7,
+   "observation": "The HP collaboration is mentioned mid-sentence while still discussing the product's design, without a distinct visual or verbal marker separating organic commentary from the sponsored pitch.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "22.7",
+     "value": "\u0907\u0938 \u0935\u0940\u0921\u093f\u092f\u094b \u092e\u0947\u0902 HP \u0915\u0947 \u0938\u093e\u0925 \u0915\u0941\u0932\u093e\u092c\u0930\u0947\u0936\u0928 \u092c\u0928\u093e \u0930\u0939\u093e \u0939\u0948 \u0914\u0930 HP \u0915\u0947 \u091c\u094b Omnibook \u0938\u0940\u0930\u0940\u091c \u0939\u0948"
+    }
+   ],
+   "recommendation": "Consider adding a brief, clearly marked disclosure beat (e.g. a dedicated title card or pause) when transitioning into the sponsored segment so viewers can clearly tell where organic hook ends and the sponsored pitch begins.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 13.74,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 18,
+  "evidence_verified": 15,
+  "evidence_rate": 0.833,
+  "recs": 6,
+  "recs_grounded": 6,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    10,
+    11
+   ],
+   "quote": [
+    2,
+    4
+   ],
+   "visual": [
+    3,
+    3
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.974",
+    "verified": true,
+    "note": "actual=0.974"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "3",
+    "verified": true,
+    "note": "actual=3.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "528.0",
+    "value": "Check out link in description",
+    "verified": false,
+    "note": "match=0.00 at None"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "194.7",
+    "value": "16 GB LPDDR5X \u0914\u0928 \u092c\u094b\u0930\u094d\u0921 \u0930\u093e\u092e \u092e\u093f\u0932 \u091c\u093e\u0924\u0940 \u0939\u0948 \u090f\u091f-\u092c\u094b\u0930\u094d\u0921-\u092a\u094b\u0930-\u090f\u091f \u092e\u0947\u0917\u093e \u091f\u094d\u0930\u093e\u0902\u0938\u092b\u0930 \u0938\u0947\u0915\u0940\u0921 \u0938\u094d\u092a\u0940\u0921 \u0935\u093e\u0932\u0940",
+    "verified": false,
+    "note": "match=0.73 at 196.08"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "224.7",
+    "value": "\u0905\u0917\u0930 \u0906\u091c\u0915\u0932 \u091c\u093c\u093e\u0926\u093e \u0924\u0930 \u090f\u0915\u094d\u0938\u0947\u0938\u093f\u0930\u0940\u091c \u091f\u093e\u0907\u092a-\u0938\u0940 \u0915\u0940 \u091c\u093c\u0930\u093e\u092c \u0936\u093f\u092b\u094d\u092b\u093c \u0939\u094b \u0930\u0939\u0940 \u0939\u0948 \u0924\u094b \u0905\u0930\u093e\u092e \u0938\u0947 \u0915\u0941\u091b \u092d\u0940 \u0932\u0917\u093e\u0928\u093e \u0932\u093e\u092a\u094d\u091f\u0949 \u092c\u093e\u0917\u0940 \u0907\u0938\u0915\u0947 \u0932\u093f\u090f 16 GB LPDDR5X \u0914\u0928 \u092c\u094b\u0930\u094d\u0921 \u0930\u093e\u092e \u092e\u093f\u0932 \u091c\u093e\u0924\u0940 \u0939\u0948",
+    "verified": true,
+    "note": "match=0.94 at 224.66"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.696",
+    "verified": false,
+    "note": "actual=0.661"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:150.0",
+    "value": "wpm 0.0",
+    "verified": true,
+    "note": "bin={'start': 150.0, 'end': 160.0, 'cuts': 4, 'wpm': 0.0, 'loud_db': -21.7, 'motion': 0.089}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:170.0",
+    "value": "wpm 0.0",
+    "verified": true,
+    "note": "bin={'start': 170.0, 'end': 180.0, 'cuts': 4, 'wpm': 0.0, 'loud_db': -21.7, 'motion': 0.096}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "loudness_db",
+    "value": "-22.9",
+    "verified": true,
+    "note": "actual=-22.9"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "median_shot_s",
+    "value": "2.44",
+    "verified": true,
+    "note": "actual=2.44"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "shots_per_min",
+    "value": "19.92",
+    "verified": true,
+    "note": "actual=19.92"
+   },
+   {
+    "owner": "rec5",
+    "kind": "quote",
+    "ref": "22.7",
+    "value": "\u0907\u0938 \u0935\u0940\u0921\u093f\u092f\u094b \u092e\u0947\u0902 HP \u0915\u0947 \u0938\u093e\u0925 \u0915\u0941\u0932\u093e\u092c\u0930\u0947\u0936\u0928 \u092c\u0928\u093e \u0930\u0939\u093e \u0939\u0948 \u0914\u0930 HP \u0915\u0947 \u091c\u094b Omnibook \u0938\u0940\u0930\u0940\u091c \u0939\u0948",
+    "verified": true,
+    "note": "match=1.00 at 23.14"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "13",
+    "verified": true,
+    "note": "actual=13.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "Host talking in front of camera with graphic sketch background and laptop on table, THIN & LIGHT text overlay",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "9.51",
+    "verified": true,
+    "note": "actual=9.51"
+   },
+   {
+    "owner": "str1",
+    "kind": "visual",
+    "ref": "165.5",
+    "value": "product_closeup showing '16.0 GB 45 TOPS Copilot+PC' text overlay",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.5",
+    "verified": true,
+    "note": "actual=0.5"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "388.0",
+    "value": "graphics_text segment reading '100% of sRGB, 100% of P3, 300.9 nits'",
+    "verified": true,
+    "note": "segment starts at ref"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 18,
+  "evidence_verified": 12,
+  "evidence_rate": 0.667,
+  "recs": 6,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.667,
+  "by_kind": {
+   "metric": [
+    9,
+    11
+   ],
+   "quote": [
+    0,
+    4
+   ],
+   "visual": [
+    3,
+    3
+   ]
+  }
+ }
+}

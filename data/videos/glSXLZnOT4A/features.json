@@ -1,0 +1,337 @@
+{
+ "video_id": "glSXLZnOT4A",
+ "category": "cooking",
+ "title": "Budget Friendly Casserole That Tastes Like A Million Bucks?",
+ "channel": "Cooking With Tammy",
+ "url": "https://www.youtube.com/watch?v=glSXLZnOT4A",
+ "views": 1463129,
+ "likes": null,
+ "comments": 1300,
+ "subscribers": 824000,
+ "upload_date": "20250401",
+ "full_duration": 706,
+ "is_short": false,
+ "fingerprint": {
+  "duration_s": 706.2,
+  "shots_per_min": 3.23,
+  "median_shot_s": 14.05,
+  "shot_len_cv": 0.76,
+  "pacing_trend": 0.82,
+  "hook_cuts": 2,
+  "time_to_first_word_s": 0.0,
+  "hook_wpm": 232.0,
+  "hook_text_overlay": 0.0,
+  "hook_motion": 0.77,
+  "wpm": 147.7,
+  "speech_coverage": 0.709,
+  "long_pauses_per_min": 2.97,
+  "questions_per_min": 0.42,
+  "you_rate": 2.7,
+  "loudness_db": -26.2,
+  "loudness_range_db": 26.9,
+  "energy_slope": -12.03,
+  "nonspeech_audio_share": 0.225,
+  "motion_mean": 0.0947,
+  "brightness_mean": 0.494,
+  "colorfulness_mean": 59.7,
+  "talking_head_share": 0.2,
+  "broll_share": 0.788,
+  "screen_share": 0.012,
+  "face_share": 0.235,
+  "text_overlay_share": 0.222,
+  "format_switches_per_min": 2.8,
+  "cta_count": 2,
+  "first_cta_pos": 0.582
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 20.0,
+   "cuts": 3,
+   "wpm": 237.0,
+   "loud_db": -22.4,
+   "motion": 0.078
+  },
+  {
+   "start": 20.0,
+   "end": 40.0,
+   "cuts": 1,
+   "wpm": 225.0,
+   "loud_db": -19.3,
+   "motion": 0.089
+  },
+  {
+   "start": 40.0,
+   "end": 60.0,
+   "cuts": 2,
+   "wpm": 168.0,
+   "loud_db": -21.5,
+   "motion": 0.112
+  },
+  {
+   "start": 60.0,
+   "end": 80.0,
+   "cuts": 3,
+   "wpm": 156.0,
+   "loud_db": -24.9,
+   "motion": 0.119
+  },
+  {
+   "start": 80.0,
+   "end": 100.0,
+   "cuts": 0,
+   "wpm": 159.0,
+   "loud_db": -23.7,
+   "motion": 0.121
+  },
+  {
+   "start": 100.0,
+   "end": 120.0,
+   "cuts": 1,
+   "wpm": 141.0,
+   "loud_db": -24.0,
+   "motion": 0.114
+  },
+  {
+   "start": 120.0,
+   "end": 140.0,
+   "cuts": 0,
+   "wpm": 162.0,
+   "loud_db": -22.4,
+   "motion": 0.11
+  },
+  {
+   "start": 140.0,
+   "end": 160.0,
+   "cuts": 3,
+   "wpm": 135.0,
+   "loud_db": -22.8,
+   "motion": 0.12
+  },
+  {
+   "start": 160.0,
+   "end": 180.0,
+   "cuts": 0,
+   "wpm": 180.0,
+   "loud_db": -20.4,
+   "motion": 0.112
+  },
+  {
+   "start": 180.0,
+   "end": 200.0,
+   "cuts": 2,
+   "wpm": 195.0,
+   "loud_db": -20.8,
+   "motion": 0.125
+  },
+  {
+   "start": 200.0,
+   "end": 220.0,
+   "cuts": 0,
+   "wpm": 195.0,
+   "loud_db": -20.7,
+   "motion": 0.104
+  },
+  {
+   "start": 220.0,
+   "end": 240.0,
+   "cuts": 1,
+   "wpm": 204.0,
+   "loud_db": -23.0,
+   "motion": 0.061
+  },
+  {
+   "start": 240.0,
+   "end": 260.0,
+   "cuts": 0,
+   "wpm": 228.0,
+   "loud_db": -24.1,
+   "motion": 0.1
+  },
+  {
+   "start": 260.0,
+   "end": 280.0,
+   "cuts": 1,
+   "wpm": 252.0,
+   "loud_db": -24.4,
+   "motion": 0.067
+  },
+  {
+   "start": 280.0,
+   "end": 300.0,
+   "cuts": 2,
+   "wpm": 225.0,
+   "loud_db": -24.5,
+   "motion": 0.056
+  },
+  {
+   "start": 300.0,
+   "end": 320.0,
+   "cuts": 1,
+   "wpm": 81.0,
+   "loud_db": -29.6,
+   "motion": 0.101
+  },
+  {
+   "start": 320.0,
+   "end": 340.0,
+   "cuts": 1,
+   "wpm": 156.0,
+   "loud_db": -25.3,
+   "motion": 0.082
+  },
+  {
+   "start": 340.0,
+   "end": 360.0,
+   "cuts": 1,
+   "wpm": 90.0,
+   "loud_db": -33.3,
+   "motion": 0.075
+  },
+  {
+   "start": 360.0,
+   "end": 380.0,
+   "cuts": 1,
+   "wpm": 99.0,
+   "loud_db": -30.9,
+   "motion": 0.113
+  },
+  {
+   "start": 380.0,
+   "end": 400.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -42.5,
+   "motion": 0.107
+  },
+  {
+   "start": 400.0,
+   "end": 420.0,
+   "cuts": 1,
+   "wpm": 33.0,
+   "loud_db": -36.6,
+   "motion": 0.11
+  },
+  {
+   "start": 420.0,
+   "end": 440.0,
+   "cuts": 1,
+   "wpm": 90.0,
+   "loud_db": -33.0,
+   "motion": 0.128
+  },
+  {
+   "start": 440.0,
+   "end": 460.0,
+   "cuts": 1,
+   "wpm": 126.0,
+   "loud_db": -30.3,
+   "motion": 0.097
+  },
+  {
+   "start": 460.0,
+   "end": 480.0,
+   "cuts": 3,
+   "wpm": 189.0,
+   "loud_db": -23.3,
+   "motion": 0.079
+  },
+  {
+   "start": 480.0,
+   "end": 500.0,
+   "cuts": 1,
+   "wpm": 174.0,
+   "loud_db": -24.3,
+   "motion": 0.094
+  },
+  {
+   "start": 500.0,
+   "end": 520.0,
+   "cuts": 0,
+   "wpm": 177.0,
+   "loud_db": -23.1,
+   "motion": 0.113
+  },
+  {
+   "start": 520.0,
+   "end": 540.0,
+   "cuts": 1,
+   "wpm": 51.0,
+   "loud_db": -36.0,
+   "motion": 0.09
+  },
+  {
+   "start": 540.0,
+   "end": 560.0,
+   "cuts": 1,
+   "wpm": 183.0,
+   "loud_db": -23.0,
+   "motion": 0.089
+  },
+  {
+   "start": 560.0,
+   "end": 580.0,
+   "cuts": 1,
+   "wpm": 105.0,
+   "loud_db": -30.1,
+   "motion": 0.12
+  },
+  {
+   "start": 580.0,
+   "end": 600.0,
+   "cuts": 0,
+   "wpm": 117.0,
+   "loud_db": -26.9,
+   "motion": 0.11
+  },
+  {
+   "start": 600.0,
+   "end": 620.0,
+   "cuts": 2,
+   "wpm": 150.0,
+   "loud_db": -27.5,
+   "motion": 0.115
+  },
+  {
+   "start": 620.0,
+   "end": 640.0,
+   "cuts": 1,
+   "wpm": 210.0,
+   "loud_db": -22.4,
+   "motion": 0.089
+  },
+  {
+   "start": 640.0,
+   "end": 660.0,
+   "cuts": 1,
+   "wpm": 75.0,
+   "loud_db": -34.8,
+   "motion": 0.073
+  },
+  {
+   "start": 660.0,
+   "end": 680.0,
+   "cuts": 0,
+   "wpm": 81.0,
+   "loud_db": -26.8,
+   "motion": 0.019
+  },
+  {
+   "start": 680.0,
+   "end": 700.0,
+   "cuts": 1,
+   "wpm": 165.0,
+   "loud_db": -28.8,
+   "motion": 0.037
+  },
+  {
+   "start": 700.0,
+   "end": 706.2,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -92.1,
+   "motion": 0.042
+  }
+ ],
+ "perception_done": true
+}

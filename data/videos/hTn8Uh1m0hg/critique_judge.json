@@ -1,0 +1,17 @@
+{
+ "full": {
+  "specificity": 5,
+  "accuracy": 4,
+  "actionability": 5,
+  "insight": 4
+ },
+ "baseline": {
+  "specificity": 4,
+  "accuracy": 4,
+  "actionability": 4,
+  "insight": 3
+ },
+ "winner": "full",
+ "reason": "A ties its points tightly to measured data (format_switches_per_min, face_share, text_overlay_share, the -53.7dB ending dip, broll_share vs category norm) and produces concrete, editor-ready recommendations grounded in the fingerprint. It explains WHY the construction works (high format-switching compensating for a single-scene process). A minor inaccuracy: it calls the cut-heavy pacing high but also claims 'minimal cuts' nowhere\u2014actually its summary is consistent. B is accurate and catches a nice real moment (the farfalle fumble and ambiguous dialogue), but relies almost entirely on transcript quotes with little engagement with the numeric data, and some recs ('restate ratio', 'clarify final result') are more generic content coaching than editing-specific. A is the stronger data-driven critique.",
+ "full_was": "A"
+}

@@ -1,0 +1,337 @@
+{
+ "video_id": "3B3B9eSgMV0",
+ "category": "tech_review",
+ "title": "Dell Pro Max Laptop Review (2026) \u2014 Tested, Measured, Honest #dellprecision #delllaptop",
+ "channel": "Engineering Laptops",
+ "url": "https://www.youtube.com/watch?v=3B3B9eSgMV0",
+ "views": 1002,
+ "likes": 4,
+ "comments": 3,
+ "subscribers": 4280,
+ "upload_date": "20260815",
+ "full_duration": 704,
+ "is_short": false,
+ "fingerprint": {
+  "duration_s": 703.6,
+  "shots_per_min": 2.22,
+  "median_shot_s": 22.64,
+  "shot_len_cv": 1.03,
+  "pacing_trend": 0.4,
+  "hook_cuts": 3,
+  "time_to_first_word_s": 4.24,
+  "hook_wpm": 136.0,
+  "hook_text_overlay": 1.0,
+  "hook_motion": 14.85,
+  "wpm": 179.5,
+  "speech_coverage": 0.957,
+  "long_pauses_per_min": 0.0,
+  "questions_per_min": 0.85,
+  "you_rate": 3.23,
+  "loudness_db": -20.6,
+  "loudness_range_db": 7.3,
+  "energy_slope": 0.81,
+  "nonspeech_audio_share": 0.025,
+  "motion_mean": 0.0086,
+  "brightness_mean": 0.889,
+  "colorfulness_mean": 16.3,
+  "talking_head_share": 0.0,
+  "broll_share": 0.035,
+  "screen_share": 0.965,
+  "face_share": 0.035,
+  "text_overlay_share": 0.965,
+  "format_switches_per_min": 1.28,
+  "cta_count": 7,
+  "first_cta_pos": 0.003
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 20.0,
+   "cuts": 3,
+   "wpm": 141.0,
+   "loud_db": -21.4,
+   "motion": 0.096
+  },
+  {
+   "start": 20.0,
+   "end": 40.0,
+   "cuts": 4,
+   "wpm": 198.0,
+   "loud_db": -22.8,
+   "motion": 0.051
+  },
+  {
+   "start": 40.0,
+   "end": 60.0,
+   "cuts": 4,
+   "wpm": 213.0,
+   "loud_db": -19.8,
+   "motion": 0.055
+  },
+  {
+   "start": 60.0,
+   "end": 80.0,
+   "cuts": 0,
+   "wpm": 186.0,
+   "loud_db": -20.6,
+   "motion": 0.002
+  },
+  {
+   "start": 80.0,
+   "end": 100.0,
+   "cuts": 0,
+   "wpm": 186.0,
+   "loud_db": -21.8,
+   "motion": 0.0
+  },
+  {
+   "start": 100.0,
+   "end": 120.0,
+   "cuts": 1,
+   "wpm": 180.0,
+   "loud_db": -20.5,
+   "motion": 0.004
+  },
+  {
+   "start": 120.0,
+   "end": 140.0,
+   "cuts": 1,
+   "wpm": 204.0,
+   "loud_db": -20.3,
+   "motion": 0.004
+  },
+  {
+   "start": 140.0,
+   "end": 160.0,
+   "cuts": 0,
+   "wpm": 183.0,
+   "loud_db": -21.1,
+   "motion": 0.0
+  },
+  {
+   "start": 160.0,
+   "end": 180.0,
+   "cuts": 1,
+   "wpm": 198.0,
+   "loud_db": -21.4,
+   "motion": 0.002
+  },
+  {
+   "start": 180.0,
+   "end": 200.0,
+   "cuts": 0,
+   "wpm": 174.0,
+   "loud_db": -19.2,
+   "motion": 0.0
+  },
+  {
+   "start": 200.0,
+   "end": 220.0,
+   "cuts": 1,
+   "wpm": 183.0,
+   "loud_db": -19.6,
+   "motion": 0.002
+  },
+  {
+   "start": 220.0,
+   "end": 240.0,
+   "cuts": 0,
+   "wpm": 168.0,
+   "loud_db": -20.1,
+   "motion": 0.001
+  },
+  {
+   "start": 240.0,
+   "end": 260.0,
+   "cuts": 1,
+   "wpm": 168.0,
+   "loud_db": -19.9,
+   "motion": 0.004
+  },
+  {
+   "start": 260.0,
+   "end": 280.0,
+   "cuts": 1,
+   "wpm": 150.0,
+   "loud_db": -19.8,
+   "motion": 0.004
+  },
+  {
+   "start": 280.0,
+   "end": 300.0,
+   "cuts": 0,
+   "wpm": 147.0,
+   "loud_db": -20.3,
+   "motion": 0.0
+  },
+  {
+   "start": 300.0,
+   "end": 320.0,
+   "cuts": 1,
+   "wpm": 195.0,
+   "loud_db": -20.8,
+   "motion": 0.003
+  },
+  {
+   "start": 320.0,
+   "end": 340.0,
+   "cuts": 0,
+   "wpm": 144.0,
+   "loud_db": -22.3,
+   "motion": 0.0
+  },
+  {
+   "start": 340.0,
+   "end": 360.0,
+   "cuts": 1,
+   "wpm": 195.0,
+   "loud_db": -20.8,
+   "motion": 0.003
+  },
+  {
+   "start": 360.0,
+   "end": 380.0,
+   "cuts": 0,
+   "wpm": 189.0,
+   "loud_db": -20.6,
+   "motion": 0.003
+  },
+  {
+   "start": 380.0,
+   "end": 400.0,
+   "cuts": 0,
+   "wpm": 174.0,
+   "loud_db": -20.5,
+   "motion": 0.0
+  },
+  {
+   "start": 400.0,
+   "end": 420.0,
+   "cuts": 1,
+   "wpm": 192.0,
+   "loud_db": -22.3,
+   "motion": 0.004
+  },
+  {
+   "start": 420.0,
+   "end": 440.0,
+   "cuts": 1,
+   "wpm": 174.0,
+   "loud_db": -20.7,
+   "motion": 0.004
+  },
+  {
+   "start": 440.0,
+   "end": 460.0,
+   "cuts": 0,
+   "wpm": 207.0,
+   "loud_db": -19.7,
+   "motion": 0.0
+  },
+  {
+   "start": 460.0,
+   "end": 480.0,
+   "cuts": 0,
+   "wpm": 174.0,
+   "loud_db": -21.2,
+   "motion": 0.004
+  },
+  {
+   "start": 480.0,
+   "end": 500.0,
+   "cuts": 1,
+   "wpm": 186.0,
+   "loud_db": -20.8,
+   "motion": 0.003
+  },
+  {
+   "start": 500.0,
+   "end": 520.0,
+   "cuts": 1,
+   "wpm": 195.0,
+   "loud_db": -21.1,
+   "motion": 0.003
+  },
+  {
+   "start": 520.0,
+   "end": 540.0,
+   "cuts": 0,
+   "wpm": 171.0,
+   "loud_db": -20.5,
+   "motion": 0.0
+  },
+  {
+   "start": 540.0,
+   "end": 560.0,
+   "cuts": 1,
+   "wpm": 177.0,
+   "loud_db": -20.2,
+   "motion": 0.004
+  },
+  {
+   "start": 560.0,
+   "end": 580.0,
+   "cuts": 1,
+   "wpm": 177.0,
+   "loud_db": -19.7,
+   "motion": 0.004
+  },
+  {
+   "start": 580.0,
+   "end": 600.0,
+   "cuts": 0,
+   "wpm": 144.0,
+   "loud_db": -19.0,
+   "motion": 0.0
+  },
+  {
+   "start": 600.0,
+   "end": 620.0,
+   "cuts": 0,
+   "wpm": 186.0,
+   "loud_db": -23.1,
+   "motion": 0.003
+  },
+  {
+   "start": 620.0,
+   "end": 640.0,
+   "cuts": 0,
+   "wpm": 198.0,
+   "loud_db": -21.1,
+   "motion": 0.003
+  },
+  {
+   "start": 640.0,
+   "end": 660.0,
+   "cuts": 0,
+   "wpm": 147.0,
+   "loud_db": -20.2,
+   "motion": 0.0
+  },
+  {
+   "start": 660.0,
+   "end": 680.0,
+   "cuts": 0,
+   "wpm": 198.0,
+   "loud_db": -19.7,
+   "motion": 0.003
+  },
+  {
+   "start": 680.0,
+   "end": 700.0,
+   "cuts": 1,
+   "wpm": 213.0,
+   "loud_db": -19.0,
+   "motion": 0.015
+  },
+  {
+   "start": 700.0,
+   "end": 703.6,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -15.3,
+   "motion": 0.072
+  }
+ ],
+ "perception_done": true
+}

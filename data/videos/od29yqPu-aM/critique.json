@@ -1,0 +1,360 @@
+{
+ "summary": "This is a silent, music-only recipe demo built entirely from close-up b-roll of hands preparing a semolina-apple dish, with on-screen ingredient labels replacing narration. Pacing is extremely slow and uncut (long static shots held 10+ seconds), relying on text overlays and visual steps rather than speech to carry information.",
+ "dna_tags": [
+  "silent cooking demo",
+  "text-overlay recipe steps",
+  "static b-roll shots",
+  "music-only ASMR-adjacent pacing",
+  "no-talking-head process video"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 7.8,
+   "role": "hook",
+   "label": "Teaser shot of finished batter being stirred"
+  },
+  {
+   "start_s": 7.8,
+   "end_s": 36.5,
+   "role": "intro_setup",
+   "label": "Semolina measured and poured"
+  },
+  {
+   "start_s": 36.5,
+   "end_s": 56.8,
+   "role": "main_content",
+   "label": "Blending step"
+  },
+  {
+   "start_s": 56.8,
+   "end_s": 107.8,
+   "role": "main_content",
+   "label": "Apple prep and grating"
+  },
+  {
+   "start_s": 107.8,
+   "end_s": 172.5,
+   "role": "main_content",
+   "label": "Salt and mixing with grated apple"
+  },
+  {
+   "start_s": 172.5,
+   "end_s": 221.8,
+   "role": "demonstration",
+   "label": "Heating pan, cooking setup"
+  },
+  {
+   "start_s": 221.8,
+   "end_s": 280.8,
+   "role": "demonstration",
+   "label": "Covering and cooking"
+  },
+  {
+   "start_s": 280.8,
+   "end_s": 289.2,
+   "role": "outro",
+   "label": "Final shot, no CTA"
+  }
+ ],
+ "hook": {
+  "what_happens": "Opens on a tight shot of a hand stirring a creamy batter with visible flecks of grated apple, no text or spoken intro.",
+  "promise": "Implicit visual promise of a quick, simple finished dish being made from a few ingredients.",
+  "strengths": [
+   "Shows the appealing end-texture of the batter immediately, which doubles as a visual payoff teaser",
+   "Bright, clean framing (brightness_mean 0.686, 92nd pct in cooking) makes the food legible instantly"
+  ],
+  "weaknesses": [
+   "hook_cuts=1 and hook_wpm=0 (8th pct in category) mean the opening has almost no pacing energy or verbal hook to orient a new viewer",
+   "No text overlay in first 3s (hook_text_overlay=0.0) despite most cooking videos in this corpus front-loading at least a label mid-point (0.5 median)"
+  ]
+ },
+ "devices": [
+  {
+   "name": "on-screen ingredient captions replacing narration",
+   "t_s": 8.8,
+   "quote": ""
+  },
+  {
+   "name": "silent process demonstration (no dialogue track)",
+   "t_s": 0.0,
+   "quote": ""
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Opening frame functions as a 'finished product' teaser before showing the raw ingredients, giving viewers a visual payoff upfront.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "Spoon mixing light-colored batter with grated fruit in a transparent glass bowl."
+    }
+   ]
+  },
+  {
+   "t_s": 8.8,
+   "point": "Text overlays carry recipe steps clearly in place of speech, keeping the measurement info readable and precise.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.857"
+    },
+    {
+     "kind": "visual",
+     "ref": "7.8",
+     "value": "On-screen text 'Semolina - (Sooji) 1/2 cup'"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "Visual quality is clean and bright, which keeps a text/silent format watchable.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "brightness_mean",
+     "value": "0.686"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Add a spoken or captioned hook line in the first few seconds",
+   "t_start_s": 0.0,
+   "t_end_s": 7.8,
+   "observation": "The hook has zero words per minute and no text overlay in the first 3 seconds, which is well below the cooking-category norm of having at least a label appear by the midpoint of comparable hooks.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_wpm",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "0.0"
+    }
+   ],
+   "recommendation": "Consider adding a one-line text overlay (e.g. '3-ingredient healthy breakfast') or a brief voiceover at 0-3s so viewers instantly know what's being made, since the category benchmark shows most cooking hooks include an overlay by this point.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Extremely low cut rate and pacing trend may read as static",
+   "t_start_s": 0.0,
+   "t_end_s": 289.2,
+   "observation": "shots_per_min is 2.7 (8th pct in cooking) and pacing_trend is 0.5 (8th pct), meaning the video not only cuts rarely but slows down even further in the second half compared to typical cooking videos in this corpus.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "shots_per_min",
+     "value": "2.7"
+    },
+    {
+     "kind": "metric",
+     "ref": "pacing_trend",
+     "value": "0.5"
+    }
+   ],
+   "recommendation": "Test trimming some of the longest static holds (e.g. the 50-80s and 190-240s stretches with 0 cuts) into slightly shorter segments or inserting a cutaway, to see if moderate pacing variation changes viewer engagement patterns.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "No CTA anywhere in the video",
+   "t_start_s": 280.8,
+   "t_end_s": 289.2,
+   "observation": "cta_count is 0 and first_cta_pos is null, while most cooking videos in the corpus include at least one CTA (median 1).",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "0"
+    }
+   ],
+   "recommendation": "Consider adding a simple end-card or spoken/text CTA (e.g. subscribe or try the recipe) in the final 10 seconds, since most peer videos include this structural element.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 280.8,
+   "t_in_range": true
+  },
+  {
+   "title": "Colorfulness is notably low for a food video",
+   "t_start_s": 0.0,
+   "t_end_s": 289.2,
+   "observation": "colorfulness_mean is 27.5, the 8th percentile within cooking videos, which could make the food visuals look less vibrant than comparable content.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "27.5"
+    }
+   ],
+   "recommendation": "Test a slight color/saturation grade pass or adjust white balance when filming the ingredients (especially the apple and batter) to see if a punchier palette changes how the dish reads on screen.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Loudness range is very narrow",
+   "t_start_s": 0.0,
+   "t_end_s": 289.2,
+   "observation": "loudness_range_db is 3.4 dB, the 8th percentile in the cooking category, indicating the background music/audio stays very flat throughout with little dynamic variation.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "loudness_range_db",
+     "value": "3.4"
+    }
+   ],
+   "recommendation": "Consider varying the music or adding light SFX accents (e.g. sizzle, pour sounds) at key steps like the frying at 172.5s or the apple grating at 81.8s to introduce more dynamic range, since the current track is unusually flat compared to peers.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 11,
+  "evidence_verified": 11,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    9,
+    9
+   ],
+   "quote": [
+    0,
+    0
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_wpm",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "shots_per_min",
+    "value": "2.7",
+    "verified": true,
+    "note": "actual=2.7"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "pacing_trend",
+    "value": "0.5",
+    "verified": true,
+    "note": "actual=0.5"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "27.5",
+    "verified": true,
+    "note": "actual=27.5"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "loudness_range_db",
+    "value": "3.4",
+    "verified": true,
+    "note": "actual=3.4"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "Spoon mixing light-colored batter with grated fruit in a transparent glass bowl.",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.857",
+    "verified": true,
+    "note": "actual=0.857"
+   },
+   {
+    "owner": "str1",
+    "kind": "visual",
+    "ref": "7.8",
+    "value": "On-screen text 'Semolina - (Sooji) 1/2 cup'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "brightness_mean",
+    "value": "0.686",
+    "verified": true,
+    "note": "actual=0.686"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 11,
+  "evidence_verified": 11,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    9,
+    9
+   ],
+   "quote": [
+    0,
+    0
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  }
+ }
+}

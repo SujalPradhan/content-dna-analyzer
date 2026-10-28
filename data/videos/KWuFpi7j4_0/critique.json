@@ -1,0 +1,449 @@
+{
+ "summary": "A fast-cut vertical short opens on a studio talking-head hook before pivoting into two screen-recording demos of AI tools, closing with a stacked graphics/text CTA block. Pacing, speech rate and CTA density all sit near the top of the shorts category, though a listed third tool is dropped from the script.",
+ "dna_tags": [
+  "bold-claim hook",
+  "listicle structure",
+  "studio-to-screen-recording switch",
+  "stacked end-card CTA",
+  "HUD graphic overlays"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 8.7,
+   "role": "hook",
+   "label": "Talking-head bold claim: 'Stop wasting time'"
+  },
+  {
+   "start_s": 8.7,
+   "end_s": 10.2,
+   "role": "intro_setup",
+   "label": "Graphics/text bridge ('AI NClights')"
+  },
+  {
+   "start_s": 10.2,
+   "end_s": 20.0,
+   "role": "main_content",
+   "label": "Tool 1 - ChatGPT demo (screen recording)"
+  },
+  {
+   "start_s": 20.0,
+   "end_s": 30.8,
+   "role": "main_content",
+   "label": "Tool 2 - Canva demo (screen recording)"
+  },
+  {
+   "start_s": 30.8,
+   "end_s": 41.1,
+   "role": "cta",
+   "label": "Tool 3 mention + comment/like/subscribe end card"
+  }
+ ],
+ "hook": {
+  "what_happens": "Presenter in a neon tech-studio set points at camera and states a bold claim about three AI tools, immediately followed by rapid cuts between HUD graphics.",
+  "promise": "Three AI tools that will make work faster, easier and smarter",
+  "strengths": [
+   "Immediate speech at 0.0s with no dead air",
+   "High hook_cuts (5) and elevated hook_wpm (100) relative to shorts category create urgency"
+  ],
+  "weaknesses": [
+   "No on-screen text overlay in first 3s despite category norm being mixed (hook_text_overlay=0 vs category p75=0.75)",
+   "Brightness is low (0.251) which is near the bottom of the category range, potentially limiting visibility of the hook visuals"
+  ]
+ },
+ "devices": [
+  {
+   "name": "bold_claim_hook",
+   "t_s": 0.0,
+   "quote": "Stop wasting time."
+  },
+  {
+   "name": "numbered_listicle",
+   "t_s": 11.1,
+   "quote": "First, Chat PT."
+  },
+  {
+   "name": "direct_address_you_rate",
+   "t_s": 11.1,
+   "quote": "Use it to write scripts, generate ideas"
+  },
+  {
+   "name": "engagement_question",
+   "t_s": 32.6,
+   "quote": "Which tool is your favorite?"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Zero delay to first word keeps hook immediate",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "0.0"
+    }
+   ]
+  },
+  {
+   "t_s": 11.1,
+   "point": "Speaking rate and you-rate are both notably above typical shorts, giving the demo segments a brisk, direct-address feel",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "106.7"
+    },
+    {
+     "kind": "metric",
+     "ref": "you_rate",
+     "value": "4.11"
+    }
+   ]
+  },
+  {
+   "t_s": 31.0,
+   "point": "Two explicit CTAs are packed into the closing graphics card, exceeding the shorts category median",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "2"
+    },
+    {
+     "kind": "visual",
+     "ref": "30.8",
+     "value": "Graphics/text end card listing comment, like and subscribe prompts"
+    }
+   ]
+  },
+  {
+   "t_s": 10.2,
+   "point": "Clear format switch from talking-head to screen-recording visually separates hook from tool demos",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "10.2",
+     "value": "Segment changes from graphics_text to screen_recording"
+    },
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "4.38"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Script promises three tools but only two are demonstrated before the CTA",
+   "t_start_s": 26.1,
+   "t_end_s": 32.6,
+   "observation": "The voiceover says 'Third, Catching' but no third tool name or demo is clearly delivered before pivoting straight into the engagement question and CTA.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "26.1",
+     "value": "Third, Catching. Which tool is your favorite?"
+    },
+    {
+     "kind": "visual",
+     "ref": "30.8",
+     "value": "Segment jumps directly to end-card graphics with no tool-3 screen recording"
+    }
+   ],
+   "recommendation": "Clarify or re-record the third tool name and insert a short demo clip of it (even 2-3s of screen recording) before the CTA, so the hook's promise of three tools is visibly fulfilled.",
+   "basis": "internal_inconsistency",
+   "priority": "high",
+   "t_snapped_s": 26.06,
+   "t_in_range": true
+  },
+  {
+   "title": "Long pause rate is unusually high for a fast listicle short",
+   "t_start_s": 5.0,
+   "t_end_s": 10.0,
+   "observation": "Long pauses per minute sit at the 92nd percentile for shorts, and the 5-10s bin shows a wpm drop to 36 alongside a cut to graphics text, suggesting a stall right after the hook.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "long_pauses_per_min",
+     "value": "1.46"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:5.0",
+     "value": "36.0"
+    }
+   ],
+   "recommendation": "Tighten or trim the 7.2-11.1s gap between the hook line and the ChatGPT intro so speech continuity carries the momentum established in the first 5 seconds.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 4.76,
+   "t_in_range": true
+  },
+  {
+   "title": "No text overlay in the first 3 seconds despite text-heavy ending",
+   "t_start_s": 0.0,
+   "t_end_s": 3.0,
+   "observation": "hook_text_overlay is 0 while the video later uses heavy stacked text at the CTA (text_overlay_share 0.286), indicating overlay text is reserved for the end rather than reinforcing the opening claim.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.286"
+    }
+   ],
+   "recommendation": "Test adding a short on-screen text callout (e.g. '3 AI Tools') synced to the opening line to reinforce the verbal promise visually from frame one.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "First CTA arrives relatively late within an already short runtime",
+   "t_start_s": 31.0,
+   "t_end_s": 33.2,
+   "observation": "first_cta_pos is 0.755 of runtime, lower percentile (38th) versus the shorts category median of ~0.77, but both CTAs are bunched within the final 10 seconds alongside the unresolved tool-3 mention.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.755"
+    },
+    {
+     "kind": "visual",
+     "ref": "31.0",
+     "value": "CTA moment: 'Which tool is your favorite? Comment below'"
+    }
+   ],
+   "recommendation": "Consider separating the engagement question from the subscribe/like prompt by a beat or visual cue, so the two CTAs don't feel stacked back-to-back in the same breath.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 30.8,
+   "t_in_range": true
+  },
+  {
+   "title": "Low colorfulness and brightness relative to category despite a visually dense neon-studio hook",
+   "t_start_s": 0.0,
+   "t_end_s": 8.7,
+   "observation": "colorfulness_mean (35.5) sits at the 25th percentile and brightness_mean (0.251) at 42nd for shorts, which may mute the impact of the elaborate HUD graphics shown in the opening frames.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "35.5"
+    },
+    {
+     "kind": "metric",
+     "ref": "brightness_mean",
+     "value": "0.251"
+    },
+    {
+     "kind": "visual",
+     "ref": "1.2",
+     "value": "Presenter in dark studio with glowing blue/purple HUD screens"
+    }
+   ],
+   "recommendation": "Test a brightness/saturation pass on the opening studio footage to make the neon HUD elements pop more clearly on small mobile screens.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 18,
+  "evidence_verified": 18,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    12
+   ],
+   "quote": [
+    1,
+    1
+   ],
+   "visual": [
+    5,
+    5
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "26.1",
+    "value": "Third, Catching. Which tool is your favorite?",
+    "verified": true,
+    "note": "match=1.00 at 30.48"
+   },
+   {
+    "owner": "rec0",
+    "kind": "visual",
+    "ref": "30.8",
+    "value": "Segment jumps directly to end-card graphics with no tool-3 screen recording",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "long_pauses_per_min",
+    "value": "1.46",
+    "verified": true,
+    "note": "actual=1.46"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:5.0",
+    "value": "36.0",
+    "verified": true,
+    "note": "bin={'start': 5.0, 'end': 10.0, 'cuts': 2, 'wpm': 36.0, 'loud_db': -19.9, 'motion': 0.108}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.286",
+    "verified": true,
+    "note": "actual=0.286"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.755",
+    "verified": true,
+    "note": "actual=0.755"
+   },
+   {
+    "owner": "rec3",
+    "kind": "visual",
+    "ref": "31.0",
+    "value": "CTA moment: 'Which tool is your favorite? Comment below'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "35.5",
+    "verified": true,
+    "note": "actual=35.5"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "brightness_mean",
+    "value": "0.251",
+    "verified": true,
+    "note": "actual=0.251"
+   },
+   {
+    "owner": "rec4",
+    "kind": "visual",
+    "ref": "1.2",
+    "value": "Presenter in dark studio with glowing blue/purple HUD screens",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "106.7",
+    "verified": true,
+    "note": "actual=106.7"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "you_rate",
+    "value": "4.11",
+    "verified": true,
+    "note": "actual=4.11"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "2",
+    "verified": true,
+    "note": "actual=2.0"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "30.8",
+    "value": "Graphics/text end card listing comment, like and subscribe prompts",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str3",
+    "kind": "visual",
+    "ref": "10.2",
+    "value": "Segment changes from graphics_text to screen_recording",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "4.38",
+    "verified": true,
+    "note": "actual=4.38"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 18,
+  "evidence_verified": 18,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    12
+   ],
+   "quote": [
+    1,
+    1
+   ],
+   "visual": [
+    5,
+    5
+   ]
+  }
+ }
+}

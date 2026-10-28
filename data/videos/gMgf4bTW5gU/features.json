@@ -1,0 +1,145 @@
+{
+ "video_id": "gMgf4bTW5gU",
+ "category": "shorts",
+ "title": "TORTILLA WRAP HACK  || EASY  WRAP HACK || #shorts # short #youtubeshort #short_video",
+ "channel": "Cooking Time with Inzi",
+ "url": "https://www.youtube.com/watch?v=gMgf4bTW5gU",
+ "views": 1157,
+ "likes": 101,
+ "comments": 94,
+ "subscribers": 5040,
+ "upload_date": "20210126",
+ "full_duration": 59,
+ "is_short": true,
+ "fingerprint": {
+  "duration_s": 58.7,
+  "shots_per_min": 12.26,
+  "median_shot_s": 3.12,
+  "shot_len_cv": 1.09,
+  "pacing_trend": 0.56,
+  "hook_cuts": 3,
+  "time_to_first_word_s": NaN,
+  "hook_wpm": 0.0,
+  "hook_text_overlay": 0.0,
+  "hook_motion": 0.76,
+  "wpm": 0.0,
+  "speech_coverage": 0.0,
+  "long_pauses_per_min": 0.0,
+  "questions_per_min": 0.0,
+  "you_rate": 0.0,
+  "loudness_db": -23.2,
+  "loudness_range_db": 11.2,
+  "energy_slope": 7.33,
+  "nonspeech_audio_share": 0.992,
+  "motion_mean": 0.1256,
+  "brightness_mean": 0.545,
+  "colorfulness_mean": 33.3,
+  "talking_head_share": 0.0,
+  "broll_share": 0.999,
+  "screen_share": 0.0,
+  "face_share": 0.0,
+  "text_overlay_share": 0.999,
+  "format_switches_per_min": 0.0,
+  "cta_count": 2,
+  "first_cta_pos": 0.136
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 5.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -30.9,
+   "motion": 0.089
+  },
+  {
+   "start": 5.0,
+   "end": 10.0,
+   "cuts": 2,
+   "wpm": 0.0,
+   "loud_db": -24.3,
+   "motion": 0.087
+  },
+  {
+   "start": 10.0,
+   "end": 15.0,
+   "cuts": 1,
+   "wpm": 0.0,
+   "loud_db": -24.4,
+   "motion": 0.11
+  },
+  {
+   "start": 15.0,
+   "end": 20.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -25.7,
+   "motion": 0.104
+  },
+  {
+   "start": 20.0,
+   "end": 25.0,
+   "cuts": 2,
+   "wpm": 0.0,
+   "loud_db": -23.9,
+   "motion": 0.169
+  },
+  {
+   "start": 25.0,
+   "end": 30.0,
+   "cuts": 3,
+   "wpm": 0.0,
+   "loud_db": -23.8,
+   "motion": 0.146
+  },
+  {
+   "start": 30.0,
+   "end": 35.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -22.5,
+   "motion": 0.067
+  },
+  {
+   "start": 35.0,
+   "end": 40.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -23.5,
+   "motion": 0.077
+  },
+  {
+   "start": 40.0,
+   "end": 45.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -19.3,
+   "motion": 0.113
+  },
+  {
+   "start": 45.0,
+   "end": 50.0,
+   "cuts": 1,
+   "wpm": 0.0,
+   "loud_db": -19.4,
+   "motion": 0.17
+  },
+  {
+   "start": 50.0,
+   "end": 55.0,
+   "cuts": 2,
+   "wpm": 0.0,
+   "loud_db": -19.2,
+   "motion": 0.216
+  },
+  {
+   "start": 55.0,
+   "end": 58.7,
+   "cuts": 1,
+   "wpm": 0.0,
+   "loud_db": -26.7,
+   "motion": 0.168
+  }
+ ],
+ "perception_done": true
+}

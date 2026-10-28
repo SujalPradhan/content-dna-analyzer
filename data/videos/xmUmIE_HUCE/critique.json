@@ -1,0 +1,419 @@
+{
+ "summary": "A 19-second screen-recording tutorial Short that demonstrates a single Windows keyboard-shortcut trick in real time, using rapid on-screen text captions and a continuous screencast with no cuts in visual format, face, or b-roll. Pacing is driven almost entirely by fast speech and dense on-screen text rather than by editing or visual variety.",
+ "dna_tags": [
+  "screencast tutorial",
+  "rapid-fire narration",
+  "single-trick payoff",
+  "caption-driven",
+  "shorts how-to"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 6.2,
+   "role": "hook",
+   "label": "Press Windows+R, type shell:appsfolder"
+  },
+  {
+   "start_s": 6.2,
+   "end_s": 11.9,
+   "role": "demonstration",
+   "label": "Enter opens apps folder"
+  },
+  {
+   "start_s": 11.9,
+   "end_s": 14.4,
+   "role": "payoff_reveal",
+   "label": "Explains benefit: skip start menu search"
+  },
+  {
+   "start_s": 15.0,
+   "end_s": 19.2,
+   "role": "cta",
+   "label": "Follow Murda Talk for more tips"
+  }
+ ],
+ "hook": {
+  "what_happens": "Video opens immediately on a desktop screen recording with the Run dialog already visible, and the narrator instantly states the shortcut 'Press Windows plus R' with on-screen text overlay.",
+  "promise": "A fast, hidden Windows trick to instantly access all installed apps.",
+  "strengths": [
+   "Zero delay to first word (time_to_first_word_s=0.0, pct 20 is low value meaning near-instant)",
+   "High hook_wpm (120, pct 92) creates urgency typical of tutorial shorts",
+   "Text overlay present in first 3s (hook_text_overlay=1.0, pct 83) reinforcing the spoken instruction visually"
+  ],
+  "weaknesses": [
+   "hook_motion is high relative to category (1.3, pct 92) yet motion_mean overall is very low (0.0211, pct 8), so the opening promises energy the rest of the screencast doesn't visually sustain"
+  ]
+ },
+ "devices": [
+  {
+   "name": "on-screen text reinforcement",
+   "t_s": 3.8,
+   "quote": "shell:appsfolder"
+  },
+  {
+   "name": "direct instructional address",
+   "t_s": 0.0,
+   "quote": "Press Windows plus R. Type shell.apps folder."
+  },
+  {
+   "name": "end-card subscribe CTA",
+   "t_s": 15.4,
+   "quote": "Follow Murda Talk for more amazing Windows tips and tricks."
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Immediate, no-preamble entry into the tutorial content maximizes screen_share and text_overlay_share for a shorts format.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "screen_share",
+     "value": "1.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "1.0"
+    }
+   ]
+  },
+  {
+   "t_s": 7.0,
+   "point": "Clear, benefit-driven narration right after the demonstration explains why the trick matters, reinforcing value quickly.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Instantly open a folder showing your installed Windows applications in one place."
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "Fast speaking rate and high speech coverage keep the short dense with information for its brief runtime.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "125.3"
+    },
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.781"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Add a visual pacing device within the screencast",
+   "t_start_s": 0.0,
+   "t_end_s": 19.2,
+   "observation": "The entire video is a single unbroken screen_recording segment with zero format switches and very low motion, while shots_per_min (15.66) is high mostly due to cuts, not visual variety.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "motion_mean",
+     "value": "0.0211"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "screen_recording, face_visible: false, continuous desktop capture"
+    }
+   ],
+   "recommendation": "Test inserting a brief zoom-in or cursor-highlight animation on the key folder reveal (around 6-11s) to visually punctuate the payoff moment within the screencast.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Brighten or increase contrast of the dark desktop background",
+   "t_start_s": 0.0,
+   "t_end_s": 19.2,
+   "observation": "brightness_mean is very low relative to category (0.153, pct 8), which may make the overlay text and cursor harder to track at a glance.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "brightness_mean",
+     "value": "0.153"
+    }
+   ],
+   "recommendation": "Test a lighter desktop theme or increased exposure on the recording to see if it improves on-screen readability.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "CTA arrives very late relative to short runtime",
+   "t_start_s": 15.4,
+   "t_end_s": 18.9,
+   "observation": "first_cta_pos is 0.783 of the runtime, placing the only CTA in the final ~4 seconds of a 19s short.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.783"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Follow Murda Talk for more amazing Windows tips and tricks."
+    }
+   ],
+   "recommendation": "Test moving a short verbal or on-screen channel mention earlier (e.g., overlaid during the demonstration at 7-11s) so it isn't solely dependent on viewers watching to the very end.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 15.36,
+   "t_in_range": true
+  },
+  {
+   "title": "No pause or breathing room before the trick is explained",
+   "t_start_s": 0.0,
+   "t_end_s": 6.2,
+   "observation": "long_pauses_per_min is 0.0 and the opening line immediately delivers both the key combo and the command with no setup, which some viewers may find too fast to follow since it's text-dependent.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "long_pauses_per_min",
+     "value": "0.0"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Press Windows plus R. Type shell.apps folder."
+    }
+   ],
+   "recommendation": "Test adding a brief 1-2s pause after showing 'shell:appsfolder' on screen before cutting to Enter, giving viewers time to read and replicate the step.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Single continuous shot length skews low shot variability with abrupt opening/closing cuts",
+   "t_start_s": 5.0,
+   "t_end_s": 15.0,
+   "observation": "median_shot_s is very low for its category (2.02s, pct 8) while hook_cuts (5) is high (pct 83), indicating cuts are concentrated at bins 5-15s rather than distributed, per timeline bins showing 3 cuts at 5-10s and 2 at 10-15s but 0 cuts in the first and last 5s.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "median_shot_s",
+     "value": "2.02"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:5.0",
+     "value": "3 cuts, wpm 120.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:15.0",
+     "value": "0 cuts, wpm 143.0"
+    }
+   ],
+   "recommendation": "Test redistributing a cut or caption change into the final 15-19.2s segment so the CTA section doesn't feel visually static compared to the demonstration section.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 4.64,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 17,
+  "evidence_verified": 16,
+  "evidence_rate": 0.941,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    13,
+    13
+   ],
+   "quote": [
+    2,
+    3
+   ],
+   "visual": [
+    1,
+    1
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "motion_mean",
+    "value": "0.0211",
+    "verified": true,
+    "note": "actual=0.0211"
+   },
+   {
+    "owner": "rec0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "screen_recording, face_visible: false, continuous desktop capture",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "brightness_mean",
+    "value": "0.153",
+    "verified": true,
+    "note": "actual=0.153"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.783",
+    "verified": true,
+    "note": "actual=0.783"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "Follow Murda Talk for more amazing Windows tips and tricks.",
+    "verified": true,
+    "note": "match=1.00 at 15.36"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "long_pauses_per_min",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Press Windows plus R. Type shell.apps folder.",
+    "verified": false,
+    "note": "match=0.71 at 0.0"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "median_shot_s",
+    "value": "2.02",
+    "verified": true,
+    "note": "actual=2.02"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:5.0",
+    "value": "3 cuts, wpm 120.0",
+    "verified": true,
+    "note": "bin={'start': 5.0, 'end': 10.0, 'cuts': 3, 'wpm': 120.0, 'loud_db': -14.3, 'motion': 0.04}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:15.0",
+    "value": "0 cuts, wpm 143.0",
+    "verified": true,
+    "note": "bin={'start': 15.0, 'end': 19.2, 'cuts': 0, 'wpm': 143.0, 'loud_db': -15.9, 'motion': 0.0}"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "screen_share",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Instantly open a folder showing your installed Windows applications in one place.",
+    "verified": true,
+    "note": "match=1.00 at 7.0"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "125.3",
+    "verified": true,
+    "note": "actual=125.3"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.781",
+    "verified": true,
+    "note": "actual=0.781"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 17,
+  "evidence_verified": 17,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    13,
+    13
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    1,
+    1
+   ]
+  }
+ }
+}

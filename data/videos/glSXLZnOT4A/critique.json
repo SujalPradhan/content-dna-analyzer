@@ -1,0 +1,480 @@
+{
+ "summary": "A long-form home-cooked casserole tutorial built from a rapid-fire talking-head hook followed by extended, low-cut b-roll/product-closeup cooking demonstration segments. Pacing is unusually slow in cuts-per-minute terms (long static shots during prep) while the host's speech rate swings from very fast in the hook to near-silent lulls later, and loudness decays sharply across the runtime toward a very quiet, text-card outro.",
+ "dna_tags": [
+  "slow-cut cooking demo",
+  "fast-talk hook",
+  "ingredient closeup labeling",
+  "declining-energy audio arc",
+  "mid-roll soft CTA"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 8.5,
+   "role": "hook",
+   "label": "Direct question hook + recipe promise"
+  },
+  {
+   "start_s": 8.5,
+   "end_s": 230.0,
+   "role": "demonstration",
+   "label": "Browning meat, seasoning build-up"
+  },
+  {
+   "start_s": 230.0,
+   "end_s": 301.0,
+   "role": "context",
+   "label": "Potato cubing and parboiling explanation"
+  },
+  {
+   "start_s": 301.0,
+   "end_s": 459.0,
+   "role": "demonstration",
+   "label": "Layering potatoes and meat in casserole dish"
+  },
+  {
+   "start_s": 459.0,
+   "end_s": 620.0,
+   "role": "demonstration",
+   "label": "Cream sauce, baking, cheese topping"
+  },
+  {
+   "start_s": 620.0,
+   "end_s": 651.0,
+   "role": "payoff_reveal",
+   "label": "Final baked casserole reveal"
+  },
+  {
+   "start_s": 651.0,
+   "end_s": 697.0,
+   "role": "recap",
+   "label": "Taste-test and closing recipe praise"
+  },
+  {
+   "start_s": 697.0,
+   "end_s": 706.2,
+   "role": "outro",
+   "label": "Credits/text card"
+  }
+ ],
+ "hook": {
+  "what_happens": "Host stands beside stovetop setup and asks a direct question about wanting a cheap, tasty meal, then names the dish she'll show.",
+  "promise": "A cheesy beefy potato casserole that 'tastes like a million bucks' for low cost.",
+  "strengths": [
+   "Zero delay to first word (time_to_first_word_s=0.0, pct17 in category) means no dead air before the pitch starts",
+   "Clear problem/solution framing stated in the opening line per the hook notes ('Direct problem/solution hook offering an affordable, tasty meal option')"
+  ],
+  "weaknesses": [
+   "hook_wpm is 232, pct92 in category \u2014 markedly faster delivery than typical cooking hooks (category hook_wpm range 102-139), which may make the opening line harder to absorb",
+   "hook_motion is 0.77, pct25, and hook_text_overlay is false, so the visual side of the hook is comparatively static/unsupported while the audio rushes"
+  ]
+ },
+ "devices": [
+  {
+   "name": "direct question hook",
+   "t_s": 0.0,
+   "quote": "Looking for a cheap and easy meal that tastes like a million bucks"
+  },
+  {
+   "name": "on-screen ingredient callouts",
+   "t_s": 40.0,
+   "quote": "CAUTION"
+  },
+  {
+   "name": "mid-video soft CTA",
+   "t_s": 411.0,
+   "quote": "This looks good so far definitely hit the like button"
+  },
+  {
+   "name": "reflective aside / reassurance",
+   "t_s": 120.2,
+   "quote": "It smells so good and we're not even halfway done yet"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "The hook opens with zero lead-in and an immediate value proposition, avoiding any dead air before the pitch.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "0.0"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Looking for a cheap and easy meal that tastes like a million bucks"
+    }
+   ]
+  },
+  {
+   "t_s": 40.0,
+   "point": "Product close-ups carry on-screen labels that function as a built-in ingredient list, aiding recipe clarity despite overall low text-overlay share.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "40.0",
+     "value": "product_closeup with on-screen text 'CAUTION'"
+    },
+    {
+     "kind": "visual",
+     "ref": "63.0",
+     "value": "product_closeup with on-screen text 'GARLIC PASTE'"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "High colorfulness gives the food and kitchen a vivid, appetizing look typical of top-performing cooking content in this corpus.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "59.7"
+    }
+   ]
+  },
+  {
+   "t_s": 411.0,
+   "point": "CTAs are woven naturally into narration beats rather than feeling bolted on, occurring right after a visual payoff moment.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "This looks good so far definitely hit the like button"
+    },
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "2"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Hook delivery speed is an outlier",
+   "t_start_s": 0.0,
+   "t_end_s": 8.5,
+   "observation": "The opening 15s is delivered at 232 wpm, far above the cooking-category range (p25-p75 \u2248102-139 wpm), while hook_motion is also below category median, meaning fast speech isn't matched by dynamic visuals.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_wpm",
+     "value": "232.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "0.77"
+    }
+   ],
+   "recommendation": "Test slowing the opening line pace slightly or adding a visual cutaway/zoom during the first 8s so the fast delivery is matched by motion, since speech and visual energy are currently mismatched.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Very long median shot length vs category",
+   "t_start_s": 117.2,
+   "t_end_s": 150.2,
+   "observation": "Median shot length is 14.05s (pct92 in cooking category) and shots_per_min is 3.23 (pct25), with some single product-closeup shots held for over 30s (e.g., 117.2-150.2s).",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "median_shot_s",
+     "value": "14.05"
+    },
+    {
+     "kind": "visual",
+     "ref": "117.2",
+     "value": "product_closeup held from 117.2s to 150.2s with text 'CAUTION'"
+    }
+   ],
+   "recommendation": "Consider breaking the longest static holds (like the 117-150s segment) with a cutaway to hands, pan, or reaction shot to vary visual rhythm during long narration stretches.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 117.6,
+   "t_in_range": true
+  },
+  {
+   "title": "Audio energy declines sharply and dips to near-silence",
+   "t_start_s": 380.0,
+   "t_end_s": 706.2,
+   "observation": "energy_slope is -12.03 (pct8, a steep downward trend), and multiple bins show loudness falling to -42.5dB (380-400s), -36.6dB (400-420s), -36dB (520-540s) and -92.1dB at the very end (700-706.2s).",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "-12.03"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:380.0",
+     "value": "loud_db: -42.5"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:700.0",
+     "value": "loud_db: -92.1"
+    }
+   ],
+   "recommendation": "Add a low-level music bed or normalize loudness during the quiet mid-video working segments (e.g., 380-420s, 520-540s) and the silent outro card, so the audio doesn't feel like it drops out.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "high",
+   "t_snapped_s": 378.94,
+   "t_in_range": true
+  },
+  {
+   "title": "First CTA lands much earlier than category norm",
+   "t_start_s": 411.0,
+   "t_end_s": 411.0,
+   "observation": "first_cta_pos is 0.582 (pct12 in cooking category), whereas cooking videos in the corpus typically place the first CTA near the end (p25-p75 \u22480.856-0.983), since the dish isn't finished until much later.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.582"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "This looks good so far definitely hit the like button"
+    }
+   ],
+   "recommendation": "If a mid-video engagement ask is desired, consider timing it closer to a stronger visual payoff (e.g., near the sauce-pour or bake-reveal) rather than mid-assembly, to align the ask with a more compelling on-screen moment.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 411.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Low text-overlay coverage for a recipe video",
+   "t_start_s": 539.0,
+   "t_end_s": 629.0,
+   "observation": "text_overlay_share is 0.222 (pct25 in category, well below typical cooking values of 0.356-0.928), yet key specifics like oven temperature are only spoken, not shown on screen (e.g., '375 degrees' at 539.7s and the later adjustment to 350 at 629s).",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.222"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Preheat your oven to 375 degrees fahrenheit"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Adjusted the heat in the oven from 375 to 350"
+    }
+   ],
+   "recommendation": "Add on-screen text callouts for critical numbers (oven temp, bake times, measurements) at the moments they're spoken, so viewers who skim or mute audio can still follow the recipe.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 539.72,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 19,
+  "evidence_verified": 19,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    11,
+    11
+   ],
+   "quote": [
+    5,
+    5
+   ],
+   "visual": [
+    3,
+    3
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_wpm",
+    "value": "232.0",
+    "verified": true,
+    "note": "actual=232.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "0.77",
+    "verified": true,
+    "note": "actual=0.77"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "median_shot_s",
+    "value": "14.05",
+    "verified": true,
+    "note": "actual=14.05"
+   },
+   {
+    "owner": "rec1",
+    "kind": "visual",
+    "ref": "117.2",
+    "value": "product_closeup held from 117.2s to 150.2s with text 'CAUTION'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "-12.03",
+    "verified": true,
+    "note": "actual=-12.03"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:380.0",
+    "value": "loud_db: -42.5",
+    "verified": true,
+    "note": "bin={'start': 380.0, 'end': 400.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -42.5, 'motion': 0.107}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:700.0",
+    "value": "loud_db: -92.1",
+    "verified": true,
+    "note": "bin={'start': 700.0, 'end': 706.2, 'cuts': 0, 'wpm': 0.0, 'loud_db': -92.1, 'motion': 0.042}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.582",
+    "verified": true,
+    "note": "actual=0.582"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "This looks good so far definitely hit the like button",
+    "verified": true,
+    "note": "match=1.00 at 408.74"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.222",
+    "verified": true,
+    "note": "actual=0.222"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "",
+    "value": "Preheat your oven to 375 degrees fahrenheit",
+    "verified": true,
+    "note": "match=1.00 at 539.72"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "",
+    "value": "Adjusted the heat in the oven from 375 to 350",
+    "verified": true,
+    "note": "match=1.00 at 628.96"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Looking for a cheap and easy meal that tastes like a million bucks",
+    "verified": true,
+    "note": "match=1.00 at 0.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "visual",
+    "ref": "40.0",
+    "value": "product_closeup with on-screen text 'CAUTION'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str1",
+    "kind": "visual",
+    "ref": "63.0",
+    "value": "product_closeup with on-screen text 'GARLIC PASTE'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "59.7",
+    "verified": true,
+    "note": "actual=59.7"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "This looks good so far definitely hit the like button",
+    "verified": true,
+    "note": "match=1.00 at 408.74"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "2",
+    "verified": true,
+    "note": "actual=2.0"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 19,
+  "evidence_verified": 17,
+  "evidence_rate": 0.895,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    9,
+    11
+   ],
+   "quote": [
+    5,
+    5
+   ],
+   "visual": [
+    3,
+    3
+   ]
+  }
+ }
+}

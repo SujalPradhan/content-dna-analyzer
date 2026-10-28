@@ -1,0 +1,462 @@
+{
+ "summary": "A 30-second cinematic b-roll montage carries a single uninterrupted voiceover monologue (story cold-open) while a persistent 'Scan to find your future home' text overlay and logo watermark run almost the entire runtime, with branding and URL copy appearing only in the final 4 seconds. Cuts are comparatively slow and steady for the category, audio energy and loudness actually dip rather than build toward the close, and the piece avoids direct address entirely in favor of third-person narrative framing.",
+ "dna_tags": [
+  "story cold-open",
+  "cinematic b-roll montage",
+  "persistent CTA overlay",
+  "slow-cut emotional voiceover",
+  "declining energy arc"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 5.0,
+   "role": "hook",
+   "label": "Dashboard cold open, 'I wake up real early every day'"
+  },
+  {
+   "start_s": 5.0,
+   "end_s": 10.0,
+   "role": "context",
+   "label": "Commute visuals, hand reaching out truck window"
+  },
+  {
+   "start_s": 10.0,
+   "end_s": 20.0,
+   "role": "main_content",
+   "label": "Truck on road, porch scene, 'piece of the American dream'"
+  },
+  {
+   "start_s": 20.0,
+   "end_s": 26.1,
+   "role": "payoff_reveal",
+   "label": "Emotional payoff lines, 'I do think that I deserve that'"
+  },
+  {
+   "start_s": 26.1,
+   "end_s": 30.1,
+   "role": "cta",
+   "label": "Logo, URL, and scan-to-find-home graphic"
+  }
+ ],
+ "hook": {
+  "what_happens": "A blurry dashboard/mirror shot of someone starting an early drive opens the ad while a persistent text overlay reading 'Scan to find your future home' is already visible, and the first spoken line is 'I wake up real early every day.'",
+  "promise": "Implies a relatable hard-working-person narrative that will resolve into a home-ownership offer.",
+  "strengths": [
+   "Text overlay is present from frame one (hook_text_overlay=1.0, pct 92 vs category), reinforcing the CTA before the story even lands",
+   "Cold-open story device paired with intimate, unglamorous visuals (blurry dash, mirror) signals authenticity rather than a typical product-first ad open"
+  ],
+  "weaknesses": [
+   "hook_motion is 0.92, at the 25th percentile for ads, meaning the opening has less visual energy than most ads in this category despite using driving/vehicle imagery",
+   "hook_cuts is 7, at only the 25th percentile for ad hooks, where faster cutting is more typical in the first 15s"
+  ]
+ },
+ "devices": [
+  {
+   "name": "cold-open personal narrative",
+   "t_s": 1.4,
+   "quote": "I wake up real early every day."
+  },
+  {
+   "name": "persistent on-screen CTA text",
+   "t_s": 0.0,
+   "quote": "Scan to find your future home:"
+  },
+  {
+   "name": "emotional thesis statement",
+   "t_s": 20.0,
+   "quote": "all people like me want is a little piece of the American dream"
+  },
+  {
+   "name": "end-card branding stack",
+   "t_s": 26.1,
+   "quote": ""
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "On-screen CTA text is sustained across nearly the entire runtime, giving viewers a constant conversion path rather than a single late prompt.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "1.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "1.0"
+    }
+   ]
+  },
+  {
+   "t_s": 1.4,
+   "point": "Speech coverage is almost total, letting the voiceover monologue carry the entire emotional arc without dead air.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.87"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "I wake up real early every day. I drive a real long time to work"
+    }
+   ]
+  },
+  {
+   "t_s": 11.2,
+   "point": "Heavy reliance on cinematic b-roll (truck on road through fields, porch scene) rather than talking-head delivery keeps the visual register aspirational and story-driven.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "broll_share",
+     "value": "0.867"
+    },
+    {
+     "kind": "visual",
+     "ref": "11.2",
+     "value": "Black pickup truck driving along a road beside green fields"
+    }
+   ]
+  },
+  {
+   "t_s": 20.0,
+   "point": "The script lands a clear, concise thesis statement near the end that ties the story to the brand promise.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "That's it. Nothing complicated. Just something beautiful that I can provide for my family."
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Audio energy dips right as the CTA/branding appears",
+   "t_start_s": 25.0,
+   "t_end_s": 30.1,
+   "observation": "Loudness and energy trend downward across the spot rather than building, with the final bin (25-30s, containing the branding/CTA) matching the quietest opening bin.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "-1.19"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:25.0",
+     "value": "loud_db: -28.3"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:0.0",
+     "value": "loud_db: -28.3"
+    }
+   ],
+   "recommendation": "Test adding a subtle musical swell or loudness lift under the final branding card (26.1-30.1s) so the CTA moment doesn't read as quieter than the story portions.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 24.92,
+   "t_in_range": true
+  },
+  {
+   "title": "No direct address despite a direct-response CTA",
+   "t_start_s": 0.0,
+   "t_end_s": 30.1,
+   "observation": "The voiceover uses first-person and third-person framing ('I', 'people like me') throughout but never addresses the viewer directly.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "you_rate",
+     "value": "0.0"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "all I want, all people like me want is a little piece of the American dream"
+    }
+   ],
+   "recommendation": "Consider testing one direct-address line (e.g. 'this could be your dream too') near the payoff around 20-25s to bridge the personal story to the viewer's own decision.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Cutting rate is slower than typical for the ad category",
+   "t_start_s": 0.0,
+   "t_end_s": 30.1,
+   "observation": "Shots per minute sit at the 25th percentile for ads while median shot length (1.99s) sits at the 92nd percentile, meaning this spot holds shots noticeably longer than most ads in the corpus.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "shots_per_min",
+     "value": "25.92"
+    },
+    {
+     "kind": "metric",
+     "ref": "median_shot_s",
+     "value": "1.99"
+    }
+   ],
+   "recommendation": "If a punchier feel is desired, test trimming 1-2 of the longer b-roll shots (e.g. the 11-15s highway driving shot) to tighten pacing; if the slower, cinematic feel is intentional for brand tone, no change is needed.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "CTA text overlay present for the entire spot before any branding appears",
+   "t_start_s": 0.0,
+   "t_end_s": 26.1,
+   "observation": "The 'Scan to find your future home' text is on screen from 0s, 26 seconds before the company name/URL ever appears, while first_cta_pos is measured at 0.0 (the 10th percentile for ads, where most ads place their first CTA much later).",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "26.1",
+     "value": "UMH PROPERTIES, INC www.umh.com/PA Scan to find your future home:"
+    }
+   ],
+   "recommendation": "Test pairing the scan prompt with the brand name earlier (e.g. at 5-10s) so viewers who stop watching before the 26s mark still see who is behind the offer.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Hook motion and cut rate lag the category despite a driving-themed opening",
+   "t_start_s": 0.0,
+   "t_end_s": 15.0,
+   "observation": "hook_motion (0.92) and hook_cuts (7) both sit at the 25th percentile for ads even though the opening sequence is built around vehicle movement.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "0.92"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "7"
+    },
+    {
+     "kind": "visual",
+     "ref": "1.2",
+     "value": "Blurry close-up of a car dashboard/speedometer at night"
+    }
+   ],
+   "recommendation": "Consider testing a slightly faster or more motion-forward opening cut (e.g. trimming the static dashboard close-up) to see if it changes viewer engagement in the first few seconds.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 19,
+  "evidence_verified": 18,
+  "evidence_rate": 0.947,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    13,
+    13
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    2,
+    3
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "-1.19",
+    "verified": true,
+    "note": "actual=-1.19"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:25.0",
+    "value": "loud_db: -28.3",
+    "verified": true,
+    "note": "bin={'start': 25.0, 'end': 30.0, 'cuts': 1, 'wpm': 144.0, 'loud_db': -28.3, 'motion': 0.116}"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:0.0",
+    "value": "loud_db: -28.3",
+    "verified": true,
+    "note": "bin={'start': 0.0, 'end': 5.0, 'cuts': 3, 'wpm': 156.0, 'loud_db': -28.3, 'motion': 0.103}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "you_rate",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "all I want, all people like me want is a little piece of the American dream",
+    "verified": true,
+    "note": "match=1.00 at 12.26"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "shots_per_min",
+    "value": "25.92",
+    "verified": true,
+    "note": "actual=25.92"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "median_shot_s",
+    "value": "1.99",
+    "verified": true,
+    "note": "actual=1.99"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "visual",
+    "ref": "26.1",
+    "value": "UMH PROPERTIES, INC www.umh.com/PA Scan to find your future home:",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "0.92",
+    "verified": true,
+    "note": "actual=0.92"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "7",
+    "verified": true,
+    "note": "actual=7.0"
+   },
+   {
+    "owner": "rec4",
+    "kind": "visual",
+    "ref": "1.2",
+    "value": "Blurry close-up of a car dashboard/speedometer at night",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.87",
+    "verified": true,
+    "note": "actual=0.87"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "I wake up real early every day. I drive a real long time to work",
+    "verified": true,
+    "note": "match=1.00 at 1.38"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "broll_share",
+    "value": "0.867",
+    "verified": true,
+    "note": "actual=0.867"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "11.2",
+    "value": "Black pickup truck driving along a road beside green fields",
+    "verified": false,
+    "note": "no segment at ref"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "That's it. Nothing complicated. Just something beautiful that I can provide for my family.",
+    "verified": true,
+    "note": "match=1.00 at 18.1"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 19,
+  "evidence_verified": 18,
+  "evidence_rate": 0.947,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    13,
+    13
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    2,
+    3
+   ]
+  }
+ }
+}

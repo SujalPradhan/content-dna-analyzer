@@ -1,0 +1,444 @@
+{
+ "summary": "This is a static, home-shot tech review built almost entirely from extended, locked-down product-closeup shots (broll_share 0.916) bookended by a short talking-head hook and outro, with very few cuts (2.18 shots/min) and heavy reliance on long pauses rather than narration to carry pacing. Audio is loud but wildly uneven (loudness_range_db 22.3, energy_slope -10.75) and speech coverage is thin (35%), giving the video a slow, meandering rhythm that decelerates further as it runs (pacing_trend 0.38).",
+ "dna_tags": [
+  "single-shot unboxing",
+  "personal-trust cold open",
+  "low-cut product closeup demo",
+  "sparse narration with long pauses",
+  "declining energy arc"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 20.9,
+   "role": "hook",
+   "label": "Cold-open personal story about ordering the laptop"
+  },
+  {
+   "start_s": 20.9,
+   "end_s": 63.9,
+   "role": "context",
+   "label": "Sponsorship disclosure and first laptop reveal"
+  },
+  {
+   "start_s": 63.9,
+   "end_s": 145.8,
+   "role": "demonstration",
+   "label": "Physical unboxing and surface inspection"
+  },
+  {
+   "start_s": 145.8,
+   "end_s": 219.9,
+   "role": "main_content",
+   "label": "Detailed laptop evaluation (screen, ports, build quality)"
+  },
+  {
+   "start_s": 219.9,
+   "end_s": 242.7,
+   "role": "recap",
+   "label": "Verdict and price comment prompt"
+  },
+  {
+   "start_s": 242.7,
+   "end_s": 248.1,
+   "role": "outro",
+   "label": "Thanks-for-watching text card"
+  }
+ ],
+ "hook": {
+  "what_happens": "Host speaks directly to camera telling a personal anecdote about ordering a laptop from Cashify two days earlier, promising a review of whether it's worth ordering from.",
+  "promise": "An honest, non-sponsored review of a Cashify refurbished laptop to help viewers decide if they should order one.",
+  "strengths": [
+   "Opens with a concrete personal stake ('do din pehle maine order kiya tha') rather than generic intro, which gives immediate narrative hook",
+   "Explicitly states the video is not sponsored/paid, which can build viewer trust early"
+  ],
+  "weaknesses": [
+   "hook_cuts is 0 and hook_motion is 0.55, both at the 8th percentile for tech_review, meaning the opening 15s is visually static with no edit energy compared to peers",
+   "No on-screen text in the first 3s (hook_text_overlay=0), missing a common reinforcement of the promise/title for viewers who skip audio"
+  ]
+ },
+ "devices": [
+  {
+   "name": "cold-open personal story",
+   "t_s": 0.0,
+   "quote": "\u0926\u094b \u0926\u093f\u0928 \u092a\u0939\u0932\u0947 \u092e\u0948\u0902\u0928\u0947 \u0915\u0948\u0936\u0940\u092b\u093e\u0908 \u0938\u0947 \u090f\u0915 \u0932\u0947\u092a\u094d\u091f\u0949\u092a \u0913\u0921\u0930 \u0915\u093f\u092f\u093e \u0925\u093e"
+  },
+  {
+   "name": "sponsorship disclosure for trust",
+   "t_s": 32.6,
+   "quote": "\u0915\u094b\u0908 \u092f\u0947 \u092e\u0948\u0902 \u0915\u094b\u0908 \u0938\u094d\u092a\u0949\u0902\u0938\u0930 \u0935\u0940\u0921\u093f\u092f\u094b \u0928\u0939\u0940\u0902 \u0939\u0948"
+  },
+  {
+   "name": "direct comment call-to-action",
+   "t_s": 175.2,
+   "quote": "\u092e\u0941\u091d\u0947 \u0915\u092e\u0947\u0902\u091f \u0915\u0930\u0915\u0947 \u092c\u0924\u093e\u0928\u093e"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Hook uses a personal, stakes-based cold open instead of generic channel intro, giving viewers an immediate reason to keep watching.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u0926\u094b \u0926\u093f\u0928 \u092a\u0939\u0932\u0947 \u092e\u0948\u0902\u0928\u0947 \u0915\u0948\u0936\u0940\u092b\u093e\u0908 \u0938\u0947 \u090f\u0915 \u0932\u0947\u092a\u094d\u091f\u0949\u092a \u0913\u0921\u0930 \u0915\u093f\u092f\u093e \u0925\u093e"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "Host speaking directly to camera in a room setup, no text overlay"
+    }
+   ]
+  },
+  {
+   "t_s": 32.6,
+   "point": "Explicit disclosure that the video is not a paid/sponsored placement builds credibility for a buying-decision review.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u0915\u094b\u0908 \u092f\u0947 \u092e\u0948\u0902 \u0915\u094b\u0908 \u0938\u094d\u092a\u0949\u0902\u0938\u0930 \u0935\u0940\u0921\u093f\u092f\u094b \u0928\u0939\u0940\u0902 \u0939\u0948"
+    }
+   ]
+  },
+  {
+   "t_s": 63.9,
+   "point": "The video leans heavily into close-up product demonstration rather than face time, matching the 'real unboxing' promise in the title.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "broll_share",
+     "value": "0.916"
+    },
+    {
+     "kind": "visual",
+     "ref": "63.9",
+     "value": "product_closeup, face not visible"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Add visual energy to the static hook",
+   "t_start_s": 0.0,
+   "t_end_s": 20.9,
+   "observation": "The first 15-20s has zero cuts and motion well below category norms, even though hook_wpm (160) shows the host is actually talking fast \u2014 the visuals don't match the verbal energy.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "0"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "0.55"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_wpm",
+     "value": "160.0"
+    }
+   ],
+   "recommendation": "Test cutting to a quick product insert or close-up within the first 10s to visually match the pace of the spoken hook, since this video sits at the 8th percentile for hook cuts and hook motion in its category.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Tighten the long silent stretches",
+   "t_start_s": 145.8,
+   "t_end_s": 219.9,
+   "observation": "Several bins in the main evaluation section show 0 wpm with dropping loudness (e.g., 150-160s at -31.4dB, 190-200s at -33.1dB), and long_pauses_per_min (4.11) sits at the 92nd percentile for the category.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "long_pauses_per_min",
+     "value": "4.11"
+    },
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.353"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:150.0",
+     "value": "wpm 0.0, loud_db -31.4"
+    }
+   ],
+   "recommendation": "Trim or compress the silent dead-air segments around 150-160s and 190-200s, or add narration/text to fill them, since speech coverage here is extremely low versus peer tech reviews.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "high",
+   "t_snapped_s": 145.8,
+   "t_in_range": true
+  },
+  {
+   "title": "Normalize wildly swinging loudness",
+   "t_start_s": 0.0,
+   "t_end_s": 248.1,
+   "observation": "Loudness ranges from about -11dB in the opening bins to -37dB by the end, with loudness_range_db at 22.3 and a steep negative energy_slope of -10.75, both at extreme percentiles for the category.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "loudness_range_db",
+     "value": "22.3"
+    },
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "-10.75"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:240.0",
+     "value": "loud_db -37.3"
+    }
+   ],
+   "recommendation": "Apply audio leveling/compression in post so the final segments aren't dramatically quieter than the opening, improving listening consistency.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "high",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Reconsider early subscribe popup placement",
+   "t_start_s": 23.2,
+   "t_end_s": 23.2,
+   "observation": "The first CTA (subscribe popup) appears at 9% of runtime, before any product content has been shown, while first_cta_pos sits at the 25th percentile for tech_review (category median is closer to 29%).",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.094"
+    },
+    {
+     "kind": "visual",
+     "ref": "23.2",
+     "value": "Subscribe popup animation"
+    }
+   ],
+   "recommendation": "Test moving the subscribe prompt slightly later, after the product reveal, so it doesn't interrupt the credibility-building disclosure that follows at 32.6s.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 23.2,
+   "t_in_range": true
+  },
+  {
+   "title": "Add on-screen text for specs/price",
+   "t_start_s": 63.9,
+   "t_end_s": 219.9,
+   "observation": "text_overlay_share is only 0.022 (8th percentile for tech_review) even though the host promises price/spec details verbally, including asking viewers to comment for pricing at 175.7s.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.022"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u092e\u0948\u0902 \u0906\u092a\u0915\u094b \u092c\u0924\u093e \u0926\u0942\u0901\u0917\u093e \u0907\u0938\u0915\u093e \u092a\u094d\u0930\u093e\u0907\u0938 \u0915\u093f\u0924\u0928\u093e"
+    }
+   ],
+   "recommendation": "Overlay key specs (price, condition grade, warranty) as on-screen text during the product-closeup segments so viewers aren't solely dependent on audio for critical buying details.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 63.53,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 18,
+  "evidence_verified": 17,
+  "evidence_rate": 0.944,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    12
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    2,
+    3
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "0.55",
+    "verified": true,
+    "note": "actual=0.55"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_wpm",
+    "value": "160.0",
+    "verified": true,
+    "note": "actual=160.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "long_pauses_per_min",
+    "value": "4.11",
+    "verified": true,
+    "note": "actual=4.11"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.353",
+    "verified": true,
+    "note": "actual=0.353"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:150.0",
+    "value": "wpm 0.0, loud_db -31.4",
+    "verified": true,
+    "note": "bin={'start': 150.0, 'end': 160.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -31.4, 'motion': 0.08}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "loudness_range_db",
+    "value": "22.3",
+    "verified": true,
+    "note": "actual=22.3"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "-10.75",
+    "verified": true,
+    "note": "actual=-10.75"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:240.0",
+    "value": "loud_db -37.3",
+    "verified": true,
+    "note": "bin={'start': 240.0, 'end': 248.1, 'cuts': 1, 'wpm': 163.0, 'loud_db': -37.3, 'motion': 0.154}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.094",
+    "verified": true,
+    "note": "actual=0.094"
+   },
+   {
+    "owner": "rec3",
+    "kind": "visual",
+    "ref": "23.2",
+    "value": "Subscribe popup animation",
+    "verified": false,
+    "note": "no segment at ref"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.022",
+    "verified": true,
+    "note": "actual=0.022"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u092e\u0948\u0902 \u0906\u092a\u0915\u094b \u092c\u0924\u093e \u0926\u0942\u0901\u0917\u093e \u0907\u0938\u0915\u093e \u092a\u094d\u0930\u093e\u0907\u0938 \u0915\u093f\u0924\u0928\u093e",
+    "verified": true,
+    "note": "match=1.00 at 176.94"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u0926\u094b \u0926\u093f\u0928 \u092a\u0939\u0932\u0947 \u092e\u0948\u0902\u0928\u0947 \u0915\u0948\u0936\u0940\u092b\u093e\u0908 \u0938\u0947 \u090f\u0915 \u0932\u0947\u092a\u094d\u091f\u0949\u092a \u0913\u0921\u0930 \u0915\u093f\u092f\u093e \u0925\u093e",
+    "verified": true,
+    "note": "match=1.00 at 0.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "Host speaking directly to camera in a room setup, no text overlay",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u0915\u094b\u0908 \u092f\u0947 \u092e\u0948\u0902 \u0915\u094b\u0908 \u0938\u094d\u092a\u0949\u0902\u0938\u0930 \u0935\u0940\u0921\u093f\u092f\u094b \u0928\u0939\u0940\u0902 \u0939\u0948",
+    "verified": true,
+    "note": "match=1.00 at 32.56"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "broll_share",
+    "value": "0.916",
+    "verified": true,
+    "note": "actual=0.916"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "63.9",
+    "value": "product_closeup, face not visible",
+    "verified": true,
+    "note": "segment starts at ref"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 18,
+  "evidence_verified": 12,
+  "evidence_rate": 0.667,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    10,
+    12
+   ],
+   "quote": [
+    0,
+    3
+   ],
+   "visual": [
+    2,
+    3
+   ]
+  }
+ }
+}

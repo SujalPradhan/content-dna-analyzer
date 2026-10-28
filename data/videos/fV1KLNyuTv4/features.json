@@ -1,0 +1,369 @@
+{
+ "video_id": "fV1KLNyuTv4",
+ "category": "explainer",
+ "title": "How Does a Mobile Network Work? Explained: GSM, LTE, 5G & the Journey of a Signal!",
+ "channel": "WebMaxi ENG",
+ "url": "https://www.youtube.com/watch?v=fV1KLNyuTv4",
+ "views": 4061,
+ "likes": 48,
+ "comments": 4,
+ "subscribers": 1910,
+ "upload_date": "20251018",
+ "full_duration": 798,
+ "is_short": false,
+ "fingerprint": {
+  "duration_s": 798.4,
+  "shots_per_min": 10.15,
+  "median_shot_s": 5.63,
+  "shot_len_cv": 0.89,
+  "pacing_trend": 1.21,
+  "hook_cuts": 1,
+  "time_to_first_word_s": 0.0,
+  "hook_wpm": 156.0,
+  "hook_text_overlay": 0.0,
+  "hook_motion": 0.82,
+  "wpm": 137.7,
+  "speech_coverage": 0.826,
+  "long_pauses_per_min": 0.0,
+  "questions_per_min": 0.15,
+  "you_rate": 2.95,
+  "loudness_db": -20.3,
+  "loudness_range_db": 14.3,
+  "energy_slope": 0.25,
+  "nonspeech_audio_share": 0.078,
+  "motion_mean": 0.0583,
+  "brightness_mean": 0.493,
+  "colorfulness_mean": 36.2,
+  "talking_head_share": 0.0,
+  "broll_share": 0.186,
+  "screen_share": 0.803,
+  "face_share": 0.085,
+  "text_overlay_share": 0.397,
+  "format_switches_per_min": 4.81,
+  "cta_count": 0,
+  "first_cta_pos": NaN
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 20.0,
+   "cuts": 2,
+   "wpm": 153.0,
+   "loud_db": -19.7,
+   "motion": 0.056
+  },
+  {
+   "start": 20.0,
+   "end": 40.0,
+   "cuts": 3,
+   "wpm": 138.0,
+   "loud_db": -20.9,
+   "motion": 0.052
+  },
+  {
+   "start": 40.0,
+   "end": 60.0,
+   "cuts": 3,
+   "wpm": 168.0,
+   "loud_db": -20.4,
+   "motion": 0.088
+  },
+  {
+   "start": 60.0,
+   "end": 80.0,
+   "cuts": 5,
+   "wpm": 135.0,
+   "loud_db": -20.4,
+   "motion": 0.038
+  },
+  {
+   "start": 80.0,
+   "end": 100.0,
+   "cuts": 0,
+   "wpm": 132.0,
+   "loud_db": -20.2,
+   "motion": 0.009
+  },
+  {
+   "start": 100.0,
+   "end": 120.0,
+   "cuts": 1,
+   "wpm": 147.0,
+   "loud_db": -20.9,
+   "motion": 0.004
+  },
+  {
+   "start": 120.0,
+   "end": 140.0,
+   "cuts": 3,
+   "wpm": 141.0,
+   "loud_db": -20.9,
+   "motion": 0.065
+  },
+  {
+   "start": 140.0,
+   "end": 160.0,
+   "cuts": 3,
+   "wpm": 165.0,
+   "loud_db": -19.8,
+   "motion": 0.08
+  },
+  {
+   "start": 160.0,
+   "end": 180.0,
+   "cuts": 5,
+   "wpm": 150.0,
+   "loud_db": -20.7,
+   "motion": 0.135
+  },
+  {
+   "start": 180.0,
+   "end": 200.0,
+   "cuts": 0,
+   "wpm": 144.0,
+   "loud_db": -19.2,
+   "motion": 0.0
+  },
+  {
+   "start": 200.0,
+   "end": 220.0,
+   "cuts": 2,
+   "wpm": 135.0,
+   "loud_db": -18.9,
+   "motion": 0.048
+  },
+  {
+   "start": 220.0,
+   "end": 240.0,
+   "cuts": 3,
+   "wpm": 141.0,
+   "loud_db": -21.1,
+   "motion": 0.129
+  },
+  {
+   "start": 240.0,
+   "end": 260.0,
+   "cuts": 2,
+   "wpm": 126.0,
+   "loud_db": -20.6,
+   "motion": 0.007
+  },
+  {
+   "start": 260.0,
+   "end": 280.0,
+   "cuts": 3,
+   "wpm": 138.0,
+   "loud_db": -20.8,
+   "motion": 0.072
+  },
+  {
+   "start": 280.0,
+   "end": 300.0,
+   "cuts": 2,
+   "wpm": 114.0,
+   "loud_db": -21.6,
+   "motion": 0.027
+  },
+  {
+   "start": 300.0,
+   "end": 320.0,
+   "cuts": 4,
+   "wpm": 129.0,
+   "loud_db": -20.4,
+   "motion": 0.042
+  },
+  {
+   "start": 320.0,
+   "end": 340.0,
+   "cuts": 1,
+   "wpm": 135.0,
+   "loud_db": -20.4,
+   "motion": 0.024
+  },
+  {
+   "start": 340.0,
+   "end": 360.0,
+   "cuts": 3,
+   "wpm": 141.0,
+   "loud_db": -20.9,
+   "motion": 0.067
+  },
+  {
+   "start": 360.0,
+   "end": 380.0,
+   "cuts": 3,
+   "wpm": 141.0,
+   "loud_db": -20.3,
+   "motion": 0.063
+  },
+  {
+   "start": 380.0,
+   "end": 400.0,
+   "cuts": 16,
+   "wpm": 135.0,
+   "loud_db": -19.7,
+   "motion": 0.065
+  },
+  {
+   "start": 400.0,
+   "end": 420.0,
+   "cuts": 18,
+   "wpm": 129.0,
+   "loud_db": -20.1,
+   "motion": 0.109
+  },
+  {
+   "start": 420.0,
+   "end": 440.0,
+   "cuts": 2,
+   "wpm": 153.0,
+   "loud_db": -20.6,
+   "motion": 0.047
+  },
+  {
+   "start": 440.0,
+   "end": 460.0,
+   "cuts": 2,
+   "wpm": 132.0,
+   "loud_db": -19.3,
+   "motion": 0.026
+  },
+  {
+   "start": 460.0,
+   "end": 480.0,
+   "cuts": 2,
+   "wpm": 126.0,
+   "loud_db": -20.2,
+   "motion": 0.031
+  },
+  {
+   "start": 480.0,
+   "end": 500.0,
+   "cuts": 4,
+   "wpm": 129.0,
+   "loud_db": -20.0,
+   "motion": 0.073
+  },
+  {
+   "start": 500.0,
+   "end": 520.0,
+   "cuts": 2,
+   "wpm": 129.0,
+   "loud_db": -20.7,
+   "motion": 0.052
+  },
+  {
+   "start": 520.0,
+   "end": 540.0,
+   "cuts": 3,
+   "wpm": 138.0,
+   "loud_db": -20.8,
+   "motion": 0.091
+  },
+  {
+   "start": 540.0,
+   "end": 560.0,
+   "cuts": 3,
+   "wpm": 153.0,
+   "loud_db": -21.4,
+   "motion": 0.111
+  },
+  {
+   "start": 560.0,
+   "end": 580.0,
+   "cuts": 4,
+   "wpm": 135.0,
+   "loud_db": -20.4,
+   "motion": 0.061
+  },
+  {
+   "start": 580.0,
+   "end": 600.0,
+   "cuts": 2,
+   "wpm": 126.0,
+   "loud_db": -19.9,
+   "motion": 0.086
+  },
+  {
+   "start": 600.0,
+   "end": 620.0,
+   "cuts": 1,
+   "wpm": 168.0,
+   "loud_db": -18.9,
+   "motion": 0.02
+  },
+  {
+   "start": 620.0,
+   "end": 640.0,
+   "cuts": 2,
+   "wpm": 150.0,
+   "loud_db": -20.2,
+   "motion": 0.064
+  },
+  {
+   "start": 640.0,
+   "end": 660.0,
+   "cuts": 2,
+   "wpm": 132.0,
+   "loud_db": -19.4,
+   "motion": 0.044
+  },
+  {
+   "start": 660.0,
+   "end": 680.0,
+   "cuts": 4,
+   "wpm": 135.0,
+   "loud_db": -20.5,
+   "motion": 0.086
+  },
+  {
+   "start": 680.0,
+   "end": 700.0,
+   "cuts": 4,
+   "wpm": 144.0,
+   "loud_db": -19.6,
+   "motion": 0.079
+  },
+  {
+   "start": 700.0,
+   "end": 720.0,
+   "cuts": 2,
+   "wpm": 138.0,
+   "loud_db": -20.5,
+   "motion": 0.035
+  },
+  {
+   "start": 720.0,
+   "end": 740.0,
+   "cuts": 7,
+   "wpm": 117.0,
+   "loud_db": -20.1,
+   "motion": 0.087
+  },
+  {
+   "start": 740.0,
+   "end": 760.0,
+   "cuts": 3,
+   "wpm": 117.0,
+   "loud_db": -19.5,
+   "motion": 0.08
+  },
+  {
+   "start": 760.0,
+   "end": 780.0,
+   "cuts": 2,
+   "wpm": 123.0,
+   "loud_db": -20.4,
+   "motion": 0.04
+  },
+  {
+   "start": 780.0,
+   "end": 798.4,
+   "cuts": 2,
+   "wpm": 124.0,
+   "loud_db": -21.4,
+   "motion": 0.041
+  }
+ ],
+ "perception_done": true
+}

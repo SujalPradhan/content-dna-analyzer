@@ -1,0 +1,353 @@
+{
+ "video_id": "fT1S7FaqdEQ",
+ "category": "cooking",
+ "title": "5 EXTREME BUDGET $5 DINNERS | Cheap & Easy Family Meals | Julia Pacheco",
+ "channel": "Julia Pacheco",
+ "url": "https://www.youtube.com/watch?v=fT1S7FaqdEQ",
+ "views": 182744,
+ "likes": 5482,
+ "comments": 507,
+ "subscribers": 1100000,
+ "upload_date": "20261011",
+ "full_duration": 746,
+ "is_short": false,
+ "fingerprint": {
+  "duration_s": 745.7,
+  "shots_per_min": 5.47,
+  "median_shot_s": 6.01,
+  "shot_len_cv": 1.07,
+  "pacing_trend": 1.0,
+  "hook_cuts": 3,
+  "time_to_first_word_s": 5.38,
+  "hook_wpm": 136.0,
+  "hook_text_overlay": 1.0,
+  "hook_motion": 0.84,
+  "wpm": 203.4,
+  "speech_coverage": 0.972,
+  "long_pauses_per_min": 0.08,
+  "questions_per_min": 0.08,
+  "you_rate": 3.36,
+  "loudness_db": -26.8,
+  "loudness_range_db": 13.4,
+  "energy_slope": -3.62,
+  "nonspeech_audio_share": 0.017,
+  "motion_mean": 0.128,
+  "brightness_mean": 0.502,
+  "colorfulness_mean": 55.6,
+  "talking_head_share": 0.04,
+  "broll_share": 0.96,
+  "screen_share": 0.0,
+  "face_share": 0.283,
+  "text_overlay_share": 0.967,
+  "format_switches_per_min": 0.24,
+  "cta_count": 1,
+  "first_cta_pos": 0.994
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 20.0,
+   "cuts": 3,
+   "wpm": 153.0,
+   "loud_db": -20.3,
+   "motion": 0.098
+  },
+  {
+   "start": 20.0,
+   "end": 40.0,
+   "cuts": 3,
+   "wpm": 183.0,
+   "loud_db": -19.8,
+   "motion": 0.126
+  },
+  {
+   "start": 40.0,
+   "end": 60.0,
+   "cuts": 1,
+   "wpm": 189.0,
+   "loud_db": -23.8,
+   "motion": 0.26
+  },
+  {
+   "start": 60.0,
+   "end": 80.0,
+   "cuts": 1,
+   "wpm": 216.0,
+   "loud_db": -25.1,
+   "motion": 0.271
+  },
+  {
+   "start": 80.0,
+   "end": 100.0,
+   "cuts": 1,
+   "wpm": 228.0,
+   "loud_db": -25.8,
+   "motion": 0.265
+  },
+  {
+   "start": 100.0,
+   "end": 120.0,
+   "cuts": 3,
+   "wpm": 216.0,
+   "loud_db": -24.4,
+   "motion": 0.256
+  },
+  {
+   "start": 120.0,
+   "end": 140.0,
+   "cuts": 1,
+   "wpm": 198.0,
+   "loud_db": -27.4,
+   "motion": 0.279
+  },
+  {
+   "start": 140.0,
+   "end": 160.0,
+   "cuts": 1,
+   "wpm": 195.0,
+   "loud_db": -27.8,
+   "motion": 0.272
+  },
+  {
+   "start": 160.0,
+   "end": 180.0,
+   "cuts": 3,
+   "wpm": 192.0,
+   "loud_db": -27.4,
+   "motion": 0.268
+  },
+  {
+   "start": 180.0,
+   "end": 200.0,
+   "cuts": 2,
+   "wpm": 165.0,
+   "loud_db": -27.6,
+   "motion": 0.235
+  },
+  {
+   "start": 200.0,
+   "end": 220.0,
+   "cuts": 2,
+   "wpm": 177.0,
+   "loud_db": -26.9,
+   "motion": 0.158
+  },
+  {
+   "start": 220.0,
+   "end": 240.0,
+   "cuts": 2,
+   "wpm": 207.0,
+   "loud_db": -25.8,
+   "motion": 0.075
+  },
+  {
+   "start": 240.0,
+   "end": 260.0,
+   "cuts": 1,
+   "wpm": 189.0,
+   "loud_db": -26.3,
+   "motion": 0.071
+  },
+  {
+   "start": 260.0,
+   "end": 280.0,
+   "cuts": 1,
+   "wpm": 186.0,
+   "loud_db": -30.1,
+   "motion": 0.063
+  },
+  {
+   "start": 280.0,
+   "end": 300.0,
+   "cuts": 0,
+   "wpm": 231.0,
+   "loud_db": -26.7,
+   "motion": 0.086
+  },
+  {
+   "start": 300.0,
+   "end": 320.0,
+   "cuts": 2,
+   "wpm": 246.0,
+   "loud_db": -29.1,
+   "motion": 0.096
+  },
+  {
+   "start": 320.0,
+   "end": 340.0,
+   "cuts": 2,
+   "wpm": 204.0,
+   "loud_db": -29.1,
+   "motion": 0.083
+  },
+  {
+   "start": 340.0,
+   "end": 360.0,
+   "cuts": 5,
+   "wpm": 207.0,
+   "loud_db": -26.0,
+   "motion": 0.105
+  },
+  {
+   "start": 360.0,
+   "end": 380.0,
+   "cuts": 0,
+   "wpm": 198.0,
+   "loud_db": -27.8,
+   "motion": 0.084
+  },
+  {
+   "start": 380.0,
+   "end": 400.0,
+   "cuts": 0,
+   "wpm": 174.0,
+   "loud_db": -27.5,
+   "motion": 0.05
+  },
+  {
+   "start": 400.0,
+   "end": 420.0,
+   "cuts": 0,
+   "wpm": 207.0,
+   "loud_db": -27.2,
+   "motion": 0.064
+  },
+  {
+   "start": 420.0,
+   "end": 440.0,
+   "cuts": 2,
+   "wpm": 210.0,
+   "loud_db": -28.8,
+   "motion": 0.123
+  },
+  {
+   "start": 440.0,
+   "end": 460.0,
+   "cuts": 1,
+   "wpm": 192.0,
+   "loud_db": -25.5,
+   "motion": 0.078
+  },
+  {
+   "start": 460.0,
+   "end": 480.0,
+   "cuts": 1,
+   "wpm": 234.0,
+   "loud_db": -26.5,
+   "motion": 0.051
+  },
+  {
+   "start": 480.0,
+   "end": 500.0,
+   "cuts": 2,
+   "wpm": 210.0,
+   "loud_db": -28.6,
+   "motion": 0.055
+  },
+  {
+   "start": 500.0,
+   "end": 520.0,
+   "cuts": 5,
+   "wpm": 183.0,
+   "loud_db": -27.9,
+   "motion": 0.104
+  },
+  {
+   "start": 520.0,
+   "end": 540.0,
+   "cuts": 5,
+   "wpm": 210.0,
+   "loud_db": -27.2,
+   "motion": 0.093
+  },
+  {
+   "start": 540.0,
+   "end": 560.0,
+   "cuts": 0,
+   "wpm": 228.0,
+   "loud_db": -28.0,
+   "motion": 0.085
+  },
+  {
+   "start": 560.0,
+   "end": 580.0,
+   "cuts": 1,
+   "wpm": 222.0,
+   "loud_db": -28.9,
+   "motion": 0.084
+  },
+  {
+   "start": 580.0,
+   "end": 600.0,
+   "cuts": 1,
+   "wpm": 171.0,
+   "loud_db": -28.7,
+   "motion": 0.088
+  },
+  {
+   "start": 600.0,
+   "end": 620.0,
+   "cuts": 1,
+   "wpm": 198.0,
+   "loud_db": -26.8,
+   "motion": 0.131
+  },
+  {
+   "start": 620.0,
+   "end": 640.0,
+   "cuts": 0,
+   "wpm": 219.0,
+   "loud_db": -24.3,
+   "motion": 0.07
+  },
+  {
+   "start": 640.0,
+   "end": 660.0,
+   "cuts": 3,
+   "wpm": 207.0,
+   "loud_db": -27.8,
+   "motion": 0.104
+  },
+  {
+   "start": 660.0,
+   "end": 680.0,
+   "cuts": 1,
+   "wpm": 222.0,
+   "loud_db": -28.8,
+   "motion": 0.074
+  },
+  {
+   "start": 680.0,
+   "end": 700.0,
+   "cuts": 2,
+   "wpm": 222.0,
+   "loud_db": -28.9,
+   "motion": 0.066
+  },
+  {
+   "start": 700.0,
+   "end": 720.0,
+   "cuts": 2,
+   "wpm": 240.0,
+   "loud_db": -27.3,
+   "motion": 0.127
+  },
+  {
+   "start": 720.0,
+   "end": 740.0,
+   "cuts": 6,
+   "wpm": 189.0,
+   "loud_db": -28.2,
+   "motion": 0.145
+  },
+  {
+   "start": 740.0,
+   "end": 745.7,
+   "cuts": 1,
+   "wpm": 232.0,
+   "loud_db": -19.4,
+   "motion": 0.097
+  }
+ ],
+ "perception_done": true
+}

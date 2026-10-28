@@ -1,0 +1,463 @@
+{
+ "summary": "A fast-talking explainer that opens with brief live-action cycling footage before transitioning almost entirely into animated diagrams and on-screen text for the remainder of the runtime. Pacing is driven by dense, rapid narration rather than cuts, with very long median shots and a sharp late-video pickup in edit rate and motion as the content moves from mechanics into a narrative anecdote.",
+ "dna_tags": [
+  "animated-diagram explainer",
+  "voiceover-led walkthrough",
+  "single long-form lecture block",
+  "late pacing ramp-up",
+  "text-overlay heavy",
+  "low-cut high-wordrate"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 8.7,
+   "role": "hook",
+   "label": "Live-action cycling b-roll with opening line"
+  },
+  {
+   "start_s": 8.7,
+   "end_s": 17,
+   "role": "intro_setup",
+   "label": "Intro to gear componentry"
+  },
+  {
+   "start_s": 17,
+   "end_s": 48,
+   "role": "main_content",
+   "label": "Chainring types explained via animation"
+  },
+  {
+   "start_s": 48,
+   "end_s": 74.6,
+   "role": "main_content",
+   "label": "Cassette and derailleur mechanics"
+  },
+  {
+   "start_s": 74.6,
+   "end_s": 132.1,
+   "role": "demonstration",
+   "label": "Gear ratio calculation walkthrough"
+  },
+  {
+   "start_s": 132.1,
+   "end_s": 143.2,
+   "role": "context",
+   "label": "Choosing gearing, live-action cutaway"
+  },
+  {
+   "start_s": 143.2,
+   "end_s": 169.2,
+   "role": "payoff_reveal",
+   "label": "Cadence and Lance Armstrong anecdote"
+  },
+  {
+   "start_s": 169.2,
+   "end_s": 184.1,
+   "role": "cta",
+   "label": "Subscribe / watch more end screen"
+  }
+ ],
+ "hook": {
+  "what_happens": "Opens on close-up live-action footage of pedalling with the line 'Gears are a fundamental part of a bicycle,' immediately posing the implicit question of how they work.",
+  "promise": "Promises to explain how bicycle gears actually work, matching the title's problem-statement framing.",
+  "strengths": [
+   "Opens with real footage (face visible) before shifting into animation, grounding the abstract topic in a relatable visual",
+   "High hook_wpm (236, pct 92) front-loads information fast, signalling a dense informational video from the first seconds"
+  ],
+  "weaknesses": [
+   "hook_text_overlay is 0 (pct 25) despite the rest of the video relying heavily on on-screen text (text_overlay_share 0.854, pct 75), so the hook doesn't preview that format",
+   "Only 1 cut in the hook window (hook_cuts=1, pct 33) while hook_motion is unusually high (1.95, pct 92), suggesting the single shot itself is handheld/jittery rather than edited for energy"
+  ]
+ },
+ "devices": [
+  {
+   "name": "rhetorical question transition",
+   "t_s": 4.5,
+   "quote": "But how do they actually work?"
+  },
+  {
+   "name": "concrete worked example",
+   "t_s": 92.9,
+   "quote": "let's say it's a 52, and the smallest cog on the back, let's say a 12"
+  },
+  {
+   "name": "celebrity anecdote as payoff",
+   "t_s": 151.1,
+   "quote": "Lance Armstrong was known as a high cadence rider"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0,
+   "point": "Fast, information-dense delivery front-loads content efficiently for an explainer format.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "215.1"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_wpm",
+     "value": "236.0"
+    }
+   ]
+  },
+  {
+   "t_s": 8.7,
+   "point": "Animation is used consistently to visualise abstract mechanical concepts (chainrings, ratios) rather than relying on talking-head delivery.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "8.7",
+     "value": "animation segment with on-screen text '1. STANDARD 2. SEMI-COMPACT 3. COMPACT'"
+    },
+    {
+     "kind": "metric",
+     "ref": "screen_share",
+     "value": "0.854"
+    }
+   ]
+  },
+  {
+   "t_s": 87.8,
+   "point": "The gear-ratio explanation uses a fully worked numeric example, making an abstract formula concrete.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "52 divided by 12, to give you the number of rotations"
+    }
+   ]
+  },
+  {
+   "t_s": 133.6,
+   "point": "Closes the technical content with a practical takeaway tied to rider type before shifting to a real-world anecdote.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "The moral of the story is obviously to get your gearing right"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Extremely long single-topic block with no cuts for over a minute",
+   "t_start_s": 17,
+   "t_end_s": 74.6,
+   "observation": "The chainring/cassette explanation runs nearly 57s as one continuous animation segment with only one cut in a 30s bin (40-50s), and shot_len_cv is at the 92nd percentile for the category.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "median_shot_s",
+     "value": "7.76"
+    },
+    {
+     "kind": "metric",
+     "ref": "shot_len_cv",
+     "value": "1.16"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:20.0",
+     "value": "cuts: 0"
+    }
+   ],
+   "recommendation": "Test breaking this segment with brief cutaways (live footage, close-ups of actual components) every 15-20s to vary visual rhythm within the long explanatory block.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 17.04,
+   "t_in_range": true
+  },
+  {
+   "title": "Hook lacks the text-overlay style used throughout the rest of the video",
+   "t_start_s": 0,
+   "t_end_s": 8.7,
+   "observation": "hook_text_overlay is 0 even though text_overlay_share for the full video is 0.854 (75th pct), creating a mismatch between the opening visual language and the bulk of the content.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.854"
+    }
+   ],
+   "recommendation": "Consider introducing a title card or topic label text overlay within the first 3 seconds to set viewer expectations that this will be a graphics/animation-led explainer.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Sharp drop in word rate and energy in the final 15 seconds",
+   "t_start_s": 170,
+   "t_end_s": 184.1,
+   "observation": "wpm collapses from 222 (160-170s bin) to 48 then 0 in the final two bins, alongside loudness dropping to -24.4 and -28 dB, as the video moves into the end card.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:170.0",
+     "value": "wpm: 48.0, loud_db: -24.4"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:180.0",
+     "value": "wpm: 0.0, loud_db: -28.0"
+    }
+   ],
+   "recommendation": "If the anecdote ending at 169s is meant to be the payoff, consider tightening the silence before the end card or adding a brief verbal sign-off to avoid an abrupt tonal drop into the CTA screen.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 170.14,
+   "t_in_range": true
+  },
+  {
+   "title": "Single CTA placed very late at 94% of runtime",
+   "t_start_s": 173,
+   "t_end_s": 173,
+   "observation": "first_cta_pos is 0.94, and both CTA moments (subscribe, watch more) are bunched at the same timestamp on the end screen only.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.94"
+    },
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "2"
+    }
+   ],
+   "recommendation": "Test placing a spoken or on-screen mid-roll mention (e.g. around the chapter transition at 74s or 133s) to give viewers who drop off before the end screen a chance to see the CTA.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 172.62,
+   "t_in_range": true
+  },
+  {
+   "title": "Pacing and motion ramp up sharply only in the final third",
+   "t_start_s": 130,
+   "t_end_s": 170,
+   "observation": "pacing_trend is 4.33 (92nd pct), meaning cut rate in the second half is far higher than the first; cuts increase from 0-1 per bin early on to 2-3 per bin after 130s, and motion rises correspondingly (0.166 at 130-140s and 160-170s vs near-zero at 80-100s).",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "pacing_trend",
+     "value": "4.33"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:80.0",
+     "value": "motion: 0.008"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:160.0",
+     "value": "cuts: 3, motion: 0.166"
+    }
+   ],
+   "recommendation": "Consider redistributing some of the visual energy (extra cutaways, camera motion) earlier into the chainring/cassette section so the video doesn't feel static for its first half relative to its ending.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 130.02,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 18,
+  "evidence_verified": 17,
+  "evidence_rate": 0.944,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    15,
+    15
+   ],
+   "quote": [
+    1,
+    2
+   ],
+   "visual": [
+    1,
+    1
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "median_shot_s",
+    "value": "7.76",
+    "verified": true,
+    "note": "actual=7.76"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "shot_len_cv",
+    "value": "1.16",
+    "verified": true,
+    "note": "actual=1.16"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:20.0",
+    "value": "cuts: 0",
+    "verified": true,
+    "note": "bin={'start': 20.0, 'end': 30.0, 'cuts': 0, 'wpm': 216.0, 'loud_db': -19.0, 'motion': 0.02}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.854",
+    "verified": true,
+    "note": "actual=0.854"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:170.0",
+    "value": "wpm: 48.0, loud_db: -24.4",
+    "verified": true,
+    "note": "bin={'start': 170.0, 'end': 180.0, 'cuts': 1, 'wpm': 48.0, 'loud_db': -24.4, 'motion': 0.028}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:180.0",
+    "value": "wpm: 0.0, loud_db: -28.0",
+    "verified": true,
+    "note": "bin={'start': 180.0, 'end': 184.1, 'cuts': 0, 'wpm': 0.0, 'loud_db': -28.0, 'motion': 0.0}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.94",
+    "verified": true,
+    "note": "actual=0.94"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "2",
+    "verified": true,
+    "note": "actual=2.0"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "pacing_trend",
+    "value": "4.33",
+    "verified": true,
+    "note": "actual=4.33"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:80.0",
+    "value": "motion: 0.008",
+    "verified": true,
+    "note": "bin={'start': 80.0, 'end': 90.0, 'cuts': 0, 'wpm': 150.0, 'loud_db': -18.5, 'motion': 0.008}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:160.0",
+    "value": "cuts: 3, motion: 0.166",
+    "verified": true,
+    "note": "bin={'start': 160.0, 'end': 170.0, 'cuts': 3, 'wpm': 222.0, 'loud_db': -21.2, 'motion': 0.166}"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "215.1",
+    "verified": true,
+    "note": "actual=215.1"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_wpm",
+    "value": "236.0",
+    "verified": true,
+    "note": "actual=236.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "visual",
+    "ref": "8.7",
+    "value": "animation segment with on-screen text '1. STANDARD 2. SEMI-COMPACT 3. COMPACT'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "screen_share",
+    "value": "0.854",
+    "verified": true,
+    "note": "actual=0.854"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "52 divided by 12, to give you the number of rotations",
+    "verified": false,
+    "note": "match=0.45 at 96.1"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "The moral of the story is obviously to get your gearing right",
+    "verified": true,
+    "note": "match=1.00 at 132.42"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 18,
+  "evidence_verified": 17,
+  "evidence_rate": 0.944,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    15,
+    15
+   ],
+   "quote": [
+    1,
+    2
+   ],
+   "visual": [
+    1,
+    1
+   ]
+  }
+ }
+}

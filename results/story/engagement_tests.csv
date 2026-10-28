@@ -1,0 +1,39 @@
+feature,feature_label,analysis,rho,ci_lo,ci_hi,p,q_bh,n
+median_shot_s,Median shot length,raw,0.503,0.109,0.768,0.0046,0.087,30
+shots_per_min,Cuts per minute,raw,-0.451,-0.746,-0.064,0.0124,0.118,30
+talking_head_share,Talking-head share,raw,0.397,0.041,0.695,0.0297,0.188,30
+hook_cuts,Cuts in first 15s,raw,-0.334,-0.626,0.039,0.0713,0.339,30
+text_overlay_share,Runtime with on-screen text,raw,-0.254,-0.62,0.167,0.1764,0.651,30
+you_rate,'you/your' per 100 words,raw,-0.238,-0.583,0.202,0.2055,0.651,30
+colorfulness_mean,Colourfulness (Hasler-Süsstrunk),raw,0.216,-0.193,0.58,0.2526,0.686,30
+cta_count,Explicit calls to action,raw,0.167,-0.145,0.458,0.3771,0.896,30
+time_to_first_word_s,Time to first spoken word,raw,0.142,-0.295,0.538,0.4805,0.913,27
+questions_per_min,Questions asked per minute,raw,0.109,-0.28,0.469,0.5659,0.913,30
+format_switches_per_min,Visual format switches per minute,raw,-0.097,-0.425,0.253,0.6083,0.913,30
+screen_share,Screen / slides / graphics share,raw,-0.09,-0.433,0.252,0.638,0.913,30
+face_share,Face-on-screen share,raw,-0.082,-0.434,0.341,0.6673,0.913,30
+loudness_range_db,Loudness range (p95-p5),raw,0.078,-0.289,0.409,0.6833,0.913,30
+broll_share,B-roll / product share,raw,-0.068,-0.451,0.314,0.721,0.913,30
+motion_mean,Mean frame-to-frame motion,raw,-0.046,-0.471,0.395,0.8091,0.935,30
+wpm,Speaking rate,raw,0.039,-0.354,0.45,0.8363,0.935,30
+speech_coverage,Share of runtime with speech,raw,0.003,-0.377,0.385,0.986,0.996,30
+nonspeech_audio_share,Sound without speech (music/SFX proxy),raw,-0.001,-0.376,0.379,0.9963,0.996,30
+talking_head_share,Talking-head share,within_category,0.637,0.311,0.847,0.0002,0.003,30
+questions_per_min,Questions asked per minute,within_category,0.415,0.038,0.71,0.0227,0.215,30
+wpm,Speaking rate,within_category,0.361,-0.039,0.692,0.05,0.303,30
+text_overlay_share,Runtime with on-screen text,within_category,-0.343,-0.728,0.081,0.0638,0.303,30
+nonspeech_audio_share,Sound without speech (music/SFX proxy),within_category,-0.325,-0.713,0.115,0.0801,0.304,30
+screen_share,Screen / slides / graphics share,within_category,-0.28,-0.595,0.096,0.1345,0.353,30
+face_share,Face-on-screen share,within_category,0.263,-0.129,0.612,0.1609,0.353,30
+time_to_first_word_s,Time to first spoken word,within_category,-0.277,-0.656,0.158,0.1624,0.353,27
+loudness_range_db,Loudness range (p95-p5),within_category,0.259,-0.134,0.597,0.1674,0.353,30
+speech_coverage,Share of runtime with speech,within_category,0.235,-0.181,0.64,0.2117,0.392,30
+motion_mean,Mean frame-to-frame motion,within_category,0.227,-0.181,0.585,0.2269,0.392,30
+broll_share,B-roll / product share,within_category,-0.17,-0.558,0.239,0.3679,0.582,30
+hook_cuts,Cuts in first 15s,within_category,-0.114,-0.518,0.316,0.547,0.799,30
+colorfulness_mean,Colourfulness (Hasler-Süsstrunk),within_category,0.101,-0.286,0.46,0.5956,0.808,30
+cta_count,Explicit calls to action,within_category,0.084,-0.273,0.43,0.6607,0.812,30
+format_switches_per_min,Visual format switches per minute,within_category,0.078,-0.331,0.478,0.6836,0.812,30
+you_rate,'you/your' per 100 words,within_category,0.052,-0.337,0.432,0.7846,0.876,30
+median_shot_s,Median shot length,within_category,0.041,-0.367,0.437,0.8299,0.876,30
+shots_per_min,Cuts per minute,within_category,-0.028,-0.41,0.377,0.8815,0.881,30

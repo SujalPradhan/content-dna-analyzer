@@ -1,0 +1,170 @@
+{
+ "summary": "This is a very short (15.8s) life-hack style cooking clip about preparing chicken drumsticks, but no transcript text was provided, so the construction can only be inferred from its title and duration. The video likely follows a quick hook-demonstration-payoff format typical of short-form cooking hacks.",
+ "dna_tags": [
+  "life-hack",
+  "quick-tip",
+  "cooking",
+  "short-form",
+  "food"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 4,
+   "role": "hook",
+   "label": "Opening visual/claim (no transcript text available)"
+  },
+  {
+   "start_s": 4,
+   "end_s": 12,
+   "role": "demonstration",
+   "label": "Core cooking hack shown"
+  },
+  {
+   "start_s": 12,
+   "end_s": 15.8,
+   "role": "payoff_reveal",
+   "label": "Result/closing shot"
+  }
+ ],
+ "hook": {
+  "what_happens": "No transcript was supplied, so the exact opening words or actions cannot be verified; based on the title, the video likely opens by showing or naming the 'life hack' for cooking drumsticks.",
+  "promise": "The title promises an 'easy' method/hack for cooking chicken drumsticks.",
+  "strengths": [],
+  "weaknesses": [
+   "No transcript text is available to confirm what is actually said or shown in the first seconds, making it impossible to verify if the hook delivers on the title's promise."
+  ]
+ },
+ "devices": [],
+ "strengths": [],
+ "recommendations": [
+  {
+   "title": "Transcript/captions appear missing",
+   "t_start_s": 0,
+   "t_end_s": 15.8,
+   "observation": "The provided transcript contains no spoken or on-screen text content for the full 15.8 second duration.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": ""
+    }
+   ],
+   "recommendation": "Ensure spoken dialogue or on-screen text is captured and included so the hook, demonstration, and payoff can be clearly communicated and verified.",
+   "basis": "internal_inconsistency",
+   "priority": "high",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Confirm hook clarity for a hack-style video",
+   "t_start_s": 0,
+   "t_end_s": 4,
+   "observation": "The title frames this as a 'life hack,' which typically requires a clear, fast statement of the problem or trick within the first few seconds, but no transcript text exists to confirm this happens.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": ""
+    }
+   ],
+   "recommendation": "If the opening does not explicitly state the hack or problem being solved, consider adding a brief verbal or text cue naming the trick immediately.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Verify demonstration is visually self-explanatory",
+   "t_start_s": 4,
+   "t_end_s": 12,
+   "observation": "With such a short runtime and no transcript narration confirmed, the demonstration may rely entirely on visuals to convey the technique.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": ""
+    }
+   ],
+   "recommendation": "If narration is sparse or absent, consider on-screen text labels at key demonstration steps to make the hack easy to follow without relying on audio.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 4.07,
+   "t_in_range": true
+  },
+  {
+   "title": "Clarify payoff/result framing",
+   "t_start_s": 12,
+   "t_end_s": 15.8,
+   "observation": "No transcript text exists to confirm whether the final seconds explicitly show or state the result of the 'hack.'",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": ""
+    }
+   ],
+   "recommendation": "Make sure the final moment clearly shows the cooked drumsticks or result so viewers can judge the hack's outcome.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 12.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 4,
+  "evidence_verified": 0,
+  "evidence_rate": 0.0,
+  "recs": 4,
+  "recs_grounded": 0,
+  "rec_grounded_rate": 0.0,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    0,
+    4
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "",
+    "value": "",
+    "verified": false,
+    "note": "match=0.00 at None"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "",
+    "verified": false,
+    "note": "match=0.00 at None"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "",
+    "verified": false,
+    "note": "match=0.00 at None"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "",
+    "verified": false,
+    "note": "match=0.00 at None"
+   }
+  ]
+ }
+}

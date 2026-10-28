@@ -1,0 +1,364 @@
+{
+ "all_full": {
+  "evidence_items": 616,
+  "evidence_verified": 584,
+  "evidence_rate": 0.948,
+  "evidence_per_rec": 3.54,
+  "recs": 174,
+  "recs_grounded": 174,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    435,
+    442
+   ],
+   "quote": [
+    66,
+    80
+   ],
+   "visual": [
+    83,
+    94
+   ]
+  }
+ },
+ "ablation_videos": [
+  "s83EB_OtaEo",
+  "qQHyK8BGQdo",
+  "hTn8Uh1m0hg",
+  "od29yqPu-aM",
+  "7LItwuSZ8ag",
+  "D9BEQdfn9xc",
+  "xmUmIE_HUCE",
+  "5nNf6QQObw8",
+  "c347oYQO57A",
+  "xB4SsILjJig",
+  "vHn_rCDYxlI",
+  "8RusBT_lFTI"
+ ],
+ "ablation_full": {
+  "evidence_items": 213,
+  "evidence_verified": 204,
+  "evidence_rate": 0.958,
+  "evidence_per_rec": 3.55,
+  "recs": 60,
+  "recs_grounded": 60,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    153,
+    155
+   ],
+   "quote": [
+    25,
+    30
+   ],
+   "visual": [
+    26,
+    28
+   ]
+  }
+ },
+ "ablation_baseline": {
+  "evidence_items": 103,
+  "evidence_verified": 84,
+  "evidence_rate": 0.816,
+  "evidence_per_rec": 1.98,
+  "recs": 52,
+  "recs_grounded": 43,
+  "rec_grounded_rate": 0.827,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    84,
+    103
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  }
+ },
+ "judge": {
+  "wins_full": 12,
+  "wins_baseline": 0,
+  "ties": 0,
+  "mean_scores": {
+   "full": {
+    "specificity": 5.0,
+    "accuracy": 4.75,
+    "actionability": 5.0,
+    "insight": 4.58
+   },
+   "baseline": {
+    "specificity": 3.42,
+    "accuracy": 3.92,
+    "actionability": 3.0,
+    "insight": 2.75
+   }
+  },
+  "per_video": [
+   {
+    "video_id": "s83EB_OtaEo",
+    "full": {
+     "specificity": 5,
+     "accuracy": 5,
+     "actionability": 5,
+     "insight": 4
+    },
+    "baseline": {
+     "specificity": 3,
+     "accuracy": 4,
+     "actionability": 2,
+     "insight": 3
+    },
+    "winner": "full",
+    "reason": "A consistently ties points to concrete metrics and timestamps (motion_mean percentile, 9-cut spike at 75-80s with wpm drop to 48, first_cta_pos 0.977, brightness/colorfulness) and gives directly actionable editor tests. B offers reasonable structural/comedic observations but its recommendations are hedged ('consider whether...') and non-actionable, and several points lean on transcript-review caveats rather than craft guidance. A's accuracy checks out against the data; B is accurate but thinner on concrete numeric grounding.",
+    "full_was": "A"
+   },
+   {
+    "video_id": "qQHyK8BGQdo",
+    "full": {
+     "specificity": 5,
+     "accuracy": 5,
+     "actionability": 5,
+     "insight": 5
+    },
+    "baseline": {
+     "specificity": 3,
+     "accuracy": 3,
+     "actionability": 3,
+     "insight": 3
+    },
+    "winner": "full",
+    "reason": "B grounds its points in concrete measured data with percentile context (time_to_first_word 11.48s vs median 0.69s, hook_wpm 12 vs p25 82, median_shot 1.04s at 8th pct, loudness_range 8.6), cites specific timeline bins and overlay text, and gives directly testable fixes. A repeatedly hedges ('from transcript alone', 'unverified') because it relies only on the transcript, ignoring the rich visual/audio metrics; it describes the silent opening as a gap rather than analyzing the wordless montage B correctly identifies. B is more specific, accurate, actionable, and insightful about why the construction works.",
+    "full_was": "B"
+   },
+   {
+    "video_id": "hTn8Uh1m0hg",
+    "full": {
+     "specificity": 5,
+     "accuracy": 4,
+     "actionability": 5,
+     "insight": 4
+    },
+    "baseline": {
+     "specificity": 4,
+     "accuracy": 4,
+     "actionability": 4,
+     "insight": 3
+    },
+    "winner": "full",
+    "reason": "A ties its points tightly to measured data (format_switches_per_min, face_share, text_overlay_share, the -53.7dB ending dip, broll_share vs category norm) and produces concrete, editor-ready recommendations grounded in the fingerprint. It explains WHY the construction works (high format-switching compensating for a single-scene process). A minor inaccuracy: it calls the cut-heavy pacing high but also claims 'minimal cuts' nowhere\u2014actually its summary is consistent. B is accurate and catches a nice real moment (the farfalle fumble and ambiguous dialogue), but relies almost entirely on transcript quotes with little engagement with the numeric data, and some recs ('restate ratio', 'clarify final result') are more generic content coaching than editing-specific. A is the stronger data-driven critique.",
+    "full_was": "A"
+   },
+   {
+    "video_id": "od29yqPu-aM",
+    "full": {
+     "specificity": 5,
+     "accuracy": 5,
+     "actionability": 5,
+     "insight": 5
+    },
+    "baseline": {
+     "specificity": 1,
+     "accuracy": 2,
+     "actionability": 1,
+     "insight": 1
+    },
+    "winner": "full",
+    "reason": "Critique A punts on nearly everything citing missing transcript, offers generic inferred structure and no concrete evidence; its main recommendation is meta-advice about capturing transcripts. Critique B correctly reads the silent/music-only b-roll format, cites real metrics (shots_per_min 2.7, text_overlay_share 0.857, loudness_range 3.4, colorfulness 27.5), names specific timestamps for cutaway trims and SFX accents, and explains why the construction works and where it falls short. B is far superior on all axes.",
+    "full_was": "B"
+   },
+   {
+    "video_id": "7LItwuSZ8ag",
+    "full": {
+     "specificity": 5,
+     "accuracy": 5,
+     "actionability": 5,
+     "insight": 5
+    },
+    "baseline": {
+     "specificity": 4,
+     "accuracy": 5,
+     "actionability": 4,
+     "insight": 3
+    },
+    "winner": "full",
+    "reason": "B integrates the measured data (energy_slope, pacing_trend, loudness dips, shot metrics, CTA position) into specific, timestamped recommendations that explain the construction, while A stays almost entirely content/narrative-focused with generic 'add a transition line' advice and no engagement with the pacing/loudness telemetry. Both are accurate, but B is more actionable and insightful; B's only flaw is a leftover 'placeholder' recommendation field.",
+    "full_was": "B"
+   },
+   {
+    "video_id": "D9BEQdfn9xc",
+    "full": {
+     "specificity": 5,
+     "accuracy": 5,
+     "actionability": 5,
+     "insight": 4
+    },
+    "baseline": {
+     "specificity": 4,
+     "accuracy": 4,
+     "actionability": 3,
+     "insight": 3
+    },
+    "winner": "full",
+    "reason": "A ties concrete timestamps to measured metrics (shot_len_cv 0.41, you_rate 0.27, the wpm dip to 90/102 at 195-220s, hook_motion outlier) and gives precise, testable editing actions. B is accurate and names good quote-level moments but leans on 'consider whether' framing that is less directly actionable, and it misses the quantitative pacing/rhythm observations that A exploits. Both correctly flag the early CTA, but A grounds its claims in the data more rigorously.",
+    "full_was": "A"
+   },
+   {
+    "video_id": "xmUmIE_HUCE",
+    "full": {
+     "specificity": 5,
+     "accuracy": 4,
+     "actionability": 5,
+     "insight": 4
+    },
+    "baseline": {
+     "specificity": 4,
+     "accuracy": 5,
+     "actionability": 4,
+     "insight": 3
+    },
+    "winner": "full",
+    "reason": "A ties concrete timestamps to metrics (brightness pct, CTA position, cut distribution across bins, motion mismatch between hook and body) and gives directly actionable edits, with strong insight into why the construction feels static. One minor issue is its claim of 'abrupt opening/closing cuts' when data shows 0 cuts there, but most claims check out. B's strongest point is correctly catching the spoken 'shell.apps folder' vs actual 'shell:appsFolder' mismatch (a genuinely useful accuracy insight), but several of its recommendations are generic ('add a reason to watch', 'expand CTA', 'confirm visual matches') and the 'confirm the demonstration matches' point is a non-actionable hedge about unavailable visuals. A delivers more concrete, metric-grounded, editor-ready guidance overall.",
+    "full_was": "A"
+   },
+   {
+    "video_id": "5nNf6QQObw8",
+    "full": {
+     "specificity": 5,
+     "accuracy": 5,
+     "actionability": 5,
+     "insight": 5
+    },
+    "baseline": {
+     "specificity": 2,
+     "accuracy": 3,
+     "actionability": 2,
+     "insight": 1
+    },
+    "winner": "full",
+    "reason": "Critique B engages directly with the measured data (motion drops, loudness taper, format switches, colorfulness, energy slope) with concrete timestamps and actionable fixes, and explains why the silent b-roll construction works. Critique A punts on nearly everything citing missing transcript, offering generic placeholder advice without referencing any of the rich visual/audio metrics available.",
+    "full_was": "B"
+   },
+   {
+    "video_id": "c347oYQO57A",
+    "full": {
+     "specificity": 5,
+     "accuracy": 4,
+     "actionability": 5,
+     "insight": 5
+    },
+    "baseline": {
+     "specificity": 4,
+     "accuracy": 5,
+     "actionability": 4,
+     "insight": 4
+    },
+    "winner": "full",
+    "reason": "A is accurate and well-grounded in transcript quotes, with solid structural analysis, but its recommendations are largely about script/content tightening that could apply to many essay videos. B is more editorially specific, tying concrete timeline bins (100-140s cut collapse, 551-595s static block) and measured metrics (motion_mean 25th percentile, screen_share 0.033, pause rate 0.15/min) to actionable editing changes, and it correctly identifies the visual-vs-verbal CTA gap. B's accuracy is slightly weaker on the hook_motion category-median claim (an assertion that can't be verified from data) but its data citations mostly check out, and its insight into why the construction works (talking density over cuts, face anchoring dense script) exceeds A's. B gives an editor more directly executable, video-specific guidance.",
+    "full_was": "B"
+   },
+   {
+    "video_id": "xB4SsILjJig",
+    "full": {
+     "specificity": 5,
+     "accuracy": 5,
+     "actionability": 5,
+     "insight": 5
+    },
+    "baseline": {
+     "specificity": 4,
+     "accuracy": 4,
+     "actionability": 2,
+     "insight": 3
+    },
+    "winner": "full",
+    "reason": "B ties concrete claims to measured data (shot_len_cv 0.63 at 8th pct, loudness_range 6.4, cta_count 2, hook_text_overlay 0) and gives directly testable editing changes with timestamps. A is accurate and well-structured with good quotes, but its 'recommendations' mostly describe/observe rather than prescribe concrete edits ('consider whether... changes how it reads', 'could be noted'), yielding weak actionability. B's insight explains WHY the pacing feels mechanical (speech-driven rather than shot-variation driven) and why audio flatness hurts section cues\u2014going beyond summary. B is the stronger critique across the board.",
+    "full_was": "B"
+   },
+   {
+    "video_id": "vHn_rCDYxlI",
+    "full": {
+     "specificity": 5,
+     "accuracy": 5,
+     "actionability": 5,
+     "insight": 4
+    },
+    "baseline": {
+     "specificity": 4,
+     "accuracy": 4,
+     "actionability": 3,
+     "insight": 3
+    },
+    "winner": "full",
+    "reason": "A ties concrete timestamps to measured metrics and category percentiles (median shot 28.1s/92nd pct, pacing_trend 1.62, colorfulness 25.7 8th pct, CTA at 0.259) and gives directly testable fixes, explaining why the construction deviates from vlog norms. B is reasonable and transcript-grounded but leans on qualitative observations with vaguer recommendations ('consider trimming'), and has a minor inaccuracy framing the hook as 'nearly two minutes'/'full pop song' when speech begins at 121s but the music montage is the intent. A's metric-anchored specificity and actionability clearly outscore B.",
+    "full_was": "A"
+   },
+   {
+    "video_id": "8RusBT_lFTI",
+    "full": {
+     "specificity": 5,
+     "accuracy": 5,
+     "actionability": 5,
+     "insight": 5
+    },
+    "baseline": {
+     "specificity": 4,
+     "accuracy": 4,
+     "actionability": 4,
+     "insight": 3
+    },
+    "winner": "full",
+    "reason": "Both correctly identify the duplicated Maggi-paratha line and the strong contrarian hook. B is stronger because it integrates measured metrics (talking_head_share 0.601, broll_share 0.394, energy_slope -13.39, hook_motion 0.68, long_pauses) accurately with percentile context, explaining WHY the construction works/fails and giving concrete, data-grounded fixes. A relies mostly on transcript observations and is accurate but less analytically deep; its 'hook text at 9:1s' is garbled and it mislabels a 0.68 hook_motion issue it never catches. B's recommendations (fill dead-air bins, even loudness decline, break up long talking-head stretches) are more specific and actionable per the timeline data.",
+    "full_was": "B"
+   }
+  ]
+ },
+ "stability": [
+  {
+   "video_id": "TJ7I3_QHtac",
+   "role_agreement": 0.839,
+   "rec_time_overlap": 1.0,
+   "tag_jaccard": 0.25,
+   "grounding_a": 0.895,
+   "grounding_b": 0.947
+  },
+  {
+   "video_id": "hTn8Uh1m0hg",
+   "role_agreement": 0.452,
+   "rec_time_overlap": 1.0,
+   "tag_jaccard": 0.0,
+   "grounding_a": 0.895,
+   "grounding_b": 0.929
+  },
+  {
+   "video_id": "7LItwuSZ8ag",
+   "role_agreement": 0.752,
+   "rec_time_overlap": 0.8,
+   "tag_jaccard": 0.1,
+   "grounding_a": 0.944,
+   "grounding_b": 1.0
+  },
+  {
+   "video_id": "KWuFpi7j4_0",
+   "role_agreement": 0.524,
+   "rec_time_overlap": 1.0,
+   "tag_jaccard": 0.111,
+   "grounding_a": 1.0,
+   "grounding_b": 1.0
+  },
+  {
+   "video_id": "7Wa_bsAM4ec",
+   "role_agreement": 0.695,
+   "rec_time_overlap": 0.667,
+   "tag_jaccard": 0.0,
+   "grounding_a": 0.944,
+   "grounding_b": 0.944
+  }
+ ]
+}

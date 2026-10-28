@@ -1,0 +1,17 @@
+{
+ "full": {
+  "specificity": 5,
+  "accuracy": 5,
+  "actionability": 5,
+  "insight": 5
+ },
+ "baseline": {
+  "specificity": 4,
+  "accuracy": 4,
+  "actionability": 4,
+  "insight": 3
+ },
+ "winner": "full",
+ "reason": "Both correctly identify the duplicated Maggi-paratha line and the strong contrarian hook. B is stronger because it integrates measured metrics (talking_head_share 0.601, broll_share 0.394, energy_slope -13.39, hook_motion 0.68, long_pauses) accurately with percentile context, explaining WHY the construction works/fails and giving concrete, data-grounded fixes. A relies mostly on transcript observations and is accurate but less analytically deep; its 'hook text at 9:1s' is garbled and it mislabels a 0.68 hook_motion issue it never catches. B's recommendations (fill dead-air bins, even loudness decline, break up long talking-head stretches) are more specific and actionable per the timeline data.",
+ "full_was": "B"
+}

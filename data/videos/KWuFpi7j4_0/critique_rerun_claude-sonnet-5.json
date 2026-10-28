@@ -1,0 +1,462 @@
+{
+ "summary": "A fast, direct-address Shorts listicle that opens with a bold claim hook, cuts to two screen-recording demos (ChatGPT, Canva), and closes with a stacked comment/like/subscribe CTA \u2014 but the promised third tool is never actually shown, and pacing stalls right after the cold open.",
+ "dna_tags": [
+  "bold-claim hook",
+  "numbered listicle",
+  "screen-recording demo",
+  "direct-address CTA stack",
+  "studio HUD aesthetic"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 8.7,
+   "role": "hook",
+   "label": "Presenter bold claim: 'Stop wasting time'"
+  },
+  {
+   "start_s": 8.7,
+   "end_s": 10.2,
+   "role": "intro_setup",
+   "label": "Graphics/text transition card"
+  },
+  {
+   "start_s": 10.2,
+   "end_s": 20.0,
+   "role": "demonstration",
+   "label": "Tool 1: ChatGPT screen recording"
+  },
+  {
+   "start_s": 20.0,
+   "end_s": 30.8,
+   "role": "demonstration",
+   "label": "Tool 2: Canva screen recording"
+  },
+  {
+   "start_s": 30.8,
+   "end_s": 41.1,
+   "role": "cta",
+   "label": "Comment/like/subscribe graphic card"
+  }
+ ],
+ "hook": {
+  "what_happens": "A presenter in a neon tech studio points at the camera and declares three AI tools will make work faster, easier, smarter.",
+  "promise": "Three AI tools that save time and improve work",
+  "strengths": [
+   "Direct, urgent opening line with immediate speech (time_to_first_word_s=0.0)",
+   "High cut density in first 15s signals energy"
+  ],
+  "weaknesses": [
+   "No on-screen text in first 3s despite a text-heavy video overall",
+   "Promise of three tools not fully honored later"
+  ]
+ },
+ "devices": [
+  {
+   "name": "bold claim opener",
+   "t_s": 0.0,
+   "quote": "Stop wasting time."
+  },
+  {
+   "name": "numbered listicle structure",
+   "t_s": 11.1,
+   "quote": "First, Chat PT."
+  },
+  {
+   "name": "direct address / rhetorical question",
+   "t_s": 32.6,
+   "quote": "Which tool is your favorite?"
+  },
+  {
+   "name": "stacked CTA",
+   "t_s": 33.4,
+   "quote": "Comment below. Hit like and subscribe to Novexic"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Hook front-loads cuts and speech to grab attention immediately, well above typical shorts pacing.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "5"
+    },
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "0.0"
+    },
+    {
+     "kind": "quote",
+     "ref": "0.0",
+     "value": "Stop wasting time."
+    }
+   ]
+  },
+  {
+   "t_s": 32.6,
+   "point": "Strong direct-address language throughout keeps the viewer personally addressed.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "you_rate",
+     "value": "4.11"
+    },
+    {
+     "kind": "quote",
+     "ref": "32.6",
+     "value": "Which tool is your favorite?"
+    }
+   ]
+  },
+  {
+   "t_s": 33.4,
+   "point": "Clear, explicit multi-action CTA stacked at the end rather than buried mid-video.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "2"
+    },
+    {
+     "kind": "quote",
+     "ref": "33.4",
+     "value": "Comment below. Hit like and subscribe to Novexic"
+    }
+   ]
+  },
+  {
+   "t_s": 10.2,
+   "point": "Frequent format switching (talking head to screen recording to graphics) keeps visual variety high for the category.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "4.38"
+    },
+    {
+     "kind": "visual",
+     "ref": "10.2",
+     "value": "screen_recording segment begins after talking_head hook"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Third tool is promised but never demonstrated",
+   "t_start_s": 26.1,
+   "t_end_s": 32.6,
+   "observation": "The script sets up three tools ('These three AI tools...'), but only ChatGPT and Canva get screen-recording demos; the third ('Catching') is spoken but immediately followed by the CTA with no visual or further explanation, and broll_share is 0.0 for this section.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "26.1",
+     "value": "Third, Catching. Which tool is your favorite?"
+    },
+    {
+     "kind": "metric",
+     "ref": "broll_share",
+     "value": "0.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "30.8",
+     "value": "graphics_text CTA card begins, no demo shown for tool 3"
+    }
+   ],
+   "recommendation": "Either cut the reference to a third tool or add a brief screen-recording/demo clip for it before cutting to the CTA card, so the opening's numeric promise matches what's delivered.",
+   "basis": "internal_inconsistency",
+   "priority": "high",
+   "t_snapped_s": 26.06,
+   "t_in_range": true
+  },
+  {
+   "title": "Pacing stalls immediately after the hook",
+   "t_start_s": 5.0,
+   "t_end_s": 10.0,
+   "observation": "Speech rate collapses from 144 wpm in the 0-5s hook bin to 36 wpm in the 5-10s bin, with only the graphics_text transition on screen \u2014 a sharp energy drop right after the fast open.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:0.0",
+     "value": "144.0 wpm"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:5.0",
+     "value": "36.0 wpm"
+    },
+    {
+     "kind": "visual",
+     "ref": "8.7",
+     "value": "graphics_text segment 'Ai NClights' with no face visible"
+    }
+   ],
+   "recommendation": "Trim or tighten the silent/low-speech gap between the hook line and the first tool demo so energy carries through from the opening claim into the first payoff.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 4.76,
+   "t_in_range": true
+  },
+  {
+   "title": "Low on-screen text coverage for a shorts-format video",
+   "t_start_s": 0.0,
+   "t_end_s": 41.1,
+   "observation": "Text overlay covers only part of the runtime and is absent in the first 3 seconds, which is below the shorts-category median where captions/text are typically used more heavily to support sound-off viewing.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.286"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "0.0"
+    }
+   ],
+   "recommendation": "Test adding burned-in captions or a text label during the hook and tool demos, consistent with the heavier text use seen elsewhere in the shorts category.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Dark, lower-colorfulness palette relative to category norms",
+   "t_start_s": 0.0,
+   "t_end_s": 20.0,
+   "observation": "Brightness and colorfulness sit below the shorts-category median despite the neon-studio visual concept, which may mute the HUD graphics' visual punch.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "brightness_mean",
+     "value": "0.251"
+    },
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "35.5"
+    },
+    {
+     "kind": "visual",
+     "ref": "1.2",
+     "value": "Dimly lit studio with neon-blue HUD screens behind presenter"
+    }
+   ],
+   "recommendation": "Consider testing a brighter grade or stronger highlight pass on the neon elements to make the futuristic set design read more vividly on small mobile screens.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 20,
+  "evidence_verified": 20,
+  "evidence_rate": 1.0,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    12
+   ],
+   "quote": [
+    4,
+    4
+   ],
+   "visual": [
+    4,
+    4
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "26.1",
+    "value": "Third, Catching. Which tool is your favorite?",
+    "verified": true,
+    "note": "match=1.00 at 30.48"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "broll_share",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "visual",
+    "ref": "30.8",
+    "value": "graphics_text CTA card begins, no demo shown for tool 3",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:0.0",
+    "value": "144.0 wpm",
+    "verified": true,
+    "note": "bin={'start': 0.0, 'end': 5.0, 'cuts': 1, 'wpm': 144.0, 'loud_db': -17.5, 'motion': 0.08}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:5.0",
+    "value": "36.0 wpm",
+    "verified": true,
+    "note": "bin={'start': 5.0, 'end': 10.0, 'cuts': 2, 'wpm': 36.0, 'loud_db': -19.9, 'motion': 0.108}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "visual",
+    "ref": "8.7",
+    "value": "graphics_text segment 'Ai NClights' with no face visible",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.286",
+    "verified": true,
+    "note": "actual=0.286"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "brightness_mean",
+    "value": "0.251",
+    "verified": true,
+    "note": "actual=0.251"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "35.5",
+    "verified": true,
+    "note": "actual=35.5"
+   },
+   {
+    "owner": "rec3",
+    "kind": "visual",
+    "ref": "1.2",
+    "value": "Dimly lit studio with neon-blue HUD screens behind presenter",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "5",
+    "verified": true,
+    "note": "actual=5.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "0.0",
+    "value": "Stop wasting time.",
+    "verified": true,
+    "note": "match=1.00 at 0.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "you_rate",
+    "value": "4.11",
+    "verified": true,
+    "note": "actual=4.11"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "32.6",
+    "value": "Which tool is your favorite?",
+    "verified": true,
+    "note": "match=1.00 at 31.6"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "2",
+    "verified": true,
+    "note": "actual=2.0"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "33.4",
+    "value": "Comment below. Hit like and subscribe to Novexic",
+    "verified": true,
+    "note": "match=1.00 at 33.38"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "4.38",
+    "verified": true,
+    "note": "actual=4.38"
+   },
+   {
+    "owner": "str3",
+    "kind": "visual",
+    "ref": "10.2",
+    "value": "screen_recording segment begins after talking_head hook",
+    "verified": true,
+    "note": "segment starts at ref"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 20,
+  "evidence_verified": 20,
+  "evidence_rate": 1.0,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    12
+   ],
+   "quote": [
+    4,
+    4
+   ],
+   "visual": [
+    4,
+    4
+   ]
+  }
+ }
+}

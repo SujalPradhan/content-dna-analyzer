@@ -1,0 +1,397 @@
+{
+ "summary": "This is a narrated travel vlog built almost entirely from aesthetic b-roll (100% broll_share, no talking-head), organized around 20+ location chapters, with a silent music-only preview montage for the first 136 seconds before any narration begins. Captions and a slow, poetic voiceover carry the story while the edit itself cuts far more frequently and briefly than is typical for the calm-vlog category it belongs to.",
+ "dna_tags": [
+  "silent preview montage",
+  "caption-led travel diary",
+  "poetic sparse voiceover",
+  "color-graded golden-hour b-roll",
+  "chapter-segmented day-in-the-life"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 37.8,
+   "role": "hook",
+   "label": "Preview montage with text overlay, no speech"
+  },
+  {
+   "start_s": 37.8,
+   "end_s": 109.8,
+   "role": "intro_setup",
+   "label": "Ferry Ride"
+  },
+  {
+   "start_s": 109.8,
+   "end_s": 187.7,
+   "role": "context",
+   "label": "Exploring Sidney BC"
+  },
+  {
+   "start_s": 187.7,
+   "end_s": 340.8,
+   "role": "main_content",
+   "label": "Exploring Victoria, Market Square, Chinatown, dinner, sunset"
+  },
+  {
+   "start_s": 340.8,
+   "end_s": 416.8,
+   "role": "main_content",
+   "label": "Next day, Fisherman's Wharf"
+  },
+  {
+   "start_s": 416.8,
+   "end_s": 530.1,
+   "role": "main_content",
+   "label": "Routine Coffee, Belle General Store"
+  },
+  {
+   "start_s": 530.1,
+   "end_s": 585.9,
+   "role": "main_content",
+   "label": "Crust Bakery, Munro's Books"
+  },
+  {
+   "start_s": 585.9,
+   "end_s": 653.3,
+   "role": "main_content",
+   "label": "Upcycle Clothing, shops, Paboom"
+  },
+  {
+   "start_s": 653.3,
+   "end_s": 684.7,
+   "role": "outro",
+   "label": "Ferry back, sunset reflection narration"
+  }
+ ],
+ "hook": {
+  "what_happens": "A wordless, music-driven montage of sunset ferry views, street scenes, a caf\u00e9 storefront and a lemonade shot, overlaid with the text 'FINDING COMFORT, soft summer days on the island'.",
+  "promise": "A cozy, slow-paced island weekend trip presented through aesthetic imagery and mood rather than spoken explanation.",
+  "strengths": [
+   "Text overlay is present from the first 3 seconds (hook_text_overlay=1.0), immediately signaling theme and tone.",
+   "Colorfulness is high (43.0, 92nd pct for category) giving the opening visual richness."
+  ],
+  "weaknesses": [
+   "Time to first spoken word is 136.46s, the 92nd percentile for vlogs (category p50 16.67s), meaning the hook relies entirely on visuals/music with zero voice for over two minutes.",
+   "hook_wpm is 0, far below even the vlog category's already-low p50 of 0.0-45 range, offering no verbal hook payload."
+  ]
+ },
+ "devices": [
+  {
+   "name": "on-screen caption narration layer",
+   "t_s": 37.8,
+   "quote": "the day started softly"
+  },
+  {
+   "name": "poetic present-tense voiceover",
+   "t_s": 138.5,
+   "quote": "It was soft, moving at its own unhurried pace"
+  },
+  {
+   "name": "chapter-title text overlays marking locations",
+   "t_s": 187.7,
+   "quote": "by late afternoon we made our way into victoria"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0,
+   "point": "Visually cohesive, highly colorful b-roll throughout gives the video a strong aesthetic identity.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "43.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "broll_share",
+     "value": "1.0"
+    }
+   ]
+  },
+  {
+   "t_s": 141.5,
+   "point": "Narration consistently reinforces the 'slow, comforting' theme in short poetic lines that match the visual mood.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Which created a calming and comforting moment."
+    }
+   ]
+  },
+  {
+   "t_s": 661.9,
+   "point": "The closing narration ties the whole trip together thematically, echoing the opening 'comfort' framing for a satisfying loop.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "This trip had given me comfort, not in big moments or grand adventures, but in the little things."
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Silent two-minute-plus opening before any narration",
+   "t_start_s": 0,
+   "t_end_s": 136.46,
+   "observation": "The first spoken word doesn't arrive until 136.46s, the 92nd percentile for the vlog category where most videos start narrating within ~17-36s.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "136.46"
+    }
+   ],
+   "recommendation": "Test pulling one or two narration lines (e.g. from the 136-144s block) earlier into the preview montage so viewers get a spoken anchor sooner, while keeping the silent aesthetic shots as B-roll around it.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "high",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Cutting pace contradicts the 'unhurried' narrative",
+   "t_start_s": 0,
+   "t_end_s": 684.7,
+   "observation": "Shots per minute (18.84) sit at the 92nd percentile and median shot length (2.75s) at the 8th percentile for vlogs, meaning the edit is fast and choppy even though the narration repeatedly emphasizes slowness and ease.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "shots_per_min",
+     "value": "18.84"
+    },
+    {
+     "kind": "metric",
+     "ref": "median_shot_s",
+     "value": "2.75"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "moving at its own unhurried pace"
+    }
+   ],
+   "recommendation": "In segments carrying 'slow/soft' narration (e.g. 138-144s, 201-212s), consider holding shots longer and reducing cut frequency so the visual rhythm matches the stated pacing of the story.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "No explicit call to action anywhere in the video",
+   "t_start_s": 0,
+   "t_end_s": 684.7,
+   "observation": "cta_count is 0, the 8th percentile for the vlog category, where most comparable videos include at least one CTA.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "0"
+    }
+   ],
+   "recommendation": "Test adding a single low-key CTA near the outro (e.g. after 661s where the reflective wrap-up narration occurs) such as a text overlay inviting comments on favorite spots, without disrupting the calm tone.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Low overall speech coverage leaves long stretches silent of narration",
+   "t_start_s": 0,
+   "t_end_s": 684.7,
+   "observation": "Speech coverage is 0.204, the 25th percentile for vlogs, and several multi-minute stretches (e.g. 144-180s, 234-258s, 322-387s) have zero recorded words per minute in the bins.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.204"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:160.0",
+     "value": "wpm 0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:240.0",
+     "value": "wpm 36.0 then bin:260.0 wpm 18.0"
+    }
+   ],
+   "recommendation": "Consider adding a few more short narration lines across the long silent b-roll stretches (e.g. Market Square/Chinatown section 234-258s) to keep the storytelling thread present throughout, while leaving some fully musical passages intentionally for breathing room.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Darker overall brightness relative to category",
+   "t_start_s": 0,
+   "t_end_s": 684.7,
+   "observation": "Mean brightness is 0.371, the 8th percentile for the vlog category, despite the footage being largely daytime/golden-hour exteriors.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "brightness_mean",
+     "value": "0.371"
+    }
+   ],
+   "recommendation": "Review the color grade on daytime segments (e.g. 187-340s Victoria walk) to check if the moody/sunset-style grading is reducing visibility of midday shots more than intended; consider a lighter grade pass for non-sunset scenes.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 13,
+  "evidence_verified": 12,
+  "evidence_rate": 0.923,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    9,
+    10
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "136.46",
+    "verified": true,
+    "note": "actual=136.46"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "shots_per_min",
+    "value": "18.84",
+    "verified": true,
+    "note": "actual=18.84"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "median_shot_s",
+    "value": "2.75",
+    "verified": true,
+    "note": "actual=2.75"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "moving at its own unhurried pace",
+    "verified": true,
+    "note": "match=1.00 at 139.68"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.204",
+    "verified": true,
+    "note": "actual=0.204"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:160.0",
+    "value": "wpm 0.0",
+    "verified": true,
+    "note": "bin={'start': 160.0, 'end': 180.0, 'cuts': 7, 'wpm': 0.0, 'loud_db': -19.7, 'motion': 0.086}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:240.0",
+    "value": "wpm 36.0 then bin:260.0 wpm 18.0",
+    "verified": false,
+    "note": "bin={'start': 240.0, 'end': 260.0, 'cuts': 4, 'wpm': 36.0, 'loud_db': -24.4, 'motion': 0.103}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "brightness_mean",
+    "value": "0.371",
+    "verified": true,
+    "note": "actual=0.371"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "43.0",
+    "verified": true,
+    "note": "actual=43.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "broll_share",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Which created a calming and comforting moment.",
+    "verified": true,
+    "note": "match=1.00 at 141.46"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "This trip had given me comfort, not in big moments or grand adventures, but in the little things.",
+    "verified": true,
+    "note": "match=1.00 at 661.94"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 13,
+  "evidence_verified": 12,
+  "evidence_rate": 0.923,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    9,
+    10
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  }
+ }
+}

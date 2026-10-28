@@ -1,0 +1,349 @@
+{
+ "summary": "A silent, music-driven short that demonstrates a single cooking hack \u2014 hanging seasoned chicken drumsticks on an oven rack over a tray of vegetables \u2014 using fast, close-up b-roll cuts rather than narration or text. The piece relies entirely on visual novelty and high color/contrast cinematography to carry the hook, with pacing that front-loads motion and cuts then goes nearly static after the midpoint.",
+ "dna_tags": [
+  "silent visual hack",
+  "product closeup b-roll",
+  "music-only short",
+  "rapid-cut demonstration",
+  "no-speech cooking tip"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 3.9,
+   "role": "hook",
+   "label": "Hands hang seasoned drumsticks on rack"
+  },
+  {
+   "start_s": 3.9,
+   "end_s": 5.7,
+   "role": "context",
+   "label": "Wide b-roll of rack setup over veggie tray"
+  },
+  {
+   "start_s": 5.7,
+   "end_s": 8.7,
+   "role": "demonstration",
+   "label": "Close-up of drumsticks hanging in oven"
+  },
+  {
+   "start_s": 8.7,
+   "end_s": 15.8,
+   "role": "payoff_reveal",
+   "label": "Extreme close-ups of cooked chicken and roasted vegetables"
+  }
+ ],
+ "hook": {
+  "what_happens": "The video opens mid-action with hands hanging raw, seasoned chicken drumsticks onto an oven rack \u2014 no spoken intro or text.",
+  "promise": "A visual 'life hack' for cooking chicken drumsticks hands-free in the oven, implied by the unusual hanging technique shown immediately.",
+  "strengths": [
+   "Opens directly on the novel technique rather than a verbal setup, matching the action_visual hook type",
+   "High motion in the first bins (0.136 at 0-5s) grabs attention quickly"
+  ],
+  "weaknesses": [
+   "No text overlay or spoken words in the first 3s to clarify what's happening or why (hook_text_overlay=0.0, hook_wpm=0.0)",
+   "Zero speech across the entire clip (speech_coverage=0.0) leaves the 'hack' unexplained for viewers who don't infer it visually"
+  ]
+ },
+ "devices": [
+  {
+   "name": "silent demonstration hook",
+   "t_s": 0.0,
+   "quote": ""
+  },
+  {
+   "name": "extreme close-up payoff",
+   "t_s": 8.8,
+   "quote": ""
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Hook opens directly on the unique hanging-chicken technique, a distinctive visual that functions as the hook itself.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "Hands hanging raw seasoned chicken drumsticks on an oven rack"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "1.07"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "Colorfulness is very high relative to the shorts category, giving the food visual pop typical of appetite-appeal content.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "84.7"
+    }
+   ]
+  },
+  {
+   "t_s": 3.9,
+   "point": "Format switches between product close-up and wider b-roll happen frequently, keeping the short visually dynamic despite no dialogue.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "7.61"
+    },
+    {
+     "kind": "visual",
+     "ref": "3.9",
+     "value": "Wide b-roll of rack setup over vegetable tray"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Clarify the hack with on-screen text in the first 3 seconds",
+   "t_start_s": 0.0,
+   "t_end_s": 3.9,
+   "observation": "The video has zero speech, zero hook text overlay, and no CTA, meaning the only way to understand the technique is visual inference.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.0"
+    }
+   ],
+   "recommendation": "Test adding a short text label (e.g. 'Hang drumsticks for juicier chicken') in the opening frames to anchor the hack's value before the visual reveal.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "high",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Address the dead motion in the back half",
+   "t_start_s": 10.0,
+   "t_end_s": 15.8,
+   "observation": "Motion drops to near-zero (0.001-0.002) and cuts stop entirely in the final two bins after an active opening, creating an abrupt pacing drop-off.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:10.0",
+     "value": "cuts=0, motion=0.001"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:15.0",
+     "value": "cuts=0, motion=0.002"
+    }
+   ],
+   "recommendation": "Consider trimming the long static close-up shots near the end or inserting one more cut/angle change to sustain visual movement through the payoff.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 9.43,
+   "t_in_range": true
+  },
+  {
+   "title": "Loudness and energy taper sharply at the close",
+   "t_start_s": 15.0,
+   "t_end_s": 15.8,
+   "observation": "Loudness drops from about -14.8dB through most of the clip to -27.4dB in the final 0.8s, and overall energy_slope is a steep -3.74, an extreme value versus the shorts category.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "-3.74"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:15.0",
+     "value": "loud_db=-27.4"
+    }
+   ],
+   "recommendation": "Test fading the music more gradually or extending the beat through the final frame so the ending doesn't feel like it cuts off abruptly.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 15.0,
+   "t_in_range": true
+  },
+  {
+   "title": "No CTA included",
+   "t_start_s": 0.0,
+   "t_end_s": 15.8,
+   "observation": "cta_count is 0, which sits at the 17th percentile for shorts, where most comparable videos include at least one CTA.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "0"
+    }
+   ],
+   "recommendation": "If driving follows/likes matters for this channel, test appending a one-second end card or verbal/text CTA after the payoff reveal.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 13,
+  "evidence_verified": 13,
+  "evidence_rate": 1.0,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    11,
+    11
+   ],
+   "quote": [
+    0,
+    0
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:10.0",
+    "value": "cuts=0, motion=0.001",
+    "verified": true,
+    "note": "bin={'start': 10.0, 'end': 15.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -14.8, 'motion': 0.001}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:15.0",
+    "value": "cuts=0, motion=0.002",
+    "verified": true,
+    "note": "bin={'start': 15.0, 'end': 15.8, 'cuts': 0, 'wpm': 0.0, 'loud_db': -27.4, 'motion': 0.002}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "-3.74",
+    "verified": true,
+    "note": "actual=-3.74"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:15.0",
+    "value": "loud_db=-27.4",
+    "verified": true,
+    "note": "bin={'start': 15.0, 'end': 15.8, 'cuts': 0, 'wpm': 0.0, 'loud_db': -27.4, 'motion': 0.002}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "Hands hanging raw seasoned chicken drumsticks on an oven rack",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "1.07",
+    "verified": true,
+    "note": "actual=1.07"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "84.7",
+    "verified": true,
+    "note": "actual=84.7"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "7.61",
+    "verified": true,
+    "note": "actual=7.61"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "3.9",
+    "value": "Wide b-roll of rack setup over vegetable tray",
+    "verified": true,
+    "note": "segment starts at ref"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 13,
+  "evidence_verified": 13,
+  "evidence_rate": 1.0,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    11,
+    11
+   ],
+   "quote": [
+    0,
+    0
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  }
+ }
+}

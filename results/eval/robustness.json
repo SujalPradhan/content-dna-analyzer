@@ -1,0 +1,45 @@
+{
+ "feature": "talking_head_share",
+ "target": "like_rate",
+ "n": 30,
+ "within_category_rho": 0.637,
+ "p": 0.0002,
+ "perm_p_within_category": 0.0012,
+ "leave_one_category_out": {
+  "ad": 0.71,
+  "cooking": 0.612,
+  "explainer": 0.665,
+  "shorts": 0.686,
+  "tech_review": 0.547,
+  "vlog": 0.586
+ },
+ "partial_rho_controlling_views_subs": 0.462,
+ "partial_p": 0.0102,
+ "share_with_any_talking_head": 0.57,
+ "by_category_rho": {
+  "ad": [
+   0.39,
+   6
+  ],
+  "cooking": [
+   0.67,
+   5
+  ],
+  "explainer": [
+   0.35,
+   5
+  ],
+  "shorts": [
+   0.0,
+   3
+  ],
+  "tech_review": [
+   0.94,
+   6
+  ],
+  "vlog": [
+   0.9,
+   5
+  ]
+ }
+}

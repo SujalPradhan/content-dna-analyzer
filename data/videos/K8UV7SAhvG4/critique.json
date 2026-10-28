@@ -1,0 +1,379 @@
+{
+ "summary": "This is the iconic Kars4Kids jingle ad built almost entirely around a repeating musical mnemonic: a kid band performs a catchy phone-number jingle over rapid shot changes, then cuts to a brief graphics/spokesperson block for the rational pitch (website, tax deduction), before returning to the jingle to close. Structure is tightly looped repetition rather than narrative, leaning on earworm audio and bright, high-energy visuals instead of story or demonstration.",
+ "dna_tags": [
+  "jingle-repetition ad",
+  "kid-band performance hook",
+  "phone-number earworm",
+  "studio multi-panel visuals",
+  "short talking-head pitch insert"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 3.2,
+   "role": "hook",
+   "label": "Split-screen kids playing instruments, instrumental intro"
+  },
+  {
+   "start_s": 3.2,
+   "end_s": 15.1,
+   "role": "main_content",
+   "label": "Jingle verse 1: phone number spelled out over performance"
+  },
+  {
+   "start_s": 15.1,
+   "end_s": 18.1,
+   "role": "cta",
+   "label": "Graphics text: website CTA"
+  },
+  {
+   "start_s": 18.1,
+   "end_s": 22.5,
+   "role": "context",
+   "label": "Talking-head kid explains pickup/tax benefit"
+  },
+  {
+   "start_s": 22.5,
+   "end_s": 30.1,
+   "role": "recap",
+   "label": "Jingle verse 2 reprise + final CTA/donate line"
+  }
+ ],
+ "hook": {
+  "what_happens": "A collage of kids playing pink instruments opens with no dialogue for 3 seconds, building visual intrigue before the jingle's spoken/sung phone number begins.",
+  "promise": "Promises a memorable, upbeat brand jingle built around the phone number and a simple donation ask.",
+  "strengths": [
+   "Visually distinct bright pink/black branding is instantly recognizable",
+   "Music starts immediately, giving sonic hook before any words"
+  ],
+  "weaknesses": [
+   "hook_motion is 0.91, below category median, meaning the opening is calmer than typical ads despite needing to grab attention fast",
+   "No on-screen text in first 3s (hook_text_overlay 0.0) while most ads in category also don't, but combined with low motion the opening risks feeling static before the jingle kicks in"
+  ]
+ },
+ "devices": [
+  {
+   "name": "Repeated jingle/mnemonic",
+   "t_s": 3.1,
+   "quote": "1-877-CARS-4-KIDS, K-A-R-S-CARS-4-KIDS, 1-877-CARS-4-KIDS, Donate Your Car Today!"
+  },
+  {
+   "name": "Direct CTA repetition",
+   "t_s": 23.1,
+   "quote": "1-877-CARS-4-KIDS, Donate Your Car Today!"
+  },
+  {
+   "name": "Benefit stacking via child testimonial",
+   "t_s": 18.4,
+   "quote": "Pick up is quick and easy, you'll get a vacation voucher and maximum tax deduction!"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 3.2,
+   "point": "Three distinct CTA moments reinforce the phone number and website across the spot, well above typical single-CTA ads.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "3"
+    }
+   ]
+  },
+  {
+   "t_s": 15.1,
+   "point": "High visual format switching keeps the 30s spot visually varied despite the repetitive audio.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "5.98"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "Bright, highly colorful studio aesthetic stands out, scoring near the top of its category for brightness and colorfulness.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "brightness_mean",
+     "value": "0.685"
+    },
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "41.1"
+    }
+   ]
+  },
+  {
+   "t_s": 3.1,
+   "point": "Loud, consistent audio presence ensures the jingle is heard clearly above category norms.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "loudness_db",
+     "value": "-11.7"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Add motion or quick cut in first 3 seconds",
+   "t_start_s": 0.0,
+   "t_end_s": 3.2,
+   "observation": "The opening 3 seconds before the jingle starts has low motion relative to other ads, with the first cut not occurring until 1.2s and only 2 cuts in the first 5-second bin.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "0.91"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:0.0",
+     "value": "cuts 2, motion 0.14"
+    }
+   ],
+   "recommendation": "Test opening on a faster zoom or cut within the first 1-2 seconds to raise visual energy before the vocal hook lands, since most ads in this category open with higher hook_motion.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Delay between visual start and first spoken word",
+   "t_start_s": 0.0,
+   "t_end_s": 3.14,
+   "observation": "time_to_first_word_s is 3.14s, at the 75th percentile for ads, meaning viewers watch silent/instrumental visuals noticeably longer than most ads in this category before any words are heard.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "3.14"
+    }
+   ],
+   "recommendation": "Consider trimming the instrumental-only opening by a second or layering a sung phrase earlier to close the gap to first spoken content, and test whether this changes viewer engagement with the hook.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Talking-head insert breaks jingle momentum",
+   "t_start_s": 18.1,
+   "t_end_s": 22.5,
+   "observation": "The only non-musical, non-performance segment (talking_head format) sits in the middle of two jingle performance blocks, and wpm spikes to 192 in the preceding bin before dropping to a calmer explanatory tone.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "18.1",
+     "value": "talking_head format, face_visible true, no on-screen text"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:15.0",
+     "value": "wpm 192.0"
+    }
+   ],
+   "recommendation": "Test shortening the talking-head benefit explanation or overlaying jingle music underneath it to keep the sonic branding continuous rather than fully pausing the music bed.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 18.18,
+   "t_in_range": true
+  },
+  {
+   "title": "No b-roll/demonstration of the donation process",
+   "t_start_s": 0.0,
+   "t_end_s": 30.1,
+   "observation": "broll_share is 0.0, at the 8th percentile for ad category, meaning the spot relies entirely on performance and talking-head footage with no footage showing a car being picked up or donated.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "broll_share",
+     "value": "0.0"
+    }
+   ],
+   "recommendation": "Consider testing a brief cutaway shot of a tow truck or car pickup during the talking-head segment (18.1-22.5s) to visually support the 'pick up is quick and easy' claim.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Early first CTA could be reinforced visually, not just audibly",
+   "t_start_s": 3.2,
+   "t_end_s": 3.2,
+   "observation": "first_cta_pos is 0.106, earlier than the category median of 0.811, and the first CTA at 3.2s is purely sung/spoken with no on-screen text overlay until 15.1s.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.106"
+    },
+    {
+     "kind": "visual",
+     "ref": "3.2",
+     "value": "performance_music, on_screen_text '1-877-Kars 4 Kids'"
+    }
+   ],
+   "recommendation": "Since text overlay does appear at 3.2s per the visual timeline, confirm it's legible quickly on mobile playback; test enlarging or bolding the phone number text in this segment to match the audio's prominence.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 3.14,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 13,
+  "evidence_verified": 13,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    11,
+    11
+   ],
+   "quote": [
+    0,
+    0
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "0.91",
+    "verified": true,
+    "note": "actual=0.91"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:0.0",
+    "value": "cuts 2, motion 0.14",
+    "verified": true,
+    "note": "bin={'start': 0.0, 'end': 5.0, 'cuts': 2, 'wpm': 36.0, 'loud_db': -16.0, 'motion': 0.14}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "3.14",
+    "verified": true,
+    "note": "actual=3.14"
+   },
+   {
+    "owner": "rec2",
+    "kind": "visual",
+    "ref": "18.1",
+    "value": "talking_head format, face_visible true, no on-screen text",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:15.0",
+    "value": "wpm 192.0",
+    "verified": true,
+    "note": "bin={'start': 15.0, 'end': 20.0, 'cuts': 4, 'wpm': 192.0, 'loud_db': -9.1, 'motion': 0.177}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "broll_share",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.106",
+    "verified": true,
+    "note": "actual=0.106"
+   },
+   {
+    "owner": "rec4",
+    "kind": "visual",
+    "ref": "3.2",
+    "value": "performance_music, on_screen_text '1-877-Kars 4 Kids'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "3",
+    "verified": true,
+    "note": "actual=3.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "5.98",
+    "verified": true,
+    "note": "actual=5.98"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "brightness_mean",
+    "value": "0.685",
+    "verified": true,
+    "note": "actual=0.685"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "41.1",
+    "verified": true,
+    "note": "actual=41.1"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "loudness_db",
+    "value": "-11.7",
+    "verified": true,
+    "note": "actual=-11.7"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 13,
+  "evidence_verified": 11,
+  "evidence_rate": 0.846,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    9,
+    11
+   ],
+   "quote": [
+    0,
+    0
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  }
+ }
+}

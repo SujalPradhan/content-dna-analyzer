@@ -1,0 +1,17 @@
+{
+ "full": {
+  "specificity": 5,
+  "accuracy": 5,
+  "actionability": 5,
+  "insight": 5
+ },
+ "baseline": {
+  "specificity": 4,
+  "accuracy": 4,
+  "actionability": 2,
+  "insight": 3
+ },
+ "winner": "full",
+ "reason": "B ties concrete claims to measured data (shot_len_cv 0.63 at 8th pct, loudness_range 6.4, cta_count 2, hook_text_overlay 0) and gives directly testable editing changes with timestamps. A is accurate and well-structured with good quotes, but its 'recommendations' mostly describe/observe rather than prescribe concrete edits ('consider whether... changes how it reads', 'could be noted'), yielding weak actionability. B's insight explains WHY the pacing feels mechanical (speech-driven rather than shot-variation driven) and why audio flatness hurts section cues\u2014going beyond summary. B is the stronger critique across the board.",
+ "full_was": "B"
+}

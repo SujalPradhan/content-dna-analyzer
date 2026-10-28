@@ -1,0 +1,391 @@
+{
+ "summary": "A Tamil-language cooking tutorial that opens with an appetizing finished-dish shot before cutting to a studio host intro, then alternates steadily between talking-head instruction and close-up b-roll of ingredients/cooking steps for the remainder of the runtime. Pacing is driven by cooking real-time rather than editing rhythm, with long speech-free stretches during cook/wait periods and a single CTA placed at the very end.",
+ "dna_tags": [
+  "studio cooking demo",
+  "talking-head/b-roll alternation",
+  "ingredient-list text overlays",
+  "payoff-first hook",
+  "slow-paced instructional"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 3.9,
+   "role": "hook",
+   "label": "Finished pasta close-up + title card"
+  },
+  {
+   "start_s": 3.9,
+   "end_s": 24.7,
+   "role": "intro_setup",
+   "label": "Host welcome and recipe intro"
+  },
+  {
+   "start_s": 24.7,
+   "end_s": 49.7,
+   "role": "demonstration",
+   "label": "Boiling pasta"
+  },
+  {
+   "start_s": 49.7,
+   "end_s": 104.2,
+   "role": "demonstration",
+   "label": "Sauteing aromatics, garlic, ginger, tomato, onion"
+  },
+  {
+   "start_s": 104.2,
+   "end_s": 138.9,
+   "role": "demonstration",
+   "label": "Adding carrot, capsicum, garam masala"
+  },
+  {
+   "start_s": 138.9,
+   "end_s": 182.8,
+   "role": "demonstration",
+   "label": "Combining pasta with sauce, chili sauce, ketchup, seasoning"
+  },
+  {
+   "start_s": 182.8,
+   "end_s": 196,
+   "role": "demonstration",
+   "label": "Finishing with cheese"
+  },
+  {
+   "start_s": 196,
+   "end_s": 208.4,
+   "role": "cta",
+   "label": "Closing remarks and subscribe ask"
+  }
+ ],
+ "hook": {
+  "what_happens": "The video opens with a tight shot of the finished, garnished pasta dish and a 'Pasta' text overlay before cutting to the host greeting viewers.",
+  "promise": "Implicit promise of a complete, appetizing pasta recipe demonstration.",
+  "strengths": [
+   "Leads with the payoff (finished dish) rather than process, giving an immediate visual reason to stay",
+   "Text overlay appears within the first 3 seconds, reinforcing the dish name instantly"
+  ],
+  "weaknesses": [
+   "Time to first word is 3.56s and hook_wpm is only 96 (25th pct for cooking), so the spoken hook is slower to deliver than typical even for this calm category",
+   "Only 2 cuts in the first 15s (50th pct) paired with motion at 75th pct suggests the visual pacing doesn't fully match the energy of the opening shot"
+  ]
+ },
+ "devices": [
+  {
+   "name": "payoff-first hook",
+   "t_s": 0,
+   "quote": "Hello friends, welcome to Madras Samayal."
+  },
+  {
+   "name": "on-screen ingredient captions",
+   "t_s": 24.7,
+   "quote": "required Salt, 2 cup Pasta"
+  },
+  {
+   "name": "direct address intro",
+   "t_s": 4.8,
+   "quote": "welcome to Madras Samayal"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0,
+   "point": "Strong payoff-first opening visual pulls viewers in before any talking begins.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "Close-up shot of cooked pasta dish garnished with veggies."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Starts with an appetizing close-up visual hook of the finished recipe"
+    }
+   ]
+  },
+  {
+   "t_s": 104.2,
+   "point": "Consistent alternation between talking-head and labeled b-roll keeps each ingredient step visually distinct.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "3.74"
+    },
+    {
+     "kind": "visual",
+     "ref": "104.2",
+     "value": "talking_head segment following b-roll of onions and tomatoes"
+    }
+   ]
+  },
+  {
+   "t_s": 0,
+   "point": "High colorfulness and heavy text-overlay use keep the ingredient-heavy demonstration visually legible.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "57.4"
+    },
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.758"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Tighten the long speech-free stretch around 140-150s",
+   "t_start_s": 138.9,
+   "t_end_s": 150,
+   "observation": "The bin from 140-150s shows 0 wpm and 0 cuts, meaning no speech and no cut for a full 10s span during what should be an active cooking step.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:140.0",
+     "value": "wpm 0.0, cuts 0"
+    }
+   ],
+   "recommendation": "Consider trimming or adding a quick cutaway/sound cue during this silent stretch so the step doesn't feel static for viewers who rely on narration pacing.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 139.24,
+   "t_in_range": true
+  },
+  {
+   "title": "Loudness range is extreme versus category",
+   "t_start_s": 0,
+   "t_end_s": 208.4,
+   "observation": "loudness_range_db measures 28.7, far above the cooking category's typical 6.5-24.7 range (92nd percentile), indicating large swings between quiet and loud moments.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "loudness_range_db",
+     "value": "28.7"
+    }
+   ],
+   "recommendation": "Review the audio mix for sudden loud/quiet jumps (e.g., between narration at -14.8dB and ambient stretches near -27.5dB) and consider smoothing levels for a steadier listening experience, as a test.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "CTA placed only at the very end",
+   "t_start_s": 204,
+   "t_end_s": 208.4,
+   "observation": "first_cta_pos is 0.979, meaning the single call to action arrives in the last 2% of runtime.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.979"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Host asks viewers to subscribe to Madras Samayal."
+    }
+   ],
+   "recommendation": "Test adding an earlier soft mention of subscribing (e.g., mid-video during a natural pause like 90-100s) in addition to the closing ask, so it isn't solely dependent on viewers reaching the final seconds.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 204.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Low speech coverage leaves large silent cooking gaps",
+   "t_start_s": 180,
+   "t_end_s": 200,
+   "observation": "speech_coverage is 0.534 (25th pct for cooking) and bins at 180-190s and 190-200s show 0 wpm, showing extended non-narrated footage late in the video.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.534"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:190.0",
+     "value": "wpm 0.0"
+    }
+   ],
+   "recommendation": "If the goal is to keep viewers oriented near the finish, consider brief voiceover or text callouts during these silent plating/finishing shots to maintain narrative continuity, as a test.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 179.75,
+   "t_in_range": true
+  },
+  {
+   "title": "Pacing trend accelerates sharply in second half",
+   "t_start_s": 100,
+   "t_end_s": 208.4,
+   "observation": "pacing_trend is 1.12 (92nd percentile), meaning the cut rate in the second half is notably higher relative to the first half compared to peers in this category.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "pacing_trend",
+     "value": "1.12"
+    }
+   ],
+   "recommendation": "Since the category norm is a flatter or slightly decelerating pace, consider whether the increased cutting late in the video (e.g., the 150-160s and 110-120s bins with 3 cuts each) matches the calmer intro pacing, or smooth the transition for consistency.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 100.4,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 13,
+  "evidence_verified": 11,
+  "evidence_rate": 0.846,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    9,
+    9
+   ],
+   "quote": [
+    0,
+    2
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:140.0",
+    "value": "wpm 0.0, cuts 0",
+    "verified": true,
+    "note": "bin={'start': 140.0, 'end': 150.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -17.8, 'motion': 0.04}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "loudness_range_db",
+    "value": "28.7",
+    "verified": true,
+    "note": "actual=28.7"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.979",
+    "verified": true,
+    "note": "actual=0.979"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "Host asks viewers to subscribe to Madras Samayal.",
+    "verified": false,
+    "note": "match=0.00 at None"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.534",
+    "verified": true,
+    "note": "actual=0.534"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:190.0",
+    "value": "wpm 0.0",
+    "verified": true,
+    "note": "bin={'start': 190.0, 'end': 200.0, 'cuts': 2, 'wpm': 0.0, 'loud_db': -21.5, 'motion': 0.064}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "pacing_trend",
+    "value": "1.12",
+    "verified": true,
+    "note": "actual=1.12"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "Close-up shot of cooked pasta dish garnished with veggies.",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Starts with an appetizing close-up visual hook of the finished recipe",
+    "verified": false,
+    "note": "match=0.00 at None"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "3.74",
+    "verified": true,
+    "note": "actual=3.74"
+   },
+   {
+    "owner": "str1",
+    "kind": "visual",
+    "ref": "104.2",
+    "value": "talking_head segment following b-roll of onions and tomatoes",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "57.4",
+    "verified": true,
+    "note": "actual=57.4"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.758",
+    "verified": true,
+    "note": "actual=0.758"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 13,
+  "evidence_verified": 9,
+  "evidence_rate": 0.692,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    7,
+    9
+   ],
+   "quote": [
+    0,
+    2
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  }
+ }
+}

@@ -1,0 +1,598 @@
+<style>
+/* Layout: one narrow reading column (68ch) for prose; charts and the explorer break out to the full 72rem width.
+   Single dark editorial theme (deliberate, one visual world); every colour is a token on .cd. */
+#dash-root { --dash-gutter: 0; }
+.cd {
+  --bg: #0f1215; --panel: #171b20; --panel-2: #1d232a; --line: #2c333c; --ink: #edf0f4; --ink-2: #c3cad3; --muted: #8f9aa7;
+  --accent: #c6f06b; --accent-ink: #14200a; --ok: #6fd28d; --warn: #f2b84b; --bad: #ff8a7a;
+  --font-display: "Bricolage Grotesque", var(--font-anthropic-sans, system-ui), sans-serif;
+  --font-body: "Instrument Sans", var(--font-anthropic-sans, system-ui), sans-serif;
+  /* tokens the charts and the explorer read */
+  --color-bg: var(--bg); --color-panel: var(--panel); --color-fg: var(--ink); --color-fg-muted: var(--muted); --color-border-line: var(--line);
+  --color-ok: var(--ok); --color-warn: var(--warn); --color-bad: var(--bad);
+  --cds-chart-grid: #232a32; --cds-chart-axis: #3a424c; --cds-chart-reference: #6b7682; --cds-chart-muted: #4b545e;
+  --cds-surface-popover: #222830; --cds-border: #38414b; --cds-shadow-popover: 0 8px 24px rgba(0,0,0,.45); --cds-text-secondary: var(--ink-2);
+  --cds-font-size-caption: 12.5px; --cds-font-size-body: 16px; --cds-font-size-heading: 17px; --cds-font-size-title: 30px; --cds-font-weight-medium: 600;
+  --cds-gap-xs: 4px; --cds-gap-sm: 8px; --cds-gap-md: 16px; --cds-gap-lg: 24px; --cds-gap-xl: 36px;
+  --cds-pad-xs: 4px; --cds-pad-sm: 8px; --cds-pad-md: 12px; --cds-pad-lg: 20px; --cds-radius: 10px; --cds-dur-slow: .3s;
+  /* one hue per genre (validated dark categorical steps) */
+  --genre-ad: #3987e5; --genre-shorts: #d95926; --genre-explainer: #199e70; --genre-tech_review: #c98500; --genre-cooking: #d55181; --genre-vlog: #9085e9; --genre-uncategorised: #6b7682;
+  --fmt-th: #7d93ab; --fmt-br: #c4955f; --fmt-sc: #5fa3a4; --fmt-ot: #4b545e;
+  /* one hue per part of the story */
+  --p1: #ff8f6b; --p2: #7fb2ff; --p3: #c6f06b; --p4: #c79bff; --p5: #9aa4b0;
+  color-scheme: dark; background: var(--bg); color: var(--ink); font-family: var(--font-body);
+  padding: 8px max(16px, env(safe-area-inset-right, 0px)) 64px max(16px, env(safe-area-inset-left, 0px));
+}
+.cd * { box-sizing: border-box; }
+.cd .wrap { max-width: 72rem; margin-inline: auto; }
+.cd p, .cd li { font-size: var(--cds-font-size-body); line-height: 1.75; color: var(--ink-2); }
+.cd .prose { max-width: 68ch; }
+.cd h1, .cd h2, .cd h3 { font-family: var(--font-display); color: var(--ink); text-wrap: balance; margin: 0; }
+.cd h1 { font-size: clamp(2.1rem, 5.4vw, 4rem); line-height: 1.05; letter-spacing: -.035em; font-weight: 700; max-width: 20ch; }
+.cd h1 em { font-style: normal; color: var(--accent); }
+.cd h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); line-height: 1.12; letter-spacing: -.02em; font-weight: 650; max-width: 26ch; margin-bottom: 18px; }
+.cd h3 { font-size: 17px; font-weight: 600; letter-spacing: -.005em; margin-bottom: 6px; }
+.cd a { color: var(--accent); }
+.cd b.n, .cd .n { color: var(--ink); font-weight: 650; font-variant-numeric: tabular-nums; }
+.cd .eyebrow { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--pc, var(--accent)); margin-bottom: 14px; }
+.cd .note { font-size: var(--cds-font-size-caption); color: var(--muted); line-height: 1.55; margin: 0 0 14px; max-width: 72ch; }
+.cd .hero { padding: clamp(28px, 6vw, 72px) 0 24px; }
+.cd .deck { font-size: clamp(1.05rem, 1.7vw, 1.3rem); line-height: 1.6; color: var(--ink-2); max-width: 60ch; margin-top: 22px; }
+.cd .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr)); gap: 0; margin-top: 36px; border-top: 1px solid var(--line); }
+.cd .stat { padding: 18px 18px 6px 0; }
+.cd .stat .v { font-family: var(--font-display); font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 650; color: var(--accent); line-height: 1; }
+.cd .stat .l { font-size: 12.5px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+.cd .part { --pc: var(--p5); margin-top: clamp(48px, 8vw, 96px); padding-top: 26px; border-top: 3px solid var(--pc); }
+.cd .part.p1 { --pc: var(--p1); } .cd .part.p2 { --pc: var(--p2); } .cd .part.p3 { --pc: var(--p3); } .cd .part.p4 { --pc: var(--p4); } .cd .part.p5 { --pc: var(--p5); }
+.cd .part-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 8px; }
+.cd .part-head .k { font-family: var(--font-display); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--pc); font-weight: 700; }
+.cd .part-head .s { font-size: 13px; color: var(--muted); }
+.cd section { margin-top: clamp(36px, 6vw, 64px); scroll-margin-top: 1rem; }
+.cd .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); min-width: 0; position: relative; }
+.cd .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); gap: var(--cds-gap-md); margin-top: var(--cds-gap-lg); }
+.cd .callout { border-left: 3px solid var(--pc, var(--accent)); background: var(--panel); padding: 18px 22px; border-radius: 0 var(--cds-radius) var(--cds-radius) 0; margin: 26px 0; max-width: 72ch; }
+.cd .callout p { margin: 0; color: var(--ink); font-size: 1.05rem; line-height: 1.6; }
+.cd .pull { font-family: var(--font-display); font-size: clamp(1.25rem, 2.4vw, 1.6rem); line-height: 1.35; color: var(--ink); max-width: 34ch; margin: 28px 0; letter-spacing: -.01em; }
+.cd .chart { width: 100%; min-height: 120px; }
+.cd svg text { fill: var(--muted); font-size: 11px; font-family: var(--font-body); }
+.cd svg .lbl { fill: var(--ink); }
+.cd .tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: 8px; box-shadow: var(--cds-shadow-popover); padding: 6px 9px; font-size: 12px; max-width: 18rem; z-index: 5; color: var(--ink); }
+.cd .tip .t { color: var(--muted); }
+.cd .tip[hidden] { display: none; }
+.cd .legend, .cd .glegend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--muted); margin-bottom: 10px; }
+.cd .legend i, .cd .gchip i { display: inline-block; width: .7rem; height: .7rem; border-radius: 2px; margin-right: .4rem; vertical-align: -1px; }
+.cd .gchip { display: inline-flex; align-items: center; }
+.cd .tablewrap { overflow-x: auto; }
+.cd table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+.cd th, .cd td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--ink-2); }
+.cd th { color: var(--muted); font-weight: 600; font-size: 12px; }
+.cd td.num, .cd th.num { text-align: right; }
+.cd .chip { display: inline-block; padding: 1px 9px; border-radius: 999px; border: 1px solid var(--line); font-size: 12px; white-space: nowrap; }
+.cd .yes { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 45%, transparent); }
+.cd .partial { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 45%, transparent); }
+.cd .no { color: var(--muted); }
+.cd .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 10px; margin-top: 22px; }
+.cd .step { border: 1px solid var(--line); border-radius: var(--cds-radius); padding: 14px; background: var(--panel); }
+.cd .step .k { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--pc); font-weight: 700; }
+.cd .step h3 { font-size: 16px; margin: 6px 0 4px; }
+.cd .step p { font-size: 13px; line-height: 1.5; margin: 0; }
+.cd .strips { display: grid; gap: 18px; margin-top: 10px; }
+.cd .strip-row h3 { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 15px; }
+.cd .strip-row h3 i { width: .7rem; height: .7rem; border-radius: 2px; display: inline-block; }
+.cd .film { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; margin-top: 8px; }
+.cd .film figure { margin: 0; }
+.cd .film img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 4px; display: block; background: #000; }
+.cd .film figcaption { font-size: 11px; color: var(--muted); margin-top: 3px; font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) { .cd .film { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.cd .fails { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr)); gap: var(--cds-gap-md); margin-top: 22px; }
+.cd .fail { background: var(--panel); border: 1px solid var(--line); border-top: 3px solid var(--pc); border-radius: var(--cds-radius); padding: 18px; }
+.cd .fail .tag { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--pc); font-weight: 700; }
+.cd .fail h3 { font-size: 19px; margin: 8px 0 8px; }
+.cd .fail p { font-size: 14px; line-height: 1.6; margin: 0 0 8px; }
+.cd .fail .fix { color: var(--ink); }
+.cd .gib { font-family: ui-monospace, Menlo, monospace; font-size: 13px; color: var(--warn); overflow-wrap: anywhere; }
+.cd .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: var(--cds-gap-md); margin-top: var(--cds-gap-lg); }
+.cd .tile .v { font-family: var(--font-display); font-size: 2rem; font-weight: 650; color: var(--ink); line-height: 1.1; }
+.cd .tile .l { font-size: 12.5px; color: var(--muted); margin-top: 6px; line-height: 1.45; }
+.cd .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: var(--cds-gap-lg); align-items: start; }
+.cd ul.lim { padding-left: 1.1rem; margin: 0; } .cd ul.lim li { margin-bottom: 6px; font-size: 15px; }
+.cd .exbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 18px 0 14px; }
+.cd .exbar label { font-size: 13px; color: var(--muted); }
+.cd .exbar select { font: inherit; font-size: 15px; color: var(--ink); background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; min-width: min(100%, 28rem); max-width: 100%; }
+.cd .exbar select:focus-visible, .cd button:focus-visible, .cd a:focus-visible, .cd input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cd .gdot { width: .8rem; height: .8rem; border-radius: 3px; display: inline-block; }
+.cd #explorer { background: var(--panel); border: 1px solid var(--line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); }
+.cd .live { font-size: 13px; color: var(--muted); border: 1px dashed var(--line); border-radius: 8px; padding: 8px 12px; }
+.cd .live[hidden] { display: none; }
+.cd input.search { width: 100%; max-width: 22rem; padding: 8px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); color: var(--ink); font: inherit; font-size: 13px; margin-bottom: 10px; }
+.cd th button { all: unset; cursor: pointer; }
+.cd .scrollbox { max-height: 30rem; overflow: auto; }
+.cd .scrollbox th { position: sticky; top: 0; background: var(--panel); }
+.cd details { margin-top: 18px; } .cd summary { cursor: pointer; color: var(--ink); font-weight: 600; }
+.cd .foot { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; margin-top: 56px; }
+.cd .cap { font-size: 15px; line-height: 1.5; color: var(--muted); margin: -8px 0 16px; max-width: 70ch; }
+.cd .card .cap { font-size: 13px; margin: 0 0 10px; }
+.cd h2 em { font-style: normal; color: var(--pc, var(--accent)); }
+.cd .flow { list-style: none; padding: 0; margin: 8px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); gap: 8px; counter-reset: f; }
+.cd .flow li { background: var(--panel); border: 1px solid var(--line); border-radius: var(--cds-radius); padding: 14px; display: grid; gap: 2px; line-height: 1.3; }
+.cd .flow li b { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); }
+.cd .flow li span { font-size: 13px; color: var(--muted); }
+.cd .flow li.hl { border-color: var(--pc); } .cd .flow li.hl b { color: var(--pc); }
+.cd .fail .big { font-family: var(--font-display); font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 650; color: var(--ink); line-height: 1.2; }
+.cd .fail .big small { font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--muted); }
+.cd .okh { color: var(--ok); } .cd .warnh { color: var(--warn); }
+.cd .glance { margin-top: 28px; }
+.cd .glance-head { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; margin-bottom: 8px; }
+.cd .glance-head h3 { margin: 0; } .cd .glance-head .note { margin: 0; }
+.cd .verdicts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--cds-gap-md); margin-top: var(--cds-gap-md); }
+.cd .verdict { --vc: var(--ok); display: flex; gap: 12px; align-items: flex-start; background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--vc); border-radius: 0 var(--cds-radius) var(--cds-radius) 0; padding: 14px 16px; }
+.cd .verdict.warn { --vc: var(--warn); }
+.cd .verdict .ic { flex: none; width: 1.6rem; height: 1.6rem; border-radius: 50%; display: grid; place-items: center; font-weight: 800; color: var(--bg); background: var(--vc); }
+.cd .verdict .vk { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--vc); }
+.cd .verdict .vv { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 650; color: var(--ink); line-height: 1.15; }
+.cd .verdict .vl { font-size: 13px; color: var(--muted); line-height: 1.45; margin-top: 2px; }
+.cd h2.big { font-size: clamp(1.8rem, 4vw, 2.8rem); max-width: 22ch; }
+.cd h2.big em { font-style: normal; color: var(--accent); }
+[data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+@media (prefers-reduced-motion: no-preference) { .cd .hero h1 { animation: rise .7s ease-out both; } @keyframes rise { from { opacity: .001; transform: translateY(8px); } } }
+</style>
+
+<div class="cd"><div class="wrap">
+
+<header class="hero" id="top">
+  <div class="eyebrow">Content DNA · <span data-source="facts" data-field="value" data-where="key=n_videos" data-fmt="int">—</span> YouTube videos · <span data-source="facts" data-field="value" data-where="key=n_categories" data-fmt="int">—</span> genres</div>
+  <h1>Every genre edits to its own beat. <em>Ads cut <span data-source="facts" data-field="value" data-where="key=cuts_ratio_ad_cooking" data-fmt="d1">—</span>× faster than cooking.</em></h1>
+  <div class="card glance">
+    <div class="glance-head"><h3>Median cuts per minute, by genre</h3><span class="note">One bar per genre · <span data-source="facts" data-field="value" data-where="key=n_videos" data-fmt="int">—</span> videos measured frame by frame</span></div>
+    <div class="chart" id="glance" data-source="facts" role="img" aria-label="Median cuts per minute by genre"></div>
+    <div class="tip" hidden></div>
+  </div>
+  <div class="verdicts">
+    <div class="verdict ok"><span class="ic" aria-hidden="true">✓</span><div><div class="vk">Grounded</div><div class="vv"><span data-source="facts" data-field="value" data-where="key=crit_evidence_rate" data-fmt="pct">—</span></div><div class="vl">of the evidence behind its advice checks out against the measurements</div></div></div>
+    <div class="verdict ok"><span class="ic" aria-hidden="true">✓</span><div><div class="vk">Specific</div><div class="vv"><span data-source="facts" data-field="value" data-where="key=judge_full_wins" data-fmt="int">—</span>–<span data-source="facts" data-field="value" data-where="key=judge_base_wins" data-fmt="int">—</span></div><div class="vl">a blind judge preferred its critique over a generic summary</div></div></div>
+    <div class="verdict warn"><span class="ic" aria-hidden="true">!</span><div><div class="vk">Not causal</div><div class="vv">Patterns, not proof</div><div class="vl">nothing here shows a style raises views; links to engagement are correlations</div></div></div>
+  </div>
+</header>
+
+<div class="part p1">
+  <div class="part-head"><span class="k">1 · Problem</span><span class="s">and the instrument</span></div>
+
+  <section id="gap">
+    <h2>Analytics say <em>where</em> viewers left. Not <em>what the edit was doing</em>.</h2>
+    <p class="cap">Existing tools score, summarise or list shots. None explains construction with timestamped fixes.</p>
+    <div class="card tablewrap">
+      <table id="landscape" data-source="landscape" data-row-key="tool">
+        <thead><tr><th data-field="tool">Tool</th><th data-field="measures_structure">Measures structure</th><th data-field="explains_construction">Explains construction</th><th data-field="timestamped_fixes">Timestamped fixes</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>Measure. Interpret. <em>Check everything.</em></h2>
+    <ol class="flow">
+      <li><b>Measure</b><span>cuts · loudness</span></li>
+      <li><b>Listen</b><span>timed words</span></li>
+      <li><b>Watch</b><span>what's on screen</span></li>
+      <li><b>Fingerprint</b><span>30 features</span></li>
+      <li><b>Critique</b><span>3–6 timed fixes</span></li>
+      <li class="hl"><b>Verify</b><span>every citation</span></li>
+    </ol>
+  </section>
+</div>
+
+<div class="part p2">
+  <div class="part-head"><span class="k">2 · One video</span><span class="s">second by second</span></div>
+  <section id="explore">
+    <h2>Every observer on <em>one clock</em>.</h2>
+    <p class="cap">Story beats, screen content, cuts, speech and loudness share one timeline. Pins are fixes; click one to jump there.</p>
+    <div class="exbar">
+      <label for="vselect">Video</label>
+      <select id="vselect" data-source="explorer" aria-label="Choose a video"></select>
+      <span id="vgenre" class="legend" style="margin:0"></span>
+    </div>
+    <p class="live" id="livenote" hidden>YouTube can't be embedded here, so timestamps open YouTube at that moment. Run <code>uv run dna serve</code> for the synced player.</p>
+    <div id="explorer" data-source="explorer"></div>
+  </section>
+</div>
+
+<div class="part p3">
+  <div class="part-head"><span class="k">3 · Patterns</span><span class="s">across <span data-source="facts" data-field="value" data-where="key=n_videos" data-fmt="int">—</span> fingerprints</span></div>
+  <div class="glegend" id="glegend" aria-label="Genre colours"></div>
+
+  <section id="grammar">
+    <h2>The first 15 seconds: <em>ad vs. cooking</em>.</h2>
+    <p class="cap">One frame every 2.5 s.</p>
+    <div class="card"><div class="strips" id="strips" data-source="frames"></div></div>
+  </section>
+
+  <section id="speech">
+    <h2>Tech reviews talk <em><span data-source="facts" data-field="value" data-where="key=wpm_tech_review" data-fmt="int">—</span></em> words a minute. Vlogs, <span data-source="facts" data-field="value" data-where="key=wpm_vlog" data-fmt="int">—</span>.</h2>
+    <p class="cap">Each dot is a video; the white tick is the genre median.</p>
+    <div class="card"><div class="chart" id="dot-wpm" data-source="videos"></div><div class="tip" hidden></div></div>
+  </section>
+
+  <section id="openings">
+    <h2>Explainers speak at once. Vlogs wait <em><span data-source="facts" data-field="value" data-where="key=ttfw_vlog" data-fmt="d1">—</span> s</em>.</h2>
+    <p class="cap">Seconds until the first voice.</p>
+    <div class="card"><div class="chart" id="dot-ttfw" data-source="videos"></div><div class="tip" hidden></div></div>
+  </section>
+
+  <section id="formats">
+    <h2>Each genre has a <em>visual diet</em>.</h2>
+    <p class="cap">Share of runtime by what's on screen.</p>
+    <div class="card"><div class="legend" id="fmt-legend" data-source="format_mix"></div><div class="chart" id="fmt" data-source="format_mix"></div><div class="tip" hidden></div></div>
+  </section>
+
+  <section id="engagement">
+    <h2>Presenter time tracks likes. <em>Probably the audience, not the edit.</em></h2>
+    <p class="cap">Only 1 of <span data-source="facts" data-field="value" data-where="key=eng_n_tests" data-fmt="int">—</span> features survives correction (ρ <span data-source="facts" data-field="value" data-where="key=th_rho" data-fmt="d2">—</span>), and it shrinks to <span data-source="facts" data-field="value" data-where="key=th_partial" data-fmt="d2">—</span> once audience size is controlled.</p>
+    <div class="card"><p class="cap">Correlation with like rate, within genre, with 95% interval. The 8 strongest features shown; highlighted = survives correction.</p><div class="chart" id="forest" data-source="engagement_tests"></div><div class="tip" hidden></div></div>
+  </section>
+</div>
+
+<div class="part p4">
+  <div class="part-head"><span class="k">4 · Trust</span><span class="s">testing the observers</span></div>
+  <section id="trust">
+    <h2>Every observer failed once. <em>Cross-checks caught each one.</em></h2>
+    <div class="fails">
+      <article class="fail"><div class="tag">Cut detector</div><h3>A morph is not a cut.</h3><div class="big"><span data-source="facts" data-field="value" data-where="key=shot_precision" data-fmt="pct">—</span> <small>precision</small> · <span data-source="facts" data-field="value" data-where="key=shot_recall" data-fmt="pct">—</span> <small>recall</small></div></article>
+      <article class="fail"><div class="tag">Vision model</div><h3>It misread the clock.</h3><div class="big"><span data-source="facts" data-field="value" data-where="key=perc_hit_before" data-fmt="pct">—</span> → <span data-source="facts" data-field="value" data-where="key=perc_hit_after" data-fmt="pct">—</span> <small>boundaries on a real cut</small></div></article>
+      <article class="fail"><div class="tag">Transcription</div><h3>It heard speech in music.</h3><div class="big"><span data-source="facts" data-field="value" data-where="key=whisper_flagged" data-fmt="int">—</span> <small>invented transcripts caught</small></div></article>
+      <article class="fail"><div class="tag">Critique</div><h3>It quoted lines nobody said.</h3><div class="big"><span data-source="facts" data-field="value" data-where="key=crit_evidence_rate" data-fmt="pct">—</span> <small>of cited evidence verified</small></div></article>
+    </div>
+  </section>
+
+  <section id="ablation">
+    <h2>Measuring makes advice <em>checkable</em>.</h2>
+    <div class="grid">
+      <div class="card"><h3>Evidence verified, by kind</h3><p class="cap">With measurements vs. transcript only (<span data-source="facts" data-field="value" data-where="key=abl_n" data-fmt="int">—</span> videos).</p><div class="legend" id="kind-legend" data-source="evidence_by_kind"></div><div class="chart" id="kinds" data-source="evidence_by_kind"></div><div class="tip" hidden></div></div>
+      <div class="card"><h3>Blind judge scores</h3><p class="cap">Preferred <span data-source="facts" data-field="value" data-where="key=judge_full_wins" data-fmt="int">—</span>–<span data-source="facts" data-field="value" data-where="key=judge_base_wins" data-fmt="int">—</span>. A model judging a model is weak evidence.</p><div class="legend" id="judge-legend" data-source="judge_scores"></div><div class="chart" id="judge" data-source="judge_scores"></div><div class="tip" hidden></div></div>
+    </div>
+    <div class="tiles">
+      <div class="card tile"><div class="v"><span data-source="facts" data-field="value" data-where="key=stab_recs" data-fmt="pct">—</span></div><div class="l">fix moments recur on a re-run</div></div>
+      <div class="card tile"><div class="v"><span data-source="facts" data-field="value" data-where="key=stab_roles" data-fmt="pct">—</span></div><div class="l">story-beat labels stay the same</div></div>
+      <div class="card tile"><div class="v"><span data-source="facts" data-field="value" data-where="key=stab_tags" data-fmt="pct">—</span></div><div class="l">tag wording overlaps: words drift, moments hold</div></div>
+    </div>
+  </section>
+</div>
+
+<div class="part p5">
+  <div class="part-head"><span class="k">5 · Limits</span><span class="s">what we know, and what we don't</span></div>
+  <section id="limits">
+    <h2>Feedback with an address. <em>Not yet proof it works.</em></h2>
+    <div class="two">
+      <div class="card"><h3 class="okh">✓ Observed</h3><ul class="lim">
+        <li>Genres differ sharply in pacing, speech and format</li>
+        <li>Measurements make advice checkable</li>
+        <li>Cross-checks caught every observer's failure</li>
+      </ul></div>
+      <div class="card"><h3 class="warnh">! Untested</h3><ul class="lim">
+        <li>No A/B test: no fix is shown to raise views</li>
+        <li><span data-source="facts" data-field="value" data-where="key=n_videos" data-fmt="int">—</span> videos from search, not representative</li>
+        <li>Like rate is a weak proxy; no retention data</li>
+      </ul></div>
+    </div>
+    <div class="tiles">
+      <div class="card tile"><div class="v"><span data-source="facts" data-field="value" data-where="key=usd_per_video" data-fmt="usd2">—</span></div><div class="l">API cost per video</div></div>
+      <div class="card tile"><div class="v"><span data-source="facts" data-field="value" data-where="key=crit_recs" data-fmt="int">—</span></div><div class="l">timestamped recommendations</div></div>
+      <div class="card tile"><div class="v"><span data-source="facts" data-field="value" data-where="key=hours_analysed" data-fmt="d1">—</span> h</div><div class="l">of video measured</div></div>
+    </div>
+  </section>
+
+  <section id="corpus">
+    <details><summary>All <span data-source="facts" data-field="value" data-where="key=n_videos" data-fmt="int">—</span> videos</summary>
+    <div class="card" style="margin-top:12px">
+      <input class="search" id="vsearch" type="search" placeholder="Filter by title, channel or genre" aria-label="Filter videos">
+      <div class="scrollbox tablewrap">
+        <table id="vt" data-source="videos" data-row-key="video_id">
+          <thead><tr>
+            <th data-field="title"><button data-k="title">Video</button></th>
+            <th data-field="category_label"><button data-k="category_label">Genre</button></th>
+            <th class="num" data-field="duration_s"><button data-k="duration_s">Length</button></th>
+            <th class="num" data-field="shots_per_min"><button data-k="shots_per_min">Cuts/min</button></th>
+            <th class="num" data-field="wpm"><button data-k="wpm">Words/min</button></th>
+            <th class="num" data-field="time_to_first_word_s"><button data-k="time_to_first_word_s">First voice</button></th>
+            <th class="num" data-field="evidence_verified"><button data-k="evidence_verified">Evidence verified</button></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div></details>
+    <details><summary>Cost breakdown</summary><div class="card tablewrap" style="margin-top:12px"><table id="cost-t" data-source="cost" data-row-key="step"><thead><tr><th data-field="step">Step</th><th class="num" data-field="calls">Calls</th><th class="num" data-field="usd">USD</th></tr></thead><tbody></tbody></table></div><p class="note">Whole project including evaluation and re-runs: <span data-source="facts" data-field="value" data-where="key=total_usd" data-fmt="usd2">—</span>. Estimated from logged tokens.</p></details>
+    <details><summary>Methods</summary><p class="note">Shots: PySceneDetect AdaptiveDetector. Motion and colour: OpenCV at 2 fps. Loudness: librosa RMS. Transcript: whisper-1 word timestamps, screened for invented passages. Screen formats and calls to action: gemini-3.5-flash on the YouTube URL. Critique: claude-sonnet-5 with structured output; every cited metric, quote and visual is re-checked by a deterministic validator. Judge: claude-opus-4-8, blind. Statistics: Kruskal-Wallis with Benjamini-Hochberg, Spearman with bootstrap intervals and within-genre permutation tests. Regenerate everything with <code>analysis/*.py</code>.</p></details>
+  </section>
+
+  <p class="foot">Content DNA Analyzer · research prototype. Every number on this page is read from the pipeline's result files (<code>results/story/</code>). Recommendations are hypotheses to test, not performance predictions.</p>
+</div>
+
+</div></div>
+
+<script data-inline="explorer">/* web/explorer.js is inlined here by analysis/build_standalone.py */</script>
+
+<script>
+(() => {
+  const cats = ["ad", "shorts", "explainer", "tech_review", "cooking", "vlog"];
+  const css = (n) => getComputedStyle(document.querySelector('.cd')).getPropertyValue(n).trim();
+  const fmts = {
+    int: (v) => d3.format(',')(Math.round(v)), d1: d3.format('.1f'), d2: d3.format('.2f'), d3: d3.format('.3f'),
+    pct: d3.format('.0%'), usd2: d3.format('$.2f'), usd3: d3.format('$.3f'), text: (v) => String(v),
+    mmss: (v) => `${Math.floor(v / 60)}:${String(Math.floor(v % 60)).padStart(2, '0')}`,
+  };
+  const fmtT = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
+  window.CD = { cats, css, fmts, fmtT };
+
+  function tipFor(el) {
+    const card = el.closest('.card');
+    return card ? card.querySelector('.tip') : null;
+  }
+  function showTip(el, evt, html) {
+    const tip = tipFor(el); if (!tip) return;
+    tip.replaceChildren();
+    html.forEach(([cls, txt]) => { const d = document.createElement('div'); if (cls) d.className = cls; d.textContent = txt; tip.appendChild(d); });
+    tip.hidden = false;
+    const card = el.closest('.card').getBoundingClientRect();
+    let x = evt.clientX - card.left + 12, y = evt.clientY - card.top + 12;
+    const w = tip.offsetWidth; if (x + w > card.width - 8) x = Math.max(8, evt.clientX - card.left - w - 12);
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  }
+  function hideTip(el) { const t = tipFor(el); if (t) t.hidden = true; }
+  window.CD.showTip = showTip; window.CD.hideTip = hideTip;
+
+  // ---------- facts
+  function fillFacts() {
+    const f = dash.data('facts');
+    document.querySelectorAll('[data-source="facts"][data-where]').forEach((el) => {
+      if (f.status !== 'ok') { el.textContent = '—'; return; }
+      const key = decodeURIComponent(el.dataset.where.split('=')[1]);
+      const row = f.data.find((r) => r.key === key);
+      const fm = fmts[el.dataset.fmt || 'text'];
+      el.textContent = row && row.value !== null && row.value !== undefined ? fm(row.value) : '—';
+    });
+  }
+
+  // ---------- simple tables
+  const yesno = { yes: 'Yes', partial: 'Partly', no: 'No' };
+  function landscape() {
+    const d = dash.data('landscape'); const tb = document.querySelector('#landscape tbody'); tb.replaceChildren();
+    if (d.status !== 'ok') return;
+    d.data.forEach((r) => {
+      const tr = document.createElement('tr');
+      ['tool'].forEach((k) => { const td = document.createElement('td'); td.textContent = r[k]; if (k === 'tool' && r.group === 'This project') td.style.fontWeight = 600; tr.appendChild(td); });
+      ['measures_structure', 'explains_construction', 'timestamped_fixes'].forEach((k) => {
+        const td = document.createElement('td'); const s = document.createElement('span'); s.className = 'chip ' + r[k]; s.textContent = yesno[r[k]] || r[k]; td.appendChild(s); tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    });
+  }
+  function cost() {
+    const d = dash.data('cost'); const tb = document.querySelector('#cost-t tbody'); tb.replaceChildren();
+    if (d.status !== 'ok') return;
+    d.data.slice().sort((a, b) => +b.usd - +a.usd).forEach((r) => {
+      const tr = document.createElement('tr');
+      [[r.step, ''], [fmts.int(+r.calls), 'num'], [fmts.usd2(+r.usd), 'num']].forEach(([t, c]) => { const td = document.createElement('td'); td.textContent = t; if (c) td.className = c; tr.appendChild(td); });
+      tb.appendChild(tr);
+    });
+  }
+
+  dash.onData(() => { fillFacts(); landscape(); cost(); });
+})();
+</script>
+
+<script>
+(() => {
+  const { cats, fmts, showTip, hideTip, fmtT } = window.CD;
+  const catLabel = { ad: 'Ads', shorts: 'Shorts', explainer: 'Explainers', tech_review: 'Tech reviews', cooking: 'Cooking', vlog: 'Vlogs' };
+
+  // ---------- dot plot by genre
+  function dotplot(id, field, { log = false, fmt = fmts.d1, unit = '' } = {}) {
+    const el = document.getElementById(id); el.replaceChildren();
+    const d = dash.data('videos'); if (d.status !== 'ok') return;
+    const rows = d.data.map((r) => ({ ...r, v: r[field] === '' || r[field] == null ? NaN : Number(r[field]) })).filter((r) => Number.isFinite(r.v) && (!log || r.v > 0));
+    const W = el.clientWidth || 400, rowH = 30, mL = 92, mR = 16, mT = 4, mB = 26, H = mT + mB + rowH * cats.length;
+    const ext = d3.extent(rows, (r) => r.v);
+    const x = log ? d3.scaleLog([Math.max(0.5, ext[0] * 0.8), ext[1] * 1.2], [mL, W - mR]).nice() : d3.scaleLinear([0, ext[1] * 1.05], [mL, W - mR]).nice();
+    const y = d3.scaleBand(cats, [mT, H - mB]).padding(0.2);
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+    const ticks = log ? x.ticks(5).filter((t) => [1, 2, 5].includes(+String(t)[0])) : x.ticks(5);
+    svg.append('g').selectAll('line').data(ticks).join('line').attr('x1', x).attr('x2', x).attr('y1', mT).attr('y2', H - mB).attr('stroke', 'var(--cds-chart-grid)');
+    svg.append('g').selectAll('text').data(ticks).join('text').attr('x', x).attr('y', H - mB + 16).attr('text-anchor', 'middle').text((t) => d3.format('~g')(t) + unit);
+    svg.append('g').selectAll('rect').data(cats).join('rect').attr('x', 0).attr('y', (c) => y(c) + y.bandwidth() / 2 - 5).attr('width', 10).attr('height', 10).attr('rx', 2).style('fill', (c) => `var(--genre-${c})`);
+    svg.append('g').selectAll('text').data(cats).join('text').attr('class', 'lbl').attr('x', 15).attr('y', (c) => y(c) + y.bandwidth() / 2 + 4).text((c) => catLabel[c]);
+    const jitter = (s) => { let h = 0; for (const ch of s) h = (h * 31 + ch.charCodeAt(0)) % 997; return (h / 997 - 0.5) * y.bandwidth() * 0.6; };
+    svg.append('g').selectAll('circle').data(rows).join('circle')
+      .attr('cx', (r) => x(r.v)).attr('cy', (r) => y(r.category) + y.bandwidth() / 2 + jitter(r.video_id)).attr('r', 4.5)
+      .style('fill', (r) => `var(--genre-${r.category})`).attr('fill-opacity', 0.85).attr('stroke', 'var(--color-panel)').attr('stroke-width', 1.5)
+      .on('pointermove', (e, r) => showTip(el, e, [['t', catLabel[r.category]], ['', r.title], ['', fmt(r.v) + unit]]))
+      .on('pointerleave', () => hideTip(el));
+    const med = d3.rollups(rows, (v) => d3.median(v, (r) => r.v), (r) => r.category);
+    svg.append('g').selectAll('line').data(med).join('line').attr('x1', (m) => x(m[1])).attr('x2', (m) => x(m[1]))
+      .attr('y1', (m) => y(m[0]) + 2).attr('y2', (m) => y(m[0]) + y.bandwidth() - 2).attr('stroke', 'var(--color-fg)').attr('stroke-width', 2.5).attr('stroke-linecap', 'round');
+  }
+
+  // ---------- format mix stacked bars
+  const fmtOrder = ['Talking head', 'B-roll / product', 'Screen / graphics', 'Other'];
+  function formats() {
+    const el = document.getElementById('fmt'); el.replaceChildren(); const lg = document.getElementById('fmt-legend'); lg.replaceChildren();
+    const d = dash.data('format_mix'); if (d.status !== 'ok') return;
+    const col = (f) => ({ 'Talking head': 'var(--fmt-th)', 'B-roll / product': 'var(--fmt-br)', 'Screen / graphics': 'var(--fmt-sc)', Other: 'var(--fmt-ot)' })[f];
+    fmtOrder.forEach((f) => { const s = document.createElement('span'); const i = document.createElement('i'); i.style.background = col(f); s.append(i, f); lg.appendChild(s); });
+    const W = el.clientWidth || 500, rowH = 34, mL = 92, mR = 8, H = rowH * cats.length + 4;
+    const x = d3.scaleLinear([0, 1], [mL, W - mR]); const y = d3.scaleBand(cats, [0, H]).padding(0.28);
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+    cats.forEach((c) => {
+      svg.append('rect').attr('x', 0).attr('y', y(c) + y.bandwidth() / 2 - 5).attr('width', 10).attr('height', 10).attr('rx', 2).style('fill', `var(--genre-${c})`);
+      svg.append('text').attr('class', 'lbl').attr('x', 15).attr('y', y(c) + y.bandwidth() / 2 + 4).text(catLabel[c]);
+      let acc = 0;
+      fmtOrder.forEach((f) => {
+        const r = d.data.find((q) => q.category === c && q.format === f); const v = r ? +r.share : 0;
+        const x0 = x(acc), w = Math.max(0, x(acc + v) - x0 - 2); acc += v;
+        if (w <= 0) return;
+        svg.append('rect').attr('x', x0).attr('y', y(c)).attr('width', w).attr('height', y.bandwidth()).attr('rx', 3).attr('fill', col(f))
+          .on('pointermove', (e) => showTip(el, e, [['t', catLabel[c]], ['', `${f}: ${fmts.pct(v)}`]])).on('pointerleave', () => hideTip(el));
+        if (w > 34) svg.append('text').attr('x', x0 + w / 2).attr('y', y(c) + y.bandwidth() / 2 + 4).attr('text-anchor', 'middle')
+          .style('fill', f === 'Other' ? 'var(--color-fg)' : '#fff').style('pointer-events', 'none').text(fmts.pct(v));
+      });
+    });
+  }
+
+  // ---------- engagement forest plot
+  function forest() {
+    const el = document.getElementById('forest'); el.replaceChildren();
+    const d = dash.data('engagement_tests'); if (d.status !== 'ok') return;
+    // the 8 strongest associations keep the chart glanceable; any feature that survives correction is always kept
+    const all = d.data.filter((r) => r.analysis === 'within_category').map((r) => ({ ...r, rho: +r.rho, lo: +r.ci_lo, hi: +r.ci_hi, q: +r.q_bh }));
+    const top = new Set(all.slice().sort((a, b) => Math.abs(b.rho) - Math.abs(a.rho)).slice(0, 8).map((r) => r.feature));
+    const rows = all.filter((r) => top.has(r.feature) || r.q < 0.05).sort((a, b) => b.rho - a.rho);
+    const W = el.clientWidth || 600, rowH = 22, mL = Math.min(260, W * 0.45), mR = 16, mT = 6, mB = 28, H = mT + mB + rowH * rows.length;
+    const x = d3.scaleLinear([-1, 1], [mL, W - mR]); const y = d3.scaleBand(rows.map((r) => r.feature), [mT, H - mB]).padding(0.3);
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+    [-1, -0.5, 0, 0.5, 1].forEach((t) => {
+      svg.append('line').attr('x1', x(t)).attr('x2', x(t)).attr('y1', mT).attr('y2', H - mB).attr('stroke', t === 0 ? 'var(--cds-chart-reference)' : 'var(--cds-chart-grid)');
+      svg.append('text').attr('x', x(t)).attr('y', H - mB + 16).attr('text-anchor', 'middle').text(t);
+    });
+    rows.forEach((r) => {
+      const sig = r.q < 0.05; const cy = y(r.feature) + y.bandwidth() / 2; const color = sig ? dash.colors[0] : 'var(--cds-chart-muted)';
+      svg.append('text').attr('class', sig ? 'lbl' : null).attr('x', mL - 8).attr('y', cy + 4).attr('text-anchor', 'end').style('font-weight', sig ? 600 : null).text(r.feature_label);
+      svg.append('line').attr('x1', x(r.lo)).attr('x2', x(r.hi)).attr('y1', cy).attr('y2', cy).attr('stroke', color).attr('stroke-width', 2).attr('stroke-linecap', 'round');
+      svg.append('circle').attr('cx', x(r.rho)).attr('cy', cy).attr('r', 4.5).attr('fill', color).attr('stroke', 'var(--color-panel)').attr('stroke-width', 2);
+      svg.append('rect').attr('x', mL).attr('y', y(r.feature) - 2).attr('width', W - mL - mR).attr('height', y.bandwidth() + 4).attr('fill', 'transparent')
+        .on('pointermove', (e) => showTip(el, e, [['t', r.feature_label], ['', `ρ ${fmts.d2(r.rho)} (95% CI ${fmts.d2(r.lo)} to ${fmts.d2(r.hi)})`], ['', `FDR q ${fmts.d3(r.q)} · n ${r.n}`]]))
+        .on('pointerleave', () => hideTip(el));
+    });
+  }
+
+  // ---------- grouped bars (two systems)
+  function grouped(id, legendId, src, catKey, valFn, labelFn, sysKey, max, valFmt) {
+    const el = document.getElementById(id); el.replaceChildren(); const lg = document.getElementById(legendId); lg.replaceChildren();
+    const d = dash.data(src); if (d.status !== 'ok') return;
+    const systems = ['Content DNA', 'Transcript-only baseline'];
+    systems.forEach((s, i) => { const sp = document.createElement('span'); const ic = document.createElement('i'); ic.style.background = i ? 'var(--cds-chart-muted)' : dash.colors[0]; sp.append(ic, s); lg.appendChild(sp); });
+    const groups = [...new Set(d.data.map((r) => r[catKey]))];
+    const W = el.clientWidth || 400, H = 190, mL = 34, mR = 8, mT = 16, mB = 26;
+    const x0 = d3.scaleBand(groups, [mL, W - mR]).padding(0.3); const x1 = d3.scaleBand(systems, [0, x0.bandwidth()]).padding(0.12);
+    const y = d3.scaleLinear([0, max], [H - mB, mT]);
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+    y.ticks(4).forEach((t) => { svg.append('line').attr('x1', mL).attr('x2', W - mR).attr('y1', y(t)).attr('y2', y(t)).attr('stroke', 'var(--cds-chart-grid)'); svg.append('text').attr('x', mL - 4).attr('y', y(t) + 3).attr('text-anchor', 'end').text(valFmt(t)); });
+    groups.forEach((g) => {
+      svg.append('text').attr('x', x0(g) + x0.bandwidth() / 2).attr('y', H - 8).attr('text-anchor', 'middle').text(labelFn(g));
+      systems.forEach((s, i) => {
+        const r = d.data.find((q) => q[catKey] === g && q[sysKey] === s); const v = r ? valFn(r) : null;
+        const bw = Math.min(28, x1.bandwidth()); const bx = x0(g) + x1(s) + (x1.bandwidth() - bw) / 2;
+        if (v === null || !Number.isFinite(v)) { svg.append('text').attr('x', bx + bw / 2).attr('y', H - mB - 4).attr('text-anchor', 'middle').text('n/a'); return; }
+        const h = Math.max(1, y(0) - y(v));
+        svg.append('path').attr('d', `M${bx},${y(0)}V${y(0) - h + 4}q0,-4 4,-4h${bw - 8}q4,0 4,4V${y(0)}Z`).attr('fill', i ? 'var(--cds-chart-muted)' : dash.colors[0])
+          .on('pointermove', (e) => showTip(el, e, [['t', `${labelFn(g)} · ${s}`], ['', valFmt(v) + (r.total !== undefined ? ` (${r.verified} of ${r.total})` : '')]])).on('pointerleave', () => hideTip(el));
+        svg.append('text').attr('x', bx + bw / 2).attr('y', y(v) - 4).attr('text-anchor', 'middle').text(valFmt(v));
+      });
+    });
+  }
+
+  // ---------- genre legend
+  function genreLegend() {
+    const el = document.getElementById('glegend'); el.replaceChildren();
+    cats.forEach((c) => { const s = document.createElement('span'); s.className = 'gchip'; const i = document.createElement('i'); i.style.background = `var(--genre-${c})`; s.append(i, catLabel[c]); el.appendChild(s); });
+  }
+
+  // the dashboard host may hand nested fields back as JSON strings; restore them
+  const unjson = (v) => { if (typeof v === 'string' && /^[\[{]/.test(v)) { try { return unjson(JSON.parse(v)); } catch (e) { return v; } }
+    if (Array.isArray(v)) return v.map(unjson); if (v && typeof v === 'object') { const o = {}; for (const k in v) o[k] = unjson(v[k]); return o; } return v; };
+
+  // ---------- filmstrips: the opening 15 s of a fast and a slow video
+  function strips() {
+    const el = document.getElementById('strips'); el.replaceChildren();
+    const d = dash.data('frames'); if (d.status !== 'ok') return;
+    unjson(d.data).forEach((v) => {
+      const row = document.createElement('div'); row.className = 'strip-row';
+      const h = document.createElement('h3'); const i = document.createElement('i'); i.style.background = `var(--genre-${v.genre})`;
+      const meta = document.createElement('span'); meta.className = 'note'; meta.style.margin = '0';
+      meta.textContent = `${catLabel[v.genre]} · ${fmts.d1(v.cuts_per_min)} cuts/min · ${v.hook_cuts} cuts in the first 15 s`;
+      h.append(i, v.title.split(' | ')[0].slice(0, 70), meta); row.appendChild(h);
+      const film = document.createElement('div'); film.className = 'film';
+      (Array.isArray(v.frames) ? v.frames : []).forEach((f) => {
+        const fig = document.createElement('figure'); const img = document.createElement('img'); img.src = f.src; img.alt = `${v.title} at ${fmts.mmss(f.t)}`;
+        const cap = document.createElement('figcaption'); cap.textContent = fmts.mmss(f.t); fig.append(img, cap); film.appendChild(fig);
+      });
+      row.appendChild(film); el.appendChild(row);
+    });
+  }
+
+  // ---------- video explorer: dropdown grouped by genre
+  let exSel = 's83EB_OtaEo', exDrawn = null, exW = 0;
+  function explorer() {
+    const d = dash.data('explorer'); const sel = document.getElementById('vselect'); const host = document.getElementById('explorer');
+    if (d.status !== 'ok' || !window.DNAExplorer) { sel.replaceChildren(); host.replaceChildren(); return; }
+    const vids = unjson(d.data);
+    if (!sel.options.length) {
+      cats.forEach((g) => {
+        const og = document.createElement('optgroup'); og.label = catLabel[g];
+        vids.filter((v) => v.genre === g).sort((a, b) => a.title.localeCompare(b.title)).forEach((v) => {
+          const o = document.createElement('option'); o.value = v.video_id; o.textContent = `${v.title.slice(0, 80)} · ${fmts.mmss(v.duration)}`; og.appendChild(o);
+        });
+        sel.appendChild(og);
+      });
+      sel.addEventListener('change', () => { exSel = sel.value; exDrawn = null; explorer(); });
+    }
+    sel.value = exSel;
+    const v = vids.find((x) => x.video_id === exSel) || vids[0];
+    const g = document.getElementById('vgenre'); g.replaceChildren();
+    const dot = document.createElement('i'); dot.className = 'gdot'; dot.style.background = `var(--genre-${v.genre})`; g.append(dot, ' ', catLabel[v.genre]);
+    const w = host.clientWidth;
+    if (exDrawn === v.video_id && Math.abs(w - exW) < 40) return;   // keep a playing video playing on unrelated redraws
+    exDrawn = v.video_id; exW = w;
+    window.DNAExplorer.render(host, v, { player: true, compact: true, onPlayer: (ok) => { document.getElementById('livenote').hidden = ok; } });
+    if (!v.youtube_id) document.getElementById('livenote').hidden = true;
+  }
+
+  // ---------- video table
+  let sortK = 'category_label', sortDir = 1;
+  function vtable() {
+    const tb = document.querySelector('#vt tbody'); tb.replaceChildren();
+    const d = dash.data('videos'); if (d.status !== 'ok') return;
+    const q = (document.getElementById('vsearch').value || '').toLowerCase();
+    const num = (v) => (v === '' || v === null || v === undefined) ? NaN : Number(v);
+    const rows = d.data.filter((r) => !q || `${r.title} ${r.channel} ${r.category_label}`.toLowerCase().includes(q))
+      .sort((a, b) => { const x = num(a[sortK]), y = num(b[sortK]); const c = Number.isFinite(x) && Number.isFinite(y) ? x - y : String(a[sortK]).localeCompare(String(b[sortK])); return c * sortDir; });
+    rows.forEach((r) => {
+      const tr = document.createElement('tr'); tr.dataset.key = r.video_id;
+      const td0 = document.createElement('td'); const a = document.createElement('a'); a.href = r.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = r.title; td0.appendChild(a); tr.appendChild(td0);
+      const vals = [[r.category_label, ''], [fmtT(+r.duration_s), 'num'], [fmts.d1(+r.shots_per_min), 'num'], [fmts.int(+r.wpm), 'num'],
+        [Number.isFinite(num(r.time_to_first_word_s)) ? fmts.d1(+r.time_to_first_word_s) + ' s' : '—', 'num'],
+        [Number.isFinite(num(r.evidence_items)) ? `${r.evidence_verified} of ${r.evidence_items}` : '—', 'num']];
+      vals.forEach(([t, c]) => { const td = document.createElement('td'); td.textContent = t; if (c) td.className = c; tr.appendChild(td); });
+      tb.appendChild(tr);
+    });
+    document.querySelectorAll('#vt th').forEach((th) => { const k = th.querySelector('button')?.dataset.k; th.setAttribute('aria-sort', k === sortK ? (sortDir > 0 ? 'ascending' : 'descending') : 'none'); });
+  }
+  document.querySelectorAll('#vt th button').forEach((bt) => bt.addEventListener('click', () => { const k = bt.dataset.k; sortDir = k === sortK ? -sortDir : 1; sortK = k; vtable(); }));
+  document.getElementById('vsearch').addEventListener('input', vtable);
+
+  // ---------- the at-a-glance chart: median cuts per minute by genre, from the facts table
+  function glance() {
+    const el = document.getElementById('glance'); el.replaceChildren();
+    const f = dash.data('facts'); if (f.status !== 'ok') return;
+    const val = (k) => { const r = f.data.find((x) => x.key === k); return r ? +r.value : null; };
+    const rows = cats.map((g) => ({ g, v: val(`cuts_${g}`) })).filter((r) => r.v !== null).sort((a, b) => b.v - a.v);
+    const W = Math.max(280, el.clientWidth), rowH = W < 520 ? 34 : 42, lw = W < 520 ? 92 : 120, H = rows.length * rowH;
+    const x = d3.scaleLinear().domain([0, d3.max(rows, (r) => r.v)]).range([0, W - lw - 56]);
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+    const g = svg.selectAll('g').data(rows).join('g').attr('transform', (r, i) => `translate(0,${i * rowH})`);
+    g.append('text').attr('class', 'lbl').attr('x', lw - 12).attr('y', rowH / 2).attr('dy', '.35em').attr('text-anchor', 'end').style('font-size', W < 520 ? '13px' : '15px').text((r) => catLabel[r.g]);
+    g.append('path').attr('fill', (r) => `var(--genre-${r.g})`).attr('d', (r) => { const w = Math.max(4, x(r.v)), h = rowH * .58, y = (rowH - h) / 2, rr = 4;
+      return `M${lw},${y}h${w - rr}a${rr},${rr} 0 0 1 ${rr},${rr}v${h - 2 * rr}a${rr},${rr} 0 0 1 -${rr},${rr}h-${w - rr}z`; });
+    g.append('text').attr('class', 'lbl').attr('x', (r) => lw + Math.max(4, x(r.v)) + 8).attr('y', rowH / 2).attr('dy', '.35em').style('font-size', W < 520 ? '14px' : '17px').style('font-weight', 650).text((r) => fmts.d1(r.v));
+    g.append('rect').attr('x', 0).attr('width', W).attr('height', rowH).attr('fill', 'transparent')
+      .on('mousemove', function (e, r) { showTip(this, e, [['', catLabel[r.g]], ['t', `median ${fmts.d1(r.v)} cuts per minute`]]); })
+      .on('mouseleave', function () { hideTip(this); });
+  }
+
+  dash.onData(() => {
+    glance();
+    dotplot('dot-wpm', 'wpm', { fmt: fmts.int });
+    dotplot('dot-ttfw', 'time_to_first_word_s', { unit: ' s' });
+    formats(); forest(); vtable(); genreLegend(); strips(); explorer();
+    grouped('kinds', 'kind-legend', 'evidence_by_kind', 'kind', (r) => (+r.total ? +r.verified / +r.total : null), (k) => ({ metric: 'Metric', quote: 'Quote', visual: 'Visual' })[k] || k, 'system', 1, fmts.pct);
+    grouped('judge', 'judge-legend', 'judge_scores', 'criterion', (r) => +r.score, (k) => k[0].toUpperCase() + k.slice(1), 'system', 5, fmts.d1);
+  });
+})();
+</script>

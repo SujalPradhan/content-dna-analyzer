@@ -1,0 +1,499 @@
+{
+ "summary": "This is a fast-cut animated explainer that opens with a narrative cold-open (a family buying cloth) to dramatize why measurement matters, then settles into a long, slower-paced lecture-style body built almost entirely of static graphics and on-screen text, before a brief recap and subscribe CTA. Pacing and speech rate are front-loaded and intense in the first 20s but decay sharply through the middle of the runtime.",
+ "dna_tags": [
+  "story cold-open explainer",
+  "text-overlay heavy animation",
+  "deceleration pacing arc",
+  "single-format (screen/graphics) lecture",
+  "educational recap-and-CTA close"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 19.9,
+   "role": "hook",
+   "label": "Cloth-shop story cold open introducing measuring tools"
+  },
+  {
+   "start_s": 19.9,
+   "end_s": 40.0,
+   "role": "context",
+   "label": "Problem: hand-span measurements differ between people"
+  },
+  {
+   "start_s": 40.0,
+   "end_s": 61.9,
+   "role": "main_content",
+   "label": "History of measurement systems, need for SI units"
+  },
+  {
+   "start_s": 61.9,
+   "end_s": 101.9,
+   "role": "main_content",
+   "label": "Metric unit conversions (km/m/cm/mm) and inches"
+  },
+  {
+   "start_s": 101.9,
+   "end_s": 137.9,
+   "role": "demonstration",
+   "label": "Ruler placement, parallax error, broken-scale technique, accessible rulers"
+  },
+  {
+   "start_s": 137.9,
+   "end_s": 153.9,
+   "role": "main_content",
+   "label": "Writing measurements correctly; measuring curves with thread"
+  },
+  {
+   "start_s": 153.9,
+   "end_s": 193.9,
+   "role": "main_content",
+   "label": "Reference points (school/garden, bus stand, Delhi sign)"
+  },
+  {
+   "start_s": 193.9,
+   "end_s": 227.9,
+   "role": "main_content",
+   "label": "Types of motion: linear, circular, oscillatory, periodic"
+  },
+  {
+   "start_s": 228.3,
+   "end_s": 237.9,
+   "role": "recap",
+   "label": "Summary of lesson takeaways"
+  },
+  {
+   "start_s": 237.9,
+   "end_s": 241.3,
+   "role": "cta",
+   "label": "Subscribe/like/share request"
+  },
+  {
+   "start_s": 241.3,
+   "end_s": 245.7,
+   "role": "outro",
+   "label": "Sign-off, chapter complete card"
+  }
+ ],
+ "hook": {
+  "what_happens": "An animated family scene opens with a child asking for cloth for a school uniform; a tailor measures it with a metal rod while dialogue flags that different jobs need different tools, all under rapid-fire text overlays.",
+  "promise": "Implicitly promises to explain how and why we measure length accurately, setting up the lesson on standard units.",
+  "strengths": [
+   "Uses a relatable narrative scenario rather than opening with a dry definition, per hook.opening_line and hook.hook_type = story_cold_open",
+   "hook_cuts=6 (pct 90 in category) and on-screen text from frame 1 keep visual interest high in first seconds",
+   "hook_wpm=204 (pct 90) front-loads a lot of spoken information quickly, signalling energy"
+  ],
+  "weaknesses": [
+   "hook_motion is only 1.15 (pct 50), so despite fast cutting and speech, actual visual movement is not distinctly higher than the rest of the video",
+   "The specific lesson topic (measurement systems/motion) is not stated until well after the opening scene, which may delay topic clarity for a study-video audience"
+  ]
+ },
+ "devices": [
+  {
+   "name": "relatable story framing",
+   "t_s": 0.0,
+   "quote": "Mother, I need cloth for my new school uniform."
+  },
+  {
+   "name": "direct question to engage viewer",
+   "t_s": 15.5,
+   "quote": "What does Charangula mean?"
+  },
+  {
+   "name": "recurring characters to anchor abstract concept",
+   "t_s": 154.0,
+   "quote": "The school is closer."
+  },
+  {
+   "name": "explicit recap structure",
+   "t_s": 228.3,
+   "quote": "Today we learned how to measure accurately,"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Opens with a narrative scenario instead of a direct lecture, giving the abstract topic of measurement a concrete human context.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "opening_visual: animated cloth shop scene with family"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Mother, I need cloth for my new school uniform."
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "The hook is unusually dense in cuts and on-screen text relative to the explainer category, giving a strong sensory start.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "6"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "1.0"
+    }
+   ]
+  },
+  {
+   "t_s": 61.9,
+   "point": "Heavy, near-constant on-screen text and graphics reinforce new vocabulary (units, conversions) as it is spoken, aiding comprehension of technical terms.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.951"
+    },
+    {
+     "kind": "visual",
+     "ref": "61.9",
+     "value": "on_screen_text: '1 METRE = 100 CENTIMETRES'"
+    }
+   ]
+  },
+  {
+   "t_s": 154.0,
+   "point": "Uses varied concrete scenarios (school vs garden, bus stand, Delhi road sign, kabaddi court) to repeatedly illustrate the single concept of reference points, aiding retention through repetition in different contexts.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Everyone is correct because each is measuring from a different place."
+    },
+    {
+     "kind": "visual",
+     "ref": "177.9",
+     "value": "on_screen_text: 'DELHI 70 km HORN PLEASE'"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Pacing collapses sharply after the hook",
+   "t_start_s": 19.9,
+   "t_end_s": 110.0,
+   "observation": "The video starts with 4-6 cuts per 10s bin but drops to 1 cut per 10s bin for long stretches (60-110s and again 130-220s), while pacing_trend (0.55) sits at only the 30th percentile for explainers, meaning the back half is cut noticeably slower than the front half relative to peers.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "pacing_trend",
+     "value": "0.55"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:60.0",
+     "value": "cuts: 1"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:90.0",
+     "value": "cuts: 1"
+    }
+   ],
+   "recommendation": "Consider testing a few additional cutaways or camera moves in the 60-110s stretch to soften the sudden shift from the energetic hook to a static, single-shot-per-10s middle section.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 19.9,
+   "t_in_range": true
+  },
+  {
+   "title": "Mid-video quiet/slow patch stands out",
+   "t_start_s": 110.0,
+   "t_end_s": 120.0,
+   "observation": "The 110-120s bin shows wpm dropping to 66 and loudness falling to -28.5dB, well below the surrounding bins (-19 to -23dB), and long_pauses_per_min (2.44) is at the 90th percentile for the category.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:110.0",
+     "value": "wpm: 66.0, loud_db: -28.5"
+    },
+    {
+     "kind": "metric",
+     "ref": "long_pauses_per_min",
+     "value": "2.44"
+    }
+   ],
+   "recommendation": "Test tightening or re-leveling this pause-heavy, quiet segment (around the parallax-error explanation) so it doesn't read as a sudden lull relative to the rest of the lesson's audio energy.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 109.23,
+   "t_in_range": true
+  },
+  {
+   "title": "Loudness trends steadily downward across the runtime",
+   "t_start_s": 0.0,
+   "t_end_s": 245.7,
+   "observation": "energy_slope is -4.25, the 10th percentile for explainers, and the timeline bins confirm loudness sliding from about -21dB early to -28dB in the 200-220s range before a late recovery near the recap.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "-4.25"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:210.0",
+     "value": "loud_db: -26.9"
+    }
+   ],
+   "recommendation": "Consider normalizing audio levels or adding a light music bed under the motion-types section (190-220s) to keep perceived energy more level through to the recap, since this decline is unusually steep versus peers.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Hook speech rate is much faster than the rest of the video",
+   "t_start_s": 0.0,
+   "t_end_s": 19.9,
+   "observation": "hook_wpm is 204 (90th percentile) while overall wpm is only 131.4 (10th percentile), a larger hook-to-body gap than typical for the category, creating an internal pacing mismatch between the opening promise of energy and the slower instructional body.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_wpm",
+     "value": "204.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "131.4"
+    }
+   ],
+   "recommendation": "Consider smoothing the speech-rate transition from hook to body, e.g. slightly slowing the opening narration or picking up pace in the early concept-explanation sections, so the shift doesn't feel as abrupt.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Single visual format used for the entire runtime",
+   "t_start_s": 0.0,
+   "t_end_s": 245.7,
+   "observation": "broll_share is 0.0 (20th percentile) and screen_share is 1.0 (80th percentile), with format_switches_per_min at only 0.24 (30th percentile), meaning the whole video stays in one animated/graphics mode without format variety that many explainers in this corpus use.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "broll_share",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "0.24"
+    }
+   ],
+   "recommendation": "Consider testing occasional cutaways to simple diagrams, live demonstrations, or different visual treatments (e.g., a real ruler close-up) for key technical beats like parallax error or unit conversion to add format variety within the lesson.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 19,
+  "evidence_verified": 19,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    14,
+    14
+   ],
+   "quote": [
+    2,
+    2
+   ],
+   "visual": [
+    3,
+    3
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "pacing_trend",
+    "value": "0.55",
+    "verified": true,
+    "note": "actual=0.55"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:60.0",
+    "value": "cuts: 1",
+    "verified": true,
+    "note": "bin={'start': 60.0, 'end': 70.0, 'cuts': 1, 'wpm': 126.0, 'loud_db': -19.7, 'motion': 0.096}"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:90.0",
+    "value": "cuts: 1",
+    "verified": true,
+    "note": "bin={'start': 90.0, 'end': 100.0, 'cuts': 1, 'wpm': 138.0, 'loud_db': -19.8, 'motion': 0.039}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:110.0",
+    "value": "wpm: 66.0, loud_db: -28.5",
+    "verified": true,
+    "note": "bin={'start': 110.0, 'end': 120.0, 'cuts': 2, 'wpm': 66.0, 'loud_db': -28.5, 'motion': 0.021}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "long_pauses_per_min",
+    "value": "2.44",
+    "verified": true,
+    "note": "actual=2.44"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "-4.25",
+    "verified": true,
+    "note": "actual=-4.25"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:210.0",
+    "value": "loud_db: -26.9",
+    "verified": true,
+    "note": "bin={'start': 210.0, 'end': 220.0, 'cuts': 1, 'wpm': 96.0, 'loud_db': -26.9, 'motion': 0.06}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "hook_wpm",
+    "value": "204.0",
+    "verified": true,
+    "note": "actual=204.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "131.4",
+    "verified": true,
+    "note": "actual=131.4"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "broll_share",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "0.24",
+    "verified": true,
+    "note": "actual=0.24"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "opening_visual: animated cloth shop scene with family",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Mother, I need cloth for my new school uniform.",
+    "verified": true,
+    "note": "match=1.00 at 0.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "6",
+    "verified": true,
+    "note": "actual=6.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.951",
+    "verified": true,
+    "note": "actual=0.951"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "61.9",
+    "value": "on_screen_text: '1 METRE = 100 CENTIMETRES'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Everyone is correct because each is measuring from a different place.",
+    "verified": true,
+    "note": "match=1.00 at 157.98"
+   },
+   {
+    "owner": "str3",
+    "kind": "visual",
+    "ref": "177.9",
+    "value": "on_screen_text: 'DELHI 70 km HORN PLEASE'",
+    "verified": true,
+    "note": "segment starts at ref"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 19,
+  "evidence_verified": 19,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    14,
+    14
+   ],
+   "quote": [
+    2,
+    2
+   ],
+   "visual": [
+    3,
+    3
+   ]
+  }
+ }
+}

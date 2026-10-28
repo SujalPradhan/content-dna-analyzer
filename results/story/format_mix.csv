@@ -1,0 +1,25 @@
+category,category_label,format,share
+ad,Ads,Talking head,0.159
+ad,Ads,B-roll / product,0.586
+ad,Ads,Screen / graphics,0.12
+ad,Ads,Other,0.134
+cooking,Cooking,Talking head,0.208
+cooking,Cooking,B-roll / product,0.788
+cooking,Cooking,Screen / graphics,0.004
+cooking,Cooking,Other,0.0
+explainer,Explainers,Talking head,0.077
+explainer,Explainers,B-roll / product,0.212
+explainer,Explainers,Screen / graphics,0.709
+explainer,Explainers,Other,0.002
+shorts,Shorts,Talking head,0.145
+shorts,Shorts,B-roll / product,0.333
+shorts,Shorts,Screen / graphics,0.522
+shorts,Shorts,Other,0.0
+tech_review,Tech reviews,Talking head,0.248
+tech_review,Tech reviews,B-roll / product,0.509
+tech_review,Tech reviews,Screen / graphics,0.243
+tech_review,Tech reviews,Other,0.0
+vlog,Vlogs,Talking head,0.348
+vlog,Vlogs,B-roll / product,0.596
+vlog,Vlogs,Screen / graphics,0.056
+vlog,Vlogs,Other,0.0

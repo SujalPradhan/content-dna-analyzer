@@ -1,0 +1,130 @@
+warning: `VIRTUAL_ENV=/Users/sujal/.pyenv/versions/3.11.9` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+{
+ "all_full": {
+  "evidence_items": 616,
+  "evidence_verified": 584,
+  "evidence_rate": 0.948,
+  "evidence_per_rec": 3.54,
+  "recs": 174,
+  "recs_grounded": 174,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    435,
+    442
+   ],
+   "quote": [
+    66,
+    80
+   ],
+   "visual": [
+    83,
+    94
+   ]
+  }
+ },
+ "ablation_videos": [
+  "s83EB_OtaEo",
+  "qQHyK8BGQdo",
+  "hTn8Uh1m0hg",
+  "od29yqPu-aM",
+  "7LItwuSZ8ag",
+  "D9BEQdfn9xc",
+  "xmUmIE_HUCE",
+  "5nNf6QQObw8",
+  "c347oYQO57A",
+  "xB4SsILjJig",
+  "vHn_rCDYxlI",
+  "8RusBT_lFTI"
+ ],
+ "ablation_full": {
+  "evidence_items": 213,
+  "evidence_verified": 204,
+  "evidence_rate": 0.958,
+  "evidence_per_rec": 3.55,
+  "recs": 60,
+  "recs_grounded": 60,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    153,
+    155
+   ],
+   "quote": [
+    25,
+    30
+   ],
+   "visual": [
+    26,
+    28
+   ]
+  }
+ },
+ "ablation_baseline": {
+  "evidence_items": 103,
+  "evidence_verified": 84,
+  "evidence_rate": 0.816,
+  "evidence_per_rec": 1.98,
+  "recs": 52,
+  "recs_grounded": 43,
+  "rec_grounded_rate": 0.827,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    84,
+    103
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  }
+ },
+ "stability": [
+  {
+   "video_id": "TJ7I3_QHtac",
+   "role_agreement": 0.839,
+   "rec_time_overlap": 1.0,
+   "tag_jaccard": 0.25,
+   "grounding_a": 0.895,
+   "grounding_b": 0.947
+  },
+  {
+   "video_id": "hTn8Uh1m0hg",
+   "role_agreement": 0.452,
+   "rec_time_overlap": 1.0,
+   "tag_jaccard": 0.0,
+   "grounding_a": 0.895,
+   "grounding_b": 0.929
+  },
+  {
+   "video_id": "7LItwuSZ8ag",
+   "role_agreement": 0.752,
+   "rec_time_overlap": 0.8,
+   "tag_jaccard": 0.1,
+   "grounding_a": 0.944,
+   "grounding_b": 1.0
+  },
+  {
+   "video_id": "KWuFpi7j4_0",
+   "role_agreement": 0.524,
+   "rec_time_overlap": 1.0,
+   "tag_jaccard": 0.111,
+   "grounding_a": 1.0,
+   "grounding_b": 1.0
+  },
+  {
+   "video_id": "7Wa_bsAM4ec",
+   "role_agreement": 0.695,
+   "rec_time_overlap": 0.667,
+   "tag_jaccard": 0.0,
+   "grounding_a": 0.944,
+   "grounding_b": 0.944
+  }
+ ]
+}
+judge {'wins_full': 12, 'wins_baseline': 0, 'ties': 0, 'mean_scores': {'full': {'specificity': 5.0, 'accuracy': 4.75, 'actionability': 5.0, 'insight': 4.58}, 'baseline': {'specificity': 3.42, 'accuracy': 3.92, 'actionability': 3.0, 'insight': 2.75}}}
+spend $6.706

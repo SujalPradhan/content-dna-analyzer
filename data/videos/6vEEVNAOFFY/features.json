@@ -1,0 +1,97 @@
+{
+ "video_id": "6vEEVNAOFFY",
+ "category": "ad",
+ "title": "SLING BABY | Doritos Commercial | #superbowl #commercials",
+ "channel": "Matter Collective",
+ "url": "https://www.youtube.com/watch?v=6vEEVNAOFFY",
+ "views": 2509057,
+ "likes": 14084,
+ "comments": 296,
+ "subscribers": 7850000,
+ "upload_date": "20221014",
+ "full_duration": 28,
+ "is_short": false,
+ "fingerprint": {
+  "duration_s": 28.4,
+  "shots_per_min": 35.95,
+  "median_shot_s": 1.4,
+  "shot_len_cv": 0.32,
+  "pacing_trend": 0.9,
+  "hook_cuts": 10,
+  "time_to_first_word_s": 0.0,
+  "hook_wpm": 104.0,
+  "hook_text_overlay": 0.0,
+  "hook_motion": 0.96,
+  "wpm": 61.3,
+  "speech_coverage": 0.481,
+  "long_pauses_per_min": 4.23,
+  "questions_per_min": 6.34,
+  "you_rate": 6.9,
+  "loudness_db": -24.6,
+  "loudness_range_db": 16.0,
+  "energy_slope": 12.05,
+  "nonspeech_audio_share": 0.474,
+  "motion_mean": 0.1469,
+  "brightness_mean": 0.349,
+  "colorfulness_mean": 38.2,
+  "talking_head_share": 0.0,
+  "broll_share": 1.0,
+  "screen_share": 0.0,
+  "face_share": 1.0,
+  "text_overlay_share": 0.0,
+  "format_switches_per_min": 0.0,
+  "cta_count": 0,
+  "first_cta_pos": NaN
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 5.0,
+   "cuts": 3,
+   "wpm": 132.0,
+   "loud_db": -29.1,
+   "motion": 0.115
+  },
+  {
+   "start": 5.0,
+   "end": 10.0,
+   "cuts": 3,
+   "wpm": 84.0,
+   "loud_db": -29.1,
+   "motion": 0.147
+  },
+  {
+   "start": 10.0,
+   "end": 15.0,
+   "cuts": 4,
+   "wpm": 96.0,
+   "loud_db": -27.3,
+   "motion": 0.159
+  },
+  {
+   "start": 15.0,
+   "end": 20.0,
+   "cuts": 3,
+   "wpm": 12.0,
+   "loud_db": -20.1,
+   "motion": 0.171
+  },
+  {
+   "start": 20.0,
+   "end": 25.0,
+   "cuts": 2,
+   "wpm": 0.0,
+   "loud_db": -18.6,
+   "motion": 0.144
+  },
+  {
+   "start": 25.0,
+   "end": 28.4,
+   "cuts": 2,
+   "wpm": 35.0,
+   "loud_db": -22.7,
+   "motion": 0.145
+  }
+ ],
+ "perception_done": true
+}

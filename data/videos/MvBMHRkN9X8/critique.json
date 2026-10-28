@@ -1,0 +1,425 @@
+{
+ "summary": "This is a 30-second visually-driven short that relies almost entirely on silent, animated demonstration (a man scanning a flower with his phone, graphics illustrating Google Lens identifying it) rather than narration, with spoken dialogue compressed into the final 1.5 seconds before the clip cuts off. The structure is a classic problem-solution demo for a mobile feature, paced with long shots and backloaded CTAs.",
+ "dna_tags": [
+  "silent visual demo",
+  "problem-solution hook",
+  "mixed talking-head/animation",
+  "backloaded narration",
+  "short-form tool showcase"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 9.9,
+   "role": "hook",
+   "label": "Man discovers glowing mystery flower, confused reaction"
+  },
+  {
+   "start_s": 9.9,
+   "end_s": 19.8,
+   "role": "demonstration",
+   "label": "Talking head shows phone, pulls up Lens app"
+  },
+  {
+   "start_s": 19.8,
+   "end_s": 25.0,
+   "role": "main_content",
+   "label": "Animated overlay scanning/identifying the flower"
+  },
+  {
+   "start_s": 25.0,
+   "end_s": 28.5,
+   "role": "payoff_reveal",
+   "label": "Search results interface revealed, CTA text appears"
+  },
+  {
+   "start_s": 28.5,
+   "end_s": 30.1,
+   "role": "cta",
+   "label": "Spoken CTA lines, abrupt cutoff"
+  }
+ ],
+ "hook": {
+  "what_happens": "A man crouches in a colorful garden looking puzzled at a glowing, sci-fi-highlighted flower, setting up a 'what is this plant' problem before transitioning to him holding a phone indoors.",
+  "promise": "Implies you can instantly identify unknown plants/objects using your phone.",
+  "strengths": [
+   "Visually striking opening image (glowing flower, garden colors) scores high colorfulness (53.6 vs category median ~44)",
+   "Clear problem-statement hook type that sets up curiosity without needing dialogue"
+  ],
+  "weaknesses": [
+   "No speech at all in first 15s (hook_wpm 0, time_to_first_word_s 28.58, 90th pct for shorts) leaves the promise entirely visual, which depends on viewers correctly inferring intent",
+   "hook_motion is low (0.69, 8th pct) despite the dramatic premise, so the scene doesn't move as much as the concept suggests"
+  ]
+ },
+ "devices": [
+  {
+   "name": "glowing object reveal",
+   "t_s": 6.2,
+   "quote": ""
+  },
+  {
+   "name": "on-screen app/search UI demo",
+   "t_s": 13.8,
+   "quote": ""
+  },
+  {
+   "name": "problem_statement hook",
+   "t_s": 0.0,
+   "quote": ""
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Strong visual color palette in the opening frames draws the eye despite no dialogue.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "53.6"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "A young man crouches in a vibrant garden, looking confused at a glowing exotic flower."
+    }
+   ]
+  },
+  {
+   "t_s": 9.9,
+   "point": "High talking-head and face share keep a consistent human presence anchoring the demo.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "talking_head_share",
+     "value": "0.658"
+    },
+    {
+     "kind": "metric",
+     "ref": "face_share",
+     "value": "1.0"
+    }
+   ]
+  },
+  {
+   "t_s": 13.8,
+   "point": "The demonstration clearly shows the actual product UI (search results, scan graphic) rather than just describing it.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "19.8",
+     "value": "animation format showing scan overlay on flower"
+    },
+    {
+     "kind": "visual",
+     "ref": "13.8",
+     "value": "phone screen showing search interface with flower identification results"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Move spoken explanation earlier",
+   "t_start_s": 0.0,
+   "t_end_s": 28.6,
+   "observation": "Speech doesn't begin until 28.58s, right at the very end of a 30s short, while shots_per_min and visual pacing suggest the whole video was built silently until the last moment.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "28.58"
+    },
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.047"
+    }
+   ],
+   "recommendation": "Consider bringing the first line of dialogue ('\u0995\u09cb\u09a8\u09cb \u0997\u09be\u099b, \u099c\u09bf\u09a8\u09bf\u09b6 \u09ac\u09be \u09aa\u09a8\u09cd\u09a8\u09c7\u09b0 \u09a8\u09be\u09ae \u099c\u09be\u09a8\u09c7\u09a8 \u09a8\u09be...') forward to the first few seconds, overlapping it with the garden visual, so the core premise is spoken rather than assumed from imagery alone.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "high",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Low motion in the hook despite dramatic concept",
+   "t_start_s": 0.0,
+   "t_end_s": 15.0,
+   "observation": "hook_motion is 0.69 (8th percentile for shorts), meaning the opening 15s moves less than the rest of the video and far less than typical shorts hooks, even though the premise (glowing flower, confusion) is visually dramatic.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "0.69"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:0.0",
+     "value": "motion 0.051"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:10.0",
+     "value": "motion 0.058"
+    }
+   ],
+   "recommendation": "Test tighter framing or quicker cuts between the garden crouch and phone-reveal shots in the first 10s to raise perceived energy, since the garden segment itself holds static shots for ~5s each.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Both CTAs crammed at the very end",
+   "t_start_s": 26.5,
+   "t_end_s": 28.5,
+   "observation": "first_cta_pos is 0.881 (88th pct for shorts) and both CTA moments ('Try Google Lens now' at 26.5s, 'Save the video' at 28.5s) occur in the last 4 seconds of a 30s clip, right as audio becomes garbled/cut off.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "26.5",
+     "value": "CTA text: Try Google Lens now"
+    },
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.881"
+    },
+    {
+     "kind": "quote",
+     "ref": "28.6",
+     "value": "\u0995\u09cb\u09a8\u09cb \u0997\u09be\u099b, \u099c\u09bf\u09a8\u09bf\u09b6 \u09ac\u09be \u09aa\u09a8\u09cd\u09a8\u09c7\u09b0 \u09a8\u09be\u09ae \u099c\u09be\u09a8\u09c7\u09a8 \u09a8\u09be, \u0986\u0982\u09a6\u09be\u099c \u0995\u09b0\u09be \u09a6\u09be\u09b0\u0995\u09be\u09b0 \u09a8\u09bf\u09af\u09bc"
+    }
+   ],
+   "recommendation": "Consider placing the first CTA slightly earlier (e.g., around the 20s mark during the reveal) so it isn't competing with the abrupt audio cutoff visible in the final transcript segment.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 26.5,
+   "t_in_range": true
+  },
+  {
+   "title": "No on-screen text overlay used anywhere",
+   "t_start_s": 0.0,
+   "t_end_s": 30.1,
+   "observation": "text_overlay_share is 0.0 (17th pct), meaning no captions or callouts reinforce the spoken or visual content, which is risky given speech only covers 4.7% of runtime.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.047"
+    }
+   ],
+   "recommendation": "Add short on-screen text captions during the silent demo segments (e.g., 'Point. Scan. Identify.') to carry the message since dialogue is nearly absent until the final seconds.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Final seconds contain garbled, unintelligible transcript",
+   "t_start_s": 30.0,
+   "t_end_s": 30.1,
+   "observation": "The transcript past 30.0s is fragmented and nonsensical ('\u099b\u09c7\u09b0\u09c7 \u0995\u09cd\u09b0\u09c7\u099f\u09c7\u09b0\u09c7 \u098f\u0995 \u0986\u09ab\u09c7\u09af\u09bc...'), suggesting the clip cuts off mid-sentence or has an audio/encoding issue.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "30.0",
+     "value": "\u099b\u09c7\u09b0\u09c7 \u0995\u09cd\u09b0\u09c7\u099f\u09c7\u09b0\u09c7 \u098f\u0995 \u0986\u09ab\u09c7\u09af\u09bc \u09b8\u09ac\u09b9\u09c7\u0982\u09b0 \u09b9\u09c7\u09b0\u09c7 \u09a8\u09c7 \u099c\u09b9\u09bf\u09b0\u09c7 \u099c\u09c7\u09b0\u09bf \u099c\u09c7\u09b0\u09c7 \u099a\u09c7\u09b0\u09c7 \u0987\u0997\u09c7\u09b0\u09c7 \u0995\u09c7\u09b0\u09c7"
+    }
+   ],
+   "recommendation": "Check the export/render at the tail end of the video to ensure the closing line and CTA audio are not cut off or corrupted.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 30.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 17,
+  "evidence_verified": 16,
+  "evidence_rate": 0.941,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    11,
+    11
+   ],
+   "quote": [
+    2,
+    2
+   ],
+   "visual": [
+    3,
+    4
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "28.58",
+    "verified": true,
+    "note": "actual=28.58"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.047",
+    "verified": true,
+    "note": "actual=0.047"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "0.69",
+    "verified": true,
+    "note": "actual=0.69"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:0.0",
+    "value": "motion 0.051",
+    "verified": true,
+    "note": "bin={'start': 0.0, 'end': 5.0, 'cuts': 1, 'wpm': 0.0, 'loud_db': -20.8, 'motion': 0.051}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:10.0",
+    "value": "motion 0.058",
+    "verified": true,
+    "note": "bin={'start': 10.0, 'end': 15.0, 'cuts': 1, 'wpm': 0.0, 'loud_db': -17.0, 'motion': 0.058}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "visual",
+    "ref": "26.5",
+    "value": "CTA text: Try Google Lens now",
+    "verified": true,
+    "note": "covering segment describes it"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.881",
+    "verified": true,
+    "note": "actual=0.881"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "28.6",
+    "value": "\u0995\u09cb\u09a8\u09cb \u0997\u09be\u099b, \u099c\u09bf\u09a8\u09bf\u09b6 \u09ac\u09be \u09aa\u09a8\u09cd\u09a8\u09c7\u09b0 \u09a8\u09be\u09ae \u099c\u09be\u09a8\u09c7\u09a8 \u09a8\u09be, \u0986\u0982\u09a6\u09be\u099c \u0995\u09b0\u09be \u09a6\u09be\u09b0\u0995\u09be\u09b0 \u09a8\u09bf\u09af\u09bc",
+    "verified": true,
+    "note": "match=1.00 at 28.58"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.047",
+    "verified": true,
+    "note": "actual=0.047"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "30.0",
+    "value": "\u099b\u09c7\u09b0\u09c7 \u0995\u09cd\u09b0\u09c7\u099f\u09c7\u09b0\u09c7 \u098f\u0995 \u0986\u09ab\u09c7\u09af\u09bc \u09b8\u09ac\u09b9\u09c7\u0982\u09b0 \u09b9\u09c7\u09b0\u09c7 \u09a8\u09c7 \u099c\u09b9\u09bf\u09b0\u09c7 \u099c\u09c7\u09b0\u09bf \u099c\u09c7\u09b0\u09c7 \u099a\u09c7\u09b0\u09c7 \u0987\u0997\u09c7\u09b0\u09c7 \u0995\u09c7\u09b0\u09c7",
+    "verified": true,
+    "note": "match=1.00 at 29.98"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "53.6",
+    "verified": true,
+    "note": "actual=53.6"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "A young man crouches in a vibrant garden, looking confused at a glowing exotic flower.",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "talking_head_share",
+    "value": "0.658",
+    "verified": true,
+    "note": "actual=0.658"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "face_share",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "19.8",
+    "value": "animation format showing scan overlay on flower",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "13.8",
+    "value": "phone screen showing search interface with flower identification results",
+    "verified": false,
+    "note": "no segment at ref"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 17,
+  "evidence_verified": 11,
+  "evidence_rate": 0.647,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    9,
+    11
+   ],
+   "quote": [
+    0,
+    2
+   ],
+   "visual": [
+    2,
+    4
+   ]
+  }
+ }
+}

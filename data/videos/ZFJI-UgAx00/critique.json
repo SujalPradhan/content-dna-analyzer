@@ -1,0 +1,537 @@
+{
+ "summary": "This is a slow-paced, aesthetic study-vlog built from long static b-roll and talking-head segments stitched together with a persistent on-screen caption style, rather than fast cutting or dense narration. Pacing is front-loaded: the opening montage and early talking-head sections carry more motion and speech than the back half, which settles into long quiet stretches of flashcards, cooking and reading with sparse voiceover.",
+ "dna_tags": [
+  "slow-burn study vlog",
+  "aesthetic b-roll montage",
+  "caption-driven narration",
+  "quiet ambient pacing",
+  "diary-style structure"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 16.2,
+   "role": "hook",
+   "label": "Aesthetic b-roll montage with 'uni vlog' title card"
+  },
+  {
+   "start_s": 16.2,
+   "end_s": 41.8,
+   "role": "intro_setup",
+   "label": "Talking head: exam season stress setup"
+  },
+  {
+   "start_s": 41.8,
+   "end_s": 65.1,
+   "role": "context",
+   "label": "B-roll transition, coffee, heading to class"
+  },
+  {
+   "start_s": 65.1,
+   "end_s": 89.8,
+   "role": "main_content",
+   "label": "Cooking talking-head segment"
+  },
+  {
+   "start_s": 89.8,
+   "end_s": 117.1,
+   "role": "main_content",
+   "label": "Studying cellular defense mechanisms, flashcards"
+  },
+  {
+   "start_s": 117.1,
+   "end_s": 193.2,
+   "role": "context",
+   "label": "Quiet stress/breakfast/halloween b-roll, minimal speech"
+  },
+  {
+   "start_s": 193.2,
+   "end_s": 230.1,
+   "role": "demonstration",
+   "label": "Dinner + milk tea taste test"
+  },
+  {
+   "start_s": 230.1,
+   "end_s": 307.7,
+   "role": "main_content",
+   "label": "More flashcards and note-taking b-roll"
+  },
+  {
+   "start_s": 307.7,
+   "end_s": 313.8,
+   "role": "payoff_reveal",
+   "label": "'Yay one exam down' milestone"
+  },
+  {
+   "start_s": 313.8,
+   "end_s": 375.0,
+   "role": "demonstration",
+   "label": "Cooking kimchi fried rice"
+  },
+  {
+   "start_s": 375.0,
+   "end_s": 440.5,
+   "role": "main_content",
+   "label": "Watching anime, repeated loop b-roll"
+  },
+  {
+   "start_s": 440.5,
+   "end_s": 467.8,
+   "role": "recap",
+   "label": "Reflection on finishing a hard exam, reading plans"
+  },
+  {
+   "start_s": 467.8,
+   "end_s": 498.0,
+   "role": "outro",
+   "label": "Subscribe CTA and sign-off"
+  }
+ ],
+ "hook": {
+  "what_happens": "A low-angle b-roll montage of the creator typing and studying plays under an 'uni vlog' text overlay for about 16 seconds before any speech begins.",
+  "promise": "Sets an aesthetic, slice-of-life study-vlog mood rather than promising a specific payoff or narrative hook.",
+  "strengths": [
+   "Text overlay present from frame 1, which corpus data shows is less common (hook_text_overlay pct 75 for this category) and helps orient viewers silently",
+   "hook_motion is 2.33, far above the video's own average and the category's typical hook_motion range, giving the opening more visual energy than the rest of the video"
+  ],
+  "weaknesses": [
+   "time_to_first_word_s is 15.88s with hook_wpm of 0, so there is no verbal hook at all in the first 15 seconds, relying purely on visual montage and caption"
+  ]
+ },
+ "devices": [
+  {
+   "name": "recurring on-screen caption identity tag",
+   "t_s": 0.0,
+   "quote": "uni vlog"
+  },
+  {
+   "name": "direct narration of daily tasks",
+   "t_s": 15.9,
+   "quote": "Hey guys, it's exam season, so there's a little bit of stress in the air."
+  },
+  {
+   "name": "milestone callout mid-video",
+   "t_s": 307.7,
+   "quote": "yay one exam down"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Consistent on-screen text/caption presence compensates for long silent stretches, keeping context legible even when there's no narration.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.876"
+    },
+    {
+     "kind": "visual",
+     "ref": "164.9",
+     "value": "b-roll with caption 'btw halloween is coming up!' and no face/speech"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "Visually rich, colorful frames make the slow pacing more watchable despite minimal motion.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "41.5"
+    },
+    {
+     "kind": "metric",
+     "ref": "brightness_mean",
+     "value": "0.442"
+    }
+   ]
+  },
+  {
+   "t_s": 41.8,
+   "point": "The video alternates between talking-head check-ins and b-roll activity segments, giving a diary-like rhythm typical of the format.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "41.8",
+     "value": "b-roll transition 'alright let's go'"
+    },
+    {
+     "kind": "visual",
+     "ref": "65.1",
+     "value": "talking_head 'that smells good'"
+    },
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "1.45"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Investigate repeated voiceover line across the back half",
+   "t_start_s": 339.4,
+   "t_end_s": 440.8,
+   "observation": "The exact line 'Okay, so I'm gonna go to a bakery, get some bread, and try different flavors of milk tea' recurs verbatim at 339.4s, 369.4s, 384.6s, 429.3s and 440.4s, spanning very different visual contexts (kimchi fried rice cooking, watching anime, exam reflection), which doesn't match the on-screen content at those moments.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "339.4",
+     "value": "Okay, so I'm gonna go to a bakery, get some bread, and try different flavors of milk tea."
+    },
+    {
+     "kind": "quote",
+     "ref": "429.3",
+     "value": "Okay, so I'm gonna go to a bakery, get some bread, and try different flavors of milk tea."
+    },
+    {
+     "kind": "visual",
+     "ref": "375.0",
+     "value": "talking_head 'I'm watching steins gate'"
+    }
+   ],
+   "recommendation": "Check the source audio/export for this stretch \u2014 it looks like a looped or misaligned voiceover clip rather than intended narration; re-sync or remove the duplicated line if it is an editing artifact.",
+   "basis": "internal_inconsistency",
+   "priority": "high",
+   "t_snapped_s": 339.4,
+   "t_in_range": true
+  },
+  {
+   "title": "Second-half pacing drops sharply versus the first half",
+   "t_start_s": 117.0,
+   "t_end_s": 307.7,
+   "observation": "pacing_trend is 0.53, far below the vlog category's typical range, meaning cut rate in the second half of the runtime is much lower than the first half; several 10s bins between 117s and 300s show zero cuts and zero wpm.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "pacing_trend",
+     "value": "0.53"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:170.0",
+     "value": "cuts: 0, wpm: 0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:280.0",
+     "value": "cuts: 0, wpm: 0.0"
+    }
+   ],
+   "recommendation": "If the goal is to sustain viewer engagement through the middle section, consider testing a few extra cutaways or ambient b-roll inserts during the longest static/silent stretches (e.g. 150-190s, 270-300s) to vary the visual rhythm.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 117.23,
+   "t_in_range": true
+  },
+  {
+   "title": "Overall loudness sits well below category norm",
+   "t_start_s": 0.0,
+   "t_end_s": 498.0,
+   "observation": "Mean loudness is -30.8dB, well under the vlog category median of roughly -20.75dB, and several individual bins dip to -34/-35dB.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "loudness_db",
+     "value": "-30.8"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:270.0",
+     "value": "loud_db: -34.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:380.0",
+     "value": "loud_db: -35.5"
+    }
+   ],
+   "recommendation": "Consider testing a loudness normalization pass so quieter narration segments sit closer to the rest of the category's typical level, which may make the voiceover easier to hear on average playback volumes.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Long speechless b-roll block mid-video lacks captioned narration",
+   "t_start_s": 164.9,
+   "t_end_s": 193.2,
+   "observation": "This ~28s segment has no face visible for part of it and the only on-screen text is a single aside ('btw halloween is coming up!'), with wpm at 0 across the matching timeline bins.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:170.0",
+     "value": "wpm: 0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:180.0",
+     "value": "wpm: 0.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "164.9",
+     "value": "b-roll, face_visible: false, on_screen_text: 'btw halloween is coming up!'"
+    }
+   ],
+   "recommendation": "If more context would help here, test adding a short caption or voiceover line explaining what's happening in this stretch, consistent with the captioning style used elsewhere in the video.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 164.8,
+   "t_in_range": true
+  },
+  {
+   "title": "Hook relies entirely on visual montage with no spoken or captioned promise",
+   "t_start_s": 0.0,
+   "t_end_s": 15.9,
+   "observation": "hook_wpm is 0 and time_to_first_word_s is 15.88s, meaning the first 16 seconds carry only the title caption 'uni vlog' with no verbal framing of what the video covers.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_wpm",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "15.88"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "Low-angle shot of student typing with overlay 'uni vlog'"
+    }
+   ],
+   "recommendation": "Consider testing a brief spoken or on-screen line in the opening seconds (e.g., naming the exam/day) to give early viewers a clearer sense of what the vlog will follow, while keeping the current visual montage.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 22,
+  "evidence_verified": 22,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    14,
+    14
+   ],
+   "quote": [
+    2,
+    2
+   ],
+   "visual": [
+    6,
+    6
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "339.4",
+    "value": "Okay, so I'm gonna go to a bakery, get some bread, and try different flavors of milk tea.",
+    "verified": true,
+    "note": "match=1.00 at 339.4"
+   },
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "429.3",
+    "value": "Okay, so I'm gonna go to a bakery, get some bread, and try different flavors of milk tea.",
+    "verified": true,
+    "note": "match=1.00 at 339.4"
+   },
+   {
+    "owner": "rec0",
+    "kind": "visual",
+    "ref": "375.0",
+    "value": "talking_head 'I'm watching steins gate'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "pacing_trend",
+    "value": "0.53",
+    "verified": true,
+    "note": "actual=0.53"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:170.0",
+    "value": "cuts: 0, wpm: 0.0",
+    "verified": true,
+    "note": "bin={'start': 170.0, 'end': 180.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -34.3, 'motion': 0.01}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:280.0",
+    "value": "cuts: 0, wpm: 0.0",
+    "verified": true,
+    "note": "bin={'start': 280.0, 'end': 290.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -34.4, 'motion': 0.014}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "loudness_db",
+    "value": "-30.8",
+    "verified": true,
+    "note": "actual=-30.8"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:270.0",
+    "value": "loud_db: -34.0",
+    "verified": true,
+    "note": "bin={'start': 270.0, 'end': 280.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -34.0, 'motion': 0.019}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:380.0",
+    "value": "loud_db: -35.5",
+    "verified": true,
+    "note": "bin={'start': 380.0, 'end': 390.0, 'cuts': 0, 'wpm': 6.0, 'loud_db': -35.5, 'motion': 0.01}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:170.0",
+    "value": "wpm: 0.0",
+    "verified": true,
+    "note": "bin={'start': 170.0, 'end': 180.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -34.3, 'motion': 0.01}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:180.0",
+    "value": "wpm: 0.0",
+    "verified": true,
+    "note": "bin={'start': 180.0, 'end': 190.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -33.4, 'motion': 0.01}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "visual",
+    "ref": "164.9",
+    "value": "b-roll, face_visible: false, on_screen_text: 'btw halloween is coming up!'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "hook_wpm",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "15.88",
+    "verified": true,
+    "note": "actual=15.88"
+   },
+   {
+    "owner": "rec4",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "Low-angle shot of student typing with overlay 'uni vlog'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.876",
+    "verified": true,
+    "note": "actual=0.876"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "164.9",
+    "value": "b-roll with caption 'btw halloween is coming up!' and no face/speech",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "41.5",
+    "verified": true,
+    "note": "actual=41.5"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "brightness_mean",
+    "value": "0.442",
+    "verified": true,
+    "note": "actual=0.442"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "41.8",
+    "value": "b-roll transition 'alright let's go'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "65.1",
+    "value": "talking_head 'that smells good'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "1.45",
+    "verified": true,
+    "note": "actual=1.45"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 22,
+  "evidence_verified": 16,
+  "evidence_rate": 0.727,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    8,
+    14
+   ],
+   "quote": [
+    2,
+    2
+   ],
+   "visual": [
+    6,
+    6
+   ]
+  }
+ }
+}

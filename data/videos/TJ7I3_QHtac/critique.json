@@ -1,0 +1,458 @@
+{
+ "summary": "A 30-second cinematic ad built as a single-voice narrative montage: a persistent first-person VO runs over continuous b-roll (dashboard, machinery, driving, porch) with a near-constant 'scan to find your future home' text overlay, closing on a branded graphics card. Pacing is driven by dense, fast narration rather than rapid cutting, with shots held noticeably longer than typical ads in this category.",
+ "dna_tags": [
+  "story-driven brand film",
+  "cinematic b-roll montage",
+  "persistent CTA overlay",
+  "single-VO narrative ad",
+  "slow-cut high-wordrate hybrid"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 5.0,
+   "role": "hook",
+   "label": "Cold open: dashboard close-up, VO begins 'I wake up real early'"
+  },
+  {
+   "start_s": 5.0,
+   "end_s": 15.0,
+   "role": "context",
+   "label": "Establishing daily grind: driving, mirror shot, worksite machinery"
+  },
+  {
+   "start_s": 15.0,
+   "end_s": 20.0,
+   "role": "main_content",
+   "label": "Hand/truck/field b-roll under 'piece of the American dream' line"
+  },
+  {
+   "start_s": 20.0,
+   "end_s": 26.1,
+   "role": "payoff_reveal",
+   "label": "Porch scene, family payoff, VO concludes 'I do deserve that'"
+  },
+  {
+   "start_s": 26.1,
+   "end_s": 30.1,
+   "role": "cta",
+   "label": "Branding card with URL and scan-to-find-home overlay"
+  }
+ ],
+ "hook": {
+  "what_happens": "A blurry dashboard/mirror close-up opens the ad with persistent on-screen text ('Scan to find your future home') and a first-person VO starting mid-story ('I wake up real early every day').",
+  "promise": "Promises a relatable, aspirational story of hard work leading to a home worth having.",
+  "strengths": [
+   "Cold-open story hook (hook_type story_cold_open) creates immediate narrative curiosity rather than a product pitch",
+   "Text overlay present in first 3s (hook_text_overlay=1.0, 92nd pct) reinforces the CTA from frame one",
+   "Hook speaking rate 172 wpm (75th pct) keeps narration dense and moving despite fewer cuts"
+  ],
+  "weaknesses": [
+   "hook_cuts=7 is only 25th pct for category while hook_motion=0.92 is also 25th pct, so visually the opening is calmer than most ads despite the fast VO, which could read as a slow visual hook",
+   "First shots (blurred dashboard/mirror) are abstract and don't show a face or product until later, delaying clear context"
+  ]
+ },
+ "devices": [
+  {
+   "name": "story_cold_open",
+   "t_s": 1.4,
+   "quote": "I wake up real early every day."
+  },
+  {
+   "name": "persistent_cta_overlay",
+   "t_s": 0.0,
+   "quote": "Scan to find your future home:"
+  },
+  {
+   "name": "single_continuous_VO",
+   "t_s": 1.4,
+   "quote": "I think it's a pretty good bargain actually"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 1.4,
+   "point": "Speech coverage is near-total and delivered at a high rate, making the ad feel information-dense for its length.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.87"
+    },
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "183.4"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "On-screen CTA text is present almost the entire runtime, maximizing exposure to the scan prompt.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "1.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "Scan to find your future home: overlay visible"
+    }
+   ]
+  },
+  {
+   "t_s": 1.4,
+   "point": "Median shot length is long for the ad category, giving each b-roll image time to register alongside the VO rather than relying on rapid-fire cuts.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "median_shot_s",
+     "value": "1.99"
+    },
+    {
+     "kind": "metric",
+     "ref": "median_shot_s_pct",
+     "value": "92"
+    }
+   ]
+  },
+  {
+   "t_s": 20.0,
+   "point": "Narrative arc resolves cleanly from grind to payoff, pairing porch/family imagery with the emotional climax line.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "20.0",
+     "value": "I do think that I deserve that"
+    },
+    {
+     "kind": "visual",
+     "ref": "13.8",
+     "value": "man approaching porch, woman seated, warm domestic scene"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Clarify the CTA earlier",
+   "t_start_s": 0.0,
+   "t_end_s": 5.0,
+   "observation": "first_cta_pos is at 0.0 (10th pct) meaning the CTA appears instantly, before any context is given, while the opening visuals are abstract dashboard/mirror shots that don't yet connect to housing.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "1.2",
+     "value": "blurred dashboard gauges, no product/home visible"
+    }
+   ],
+   "recommendation": "Test delaying the explicit CTA text overlay by a second or two, or pairing it with a visual that ties more directly to 'home' so the ask doesn't precede the story context.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Low hook motion vs. cut count",
+   "t_start_s": 0.0,
+   "t_end_s": 15.0,
+   "observation": "hook_motion is 0.92 (25th pct) despite hook_cuts of 7 (25th pct also low), meaning the opening is both low-cut and low-motion relative to other ads, which could feel static for a 'commercial' pace.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "0.92"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "7"
+    }
+   ],
+   "recommendation": "If a punchier opening is desired, consider testing a shot with more camera movement or action (e.g., the machinery scene at 6.2s) earlier in the sequence.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Energy/loudness drops across runtime",
+   "t_start_s": 0.0,
+   "t_end_s": 30.1,
+   "observation": "energy_slope is -1.19 (8th pct), and loudness dips from -28.3 dB at the start to -28.3 dB again by 25-30s after rising mid-ad, with nonspeech_audio_share only 0.066 (8th pct), suggesting minimal music/sound design lift to carry the emotional close.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "-1.19"
+    },
+    {
+     "kind": "metric",
+     "ref": "nonspeech_audio_share",
+     "value": "0.066"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:25.0",
+     "value": "-28.3"
+    }
+   ],
+   "recommendation": "Test raising music/ambient bed presence or loudness in the final 5 seconds (25-30s) to match the emotional payoff of the VO's closing line rather than letting loudness fall back to opening levels.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "No direct address despite personal narrative",
+   "t_start_s": 1.4,
+   "t_end_s": 29.0,
+   "observation": "you_rate is 0.0 (8th pct for ads), meaning the entire first-person monologue never directly addresses the viewer with 'you/your', which is unusual for the category and may limit the sense of invitation into the CTA.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "you_rate",
+     "value": "0.0"
+    },
+    {
+     "kind": "quote",
+     "ref": "20.0",
+     "value": "all people like me want is a little piece of the American dream"
+    }
+   ],
+   "recommendation": "Consider testing a closing line that shifts from 'I/people like me' to a direct address of the viewer (e.g., 'you deserve that too') to bridge the story to the CTA.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 1.38,
+   "t_in_range": true
+  },
+  {
+   "title": "Final frame legibility",
+   "t_start_s": 26.1,
+   "t_end_s": 30.1,
+   "observation": "The closing graphics card compresses URL, company name, and CTA text into under 4 seconds (26.1-30.1s), the shortest segment in the timeline bins, with the final bin showing an anomalous wpm spike (4200.0) from the trailing FEMA.gov line.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:30.0",
+     "value": "4200.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "26.1",
+     "value": "UMH PROPERTIES, INC www.umh.com/PA Scan to find your future home: all on screen together"
+    }
+   ],
+   "recommendation": "Test extending the end card by a second or two, or simplifying the on-screen text so the URL and brand name aren't competing for attention in such a short window.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 25.83,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 19,
+  "evidence_verified": 17,
+  "evidence_rate": 0.895,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    13
+   ],
+   "quote": [
+    2,
+    2
+   ],
+   "visual": [
+    3,
+    4
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "visual",
+    "ref": "1.2",
+    "value": "blurred dashboard gauges, no product/home visible",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "0.92",
+    "verified": true,
+    "note": "actual=0.92"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "7",
+    "verified": true,
+    "note": "actual=7.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "-1.19",
+    "verified": true,
+    "note": "actual=-1.19"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "nonspeech_audio_share",
+    "value": "0.066",
+    "verified": true,
+    "note": "actual=0.066"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:25.0",
+    "value": "-28.3",
+    "verified": true,
+    "note": "bin={'start': 25.0, 'end': 30.0, 'cuts': 1, 'wpm': 144.0, 'loud_db': -28.3, 'motion': 0.116}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "you_rate",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "20.0",
+    "value": "all people like me want is a little piece of the American dream",
+    "verified": true,
+    "note": "match=1.00 at 13.08"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:30.0",
+    "value": "4200.0",
+    "verified": true,
+    "note": "bin={'start': 30.0, 'end': 30.1, 'cuts': 0, 'wpm': 4200.0, 'loud_db': -43.0, 'motion': None}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "visual",
+    "ref": "26.1",
+    "value": "UMH PROPERTIES, INC www.umh.com/PA Scan to find your future home: all on screen together",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.87",
+    "verified": true,
+    "note": "actual=0.87"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "183.4",
+    "verified": true,
+    "note": "actual=183.4"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "Scan to find your future home: overlay visible",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "median_shot_s",
+    "value": "1.99",
+    "verified": true,
+    "note": "actual=1.99"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "median_shot_s_pct",
+    "value": "92",
+    "verified": false,
+    "note": "unknown metric"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "20.0",
+    "value": "I do think that I deserve that",
+    "verified": true,
+    "note": "match=1.00 at 24.18"
+   },
+   {
+    "owner": "str3",
+    "kind": "visual",
+    "ref": "13.8",
+    "value": "man approaching porch, woman seated, warm domestic scene",
+    "verified": false,
+    "note": "no segment at ref"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 19,
+  "evidence_verified": 17,
+  "evidence_rate": 0.895,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    13
+   ],
+   "quote": [
+    2,
+    2
+   ],
+   "visual": [
+    3,
+    4
+   ]
+  }
+ }
+}

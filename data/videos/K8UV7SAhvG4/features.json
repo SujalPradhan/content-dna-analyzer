@@ -1,0 +1,105 @@
+{
+ "video_id": "K8UV7SAhvG4",
+ "category": "ad",
+ "title": "Kars4Kids Official TV Commercial (Kars for Kids Video Jingle)",
+ "channel": "Kars4Kids",
+ "url": "https://www.youtube.com/watch?v=K8UV7SAhvG4",
+ "views": 7071689,
+ "likes": 14557,
+ "comments": 1700,
+ "subscribers": 15300,
+ "upload_date": "20141104",
+ "full_duration": 30,
+ "is_short": false,
+ "fingerprint": {
+  "duration_s": 30.1,
+  "shots_per_min": 29.91,
+  "median_shot_s": 1.74,
+  "shot_len_cv": 0.59,
+  "pacing_trend": 1.12,
+  "hook_cuts": 7,
+  "time_to_first_word_s": 3.14,
+  "hook_wpm": 88.0,
+  "hook_text_overlay": 0.0,
+  "hook_motion": 0.91,
+  "wpm": 121.6,
+  "speech_coverage": 0.788,
+  "long_pauses_per_min": 1.99,
+  "questions_per_min": 0.0,
+  "you_rate": 4.92,
+  "loudness_db": -11.7,
+  "loudness_range_db": 12.8,
+  "energy_slope": -0.48,
+  "nonspeech_audio_share": 0.18,
+  "motion_mean": 0.1456,
+  "brightness_mean": 0.685,
+  "colorfulness_mean": 41.1,
+  "talking_head_share": 0.146,
+  "broll_share": 0.0,
+  "screen_share": 0.1,
+  "face_share": 0.9,
+  "text_overlay_share": 0.747,
+  "format_switches_per_min": 5.98,
+  "cta_count": 3,
+  "first_cta_pos": 0.106
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 5.0,
+   "cuts": 2,
+   "wpm": 36.0,
+   "loud_db": -16.0,
+   "motion": 0.14
+  },
+  {
+   "start": 5.0,
+   "end": 10.0,
+   "cuts": 2,
+   "wpm": 108.0,
+   "loud_db": -9.7,
+   "motion": 0.092
+  },
+  {
+   "start": 10.0,
+   "end": 15.0,
+   "cuts": 3,
+   "wpm": 120.0,
+   "loud_db": -9.7,
+   "motion": 0.166
+  },
+  {
+   "start": 15.0,
+   "end": 20.0,
+   "cuts": 4,
+   "wpm": 192.0,
+   "loud_db": -9.1,
+   "motion": 0.177
+  },
+  {
+   "start": 20.0,
+   "end": 25.0,
+   "cuts": 2,
+   "wpm": 144.0,
+   "loud_db": -9.4,
+   "motion": 0.168
+  },
+  {
+   "start": 25.0,
+   "end": 30.0,
+   "cuts": 2,
+   "wpm": 60.0,
+   "loud_db": -12.8,
+   "motion": 0.131
+  },
+  {
+   "start": 30.0,
+   "end": 30.1,
+   "cuts": 0,
+   "wpm": 3600.0,
+   "loud_db": -44.2,
+   "motion": null
+  }
+ ],
+ "perception_done": true
+}

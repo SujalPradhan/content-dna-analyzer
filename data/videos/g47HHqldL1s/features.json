@@ -1,0 +1,329 @@
+{
+ "video_id": "g47HHqldL1s",
+ "category": "vlog",
+ "title": "Victoria BC Travel Vlog \ud83c\udf3f | Slow & Cozy Weekend on Vancouver Island \u2013 Caf\u00e9 Hopping, Sunsets & Ocean",
+ "channel": "winnie chan",
+ "url": "https://www.youtube.com/watch?v=g47HHqldL1s",
+ "views": 4982,
+ "likes": 92,
+ "comments": 3,
+ "subscribers": 1200,
+ "upload_date": "20250915",
+ "full_duration": 685,
+ "is_short": false,
+ "fingerprint": {
+  "duration_s": 684.7,
+  "shots_per_min": 18.84,
+  "median_shot_s": 2.75,
+  "shot_len_cv": 0.54,
+  "pacing_trend": 0.92,
+  "hook_cuts": 6,
+  "time_to_first_word_s": 136.46,
+  "hook_wpm": 0.0,
+  "hook_text_overlay": 1.0,
+  "hook_motion": 1.08,
+  "wpm": 34.4,
+  "speech_coverage": 0.204,
+  "long_pauses_per_min": 1.31,
+  "questions_per_min": 0.0,
+  "you_rate": 0.0,
+  "loudness_db": -20.6,
+  "loudness_range_db": 11.9,
+  "energy_slope": -1.63,
+  "nonspeech_audio_share": 0.777,
+  "motion_mean": 0.0907,
+  "brightness_mean": 0.371,
+  "colorfulness_mean": 43.0,
+  "talking_head_share": 0.0,
+  "broll_share": 1.0,
+  "screen_share": 0.0,
+  "face_share": 0.945,
+  "text_overlay_share": 1.0,
+  "format_switches_per_min": 0.0,
+  "cta_count": 0,
+  "first_cta_pos": NaN
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 20.0,
+   "cuts": 8,
+   "wpm": 0.0,
+   "loud_db": -22.0,
+   "motion": 0.096
+  },
+  {
+   "start": 20.0,
+   "end": 40.0,
+   "cuts": 9,
+   "wpm": 0.0,
+   "loud_db": -20.0,
+   "motion": 0.111
+  },
+  {
+   "start": 40.0,
+   "end": 60.0,
+   "cuts": 7,
+   "wpm": 0.0,
+   "loud_db": -16.4,
+   "motion": 0.089
+  },
+  {
+   "start": 60.0,
+   "end": 80.0,
+   "cuts": 6,
+   "wpm": 0.0,
+   "loud_db": -16.3,
+   "motion": 0.099
+  },
+  {
+   "start": 80.0,
+   "end": 100.0,
+   "cuts": 7,
+   "wpm": 0.0,
+   "loud_db": -15.3,
+   "motion": 0.072
+  },
+  {
+   "start": 100.0,
+   "end": 120.0,
+   "cuts": 7,
+   "wpm": 0.0,
+   "loud_db": -18.5,
+   "motion": 0.093
+  },
+  {
+   "start": 120.0,
+   "end": 140.0,
+   "cuts": 6,
+   "wpm": 36.0,
+   "loud_db": -19.0,
+   "motion": 0.137
+  },
+  {
+   "start": 140.0,
+   "end": 160.0,
+   "cuts": 9,
+   "wpm": 30.0,
+   "loud_db": -18.9,
+   "motion": 0.074
+  },
+  {
+   "start": 160.0,
+   "end": 180.0,
+   "cuts": 7,
+   "wpm": 0.0,
+   "loud_db": -19.7,
+   "motion": 0.086
+  },
+  {
+   "start": 180.0,
+   "end": 200.0,
+   "cuts": 6,
+   "wpm": 63.0,
+   "loud_db": -22.7,
+   "motion": 0.114
+  },
+  {
+   "start": 200.0,
+   "end": 220.0,
+   "cuts": 8,
+   "wpm": 96.0,
+   "loud_db": -21.4,
+   "motion": 0.096
+  },
+  {
+   "start": 220.0,
+   "end": 240.0,
+   "cuts": 8,
+   "wpm": 54.0,
+   "loud_db": -22.9,
+   "motion": 0.082
+  },
+  {
+   "start": 240.0,
+   "end": 260.0,
+   "cuts": 4,
+   "wpm": 36.0,
+   "loud_db": -24.4,
+   "motion": 0.103
+  },
+  {
+   "start": 260.0,
+   "end": 280.0,
+   "cuts": 7,
+   "wpm": 18.0,
+   "loud_db": -23.8,
+   "motion": 0.092
+  },
+  {
+   "start": 280.0,
+   "end": 300.0,
+   "cuts": 2,
+   "wpm": 45.0,
+   "loud_db": -24.5,
+   "motion": 0.059
+  },
+  {
+   "start": 300.0,
+   "end": 320.0,
+   "cuts": 6,
+   "wpm": 126.0,
+   "loud_db": -20.8,
+   "motion": 0.071
+  },
+  {
+   "start": 320.0,
+   "end": 340.0,
+   "cuts": 5,
+   "wpm": 27.0,
+   "loud_db": -23.0,
+   "motion": 0.065
+  },
+  {
+   "start": 340.0,
+   "end": 360.0,
+   "cuts": 7,
+   "wpm": 0.0,
+   "loud_db": -20.7,
+   "motion": 0.119
+  },
+  {
+   "start": 360.0,
+   "end": 380.0,
+   "cuts": 9,
+   "wpm": 0.0,
+   "loud_db": -19.5,
+   "motion": 0.107
+  },
+  {
+   "start": 380.0,
+   "end": 400.0,
+   "cuts": 6,
+   "wpm": 102.0,
+   "loud_db": -18.8,
+   "motion": 0.091
+  },
+  {
+   "start": 400.0,
+   "end": 420.0,
+   "cuts": 6,
+   "wpm": 0.0,
+   "loud_db": -22.3,
+   "motion": 0.101
+  },
+  {
+   "start": 420.0,
+   "end": 440.0,
+   "cuts": 7,
+   "wpm": 0.0,
+   "loud_db": -23.7,
+   "motion": 0.081
+  },
+  {
+   "start": 440.0,
+   "end": 460.0,
+   "cuts": 7,
+   "wpm": 96.0,
+   "loud_db": -19.8,
+   "motion": 0.087
+  },
+  {
+   "start": 460.0,
+   "end": 480.0,
+   "cuts": 3,
+   "wpm": 69.0,
+   "loud_db": -20.0,
+   "motion": 0.087
+  },
+  {
+   "start": 480.0,
+   "end": 500.0,
+   "cuts": 5,
+   "wpm": 0.0,
+   "loud_db": -22.0,
+   "motion": 0.084
+  },
+  {
+   "start": 500.0,
+   "end": 520.0,
+   "cuts": 9,
+   "wpm": 0.0,
+   "loud_db": -22.3,
+   "motion": 0.102
+  },
+  {
+   "start": 520.0,
+   "end": 540.0,
+   "cuts": 6,
+   "wpm": 33.0,
+   "loud_db": -23.8,
+   "motion": 0.111
+  },
+  {
+   "start": 540.0,
+   "end": 560.0,
+   "cuts": 5,
+   "wpm": 36.0,
+   "loud_db": -19.3,
+   "motion": 0.077
+  },
+  {
+   "start": 560.0,
+   "end": 580.0,
+   "cuts": 4,
+   "wpm": 0.0,
+   "loud_db": -20.3,
+   "motion": 0.104
+  },
+  {
+   "start": 580.0,
+   "end": 600.0,
+   "cuts": 5,
+   "wpm": 21.0,
+   "loud_db": -20.8,
+   "motion": 0.11
+  },
+  {
+   "start": 600.0,
+   "end": 620.0,
+   "cuts": 7,
+   "wpm": 87.0,
+   "loud_db": -18.9,
+   "motion": 0.104
+  },
+  {
+   "start": 620.0,
+   "end": 640.0,
+   "cuts": 7,
+   "wpm": 0.0,
+   "loud_db": -20.2,
+   "motion": 0.092
+  },
+  {
+   "start": 640.0,
+   "end": 660.0,
+   "cuts": 5,
+   "wpm": 66.0,
+   "loud_db": -19.8,
+   "motion": 0.084
+  },
+  {
+   "start": 660.0,
+   "end": 680.0,
+   "cuts": 3,
+   "wpm": 138.0,
+   "loud_db": -19.3,
+   "motion": 0.027
+  },
+  {
+   "start": 680.0,
+   "end": 684.7,
+   "cuts": 2,
+   "wpm": 0.0,
+   "loud_db": -23.7,
+   "motion": 0.0
+  }
+ ],
+ "perception_done": true
+}

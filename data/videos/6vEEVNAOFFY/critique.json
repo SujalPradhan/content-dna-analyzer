@@ -1,0 +1,388 @@
+{
+ "summary": "A 28-second Doritos spot built as a single continuous visual gag: a grandmother teases a baby with chips, a sound-design hinge-cord shot foreshadows a slingshot rig, speech drops to near-silence as tension builds, and a one-line punchline ('Excuse me') lands in the final seconds. The ad relies almost entirely on b-roll/visual comedy and a wide dynamic audio range rather than dialogue density or on-screen branding.",
+ "dna_tags": [
+  "comedic suspense ad",
+  "visual-gag payoff",
+  "silent buildup",
+  "single continuous b-roll",
+  "backyard slice-of-life casting",
+  "sound-driven tension"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 4.3,
+   "role": "hook",
+   "label": "Grandma asks 'Who has the Doritos?' while baby watches"
+  },
+  {
+   "start_s": 4.3,
+   "end_s": 13.4,
+   "role": "intro_setup",
+   "label": "Teasing exchange, chips withheld from baby"
+  },
+  {
+   "start_s": 13.4,
+   "end_s": 20.0,
+   "role": "demonstration",
+   "label": "Bungee-cord close-up foreshadows slingshot rig"
+  },
+  {
+   "start_s": 20.0,
+   "end_s": 25.0,
+   "role": "context",
+   "label": "Silent build-up, no dialogue, rising loudness"
+  },
+  {
+   "start_s": 25.0,
+   "end_s": 28.4,
+   "role": "payoff_reveal",
+   "label": "'Excuse me' punchline"
+  }
+ ],
+ "hook": {
+  "what_happens": "An elderly woman in a wheelchair-like chair sits beside a baby in a jumper/swing in a backyard, asking twice 'Who has the Doritos?' before teasing the baby with 'You want one? Sorry.'",
+  "promise": "A comedic payoff involving the chips and the baby's swing rig",
+  "strengths": [
+   "Opens on spoken words at 0.0s with a direct question, giving an immediate narrative hook (questions_per_min 6.34, 75th pct in category)",
+   "Fast early cutting (hook_cuts 10, 75th pct) keeps the odd juxtaposition of grandmother and baby visually active",
+   "Unusual visual pairing (wheelchair, swing, backyard) creates curiosity before any punchline is revealed"
+  ],
+  "weaknesses": [
+   "No on-screen text or branding appears in the first 3 seconds (hook_text_overlay false, 42nd pct), so viewers scrolling without sound get no brand cue",
+   "Opening visual (wide static backyard shot) is low-motion and ambiguous about what the gag will be, relying entirely on dialogue to signal intent"
+  ]
+ },
+ "devices": [
+  {
+   "name": "Sound-bridge foreshadowing",
+   "t_s": 11.2,
+   "quote": ""
+  },
+  {
+   "name": "Suspense silence before punchline",
+   "t_s": 20.0,
+   "quote": ""
+  },
+  {
+   "name": "Direct-address teasing dialogue",
+   "t_s": 4.3,
+   "quote": "You want one? Sorry."
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 20.0,
+   "point": "The ad builds tension through an extended quiet stretch and rising loudness/energy before the reveal, a classic ad-comedy timing device",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "12.05"
+    },
+    {
+     "kind": "metric",
+     "ref": "loudness_range_db",
+     "value": "16.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:20.0",
+     "value": "wpm 0.0, loud_db -18.6"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "The spot leans fully on visual storytelling and face-forward b-roll rather than talking-head exposition, matching a cinematic Super Bowl ad style",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "broll_share",
+     "value": "1.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "face_share",
+     "value": "1.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "An old woman in a wheelchair sitting next to a baby in a jumper in a backyard."
+    }
+   ]
+  },
+  {
+   "t_s": 11.2,
+   "point": "A close-up insert of a bungee/spring cord mid-sequence quietly foreshadows the physical gag without dialogue, letting the visual carry plot information",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "11.2",
+     "value": "Close-up of a stretched bungee/spring cord against a porch backdrop"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Add branding/text to reinforce sound-off viewing",
+   "t_start_s": 0.0,
+   "t_end_s": 3.0,
+   "observation": "The spot has zero on-screen text across its entire runtime, well below typical category levels",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "0.0"
+    }
+   ],
+   "recommendation": "Test adding a small logo or product text in the first 3 seconds so sound-off or distracted viewers can still identify the brand before the punchline lands",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Consider a closing CTA/brand card",
+   "t_start_s": 25.0,
+   "t_end_s": 28.4,
+   "observation": "cta_count is 0, well below the ad category's typical 1-2 calls to action, and there is no first_cta_pos recorded",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "0"
+    },
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "null"
+    }
+   ],
+   "recommendation": "Test appending a brief end card with the product name/tagline after the punchline so the payoff still lands narratively while leaving a clear brand touchpoint",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 25.15,
+   "t_in_range": true
+  },
+  {
+   "title": "Examine the 15-25s dialogue lull before the payoff",
+   "t_start_s": 15.0,
+   "t_end_s": 25.0,
+   "observation": "Words-per-minute drops to 12 then 0 in consecutive bins right before the final punchline, the longest stretch of the ad without speech",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:15.0",
+     "value": "wpm 12.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:20.0",
+     "value": "wpm 0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "long_pauses_per_min",
+     "value": "4.23"
+    }
+   ],
+   "recommendation": "If this silence is meant to build suspense, consider testing whether a sound effect or visual cue mid-pause keeps engagement before the 'Excuse me' line, since the pause is unusually long relative to the category's long_pauses_per_min benchmark",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 15.22,
+   "t_in_range": true
+  },
+  {
+   "title": "Shot-length variability is unusually uniform",
+   "t_start_s": 0.0,
+   "t_end_s": 28.4,
+   "observation": "Shot-length CV of 0.32 sits at the 8th percentile for ads, meaning cuts are far more evenly timed than most ads in the corpus, which typically vary shot length more for comedic emphasis",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "shot_len_cv",
+     "value": "0.32"
+    }
+   ],
+   "recommendation": "Test varying shot duration more around the punchline (e.g., a longer hold before 'Excuse me' and a quicker cut after) to see if it sharpens comedic timing",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 15,
+  "evidence_verified": 13,
+  "evidence_rate": 0.867,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    13
+   ],
+   "quote": [
+    0,
+    0
+   ],
+   "visual": [
+    1,
+    2
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "null",
+    "verified": false,
+    "note": "unknown metric"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:15.0",
+    "value": "wpm 12.0",
+    "verified": true,
+    "note": "bin={'start': 15.0, 'end': 20.0, 'cuts': 3, 'wpm': 12.0, 'loud_db': -20.1, 'motion': 0.171}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:20.0",
+    "value": "wpm 0.0",
+    "verified": true,
+    "note": "bin={'start': 20.0, 'end': 25.0, 'cuts': 2, 'wpm': 0.0, 'loud_db': -18.6, 'motion': 0.144}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "long_pauses_per_min",
+    "value": "4.23",
+    "verified": true,
+    "note": "actual=4.23"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "shot_len_cv",
+    "value": "0.32",
+    "verified": true,
+    "note": "actual=0.32"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "12.05",
+    "verified": true,
+    "note": "actual=12.05"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "loudness_range_db",
+    "value": "16.0",
+    "verified": true,
+    "note": "actual=16.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "bin:20.0",
+    "value": "wpm 0.0, loud_db -18.6",
+    "verified": true,
+    "note": "bin={'start': 20.0, 'end': 25.0, 'cuts': 2, 'wpm': 0.0, 'loud_db': -18.6, 'motion': 0.144}"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "broll_share",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "face_share",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "An old woman in a wheelchair sitting next to a baby in a jumper in a backyard.",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "11.2",
+    "value": "Close-up of a stretched bungee/spring cord against a porch backdrop",
+    "verified": false,
+    "note": "no segment at ref"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 15,
+  "evidence_verified": 10,
+  "evidence_rate": 0.667,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    9,
+    13
+   ],
+   "quote": [
+    0,
+    0
+   ],
+   "visual": [
+    1,
+    2
+   ]
+  }
+ }
+}

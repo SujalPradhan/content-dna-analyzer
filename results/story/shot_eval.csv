@@ -1,0 +1,5 @@
+video_id,style,manual,detected,tp,precision,recall
+3B3B9eSgMV0,spec-review explainer (stock b-roll + slides),12,11,11,1.0,0.92
+KWuFpi7j4_0,AI-generated tech Short with morph transitions + motion graphics,20,9,7,0.78,0.35
+s83EB_OtaEo,"Super Bowl ad (cinematic, fast cutting)",28,35,26,0.74,0.93
+g47HHqldL1s,aesthetic travel vlog (hard cuts ~2.3 s),25,27,24,0.89,0.96

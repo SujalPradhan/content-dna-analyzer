@@ -1,0 +1,12 @@
+tool,group,outputs,measures_structure,explains_construction,timestamped_fixes
+YouTube Studio,Creator analytics,"Retention curve, CTR, key moments",no,no,no
+vidIQ / TubeBuddy,Creator analytics,"SEO, title & thumbnail tests",no,no,no
+Google Video Intelligence,Video API,"Shots, labels, OCR, speech",partial,no,no
+AWS Rekognition Video,Video API,Shot & technical-cue segments,partial,no,no
+Twelve Labs,Video API,"Moment search, summaries, chapters",partial,no,no
+Opus Clip,Repurposing,Clips + 0-99 virality score,no,no,partial
+Vidmob,Ad scoring,"Creative element tags, guideline scores",partial,partial,partial
+CreativeX,Ad scoring,Guideline compliance score,partial,no,no
+Neurons / Memorable,Ad scoring,Predicted attention / memorability,no,no,partial
+Kantar LINK AI / System1,Ad scoring,Predicted ad-test outcome,no,no,no
+Content DNA Analyzer,This project,"Measured fingerprint + verified, timestamped critique",yes,yes,yes

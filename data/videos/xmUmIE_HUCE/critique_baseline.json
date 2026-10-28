@@ -1,0 +1,260 @@
+{
+ "summary": "This is a short, fast-paced tip video demonstrating a single Windows Run command (shell:appsfolder) in under 20 seconds. It follows a simple structure: instruction, demonstration, benefit statement, and a follow CTA, with no preamble or hook beyond the title.",
+ "dna_tags": [
+  "quick-tip",
+  "windows-tutorial",
+  "run-command-hack",
+  "short-form",
+  "no-intro",
+  "follow-cta"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 6.2,
+   "role": "demonstration",
+   "label": "Typing the shell:appsfolder command and pressing Enter"
+  },
+  {
+   "start_s": 7.0,
+   "end_s": 11.9,
+   "role": "payoff_reveal",
+   "label": "Folder of installed apps opens"
+  },
+  {
+   "start_s": 12.6,
+   "end_s": 14.4,
+   "role": "recap",
+   "label": "Benefit stated: skip the start menu search"
+  },
+  {
+   "start_s": 15.4,
+   "end_s": 18.9,
+   "role": "cta",
+   "label": "Follow for more tips"
+  }
+ ],
+ "hook": {
+  "what_happens": "The video opens immediately with the instruction 'Press Windows plus R. Type shell.apps folder.' with no setup or context.",
+  "promise": "The title promises an instant way to open all Windows apps using a hidden Run command.",
+  "strengths": [
+   "Gets straight to the action with zero delay, matching the short runtime"
+  ],
+  "weaknesses": [
+   "No verbal hook or reason given upfront for why a viewer should care before showing the steps",
+   "Relies entirely on the title/thumbnail to create curiosity since the spoken opening is just a command instruction"
+  ]
+ },
+ "devices": [],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Immediate, no-filler start that gets to the instruction right away",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Press Windows plus R. Type shell.apps folder."
+    }
+   ]
+  },
+  {
+   "t_s": 7.0,
+   "point": "Demonstration directly shows the payoff of the command",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Instantly open a folder showing your installed Windows applications in one place."
+    }
+   ]
+  },
+  {
+   "t_s": 12.6,
+   "point": "Clearly states the practical benefit of the trick",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "No need to search through the start menu."
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Clarify the command name verbally",
+   "t_start_s": 0.0,
+   "t_end_s": 5.0,
+   "observation": "The spoken command is 'shell.apps folder' which does not match the actual Windows command syntax 'shell:appsFolder', potentially confusing viewers trying to replicate it by ear.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Type shell.apps folder."
+    }
+   ],
+   "recommendation": "Consider enunciating or displaying the exact command text so viewers can accurately type 'shell:appsFolder' rather than relying on an ambiguous spoken phrase.",
+   "basis": "internal_inconsistency",
+   "priority": "high",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Add a brief reason-to-watch before the steps",
+   "t_start_s": 0.0,
+   "t_end_s": 0.0,
+   "observation": "The video jumps directly into the instruction without any framing line about why this trick is useful before demonstrating it.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Press Windows plus R. Type shell.apps folder."
+    }
+   ],
+   "recommendation": "Consider adding a one-line setup before the steps that states the benefit, so the context precedes the action rather than following it.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Expand on the CTA branding mention",
+   "t_start_s": 15.4,
+   "t_end_s": 18.9,
+   "observation": "The closing CTA names the channel 'Murda Talk' but gives no specific reason to follow beyond 'more amazing Windows tips and tricks.'",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Follow Murda Talk for more amazing Windows tips and tricks."
+    }
+   ],
+   "recommendation": "Consider referencing a specific upcoming tip or theme to make the follow CTA feel more concrete.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 15.36,
+   "t_in_range": true
+  },
+  {
+   "title": "Confirm the demonstration visual matches the spoken benefit",
+   "t_start_s": 7.0,
+   "t_end_s": 11.9,
+   "observation": "The narration claims the folder shows 'installed Windows applications in one place,' but the transcript alone doesn't confirm what is visually shown matches this claim.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Instantly open a folder showing your installed Windows applications in one place."
+    }
+   ],
+   "recommendation": "Consider verbally pointing out specific apps visible in the folder during the demonstration to reinforce the claim being made.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 7.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 7,
+  "evidence_verified": 4,
+  "evidence_rate": 0.571,
+  "recs": 4,
+  "recs_grounded": 2,
+  "rec_grounded_rate": 0.5,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    4,
+    7
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Type shell.apps folder.",
+    "verified": false,
+    "note": "match=0.33 at 1.08"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Press Windows plus R. Type shell.apps folder.",
+    "verified": false,
+    "note": "match=0.71 at 0.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "Follow Murda Talk for more amazing Windows tips and tricks.",
+    "verified": true,
+    "note": "match=1.00 at 15.36"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Instantly open a folder showing your installed Windows applications in one place.",
+    "verified": true,
+    "note": "match=1.00 at 7.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Press Windows plus R. Type shell.apps folder.",
+    "verified": false,
+    "note": "match=0.71 at 0.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Instantly open a folder showing your installed Windows applications in one place.",
+    "verified": true,
+    "note": "match=1.00 at 7.0"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "No need to search through the start menu.",
+    "verified": true,
+    "note": "match=1.00 at 12.58"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 7,
+  "evidence_verified": 4,
+  "evidence_rate": 0.571,
+  "recs": 4,
+  "recs_grounded": 2,
+  "rec_grounded_rate": 0.5,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    4,
+    7
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  }
+ }
+}

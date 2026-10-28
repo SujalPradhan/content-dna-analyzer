@@ -1,0 +1,382 @@
+{
+ "summary": "This is a short, logo-driven channel intro: a single 10-second animated branding sequence with no cuts until the very end, building from a quiet digital-matrix graphic into a full-screen animated logo reveal timed to a short voiceover welcome line.",
+ "dna_tags": [
+  "branded intro bumper",
+  "logo reveal",
+  "animation-only format",
+  "single-shot sequence",
+  "rising energy sting"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 3.2,
+   "role": "hook",
+   "label": "Silent animated matrix build-up before any voice or logo text"
+  },
+  {
+   "start_s": 3.2,
+   "end_s": 9.5,
+   "role": "payoff_reveal",
+   "label": "Logo ring animation forms around host avatar with welcome voiceover"
+  },
+  {
+   "start_s": 9.5,
+   "end_s": 10.1,
+   "role": "outro",
+   "label": "Final static branded frame with menu text overlay"
+  }
+ ],
+ "hook": {
+  "what_happens": "The video opens on an abstract green digital tunnel/matrix animation with no speech or text for over 3 seconds, then a circular logo animation forms around a host photo and animated robot mascot while a voiceover says a welcome line.",
+  "promise": "Implicitly promises a recurring 'AI Magic Friends' branded series about AI tools and tips, based on the on-screen text and menu options appearing at the end.",
+  "strengths": [
+   "Strong, consistent on-screen branding text visible within the first 3 seconds (hook_text_overlay=1.0)",
+   "Clear escalation from abstract graphic to full logo reveal creates a build-build-reveal structure"
+  ],
+  "weaknesses": [
+   "No spoken word until 3.24s (time_to_first_word_s=3.24), leaving the opening silent relative to the fast hook norms of the shorts category",
+   "Only 1 cut in the first 15s (hook_cuts=1, 8th percentile for shorts), meaning the hook is visually static for a short-form video"
+  ]
+ },
+ "devices": [
+  {
+   "name": "brand_logo_reveal",
+   "t_s": 3.8,
+   "quote": "AI magic friends se apnader shagatam."
+  },
+  {
+   "name": "rising_audio_energy",
+   "t_s": 5.0,
+   "quote": ""
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "On-screen branded text appears immediately within the first 3 seconds, reinforcing channel identity before any voice is heard.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "1.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "Green digital AI matrix motion graphics background with on-screen text 'AIMF AI MAGIC FRIENDS'"
+    }
+   ]
+  },
+  {
+   "t_s": 5.0,
+   "point": "Loudness rises sharply in the second half of the clip, giving the logo reveal a sense of climax.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "18.18"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:5.0",
+     "value": "-14.5"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:0.0",
+     "value": "-24.6"
+    }
+   ]
+  },
+  {
+   "t_s": 3.2,
+   "point": "The welcome line is short and clearly delivered, pairing voice with the logo formation for a coordinated audio-visual payoff.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "AI magic friends se apnader shagatam. Chalun shikhi, jani, ebong egiye choli."
+    },
+    {
+     "kind": "visual",
+     "ref": "3.8",
+     "value": "Circular logo ring animation forms around host photo with sound-wave graphic"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Shorten the silent opening before the first word",
+   "t_start_s": 0.0,
+   "t_end_s": 3.24,
+   "observation": "The first spoken word doesn't arrive until 3.24s, while the shorts category median time_to_first_word_s is 3.24s but the top quartile starts as early as 0s, and most shorts rely on faster verbal or visual engagement in the first few seconds.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "3.24"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "Abstract green tunnel animation with no voice or mascot yet"
+    }
+   ],
+   "recommendation": "Test moving the branded logo/mascot reveal or voiceover earlier, within the first 1-2 seconds, so viewers see a recognizable character or hear speech sooner.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Static first half lacks any cuts",
+   "t_start_s": 0.0,
+   "t_end_s": 5.0,
+   "observation": "hook_cuts is just 1 and shots_per_min is 5.97, both at the 8th percentile for shorts, and shot_len_cv is extremely low (0.09, 8th percentile), indicating almost no visual variation across the whole clip.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "1"
+    },
+    {
+     "kind": "metric",
+     "ref": "shot_len_cv",
+     "value": "0.09"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:0.0",
+     "value": "0"
+    }
+   ],
+   "recommendation": "If future intros of similar length are made, test adding one additional visual change (e.g., a graphic pulse, zoom, or quick cut) in the first 5 seconds to introduce some visual movement before the main logo reveal.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "No explicit call to action in the bumper",
+   "t_start_s": 9.5,
+   "t_end_s": 10.1,
+   "observation": "cta_count is 0, at the 17th percentile for shorts, and first_cta_pos is null, meaning there's no direct prompt despite menu-style text appearing on screen at the end.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "0"
+    },
+    {
+     "kind": "visual",
+     "ref": "8.8",
+     "value": "Menu-style text overlay showing 'AI Tools, Tech Tips, Tutorials, Online Earning, Fan & More' with a language prompt"
+    }
+   ],
+   "recommendation": "Since on-screen menu options already appear in the final frame, consider pairing them with a brief spoken or text CTA such as 'subscribe to follow along' to make the intent of the bumper explicit, as a test.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 9.34,
+   "t_in_range": true
+  },
+  {
+   "title": "Loudness range and energy slope are extreme versus category norms",
+   "t_start_s": 0.0,
+   "t_end_s": 10.1,
+   "observation": "loudness_range_db is 27.0 (92nd percentile) and energy_slope is 18.18 (92nd percentile) for shorts, meaning the audio swings from very quiet to very loud more dramatically than most comparable intros.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "loudness_range_db",
+     "value": "27.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "18.18"
+    }
+   ],
+   "recommendation": "If this swing wasn't intentional for dramatic effect, test smoothing the loudness curve slightly so the transition from the quiet open to the loud reveal doesn't risk sounding like a sudden volume jump on playback.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 16,
+  "evidence_verified": 14,
+  "evidence_rate": 0.875,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    11,
+    11
+   ],
+   "quote": [
+    1,
+    1
+   ],
+   "visual": [
+    2,
+    4
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "3.24",
+    "verified": true,
+    "note": "actual=3.24"
+   },
+   {
+    "owner": "rec0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "Abstract green tunnel animation with no voice or mascot yet",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "1",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "shot_len_cv",
+    "value": "0.09",
+    "verified": true,
+    "note": "actual=0.09"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:0.0",
+    "value": "0",
+    "verified": true,
+    "note": "bin={'start': 0.0, 'end': 5.0, 'cuts': 0, 'wpm': 48.0, 'loud_db': -24.6, 'motion': 0.099}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "visual",
+    "ref": "8.8",
+    "value": "Menu-style text overlay showing 'AI Tools, Tech Tips, Tutorials, Online Earning, Fan & More' with a language prompt",
+    "verified": false,
+    "note": "no segment at ref"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "loudness_range_db",
+    "value": "27.0",
+    "verified": true,
+    "note": "actual=27.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "18.18",
+    "verified": true,
+    "note": "actual=18.18"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "Green digital AI matrix motion graphics background with on-screen text 'AIMF AI MAGIC FRIENDS'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "18.18",
+    "verified": true,
+    "note": "actual=18.18"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "bin:5.0",
+    "value": "-14.5",
+    "verified": true,
+    "note": "bin={'start': 5.0, 'end': 10.0, 'cuts': 1, 'wpm': 96.0, 'loud_db': -14.5, 'motion': 0.125}"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "bin:0.0",
+    "value": "-24.6",
+    "verified": true,
+    "note": "bin={'start': 0.0, 'end': 5.0, 'cuts': 0, 'wpm': 48.0, 'loud_db': -24.6, 'motion': 0.099}"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "AI magic friends se apnader shagatam. Chalun shikhi, jani, ebong egiye choli.",
+    "verified": true,
+    "note": "match=1.00 at 3.24"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "3.8",
+    "value": "Circular logo ring animation forms around host photo with sound-wave graphic",
+    "verified": false,
+    "note": "no segment at ref"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 16,
+  "evidence_verified": 12,
+  "evidence_rate": 0.75,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    9,
+    11
+   ],
+   "quote": [
+    1,
+    1
+   ],
+   "visual": [
+    2,
+    4
+   ]
+  }
+ }
+}

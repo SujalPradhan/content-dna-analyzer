@@ -1,0 +1,329 @@
+{
+ "video_id": "cToNtqt6J3g",
+ "category": "cooking",
+ "title": "Tasty Masala Pasta recipe\u0964 \u0938\u092c\u0938\u0947 \u0906\u0938\u093e\u0928 \u0914\u0930 \u091f\u0947\u0938\u094d\u091f\u0940 \u092a\u093e\u0938\u094d\u0924\u093e\u0964 pasta recipe\u0964 Indian style masala pasta\u0964",
+ "channel": "Shyam Rasoi",
+ "url": "https://www.youtube.com/watch?v=cToNtqt6J3g",
+ "views": 3626606,
+ "likes": 21570,
+ "comments": 403,
+ "subscribers": 2620000,
+ "upload_date": "20231030",
+ "full_duration": 348,
+ "is_short": false,
+ "fingerprint": {
+  "duration_s": 348.4,
+  "shots_per_min": 4.48,
+  "median_shot_s": 4.8,
+  "shot_len_cv": 1.28,
+  "pacing_trend": 0.87,
+  "hook_cuts": 4,
+  "time_to_first_word_s": 0.0,
+  "hook_wpm": 140.0,
+  "hook_text_overlay": 0.0,
+  "hook_motion": 1.45,
+  "wpm": 135.0,
+  "speech_coverage": 0.843,
+  "long_pauses_per_min": 1.03,
+  "questions_per_min": 0.0,
+  "you_rate": 0.0,
+  "loudness_db": -9.6,
+  "loudness_range_db": 4.2,
+  "energy_slope": 0.39,
+  "nonspeech_audio_share": 0.142,
+  "motion_mean": 0.0574,
+  "brightness_mean": 0.425,
+  "colorfulness_mean": 52.3,
+  "talking_head_share": 0.0,
+  "broll_share": 0.989,
+  "screen_share": 0.011,
+  "face_share": 0.0,
+  "text_overlay_share": 0.952,
+  "format_switches_per_min": 0.69,
+  "cta_count": 3,
+  "first_cta_pos": 0.948
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 10.0,
+   "cuts": 2,
+   "wpm": 144.0,
+   "loud_db": -9.9,
+   "motion": 0.083
+  },
+  {
+   "start": 10.0,
+   "end": 20.0,
+   "cuts": 3,
+   "wpm": 156.0,
+   "loud_db": -9.6,
+   "motion": 0.085
+  },
+  {
+   "start": 20.0,
+   "end": 30.0,
+   "cuts": 1,
+   "wpm": 162.0,
+   "loud_db": -9.3,
+   "motion": 0.074
+  },
+  {
+   "start": 30.0,
+   "end": 40.0,
+   "cuts": 0,
+   "wpm": 162.0,
+   "loud_db": -9.2,
+   "motion": 0.07
+  },
+  {
+   "start": 40.0,
+   "end": 50.0,
+   "cuts": 0,
+   "wpm": 162.0,
+   "loud_db": -9.5,
+   "motion": 0.077
+  },
+  {
+   "start": 50.0,
+   "end": 60.0,
+   "cuts": 2,
+   "wpm": 126.0,
+   "loud_db": -9.4,
+   "motion": 0.084
+  },
+  {
+   "start": 60.0,
+   "end": 70.0,
+   "cuts": 1,
+   "wpm": 156.0,
+   "loud_db": -9.6,
+   "motion": 0.061
+  },
+  {
+   "start": 70.0,
+   "end": 80.0,
+   "cuts": 0,
+   "wpm": 174.0,
+   "loud_db": -9.7,
+   "motion": 0.033
+  },
+  {
+   "start": 80.0,
+   "end": 90.0,
+   "cuts": 1,
+   "wpm": 120.0,
+   "loud_db": -9.7,
+   "motion": 0.043
+  },
+  {
+   "start": 90.0,
+   "end": 100.0,
+   "cuts": 0,
+   "wpm": 150.0,
+   "loud_db": -10.4,
+   "motion": 0.037
+  },
+  {
+   "start": 100.0,
+   "end": 110.0,
+   "cuts": 2,
+   "wpm": 0.0,
+   "loud_db": -9.9,
+   "motion": 0.079
+  },
+  {
+   "start": 110.0,
+   "end": 120.0,
+   "cuts": 0,
+   "wpm": 90.0,
+   "loud_db": -10.6,
+   "motion": 0.049
+  },
+  {
+   "start": 120.0,
+   "end": 130.0,
+   "cuts": 1,
+   "wpm": 168.0,
+   "loud_db": -9.3,
+   "motion": 0.046
+  },
+  {
+   "start": 130.0,
+   "end": 140.0,
+   "cuts": 1,
+   "wpm": 90.0,
+   "loud_db": -9.5,
+   "motion": 0.049
+  },
+  {
+   "start": 140.0,
+   "end": 150.0,
+   "cuts": 0,
+   "wpm": 180.0,
+   "loud_db": -9.6,
+   "motion": 0.048
+  },
+  {
+   "start": 150.0,
+   "end": 160.0,
+   "cuts": 0,
+   "wpm": 174.0,
+   "loud_db": -9.8,
+   "motion": 0.055
+  },
+  {
+   "start": 160.0,
+   "end": 170.0,
+   "cuts": 0,
+   "wpm": 156.0,
+   "loud_db": -9.4,
+   "motion": 0.041
+  },
+  {
+   "start": 170.0,
+   "end": 180.0,
+   "cuts": 0,
+   "wpm": 186.0,
+   "loud_db": -9.8,
+   "motion": 0.031
+  },
+  {
+   "start": 180.0,
+   "end": 190.0,
+   "cuts": 0,
+   "wpm": 162.0,
+   "loud_db": -11.0,
+   "motion": 0.057
+  },
+  {
+   "start": 190.0,
+   "end": 200.0,
+   "cuts": 0,
+   "wpm": 204.0,
+   "loud_db": -9.5,
+   "motion": 0.053
+  },
+  {
+   "start": 200.0,
+   "end": 210.0,
+   "cuts": 0,
+   "wpm": 210.0,
+   "loud_db": -9.5,
+   "motion": 0.05
+  },
+  {
+   "start": 210.0,
+   "end": 220.0,
+   "cuts": 0,
+   "wpm": 198.0,
+   "loud_db": -9.5,
+   "motion": 0.062
+  },
+  {
+   "start": 220.0,
+   "end": 230.0,
+   "cuts": 1,
+   "wpm": 186.0,
+   "loud_db": -8.9,
+   "motion": 0.058
+  },
+  {
+   "start": 230.0,
+   "end": 240.0,
+   "cuts": 0,
+   "wpm": 186.0,
+   "loud_db": -8.9,
+   "motion": 0.062
+  },
+  {
+   "start": 240.0,
+   "end": 250.0,
+   "cuts": 1,
+   "wpm": 198.0,
+   "loud_db": -9.3,
+   "motion": 0.051
+  },
+  {
+   "start": 250.0,
+   "end": 260.0,
+   "cuts": 0,
+   "wpm": 156.0,
+   "loud_db": -9.8,
+   "motion": 0.056
+  },
+  {
+   "start": 260.0,
+   "end": 270.0,
+   "cuts": 1,
+   "wpm": 0.0,
+   "loud_db": -10.0,
+   "motion": 0.044
+  },
+  {
+   "start": 270.0,
+   "end": 280.0,
+   "cuts": 2,
+   "wpm": 102.0,
+   "loud_db": -9.6,
+   "motion": 0.051
+  },
+  {
+   "start": 280.0,
+   "end": 290.0,
+   "cuts": 0,
+   "wpm": 162.0,
+   "loud_db": -9.0,
+   "motion": 0.042
+  },
+  {
+   "start": 290.0,
+   "end": 300.0,
+   "cuts": 1,
+   "wpm": 180.0,
+   "loud_db": -9.4,
+   "motion": 0.06
+  },
+  {
+   "start": 300.0,
+   "end": 310.0,
+   "cuts": 0,
+   "wpm": 90.0,
+   "loud_db": -9.8,
+   "motion": 0.039
+  },
+  {
+   "start": 310.0,
+   "end": 320.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -9.0,
+   "motion": 0.06
+  },
+  {
+   "start": 320.0,
+   "end": 330.0,
+   "cuts": 1,
+   "wpm": 18.0,
+   "loud_db": -9.2,
+   "motion": 0.062
+  },
+  {
+   "start": 330.0,
+   "end": 340.0,
+   "cuts": 2,
+   "wpm": 0.0,
+   "loud_db": -9.6,
+   "motion": 0.073
+  },
+  {
+   "start": 340.0,
+   "end": 348.4,
+   "cuts": 3,
+   "wpm": 114.0,
+   "loud_db": -8.9,
+   "motion": 0.085
+  }
+ ],
+ "perception_done": true
+}

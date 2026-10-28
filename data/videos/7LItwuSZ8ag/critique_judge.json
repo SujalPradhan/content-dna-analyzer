@@ -1,0 +1,17 @@
+{
+ "full": {
+  "specificity": 5,
+  "accuracy": 5,
+  "actionability": 5,
+  "insight": 5
+ },
+ "baseline": {
+  "specificity": 4,
+  "accuracy": 5,
+  "actionability": 4,
+  "insight": 3
+ },
+ "winner": "full",
+ "reason": "B integrates the measured data (energy_slope, pacing_trend, loudness dips, shot metrics, CTA position) into specific, timestamped recommendations that explain the construction, while A stays almost entirely content/narrative-focused with generic 'add a transition line' advice and no engagement with the pacing/loudness telemetry. Both are accurate, but B is more actionable and insightful; B's only flaw is a leftover 'placeholder' recommendation field.",
+ "full_was": "B"
+}

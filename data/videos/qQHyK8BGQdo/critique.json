@@ -1,0 +1,497 @@
+{
+ "summary": "A 30.6s TV ad for Blinds2Go builds a wordless, music-driven visual hook of people looking up and raising blinds, delaying voiceover until nearly the 12-second mark, then compresses the full product pitch and CTA into the back half. Pacing is extremely rapid in the silent opening (fast cuts, no dialogue) before shifting to dense, fast-spoken copy and a quick end-card CTA.",
+ "dna_tags": [
+  "wordless visual hook",
+  "rapid-cut montage",
+  "delayed voiceover reveal",
+  "product-benefit speedrun",
+  "end-card CTA",
+  "music-led ad"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 11.5,
+   "role": "hook",
+   "label": "Silent rapid-cut visual hook of people looking up/raising blinds"
+  },
+  {
+   "start_s": 11.5,
+   "end_s": 21.9,
+   "role": "main_content",
+   "label": "No-drill installation benefit voiceover"
+  },
+  {
+   "start_s": 22.6,
+   "end_s": 26.3,
+   "role": "main_content",
+   "label": "SureSize measuring guarantee benefit"
+  },
+  {
+   "start_s": 26.3,
+   "end_s": 30.2,
+   "role": "cta",
+   "label": "Search Blinds2Go online CTA"
+  },
+  {
+   "start_s": 27.7,
+   "end_s": 30.6,
+   "role": "outro",
+   "label": "End-card graphics with branding and Trustpilot text"
+  }
+ ],
+ "hook": {
+  "what_happens": "Quick cuts of a woman smiling upward, another raising blinds in a kitchen, then more shots of people interacting with blinds, all set to upbeat music with no spoken words.",
+  "promise": "Visually implies an emotionally satisfying, easy transformation ('the only way is up') before any product claim is spoken.",
+  "strengths": [
+   "High motion and cut rate create immediate visual energy",
+   "Faces and warm domestic settings establish relatable context before any sales pitch"
+  ],
+  "weaknesses": [
+   "No speech or text overlay until 11.48s, among the latest first-word times in the ad category (92nd pct)",
+   "Hook words-per-minute is only 12, far below category hook_wpm norms (82-155), so the opening carries no verbal promise or brand message"
+  ]
+ },
+ "devices": [
+  {
+   "name": "wordless visual hook with music lead-in",
+   "t_s": 0.0,
+   "quote": ""
+  },
+  {
+   "name": "delayed brand reveal via on-screen logo text",
+   "t_s": 0.0,
+   "quote": ""
+  },
+  {
+   "name": "rapid benefit-stacking voiceover",
+   "t_s": 11.5,
+   "quote": "Put up your blinds the easy way with Blinds2Go, because with no need for a drill, you can"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Opening achieves strong visual energy and motion to capture attention before any dialogue.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "1.04"
+    },
+    {
+     "kind": "metric",
+     "ref": "motion_mean",
+     "value": "0.1598"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "Very high cut rate in the opening 15s creates a dynamic, fast-paced feel typical of polished ad production.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "14"
+    },
+    {
+     "kind": "metric",
+     "ref": "shots_per_min",
+     "value": "51.05"
+    }
+   ]
+  },
+  {
+   "t_s": 16.4,
+   "point": "On-screen text overlay runs through nearly the entire runtime, reinforcing brand and offer details visually alongside voiceover.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "1.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "16.4",
+     "value": "blinds2go\u2122 No Drill Installation Free SureSize Measuring Guarantee overlay text"
+    }
+   ]
+  },
+  {
+   "t_s": 20.0,
+   "point": "Energy and loudness build steadily from the quiet hook into the benefit section, supporting the pitch's momentum.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "13.31"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:20.0",
+     "value": "loud_db -22.5"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "First spoken word arrives very late relative to ad norms",
+   "t_start_s": 0.0,
+   "t_end_s": 11.5,
+   "observation": "No speech occurs until 11.48s into a 30.6s ad, while category median time_to_first_word_s is 0.69s and p75 is only 2.7s.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "11.48"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:0.0",
+     "value": "wpm 0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:5.0",
+     "value": "wpm 0.0"
+    }
+   ],
+   "recommendation": "Test pulling a short verbal or on-screen brand/benefit cue (even a few words) into the first 5s so the product message isn't entirely dependent on the visual montage.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "high",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Hook speaking rate near zero compresses the entire pitch into the back third",
+   "t_start_s": 0.0,
+   "t_end_s": 15.0,
+   "observation": "hook_wpm is 12, far below the ad category p25 of 82, meaning almost no verbal content lands in the first 15 seconds, after which wpm jumps to 144-204 in bins from 15-30s.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_wpm",
+     "value": "12.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:20.0",
+     "value": "wpm 204.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:15.0",
+     "value": "wpm 144.0"
+    }
+   ],
+   "recommendation": "Consider redistributing some voiceover earlier (e.g., a brand mention around 5-8s) so the benefit messaging isn't rushed at 200wpm in the 20-25s window.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Median shot length is extremely short versus ad peers",
+   "t_start_s": 0.0,
+   "t_end_s": 15.0,
+   "observation": "median_shot_s of 1.04s sits at the 8th percentile for ad category, where typical shots run 1.26-1.66s, indicating unusually choppy editing even for a fast-paced ad.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "median_shot_s",
+     "value": "1.04"
+    },
+    {
+     "kind": "metric",
+     "ref": "shots_per_min",
+     "value": "51.05"
+    }
+   ],
+   "recommendation": "If testing variants, try letting a couple of hook shots (e.g., the woman smiling at 1.2s or the blind-raising action at 6.2s) breathe slightly longer to see if comprehension of the visual story improves.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Single CTA placed very late at 87% of runtime",
+   "t_start_s": 26.7,
+   "t_end_s": 30.2,
+   "observation": "first_cta_pos is 0.874 (70th pct for ad category), with only one CTA total, delivered in the final 4 seconds alongside dense on-screen text.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.874"
+    },
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "1"
+    },
+    {
+     "kind": "quote",
+     "ref": "26.3",
+     "value": "Search Blinds2Go online today and discover the perfect fit"
+    }
+   ],
+   "recommendation": "Test adding a brief earlier CTA or brand mention mid-ad (around 15-18s) so the call to action isn't solely reliant on the final seconds when attention may have dropped.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 26.94,
+   "t_in_range": true
+  },
+  {
+   "title": "Loudness range is unusually narrow for the category",
+   "t_start_s": 0.0,
+   "t_end_s": 30.6,
+   "observation": "loudness_range_db of 8.6 sits at the 8th percentile for ads, where typical range is 11.2-12.95 dB, suggesting limited dynamic contrast between quiet hook and louder pitch sections.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "loudness_range_db",
+     "value": "8.6"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:0.0",
+     "value": "loud_db -34.6"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:25.0",
+     "value": "loud_db -21.7"
+    }
+   ],
+   "recommendation": "Consider widening the dynamic gap between the hushed opening and the voiceover/CTA sections to sharpen the sense of build within the 30s runtime.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 22,
+  "evidence_verified": 22,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    20,
+    20
+   ],
+   "quote": [
+    1,
+    1
+   ],
+   "visual": [
+    1,
+    1
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "11.48",
+    "verified": true,
+    "note": "actual=11.48"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:0.0",
+    "value": "wpm 0.0",
+    "verified": true,
+    "note": "bin={'start': 0.0, 'end': 5.0, 'cuts': 5, 'wpm': 0.0, 'loud_db': -34.6, 'motion': 0.183}"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "bin:5.0",
+    "value": "wpm 0.0",
+    "verified": true,
+    "note": "bin={'start': 5.0, 'end': 10.0, 'cuts': 5, 'wpm': 0.0, 'loud_db': -27.0, 'motion': 0.181}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_wpm",
+    "value": "12.0",
+    "verified": true,
+    "note": "actual=12.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:20.0",
+    "value": "wpm 204.0",
+    "verified": true,
+    "note": "bin={'start': 20.0, 'end': 25.0, 'cuts': 4, 'wpm': 204.0, 'loud_db': -22.5, 'motion': 0.179}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:15.0",
+    "value": "wpm 144.0",
+    "verified": true,
+    "note": "bin={'start': 15.0, 'end': 20.0, 'cuts': 6, 'wpm': 144.0, 'loud_db': -22.9, 'motion': 0.21}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "median_shot_s",
+    "value": "1.04",
+    "verified": true,
+    "note": "actual=1.04"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "shots_per_min",
+    "value": "51.05",
+    "verified": true,
+    "note": "actual=51.05"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.874",
+    "verified": true,
+    "note": "actual=0.874"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "1",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "26.3",
+    "value": "Search Blinds2Go online today and discover the perfect fit",
+    "verified": true,
+    "note": "match=1.00 at 26.3"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "loudness_range_db",
+    "value": "8.6",
+    "verified": true,
+    "note": "actual=8.6"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:0.0",
+    "value": "loud_db -34.6",
+    "verified": true,
+    "note": "bin={'start': 0.0, 'end': 5.0, 'cuts': 5, 'wpm': 0.0, 'loud_db': -34.6, 'motion': 0.183}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:25.0",
+    "value": "loud_db -21.7",
+    "verified": true,
+    "note": "bin={'start': 25.0, 'end': 30.0, 'cuts': 2, 'wpm': 144.0, 'loud_db': -21.7, 'motion': 0.081}"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "1.04",
+    "verified": true,
+    "note": "actual=1.04"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "motion_mean",
+    "value": "0.1598",
+    "verified": true,
+    "note": "actual=0.1598"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "14",
+    "verified": true,
+    "note": "actual=14.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "shots_per_min",
+    "value": "51.05",
+    "verified": true,
+    "note": "actual=51.05"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "16.4",
+    "value": "blinds2go\u2122 No Drill Installation Free SureSize Measuring Guarantee overlay text",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "13.31",
+    "verified": true,
+    "note": "actual=13.31"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "bin:20.0",
+    "value": "loud_db -22.5",
+    "verified": true,
+    "note": "bin={'start': 20.0, 'end': 25.0, 'cuts': 4, 'wpm': 204.0, 'loud_db': -22.5, 'motion': 0.179}"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 22,
+  "evidence_verified": 15,
+  "evidence_rate": 0.682,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    13,
+    20
+   ],
+   "quote": [
+    1,
+    1
+   ],
+   "visual": [
+    1,
+    1
+   ]
+  }
+ }
+}

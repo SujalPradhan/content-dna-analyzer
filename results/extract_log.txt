@@ -1,0 +1,39 @@
+warning: `VIRTUAL_ENV=/Users/sujal/.pyenv/versions/3.11.9` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+ok   7Wa_bsAM4ec 248.1s Cashify Refurbished Laptop Review 🔥 Kya Sahi Deal 
+ok   3B3B9eSgMV0 703.6s Dell Pro Max Laptop Review (2026) — Tested, Measur
+ok   TdmOT-B_M6M 542.3s HP OmniBook 5 Copilot+ PC Review | The Student Lap
+ok   xB4SsILjJig 828.1s What is The BEST Smartphone to Buy in 2025?
+ok   i53Qur_WGE4 860.5s M5 MacBook Air Long Term Review - ALMOST Perfect..
+ok   c347oYQO57A 796.7s So This is Peak Smartphone
+ok   hTn8Uh1m0hg 262.6s How to Make Pasta | Jamie & Buddy Oliver
+ok   fT1S7FaqdEQ 745.7s 5 EXTREME BUDGET $5 DINNERS | Cheap & Easy Family 
+ok   od29yqPu-aM 289.2s No Oil No Flour No Maida Only 3 Ingredients Health
+ok   glSXLZnOT4A 706.2s Budget Friendly Casserole That Tastes Like A Milli
+ok   cToNtqt6J3g 348.4s Tasty Masala Pasta recipe। सबसे आसान और टेस्टी पास
+ok   oJYpjUVYxm0 208.4s Pasta Recipe in Tamil | How to make Pasta in Tamil
+ok   7LItwuSZ8ag 245.7s Class 6 Science| Measurement of Length and Motion|
+ok   fV1KLNyuTv4 798.4s How Does a Mobile Network Work? Explained: GSM, LT
+ERROR: [youtube] SK4uLmodN6A: This video is not available
+ok   cDcpbNE4xys 474.2s What is WordPress? And How Does it Work? - Explain
+ok   D9BEQdfn9xc 395.2s Explained: What Is Wall Street And How Does It Wor
+FAIL https://www.youtube.com/watch?v=SK4uLmodN6A DownloadError: ERROR: [youtube] SK4uLmodN6A: This video is not available
+ok   Da-2h2B4faU 480.0s String Theory Explained – What is The True Nature 
+ok   8RusBT_lFTI 519.0s Mussoorie Travel Vlog | Delhi to Mussoorie | Hidde
+ok   vHn_rCDYxlI 630.7s *NEW* WEEKEND TRAVEL VLOG 🏡 | Cleaning, organising
+ok   g47HHqldL1s 684.7s Victoria BC Travel Vlog 🌿 | Slow & Cozy Weekend on
+ok   ZFJI-UgAx00 498.0s study vlog | midterm exams, library studying, prod
+ok   B0tIVOq6m1U 567.1s Weekend trip to Alibaug | Alibaug Tourist Places |
+ok   AhcXsmR0MU0 760.2s Colorado Travel Vlog | weekend ski trip with frien
+ok   TJ7I3_QHtac 30.1s UMH Properties TV Commercial 2025
+ok   s83EB_OtaEo 97.8s Uber Eats Super Bowl Commercial (2025) Featuring M
+ok   zcj2PaJTEmk 30.1s ‘Your Attention, Please’ | Official Novartis TV Co
+ok   6vEEVNAOFFY 28.4s SLING BABY | Doritos Commercial | #superbowl #comm
+ok   qQHyK8BGQdo 30.6s Blinds 2go™ TV Ad | September 2025 - The Only Way 
+ok   K8UV7SAhvG4 30.1s Kars4Kids Official TV Commercial (Kars for Kids Vi
+ok   KWuFpi7j4_0 41.1s AI Tools You NEED to Try in 2026! 🤯🚀 #Shorts
+ok   4K2P6Zy0nF4 10.1s AI Magic Friends Intro | AI Tools & Tech Tips #sho
+ok   MvBMHRkN9X8 30.1s 😱 ছবি তুললেই জেনে যাবেন এটা কী! 🤯 | Google Lens Ba
+ok   xmUmIE_HUCE 19.2s Open All Windows Apps Instantly! 🤯 | Hidden Window
+ok   gMgf4bTW5gU 58.7s TORTILLA WRAP HACK  || EASY  WRAP HACK || #shorts 
+ok   5nNf6QQObw8 15.8s Chicken Drumsticks - Easy Owen Cooking Life Hack
+spend so far: $2.0578

@@ -1,0 +1,480 @@
+{
+ "summary": "A narration-driven explainer that moves briskly through Wall Street's definition, history and career advice using near-constant stock b-roll and on-screen date/title cards keyed to a chapter structure. Cuts are frequent but very uniform in length, speech is dense and almost wall-to-wall, and a subscribe ask is inserted unusually early, right after the opening definition.",
+ "dna_tags": [
+  "chapter-stamped history explainer",
+  "dense narration over stock b-roll",
+  "text-overlay date markers",
+  "early mid-roll CTA interruption",
+  "steady uniform cut rhythm"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 6.6,
+   "role": "hook",
+   "label": "Title card question over Wall St street sign"
+  },
+  {
+   "start_s": 6.6,
+   "end_s": 24.4,
+   "role": "intro_setup",
+   "label": "Defining Wall Street literally and figuratively"
+  },
+  {
+   "start_s": 24.4,
+   "end_s": 29.8,
+   "role": "cta",
+   "label": "Early subscribe ask"
+  },
+  {
+   "start_s": 29.8,
+   "end_s": 98,
+   "role": "main_content",
+   "label": "What the term Wall Street covers"
+  },
+  {
+   "start_s": 98,
+   "end_s": 123,
+   "role": "context",
+   "label": "NYSE and Federal Reserve Bank of NY"
+  },
+  {
+   "start_s": 123,
+   "end_s": 247,
+   "role": "main_content",
+   "label": "History from 1653 wall to 20th century financial center"
+  },
+  {
+   "start_s": 247,
+   "end_s": 286,
+   "role": "context",
+   "label": "Main Street vs Wall Street comparison"
+  },
+  {
+   "start_s": 286,
+   "end_s": 323,
+   "role": "main_content",
+   "label": "Wall Street Journal and DJIA origin"
+  },
+  {
+   "start_s": 323,
+   "end_s": 368,
+   "role": "demonstration",
+   "label": "How to get a job on Wall Street"
+  },
+  {
+   "start_s": 368,
+   "end_s": 385.9,
+   "role": "recap",
+   "label": "Summary of physical street and metaphor"
+  },
+  {
+   "start_s": 385.9,
+   "end_s": 395.2,
+   "role": "outro",
+   "label": "Comment prompt and final subscribe/like ask"
+  }
+ ],
+ "hook": {
+  "what_happens": "The video opens on a static Wall St street-sign image with the on-screen title 'What Exactly Is Wall Street?' while the narrator immediately asks the same question aloud.",
+  "promise": "Promises a clear explanation of what Wall Street actually is, both as a physical place and a financial concept.",
+  "strengths": [
+   "Zero delay to first word (time_to_first_word_s 0.0) aligns narration with the on-screen question immediately",
+   "Text overlay present in first 3s matching the spoken hook, reinforcing the topic visually",
+   "High hook_wpm (188) signals an information-forward pace from the first line"
+  ],
+  "weaknesses": [
+   "hook_motion is 0.6, a pct10 outlier versus category norms, meaning the opening visuals are notably more static than the rest of the video and than typical explainer hooks",
+   "Same still image repeated across multiple hook timestamps (1.2s, 3.8s, 6.2s) rather than varied visuals to match the spoken pace"
+  ]
+ },
+ "devices": [
+  {
+   "name": "question-hook",
+   "t_s": 0.0,
+   "quote": "What exactly is Wall Street?"
+  },
+  {
+   "name": "early CTA interruption",
+   "t_s": 24.4,
+   "quote": "Consider subscribing to our YouTube channel so we can continue the video."
+  },
+  {
+   "name": "on-screen date stamps",
+   "t_s": 129.9,
+   "quote": "the wall was demolished in 1699, but the name remained"
+  },
+  {
+   "name": "comparison framing",
+   "t_s": 248.5,
+   "quote": "Wall Street is frequently compared to Main Street."
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Near-constant speech coverage keeps the explainer information-dense with little dead air, fitting a fact-delivery format.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.936"
+    },
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "167.8"
+    }
+   ]
+  },
+  {
+   "t_s": 74.7,
+   "point": "Heavy reliance on b-roll paired with topic-specific text overlays (e.g., exchange lists, dates) gives visual anchors for dense narration.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "broll_share",
+     "value": "0.827"
+    },
+    {
+     "kind": "visual",
+     "ref": "74.7",
+     "value": "On-screen text listing 'Stock Exchanges, Investment and Commercial Banks, Brokerages and Broker-Dealers...' synced to the spoken list"
+    }
+   ]
+  },
+  {
+   "t_s": 123.0,
+   "point": "Chapter markers embedded as on-screen text/dates give the long historical section a clear navigable spine.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "122.8",
+     "value": "On-screen text 'Wall Street's History, Lower Manhattan in 1653'"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Wall Street was named after the wooden wall built by Dutch colonists in lower Manhattan in 1653"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Move the subscribe CTA out of the opening definition",
+   "t_start_s": 23.9,
+   "t_end_s": 29.8,
+   "observation": "The first CTA lands at only 6% into the runtime, immediately after the core definition is given, which is far earlier than typical for the explainer category.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.06"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Consider subscribing to our YouTube channel so we can continue the video."
+    }
+   ],
+   "recommendation": "Test moving this ask later (e.g., after a content milestone such as the history section) so the opening definition completes uninterrupted.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "high",
+   "t_snapped_s": 23.84,
+   "t_in_range": true
+  },
+  {
+   "title": "Add visual motion/variety to match the narration energy in the hook",
+   "t_start_s": 0.0,
+   "t_end_s": 15.0,
+   "observation": "Motion in the first 15 seconds is a pct10 outlier (unusually low relative to the rest of the video and to category peers), while speaking rate is already fast.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "0.6"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_wpm",
+     "value": "188.0"
+    },
+    {
+     "kind": "visual",
+     "ref": "1.2",
+     "value": "Static Wall St sign image repeated across three hook timestamps"
+    }
+   ],
+   "recommendation": "Consider cutting between more varied shots or adding subtle camera movement/zoom in the first 15s so visual pace better matches the fast narration.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Vary shot duration to break up a very uniform cutting rhythm",
+   "t_start_s": 30.0,
+   "t_end_s": 390.0,
+   "observation": "Shot-length variability (CV) is 0.41, a pct10 outlier (unusually low/uniform) despite a 6+ minute runtime with many distinct topics.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "shot_len_cv",
+     "value": "0.41"
+    },
+    {
+     "kind": "metric",
+     "ref": "median_shot_s",
+     "value": "5.0"
+    }
+   ],
+   "recommendation": "Test lengthening or shortening select shots around key reveals (e.g., the 1792 Buttonwood Agreement or DJIA origin) to create emphasis through contrast rather than keeping a flat rhythm throughout.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 30.06,
+   "t_in_range": true
+  },
+  {
+   "title": "Smooth the sharp speech-rate dip around the exchange list at 195-220s",
+   "t_start_s": 195.0,
+   "t_end_s": 220.0,
+   "observation": "wpm drops from a 198 peak at 170-180s to 90 and 102 in the following two bins, alongside very low motion (0.107 and 0.028), suggesting a pacing lull in the middle of the exchange-naming section.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:170.0",
+     "value": "198"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:200.0",
+     "value": "90"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:210.0",
+     "value": "motion 0.028"
+    }
+   ],
+   "recommendation": "Consider either trimming the slower-paced exchange list or adding a stronger visual beat there so the dip in delivery speed doesn't coincide with a visual lull.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 195.08,
+   "t_in_range": true
+  },
+  {
+   "title": "Low direct-address language despite an explainer format",
+   "t_start_s": 323.0,
+   "t_end_s": 368.0,
+   "observation": "you_rate is 0.27, a pct10 outlier versus the explainer category, even in the career-advice section that could naturally speak to the viewer.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "you_rate",
+     "value": "0.27"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Getting a job on Wall Street frequently begins in college."
+    }
+   ],
+   "recommendation": "Test rephrasing some third-person career-advice lines into direct second-person address (e.g., 'you' framing) to see if it changes viewer connection in this section.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 323.05,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 18,
+  "evidence_verified": 18,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    12
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    3,
+    3
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.06",
+    "verified": true,
+    "note": "actual=0.06"
+   },
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Consider subscribing to our YouTube channel so we can continue the video.",
+    "verified": true,
+    "note": "match=1.00 at 23.38"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "0.6",
+    "verified": true,
+    "note": "actual=0.6"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_wpm",
+    "value": "188.0",
+    "verified": true,
+    "note": "actual=188.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "visual",
+    "ref": "1.2",
+    "value": "Static Wall St sign image repeated across three hook timestamps",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "shot_len_cv",
+    "value": "0.41",
+    "verified": true,
+    "note": "actual=0.41"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "median_shot_s",
+    "value": "5.0",
+    "verified": true,
+    "note": "actual=5.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:170.0",
+    "value": "198",
+    "verified": true,
+    "note": "bin={'start': 170.0, 'end': 180.0, 'cuts': 1, 'wpm': 198.0, 'loud_db': -16.6, 'motion': 0.167}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:200.0",
+    "value": "90",
+    "verified": true,
+    "note": "bin={'start': 200.0, 'end': 210.0, 'cuts': 1, 'wpm': 90.0, 'loud_db': -16.7, 'motion': 0.107}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:210.0",
+    "value": "motion 0.028",
+    "verified": true,
+    "note": "bin={'start': 210.0, 'end': 220.0, 'cuts': 1, 'wpm': 102.0, 'loud_db': -18.1, 'motion': 0.028}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "you_rate",
+    "value": "0.27",
+    "verified": true,
+    "note": "actual=0.27"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "",
+    "value": "Getting a job on Wall Street frequently begins in college.",
+    "verified": true,
+    "note": "match=1.00 at 325.98"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.936",
+    "verified": true,
+    "note": "actual=0.936"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "167.8",
+    "verified": true,
+    "note": "actual=167.6"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "broll_share",
+    "value": "0.827",
+    "verified": true,
+    "note": "actual=0.827"
+   },
+   {
+    "owner": "str1",
+    "kind": "visual",
+    "ref": "74.7",
+    "value": "On-screen text listing 'Stock Exchanges, Investment and Commercial Banks, Brokerages and Broker-Dealers...' synced to the spoken list",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "122.8",
+    "value": "On-screen text 'Wall Street's History, Lower Manhattan in 1653'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "Wall Street was named after the wooden wall built by Dutch colonists in lower Manhattan in 1653",
+    "verified": true,
+    "note": "match=1.00 at 124.06"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 18,
+  "evidence_verified": 17,
+  "evidence_rate": 0.944,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    11,
+    12
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    3,
+    3
+   ]
+  }
+ }
+}

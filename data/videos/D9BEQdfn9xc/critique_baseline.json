@@ -1,0 +1,386 @@
+{
+ "summary": "This is a straightforward explainer video that opens with a literal-then-figurative definition of Wall Street, inserts an early subscribe request, then walks chronologically through history, a Main Street vs Wall Street comparison, the founding of the Wall Street Journal, and career advice, before closing with a recap and multiple calls to action. It relies on narration over what is presumably stock/historical footage, structured by topic headers spoken aloud.",
+ "dna_tags": [
+  "definitional explainer",
+  "finance education",
+  "historical narration",
+  "topic-header structure",
+  "direct-address CTA",
+  "listicle-style career tips"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 9.7,
+   "role": "hook",
+   "label": "What exactly is Wall Street?"
+  },
+  {
+   "start_s": 9.7,
+   "end_s": 24.4,
+   "role": "intro_setup",
+   "label": "Figurative meaning and financial industry connection"
+  },
+  {
+   "start_s": 24.4,
+   "end_s": 29.8,
+   "role": "cta",
+   "label": "Subscribe request"
+  },
+  {
+   "start_s": 30.2,
+   "end_s": 124.0,
+   "role": "context",
+   "label": "Wall Street as concept, location, and shorthand ('the street')"
+  },
+  {
+   "start_s": 124.1,
+   "end_s": 246.3,
+   "role": "main_content",
+   "label": "History of Wall Street from Dutch wall to post-WWI financial center"
+  },
+  {
+   "start_s": 246.9,
+   "end_s": 285.0,
+   "role": "main_content",
+   "label": "Main Street vs Wall Street comparison"
+  },
+  {
+   "start_s": 285.2,
+   "end_s": 325.5,
+   "role": "main_content",
+   "label": "Founding and role of the Wall Street Journal"
+  },
+  {
+   "start_s": 326.0,
+   "end_s": 368.8,
+   "role": "demonstration",
+   "label": "How to get a job on Wall Street"
+  },
+  {
+   "start_s": 368.8,
+   "end_s": 387.5,
+   "role": "recap",
+   "label": "Summary of Wall Street as place and metaphor"
+  },
+  {
+   "start_s": 387.5,
+   "end_s": 395.0,
+   "role": "outro",
+   "label": "Movie reference, comment prompt, like/subscribe close"
+  }
+ ],
+ "hook": {
+  "what_happens": "The video opens with the literal question 'What exactly is Wall Street?' and immediately answers it with the geographic fact that it's a street in lower Manhattan before pivoting to its figurative meaning.",
+  "promise": "Implicitly promises a clear, complete explanation of what Wall Street is and how it works, covering both literal and figurative meanings.",
+  "strengths": [
+   "Opens with the exact question posed in the title, immediately signaling relevance",
+   "Delivers a concrete factual answer within the first 4 seconds rather than stalling"
+  ],
+  "weaknesses": [
+   "The hook is purely definitional with no visual, story, or stakes-based device to create curiosity beyond the title itself",
+   "No preview of the scope of topics (history, jobs, Main Street comparison) that follow, so viewers don't know how much ground will be covered"
+  ]
+ },
+ "devices": [
+  {
+   "name": "direct question opener",
+   "t_s": 0.0,
+   "quote": "What exactly is Wall Street?"
+  },
+  {
+   "name": "early subscribe CTA",
+   "t_s": 24.4,
+   "quote": "Consider subscribing to our YouTube channel so we can continue the video."
+  },
+  {
+   "name": "spoken section header",
+   "t_s": 123.9,
+   "quote": "Wall Street's history"
+  },
+  {
+   "name": "spoken section header",
+   "t_s": 246.9,
+   "quote": "Main Street vs. Wall Street"
+  },
+  {
+   "name": "spoken section header",
+   "t_s": 323.1,
+   "quote": "What is the best way to get a job on Wall Street?"
+  },
+  {
+   "name": "closing engagement prompt",
+   "t_s": 387.5,
+   "quote": "Let us know down in the comments what you think about Wall Street. Leave a like and subscribe to our channel."
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 124.1,
+   "point": "Provides specific, dated historical facts that ground the abstract concept in concrete events.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Wall Street was named after the wooden wall built by Dutch colonists in lower Manhattan in 1653"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "24 of the most prominent brokers and merchants in the United States signed the Buttonwood Agreement"
+    }
+   ]
+  },
+  {
+   "t_s": 248.5,
+   "point": "Uses a clear comparative device (Wall Street vs Main Street) to clarify an abstract economic distinction.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Wall Street is typically associated with large corporations and financial institutions, whereas Main Street is associated with mom and pop shops and small businesses."
+    }
+   ]
+  },
+  {
+   "t_s": 326.0,
+   "point": "Shifts from pure explanation to practical, actionable guidance on entering the field.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "During at least one summer, try to get an internship at a Wall Street firm or a similar institution."
+    }
+   ]
+  },
+  {
+   "t_s": 368.8,
+   "point": "Closes with a concise recap that restates the dual physical/metaphorical definition established at the start, reinforcing the core thesis.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Wall Street is both a physical street and a metaphor."
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Early subscribe CTA interrupts the informational flow right after the hook",
+   "t_start_s": 24.4,
+   "t_end_s": 29.8,
+   "observation": "The subscribe request is placed immediately after the opening definition, before any substantial content has been delivered, directly between the hook and the continuation of the explanation.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Consider subscribing to our YouTube channel so we can continue the video. Sounds good? Awesome! Thank you!"
+    }
+   ],
+   "recommendation": "Consider whether placing the subscribe ask this early serves the content, since it interrupts the explanation before the viewer has received much of the promised information.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 24.4,
+   "t_in_range": true
+  },
+  {
+   "title": "Topic transitions are abrupt",
+   "t_start_s": 246.9,
+   "t_end_s": 246.9,
+   "observation": "The video jumps from the post-WWI history point directly into a new topic header with no transitional sentence connecting the two ideas.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Wall Street was the financial center of NYC. Main Street vs. Wall Street"
+    }
+   ],
+   "recommendation": "Review whether a connecting sentence between sections would help listeners follow the shift from history to the Main Street comparison.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 246.9,
+   "t_in_range": true
+  },
+  {
+   "title": "Hook lacks a distinct curiosity or stakes element beyond the title restatement",
+   "t_start_s": 0.0,
+   "t_end_s": 9.7,
+   "observation": "The opening simply repeats the title as a question and answers it factually, without additional framing such as a surprising fact, stat, or story to pull viewers in.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "What exactly is Wall Street? Wall Street is a street in New York City, specifically at the southern end of Manhattan."
+    }
+   ],
+   "recommendation": "Consider whether an attention-grabbing fact or framing device at the very start would differentiate the opening from a simple title restatement.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Multiple CTAs stacked together at the end",
+   "t_start_s": 387.5,
+   "t_end_s": 395.0,
+   "observation": "The closing moments combine a movie reference, a comment prompt, and a like/subscribe request all within about 7.5 seconds.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Have you seen movies like The Wolf of the Wall Street and The Big Short? Let us know down in the comments what you think about Wall Street. Leave a like and subscribe to our channel."
+    }
+   ],
+   "recommendation": "Consider whether spacing out or simplifying the closing asks would make each one clearer to the viewer rather than delivering all three in rapid succession.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 387.52,
+   "t_in_range": true
+  },
+  {
+   "title": "Dense historical segment covers many names and dates without visual anchoring cues in the transcript",
+   "t_start_s": 124.1,
+   "t_end_s": 246.3,
+   "observation": "The history section cites numerous entities and years (1653, 1699, 1792, 1817, 1865, World War I) in quick succession, including a garbled list of exchanges around 200-213s.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "several other major exchanges, including the New York Mercantile Exchange, the New York Board of Trade, the New York Futures Exchange, NYFE, and the American"
+    }
+   ],
+   "recommendation": "Review this segment for clarity, since the listed exchanges and the surrounding sentence appear to cut off or run together, which may make the historical sequence harder to follow.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 124.06,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 10,
+  "evidence_verified": 7,
+  "evidence_rate": 0.7,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    7,
+    10
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Consider subscribing to our YouTube channel so we can continue the video. Sounds good? Awesome! Thank you!",
+    "verified": true,
+    "note": "match=1.00 at 23.38"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Wall Street was the financial center of NYC. Main Street vs. Wall Street",
+    "verified": true,
+    "note": "match=1.00 at 243.88"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "What exactly is Wall Street? Wall Street is a street in New York City, specifically at the southern end of Manhattan.",
+    "verified": true,
+    "note": "match=1.00 at 0.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Have you seen movies like The Wolf of the Wall Street and The Big Short? Let us know down in the comments what you think about Wall Street. Leave a like and subscribe to our channel.",
+    "verified": true,
+    "note": "match=1.00 at 385.92"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "",
+    "value": "several other major exchanges, including the New York Mercantile Exchange, the New York Board of Trade, the New York Futures Exchange, NYFE, and the American",
+    "verified": true,
+    "note": "match=1.00 at 197.48"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Wall Street was named after the wooden wall built by Dutch colonists in lower Manhattan in 1653",
+    "verified": true,
+    "note": "match=1.00 at 124.06"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "24 of the most prominent brokers and merchants in the United States signed the Buttonwood Agreement",
+    "verified": false,
+    "note": "match=0.25 at 112.44"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Wall Street is typically associated with large corporations and financial institutions, whereas Main Street is associated with mom and pop shops and small businesses.",
+    "verified": false,
+    "note": "match=0.29 at 244.1"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "During at least one summer, try to get an internship at a Wall Street firm or a similar institution.",
+    "verified": false,
+    "note": "match=0.32 at 320.7"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Wall Street is both a physical street and a metaphor.",
+    "verified": true,
+    "note": "match=1.00 at 366.36"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 10,
+  "evidence_verified": 7,
+  "evidence_rate": 0.7,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    7,
+    10
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  }
+ }
+}

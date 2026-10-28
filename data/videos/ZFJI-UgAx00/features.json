@@ -1,0 +1,449 @@
+{
+ "video_id": "ZFJI-UgAx00",
+ "category": "vlog",
+ "title": "study vlog | midterm exams, library studying, productive days, ramen, uni life",
+ "channel": "Jamwhy",
+ "url": "https://www.youtube.com/watch?v=ZFJI-UgAx00",
+ "views": 24178,
+ "likes": 734,
+ "comments": 37,
+ "subscribers": 64700,
+ "upload_date": "20261025",
+ "full_duration": 498,
+ "is_short": false,
+ "fingerprint": {
+  "duration_s": 498.0,
+  "shots_per_min": 5.3,
+  "median_shot_s": 6.73,
+  "shot_len_cv": 1.0,
+  "pacing_trend": 0.53,
+  "hook_cuts": 6,
+  "time_to_first_word_s": 15.88,
+  "hook_wpm": 0.0,
+  "hook_text_overlay": 1.0,
+  "hook_motion": 2.33,
+  "wpm": 49.8,
+  "speech_coverage": 0.239,
+  "long_pauses_per_min": 1.57,
+  "questions_per_min": 0.0,
+  "you_rate": 0.73,
+  "loudness_db": -30.8,
+  "loudness_range_db": 11.2,
+  "energy_slope": 0.14,
+  "nonspeech_audio_share": 0.737,
+  "motion_mean": 0.0277,
+  "brightness_mean": 0.442,
+  "colorfulness_mean": 41.5,
+  "talking_head_share": 0.308,
+  "broll_share": 0.683,
+  "screen_share": 0.009,
+  "face_share": 0.898,
+  "text_overlay_share": 0.876,
+  "format_switches_per_min": 1.45,
+  "cta_count": 1,
+  "first_cta_pos": 0.972
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 10.0,
+   "cuts": 4,
+   "wpm": 0.0,
+   "loud_db": -25.6,
+   "motion": 0.065
+  },
+  {
+   "start": 10.0,
+   "end": 20.0,
+   "cuts": 3,
+   "wpm": 60.0,
+   "loud_db": -26.2,
+   "motion": 0.05
+  },
+  {
+   "start": 20.0,
+   "end": 30.0,
+   "cuts": 0,
+   "wpm": 198.0,
+   "loud_db": -29.9,
+   "motion": 0.009
+  },
+  {
+   "start": 30.0,
+   "end": 40.0,
+   "cuts": 0,
+   "wpm": 150.0,
+   "loud_db": -30.9,
+   "motion": 0.008
+  },
+  {
+   "start": 40.0,
+   "end": 50.0,
+   "cuts": 3,
+   "wpm": 48.0,
+   "loud_db": -29.8,
+   "motion": 0.059
+  },
+  {
+   "start": 50.0,
+   "end": 60.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -32.9,
+   "motion": 0.021
+  },
+  {
+   "start": 60.0,
+   "end": 70.0,
+   "cuts": 2,
+   "wpm": 66.0,
+   "loud_db": -29.4,
+   "motion": 0.085
+  },
+  {
+   "start": 70.0,
+   "end": 80.0,
+   "cuts": 2,
+   "wpm": 48.0,
+   "loud_db": -30.4,
+   "motion": 0.03
+  },
+  {
+   "start": 80.0,
+   "end": 90.0,
+   "cuts": 2,
+   "wpm": 24.0,
+   "loud_db": -31.5,
+   "motion": 0.031
+  },
+  {
+   "start": 90.0,
+   "end": 100.0,
+   "cuts": 1,
+   "wpm": 180.0,
+   "loud_db": -26.7,
+   "motion": 0.026
+  },
+  {
+   "start": 100.0,
+   "end": 110.0,
+   "cuts": 0,
+   "wpm": 150.0,
+   "loud_db": -27.4,
+   "motion": 0.011
+  },
+  {
+   "start": 110.0,
+   "end": 120.0,
+   "cuts": 3,
+   "wpm": 36.0,
+   "loud_db": -33.3,
+   "motion": 0.052
+  },
+  {
+   "start": 120.0,
+   "end": 130.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -32.5,
+   "motion": 0.002
+  },
+  {
+   "start": 130.0,
+   "end": 140.0,
+   "cuts": 1,
+   "wpm": 0.0,
+   "loud_db": -30.9,
+   "motion": 0.016
+  },
+  {
+   "start": 140.0,
+   "end": 150.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -32.1,
+   "motion": 0.017
+  },
+  {
+   "start": 150.0,
+   "end": 160.0,
+   "cuts": 1,
+   "wpm": 0.0,
+   "loud_db": -33.8,
+   "motion": 0.031
+  },
+  {
+   "start": 160.0,
+   "end": 170.0,
+   "cuts": 2,
+   "wpm": 0.0,
+   "loud_db": -31.8,
+   "motion": 0.032
+  },
+  {
+   "start": 170.0,
+   "end": 180.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -34.3,
+   "motion": 0.01
+  },
+  {
+   "start": 180.0,
+   "end": 190.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -33.4,
+   "motion": 0.01
+  },
+  {
+   "start": 190.0,
+   "end": 200.0,
+   "cuts": 2,
+   "wpm": 72.0,
+   "loud_db": -33.1,
+   "motion": 0.035
+  },
+  {
+   "start": 200.0,
+   "end": 210.0,
+   "cuts": 0,
+   "wpm": 126.0,
+   "loud_db": -30.4,
+   "motion": 0.038
+  },
+  {
+   "start": 210.0,
+   "end": 220.0,
+   "cuts": 2,
+   "wpm": 48.0,
+   "loud_db": -31.1,
+   "motion": 0.049
+  },
+  {
+   "start": 220.0,
+   "end": 230.0,
+   "cuts": 1,
+   "wpm": 186.0,
+   "loud_db": -30.0,
+   "motion": 0.019
+  },
+  {
+   "start": 230.0,
+   "end": 240.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -30.6,
+   "motion": 0.013
+  },
+  {
+   "start": 240.0,
+   "end": 250.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -32.9,
+   "motion": 0.007
+  },
+  {
+   "start": 250.0,
+   "end": 260.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -32.7,
+   "motion": 0.003
+  },
+  {
+   "start": 260.0,
+   "end": 270.0,
+   "cuts": 2,
+   "wpm": 0.0,
+   "loud_db": -32.3,
+   "motion": 0.025
+  },
+  {
+   "start": 270.0,
+   "end": 280.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -34.0,
+   "motion": 0.019
+  },
+  {
+   "start": 280.0,
+   "end": 290.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -34.4,
+   "motion": 0.014
+  },
+  {
+   "start": 290.0,
+   "end": 300.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -31.3,
+   "motion": 0.015
+  },
+  {
+   "start": 300.0,
+   "end": 310.0,
+   "cuts": 1,
+   "wpm": 0.0,
+   "loud_db": -32.1,
+   "motion": 0.048
+  },
+  {
+   "start": 310.0,
+   "end": 320.0,
+   "cuts": 1,
+   "wpm": 0.0,
+   "loud_db": -28.8,
+   "motion": 0.096
+  },
+  {
+   "start": 320.0,
+   "end": 330.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -30.0,
+   "motion": 0.014
+  },
+  {
+   "start": 330.0,
+   "end": 340.0,
+   "cuts": 1,
+   "wpm": 6.0,
+   "loud_db": -30.5,
+   "motion": 0.014
+  },
+  {
+   "start": 340.0,
+   "end": 350.0,
+   "cuts": 1,
+   "wpm": 102.0,
+   "loud_db": -30.4,
+   "motion": 0.028
+  },
+  {
+   "start": 350.0,
+   "end": 360.0,
+   "cuts": 2,
+   "wpm": 0.0,
+   "loud_db": -30.4,
+   "motion": 0.027
+  },
+  {
+   "start": 360.0,
+   "end": 370.0,
+   "cuts": 2,
+   "wpm": 6.0,
+   "loud_db": -31.7,
+   "motion": 0.1
+  },
+  {
+   "start": 370.0,
+   "end": 380.0,
+   "cuts": 1,
+   "wpm": 102.0,
+   "loud_db": -31.5,
+   "motion": 0.086
+  },
+  {
+   "start": 380.0,
+   "end": 390.0,
+   "cuts": 0,
+   "wpm": 6.0,
+   "loud_db": -35.5,
+   "motion": 0.01
+  },
+  {
+   "start": 390.0,
+   "end": 400.0,
+   "cuts": 1,
+   "wpm": 0.0,
+   "loud_db": -31.7,
+   "motion": 0.019
+  },
+  {
+   "start": 400.0,
+   "end": 410.0,
+   "cuts": 0,
+   "wpm": 102.0,
+   "loud_db": -30.0,
+   "motion": 0.011
+  },
+  {
+   "start": 410.0,
+   "end": 420.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -30.6,
+   "motion": 0.011
+  },
+  {
+   "start": 420.0,
+   "end": 430.0,
+   "cuts": 0,
+   "wpm": 6.0,
+   "loud_db": -30.7,
+   "motion": 0.01
+  },
+  {
+   "start": 430.0,
+   "end": 440.0,
+   "cuts": 0,
+   "wpm": 102.0,
+   "loud_db": -28.4,
+   "motion": 0.007
+  },
+  {
+   "start": 440.0,
+   "end": 450.0,
+   "cuts": 1,
+   "wpm": 294.0,
+   "loud_db": -26.3,
+   "motion": 0.028
+  },
+  {
+   "start": 450.0,
+   "end": 460.0,
+   "cuts": 0,
+   "wpm": 216.0,
+   "loud_db": -26.2,
+   "motion": 0.02
+  },
+  {
+   "start": 460.0,
+   "end": 470.0,
+   "cuts": 1,
+   "wpm": 132.0,
+   "loud_db": -28.8,
+   "motion": 0.018
+  },
+  {
+   "start": 470.0,
+   "end": 480.0,
+   "cuts": 0,
+   "wpm": 0.0,
+   "loud_db": -30.3,
+   "motion": 0.015
+  },
+  {
+   "start": 480.0,
+   "end": 490.0,
+   "cuts": 1,
+   "wpm": 0.0,
+   "loud_db": -29.1,
+   "motion": 0.012
+  },
+  {
+   "start": 490.0,
+   "end": 498.0,
+   "cuts": 0,
+   "wpm": 8.0,
+   "loud_db": -30.9,
+   "motion": 0.004
+  }
+ ],
+ "perception_done": true
+}

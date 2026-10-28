@@ -1,0 +1,17 @@
+{
+ "full": {
+  "specificity": 5,
+  "accuracy": 5,
+  "actionability": 5,
+  "insight": 5
+ },
+ "baseline": {
+  "specificity": 3,
+  "accuracy": 3,
+  "actionability": 3,
+  "insight": 3
+ },
+ "winner": "full",
+ "reason": "B grounds its points in concrete measured data with percentile context (time_to_first_word 11.48s vs median 0.69s, hook_wpm 12 vs p25 82, median_shot 1.04s at 8th pct, loudness_range 8.6), cites specific timeline bins and overlay text, and gives directly testable fixes. A repeatedly hedges ('from transcript alone', 'unverified') because it relies only on the transcript, ignoring the rich visual/audio metrics; it describes the silent opening as a gap rather than analyzing the wordless montage B correctly identifies. B is more specific, accurate, actionable, and insightful about why the construction works.",
+ "full_was": "B"
+}

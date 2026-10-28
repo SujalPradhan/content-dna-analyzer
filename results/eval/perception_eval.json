@@ -1,0 +1,360 @@
+{
+ "tolerance_s": 1.0,
+ "n": 35,
+ "overrun_gt_5pct_before": 14,
+ "overrun_gt_5pct_after": 0,
+ "median_boundary_hit_before": 0.572,
+ "median_boundary_hit_after": 0.875,
+ "rows": [
+  {
+   "video_id": "3B3B9eSgMV0",
+   "category": "tech_review",
+   "n_cuts": 26,
+   "hit_after": 0.7575757575757576,
+   "n_bounds_after": 33,
+   "overrun_after": 1.0,
+   "overrun_before": 1.625,
+   "hit_before": 0.391304347826087
+  },
+  {
+   "video_id": "4K2P6Zy0nF4",
+   "category": "shorts",
+   "n_cuts": 1,
+   "hit_after": null,
+   "n_bounds_after": 0,
+   "overrun_after": 1.005,
+   "overrun_before": 1.0,
+   "hit_before": 0.0
+  },
+  {
+   "video_id": "5nNf6QQObw8",
+   "category": "shorts",
+   "n_cuts": 4,
+   "hit_after": 0.6666666666666666,
+   "n_bounds_after": 3,
+   "overrun_after": 1.002,
+   "overrun_before": 1.0,
+   "hit_before": null
+  },
+  {
+   "video_id": "6vEEVNAOFFY",
+   "category": "ad",
+   "n_cuts": 17,
+   "hit_after": null,
+   "n_bounds_after": 0,
+   "overrun_after": 1.001,
+   "overrun_before": 1.0,
+   "hit_before": null
+  },
+  {
+   "video_id": "7LItwuSZ8ag",
+   "category": "explainer",
+   "n_cuts": 60,
+   "hit_after": 1.0,
+   "n_bounds_after": 25,
+   "overrun_after": 1.0,
+   "overrun_before": 1.049,
+   "hit_before": 0.6153846153846154
+  },
+  {
+   "video_id": "7Wa_bsAM4ec",
+   "category": "tech_review",
+   "n_cuts": 9,
+   "hit_after": 0.6666666666666666,
+   "n_bounds_after": 6,
+   "overrun_after": 1.0,
+   "overrun_before": 1.645,
+   "hit_before": 1.0
+  },
+  {
+   "video_id": "8RusBT_lFTI",
+   "category": "vlog",
+   "n_cuts": 52,
+   "hit_after": 1.0,
+   "n_bounds_after": 32,
+   "overrun_after": 1.0,
+   "overrun_before": 1.617,
+   "hit_before": 0.35
+  },
+  {
+   "video_id": "AhcXsmR0MU0",
+   "category": "vlog",
+   "n_cuts": 140,
+   "hit_after": 0.8809523809523809,
+   "n_bounds_after": 42,
+   "overrun_after": 1.0,
+   "overrun_before": 1.631,
+   "hit_before": 0.6190476190476191
+  },
+  {
+   "video_id": "B0tIVOq6m1U",
+   "category": "vlog",
+   "n_cuts": 93,
+   "hit_after": 0.7441860465116279,
+   "n_bounds_after": 43,
+   "overrun_after": 1.0,
+   "overrun_before": 1.0,
+   "hit_before": 0.5277777777777778
+  },
+  {
+   "video_id": "D9BEQdfn9xc",
+   "category": "explainer",
+   "n_cuts": 80,
+   "hit_after": 1.0,
+   "n_bounds_after": 41,
+   "overrun_after": 1.0,
+   "overrun_before": 1.607,
+   "hit_before": 0.5
+  },
+  {
+   "video_id": "Da-2h2B4faU",
+   "category": "explainer",
+   "n_cuts": 1,
+   "hit_after": null,
+   "n_bounds_after": 0,
+   "overrun_after": 1.0,
+   "overrun_before": 1.0,
+   "hit_before": null
+  },
+  {
+   "video_id": "K8UV7SAhvG4",
+   "category": "ad",
+   "n_cuts": 15,
+   "hit_after": 0.75,
+   "n_bounds_after": 4,
+   "overrun_after": 1.0,
+   "overrun_before": 1.0,
+   "hit_before": null
+  },
+  {
+   "video_id": "KWuFpi7j4_0",
+   "category": "shorts",
+   "n_cuts": 9,
+   "hit_after": 0.5,
+   "n_bounds_after": 4,
+   "overrun_after": 1.001,
+   "overrun_before": 1.0,
+   "hit_before": 0.5
+  },
+  {
+   "video_id": "MvBMHRkN9X8",
+   "category": "shorts",
+   "n_cuts": 4,
+   "hit_after": 1.0,
+   "n_bounds_after": 2,
+   "overrun_after": 1.001,
+   "overrun_before": 1.0,
+   "hit_before": 1.0
+  },
+  {
+   "video_id": "TJ7I3_QHtac",
+   "category": "ad",
+   "n_cuts": 13,
+   "hit_after": 1.0,
+   "n_bounds_after": 1,
+   "overrun_after": 1.0,
+   "overrun_before": 1.0,
+   "hit_before": null
+  },
+  {
+   "video_id": "TdmOT-B_M6M",
+   "category": "tech_review",
+   "n_cuts": 180,
+   "hit_after": 0.9770114942528736,
+   "n_bounds_after": 87,
+   "overrun_after": 1.0,
+   "overrun_before": 1.664,
+   "hit_before": 0.6046511627906976
+  },
+  {
+   "video_id": "ZFJI-UgAx00",
+   "category": "vlog",
+   "n_cuts": 44,
+   "hit_after": 1.0,
+   "n_bounds_after": 18,
+   "overrun_after": 1.0,
+   "overrun_before": 1.643,
+   "hit_before": 0.375
+  },
+  {
+   "video_id": "c347oYQO57A",
+   "category": "tech_review",
+   "n_cuts": 135,
+   "hit_after": 0.8666666666666667,
+   "n_bounds_after": 45,
+   "overrun_after": 1.0,
+   "overrun_before": 1.653,
+   "hit_before": 0.375
+  },
+  {
+   "video_id": "cDcpbNE4xys",
+   "category": "explainer",
+   "n_cuts": 71,
+   "hit_after": 0.8709677419354839,
+   "n_bounds_after": 62,
+   "overrun_after": 1.0,
+   "overrun_before": 1.59,
+   "hit_before": 0.4772727272727273
+  },
+  {
+   "video_id": "cToNtqt6J3g",
+   "category": "cooking",
+   "n_cuts": 26,
+   "hit_after": 0.8,
+   "n_bounds_after": 5,
+   "overrun_after": 1.0,
+   "overrun_before": 1.0,
+   "hit_before": 0.5714285714285714
+  },
+  {
+   "video_id": "fT1S7FaqdEQ",
+   "category": "cooking",
+   "n_cuts": 68,
+   "hit_after": 0.5,
+   "n_bounds_after": 8,
+   "overrun_after": 1.0,
+   "overrun_before": 1.0,
+   "hit_before": 0.6
+  },
+  {
+   "video_id": "fV1KLNyuTv4",
+   "category": "explainer",
+   "n_cuts": 135,
+   "hit_after": 0.9565217391304348,
+   "n_bounds_after": 92,
+   "overrun_after": 1.0,
+   "overrun_before": 1.651,
+   "hit_before": 0.42
+  },
+  {
+   "video_id": "g47HHqldL1s",
+   "category": "vlog",
+   "n_cuts": 215,
+   "hit_after": 0.25,
+   "n_bounds_after": 8,
+   "overrun_after": 1.0,
+   "overrun_before": 1.0,
+   "hit_before": 0.8333333333333334
+  },
+  {
+   "video_id": "gMgf4bTW5gU",
+   "category": "shorts",
+   "n_cuts": 12,
+   "hit_after": null,
+   "n_bounds_after": 0,
+   "overrun_after": 0.999,
+   "overrun_before": 1.0,
+   "hit_before": null
+  },
+  {
+   "video_id": "glSXLZnOT4A",
+   "category": "cooking",
+   "n_cuts": 38,
+   "hit_after": 0.5454545454545454,
+   "n_bounds_after": 33,
+   "overrun_after": 1.0,
+   "overrun_before": 1.0,
+   "hit_before": 0.6
+  },
+  {
+   "video_id": "hTn8Uh1m0hg",
+   "category": "cooking",
+   "n_cuts": 59,
+   "hit_after": 1.0,
+   "n_bounds_after": 49,
+   "overrun_after": 1.0,
+   "overrun_before": 1.0,
+   "hit_before": 0.7567567567567568
+  },
+  {
+   "video_id": "i53Qur_WGE4",
+   "category": "tech_review",
+   "n_cuts": 248,
+   "hit_after": 0.88,
+   "n_bounds_after": 100,
+   "overrun_after": 1.0,
+   "overrun_before": 1.651,
+   "hit_before": 0.625
+  },
+  {
+   "video_id": "oJYpjUVYxm0",
+   "category": "cooking",
+   "n_cuts": 32,
+   "hit_after": 1.0,
+   "n_bounds_after": 13,
+   "overrun_after": 1.0,
+   "overrun_before": 1.002,
+   "hit_before": 0.5
+  },
+  {
+   "video_id": "od29yqPu-aM",
+   "category": "cooking",
+   "n_cuts": 13,
+   "hit_after": 0.1111111111111111,
+   "n_bounds_after": 9,
+   "overrun_after": 1.0,
+   "overrun_before": 1.0,
+   "hit_before": 0.14285714285714285
+  },
+  {
+   "video_id": "qQHyK8BGQdo",
+   "category": "ad",
+   "n_cuts": 26,
+   "hit_after": 1.0,
+   "n_bounds_after": 2,
+   "overrun_after": 1.001,
+   "overrun_before": 1.0,
+   "hit_before": 1.0
+  },
+  {
+   "video_id": "s83EB_OtaEo",
+   "category": "ad",
+   "n_cuts": 60,
+   "hit_after": 0.9090909090909091,
+   "n_bounds_after": 11,
+   "overrun_after": 1.0,
+   "overrun_before": 1.409,
+   "hit_before": 0.7777777777777778
+  },
+  {
+   "video_id": "vHn_rCDYxlI",
+   "category": "vlog",
+   "n_cuts": 19,
+   "hit_after": 0.21428571428571427,
+   "n_bounds_after": 28,
+   "overrun_after": 1.0,
+   "overrun_before": 1.634,
+   "hit_before": 0.0
+  },
+  {
+   "video_id": "xB4SsILjJig",
+   "category": "tech_review",
+   "n_cuts": 206,
+   "hit_after": 0.8223684210526315,
+   "n_bounds_after": 152,
+   "overrun_after": 1.0,
+   "overrun_before": 1.442,
+   "hit_before": 0.5735294117647058
+  },
+  {
+   "video_id": "xmUmIE_HUCE",
+   "category": "shorts",
+   "n_cuts": 5,
+   "hit_after": null,
+   "n_bounds_after": 0,
+   "overrun_after": 1.002,
+   "overrun_before": 1.0,
+   "hit_before": null
+  },
+  {
+   "video_id": "zcj2PaJTEmk",
+   "category": "ad",
+   "n_cuts": 12,
+   "hit_after": 1.0,
+   "n_bounds_after": 3,
+   "overrun_after": 1.0,
+   "overrun_before": 1.0,
+   "hit_before": 1.0
+  }
+ ]
+}

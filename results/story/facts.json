@@ -1,0 +1,477 @@
+[
+ {
+  "key":"n_videos",
+  "value":35,
+  "label":"videos analysed"
+ },
+ {
+  "key":"n_categories",
+  "value":6,
+  "label":"categories"
+ },
+ {
+  "key":"hours_analysed",
+  "value":3.6,
+  "label":"hours of video analysed"
+ },
+ {
+  "key":"n_features",
+  "value":30,
+  "label":"fingerprint features"
+ },
+ {
+  "key":"n_unavailable",
+  "value":1,
+  "label":"selected video unavailable at download"
+ },
+ {
+  "key":"h1_n_significant",
+  "value":7,
+  "label":"features differing by category (FDR q<0.05)"
+ },
+ {
+  "key":"h1_n_tested",
+  "value":19,
+  "label":"features tested for category differences"
+ },
+ {
+  "key":"cuts_ad",
+  "value":32.9,
+  "label":"median cuts\/min, Ads"
+ },
+ {
+  "key":"wpm_ad",
+  "value":120,
+  "label":"median words\/min, Ads"
+ },
+ {
+  "key":"ttfw_ad",
+  "value":0.7,
+  "label":"median seconds to first word, Ads"
+ },
+ {
+  "key":"speech_ad",
+  "value":0.7,
+  "label":"median speech coverage, Ads"
+ },
+ {
+  "key":"firstcta_ad",
+  "value":0.81,
+  "label":"median first-CTA position, Ads"
+ },
+ {
+  "key":"cuts_cooking",
+  "value":5.0,
+  "label":"median cuts\/min, Cooking"
+ },
+ {
+  "key":"wpm_cooking",
+  "value":141,
+  "label":"median words\/min, Cooking"
+ },
+ {
+  "key":"ttfw_cooking",
+  "value":2.8,
+  "label":"median seconds to first word, Cooking"
+ },
+ {
+  "key":"speech_cooking",
+  "value":0.78,
+  "label":"median speech coverage, Cooking"
+ },
+ {
+  "key":"firstcta_cooking",
+  "value":0.96,
+  "label":"median first-CTA position, Cooking"
+ },
+ {
+  "key":"cuts_explainer",
+  "value":10.2,
+  "label":"median cuts\/min, Explainers"
+ },
+ {
+  "key":"wpm_explainer",
+  "value":152,
+  "label":"median words\/min, Explainers"
+ },
+ {
+  "key":"ttfw_explainer",
+  "value":0.0,
+  "label":"median seconds to first word, Explainers"
+ },
+ {
+  "key":"speech_explainer",
+  "value":0.83,
+  "label":"median speech coverage, Explainers"
+ },
+ {
+  "key":"firstcta_explainer",
+  "value":0.77,
+  "label":"median first-CTA position, Explainers"
+ },
+ {
+  "key":"cuts_shorts",
+  "value":12.7,
+  "label":"median cuts\/min, Shorts"
+ },
+ {
+  "key":"wpm_shorts",
+  "value":67,
+  "label":"median words\/min, Shorts"
+ },
+ {
+  "key":"ttfw_shorts",
+  "value":1.6,
+  "label":"median seconds to first word, Shorts"
+ },
+ {
+  "key":"speech_shorts",
+  "value":0.3,
+  "label":"median speech coverage, Shorts"
+ },
+ {
+  "key":"firstcta_shorts",
+  "value":0.77,
+  "label":"median first-CTA position, Shorts"
+ },
+ {
+  "key":"cuts_tech_review",
+  "value":12.6,
+  "label":"median cuts\/min, Tech reviews"
+ },
+ {
+  "key":"wpm_tech_review",
+  "value":176,
+  "label":"median words\/min, Tech reviews"
+ },
+ {
+  "key":"ttfw_tech_review",
+  "value":0.0,
+  "label":"median seconds to first word, Tech reviews"
+ },
+ {
+  "key":"speech_tech_review",
+  "value":0.96,
+  "label":"median speech coverage, Tech reviews"
+ },
+ {
+  "key":"firstcta_tech_review",
+  "value":0.29,
+  "label":"median first-CTA position, Tech reviews"
+ },
+ {
+  "key":"cuts_vlog",
+  "value":7.9,
+  "label":"median cuts\/min, Vlogs"
+ },
+ {
+  "key":"wpm_vlog",
+  "value":55,
+  "label":"median words\/min, Vlogs"
+ },
+ {
+  "key":"ttfw_vlog",
+  "value":16.7,
+  "label":"median seconds to first word, Vlogs"
+ },
+ {
+  "key":"speech_vlog",
+  "value":0.31,
+  "label":"median speech coverage, Vlogs"
+ },
+ {
+  "key":"firstcta_vlog",
+  "value":0.94,
+  "label":"median first-CTA position, Vlogs"
+ },
+ {
+  "key":"cuts_ratio_ad_cooking",
+  "value":6.6,
+  "label":"ads cut this many times faster than cooking videos (median cuts\/min ratio)"
+ },
+ {
+  "key":"opening_db_tech_review",
+  "value":0.14,
+  "label":"median loudness of first 10% minus rest (dB), Tech reviews"
+ },
+ {
+  "key":"opening_db_ad",
+  "value":-4.86,
+  "label":"median loudness of first 10% minus rest (dB), Ads"
+ },
+ {
+  "key":"opening_db_explainer",
+  "value":-0.07,
+  "label":"median loudness of first 10% minus rest (dB), Explainers"
+ },
+ {
+  "key":"opening_db_vlog",
+  "value":2.05,
+  "label":"median loudness of first 10% minus rest (dB), Vlogs"
+ },
+ {
+  "key":"opening_db_shorts",
+  "value":-5.52,
+  "label":"median loudness of first 10% minus rest (dB), Shorts"
+ },
+ {
+  "key":"opening_db_cooking",
+  "value":2.85,
+  "label":"median loudness of first 10% minus rest (dB), Cooking"
+ },
+ {
+  "key":"arch_k",
+  "value":3,
+  "label":"archetypes found (k chosen by silhouette)"
+ },
+ {
+  "key":"arch_silhouette",
+  "value":0.229,
+  "label":"silhouette score (0-1; <0.3 = weak structure)"
+ },
+ {
+  "key":"arch_ari",
+  "value":0.134,
+  "label":"agreement between archetypes and categories (ARI; 0 = none, 1 = identical)"
+ },
+ {
+  "key":"arch_mixed",
+  "value":3,
+  "label":"archetypes containing 3+ categories"
+ },
+ {
+  "key":"eng_n_tests",
+  "value":19,
+  "label":"features tested against like rate (within category)"
+ },
+ {
+  "key":"eng_n_surviving",
+  "value":1,
+  "label":"features surviving FDR correction"
+ },
+ {
+  "key":"eng_n",
+  "value":30,
+  "label":"videos with public like counts"
+ },
+ {
+  "key":"th_rho",
+  "value":0.637,
+  "label":"talking-head share vs like rate, within-category Spearman rho"
+ },
+ {
+  "key":"th_perm_p",
+  "value":0.0012,
+  "label":"permutation p (feature shuffled within category)"
+ },
+ {
+  "key":"th_partial",
+  "value":0.462,
+  "label":"rho after controlling for views and subscribers"
+ },
+ {
+  "key":"th_loco_min",
+  "value":0.547,
+  "label":"smallest rho when leaving one category out"
+ },
+ {
+  "key":"th_any_share",
+  "value":0.57,
+  "label":"share of videos with any talking-head time"
+ },
+ {
+  "key":"views_like_rho",
+  "value":-0.405,
+  "label":"views vs like rate, Spearman rho (bigger audiences like less)"
+ },
+ {
+  "key":"shot_precision",
+  "value":0.829,
+  "label":"shot detector pooled precision"
+ },
+ {
+  "key":"shot_recall",
+  "value":0.8,
+  "label":"shot detector pooled recall"
+ },
+ {
+  "key":"shot_manual",
+  "value":85,
+  "label":"hand-labelled cuts"
+ },
+ {
+  "key":"perc_overrun_before",
+  "value":14,
+  "label":"videos whose vision timeline overran runtime, before fix"
+ },
+ {
+  "key":"perc_overrun_after",
+  "value":0,
+  "label":"after fix"
+ },
+ {
+  "key":"perc_hit_before",
+  "value":0.572,
+  "label":"median share of vision-model boundaries on a measured cut, before fix"
+ },
+ {
+  "key":"perc_hit_after",
+  "value":0.875,
+  "label":"after fix"
+ },
+ {
+  "key":"perc_overrun_ratio",
+  "value":1.63,
+  "label":"median overrun ratio of affected timelines (100\/60 = 1.67)"
+ },
+ {
+  "key":"crit_videos",
+  "value":35,
+  "label":"videos critiqued"
+ },
+ {
+  "key":"crit_recs",
+  "value":174,
+  "label":"recommendations generated"
+ },
+ {
+  "key":"crit_evidence_items",
+  "value":616,
+  "label":"evidence items cited"
+ },
+ {
+  "key":"crit_evidence_rate",
+  "value":0.948,
+  "label":"share of cited evidence verified against measurements"
+ },
+ {
+  "key":"crit_rec_grounded",
+  "value":1.0,
+  "label":"share of recommendations with >=1 verified evidence item"
+ },
+ {
+  "key":"abl_n",
+  "value":12,
+  "label":"videos in ablation"
+ },
+ {
+  "key":"abl_full_rate",
+  "value":0.958,
+  "label":"evidence verified, full pipeline (ablation set)"
+ },
+ {
+  "key":"abl_base_rate",
+  "value":0.816,
+  "label":"evidence verified, transcript-only baseline"
+ },
+ {
+  "key":"abl_full_per_rec",
+  "value":3.55,
+  "label":"evidence items per recommendation, full"
+ },
+ {
+  "key":"abl_base_per_rec",
+  "value":1.98,
+  "label":"evidence items per recommendation, baseline"
+ },
+ {
+  "key":"judge_full_wins",
+  "value":12,
+  "label":"blind judge preferred full pipeline"
+ },
+ {
+  "key":"judge_base_wins",
+  "value":0,
+  "label":"blind judge preferred baseline"
+ },
+ {
+  "key":"judge_ties",
+  "value":0,
+  "label":"ties"
+ },
+ {
+  "key":"stab_n",
+  "value":5,
+  "label":"videos re-run for stability"
+ },
+ {
+  "key":"stab_roles",
+  "value":0.69,
+  "label":"median structure-role agreement between two runs"
+ },
+ {
+  "key":"stab_recs",
+  "value":1.0,
+  "label":"median share of rec timestamps reproduced"
+ },
+ {
+  "key":"stab_tags",
+  "value":0.1,
+  "label":"median tag overlap (Jaccard)"
+ },
+ {
+  "key":"basis_outlier",
+  "value":100,
+  "label":"recommendations based on a corpus outlier"
+ },
+ {
+  "key":"total_usd",
+  "value":6.77,
+  "label":"total estimated LLM spend for the whole project (USD)"
+ },
+ {
+  "key":"usd_per_video",
+  "value":0.12,
+  "label":"median cost of one full pass per video (USD)"
+ },
+ {
+  "key":"usd_rerun",
+  "value":0.73,
+  "label":"spent re-running the vision step after the timestamp fix (USD)"
+ },
+ {
+  "key":"cache_read_share",
+  "value":0.48,
+  "label":"share of critique input tokens served from prompt cache"
+ },
+ {
+  "key":"anec_title",
+  "value":"Dell Pro Max Laptop Review (2026) \u2014 Tested, Measured, Honest",
+  "label":"video whose vision timeline overran"
+ },
+ {
+  "key":"anec_duration",
+  "value":703.6,
+  "label":"its analysed duration (s)"
+ },
+ {
+  "key":"anec_bad_cta",
+  "value":1140.5,
+  "label":"last CTA time as first reported (s)"
+ },
+ {
+  "key":"anec_fixed_cta",
+  "value":699.1,
+  "label":"last CTA time after the fix (s)"
+ },
+ {
+  "key":"whisper_flagged",
+  "value":3,
+  "label":"transcripts where Whisper invented speech (rejected or partly dropped)"
+ },
+ {
+  "key":"whisper_rejected",
+  "value":2,
+  "label":"transcripts rejected entirely"
+ },
+ {
+  "key":"hall_sample",
+  "value":"\u10da\u10d4\u10d8\u10d8\u10d4\u10e0\u10dd\u10d3\u10d8\u10d4 \u10db\u10d4\u10e0\u10dd\u10dd\u10d2\u10df\u10d1\u10d8\u10d4 \u10e0\u10dd\u10e0\u10dd\u10d3\u10d8\u10d4 \u10db\u10d4\u10e0\u10dd\u10d8\u10d4\u10e0\u10dd\u10d8\u10d4 \u10d3\u10d0\u10d2\u10d5\u10d4",
+  "label":"start of the invented 'speech' on a music-only cooking video"
+ },
+ {
+  "key":"arch_single",
+  "value":0,
+  "label":"archetypes made of a single genre"
+ }
+]

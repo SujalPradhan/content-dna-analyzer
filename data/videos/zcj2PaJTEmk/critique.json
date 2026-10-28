@@ -1,0 +1,411 @@
+{
+ "summary": "A 30-second PSA-style ad that opens with a fast-cut, glamorous red-carpet montage set to music before hard-cutting to black-text statistics and then pivoting into a direct-to-camera talking-head PSA with a CTA. The construction deliberately contrasts rapid visual spectacle with a sudden silent, static reveal to create a tonal rupture that reframes the message.",
+ "dna_tags": [
+  "bait-and-switch hook",
+  "red-carpet glamour montage",
+  "text-card tonal pivot",
+  "PSA talking-head close",
+  "high you-rate direct address"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 9.1,
+   "role": "hook",
+   "label": "Red carpet b-roll montage with song lyrics"
+  },
+  {
+   "start_s": 9.1,
+   "end_s": 15.5,
+   "role": "payoff_reveal",
+   "label": "Black text cards reveal PSA statistic"
+  },
+  {
+   "start_s": 15.5,
+   "end_s": 25.8,
+   "role": "main_content",
+   "label": "Talking-head PSA message on breast cancer detection"
+  },
+  {
+   "start_s": 25.8,
+   "end_s": 30.1,
+   "role": "cta",
+   "label": "On-screen CTA card with URL"
+  }
+ ],
+ "hook": {
+  "what_happens": "Fast-cut red carpet footage of paparazzi and a glamorous woman set to a catchy 'I see you looking' song, giving no indication of the ad's real subject.",
+  "promise": "Implies a glamour/celebrity or fashion story, building curiosity before withholding the twist.",
+  "strengths": [
+   "High hook_motion (1.41, 92nd pct) and 9 cuts in first 15s create immediate visual energy",
+   "Misdirection via glamorous visuals paired with a flirtatious lyric sets up a strong tonal contrast for the reveal"
+  ],
+  "weaknesses": [
+   "Zero spoken words in first 9s and no text overlay in first 3s (hook_text_overlay=0) mean the viewer has no verbal anchor until the pivot"
+  ]
+ },
+ "devices": [
+  {
+   "name": "bait-and-switch tonal pivot",
+   "t_s": 9.1,
+   "quote": "SO MUCH ATTENTION. YET SO IGNORED."
+  },
+  {
+   "name": "direct address via 'you/your'",
+   "t_s": 15.4,
+   "quote": "Let's start paying attention to our breasts"
+  },
+  {
+   "name": "silence-to-sound audio drop",
+   "t_s": 10.0,
+   "quote": ""
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "The opening sustains high motion and rapid cutting that is well above category norms, giving the hook unusual kinetic energy for a 30s ad.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "1.41"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "9"
+    }
+   ]
+  },
+  {
+   "t_s": 9.1,
+   "point": "The abrupt shift from loud music-driven glamour to silent black text cards creates a stark structural contrast that mirrors the message of being 'ignored'.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:10.0",
+     "value": "-49.4"
+    },
+    {
+     "kind": "visual",
+     "ref": "9.1",
+     "value": "graphics_text segment with no face visible, text 'SO MUCH ATTENTION. YET SO IGNORED.'"
+    }
+   ]
+  },
+  {
+   "t_s": 15.5,
+   "point": "The talking-head segment uses an unusually high rate of direct 'you/your' address, reinforcing personal relevance of the PSA.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "you_rate",
+     "value": "7.69"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Let's start paying attention to our breasts when it matters most"
+    }
+   ]
+  },
+  {
+   "t_s": 26.2,
+   "point": "CTA is clearly isolated as its own visual beat with on-screen text and voice reinforcement, avoiding ambiguity about next steps.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "25.8",
+     "value": "graphics_text segment reading 'YOUR ATTENTION PLEASE .COM'"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Go to yourattentionplease.com"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Shot-length variability is extreme even for an ad",
+   "t_start_s": 0.0,
+   "t_end_s": 30.1,
+   "observation": "shot_len_cv sits at 1.19, the 92nd percentile within the ad category, meaning shot durations swing dramatically between the fast hook and the long static text/talking-head sections.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "shot_len_cv",
+     "value": "1.19"
+    }
+   ],
+   "recommendation": "If a more even viewing experience is desired, consider smoothing the transition between the fast-cut hook and the static card section with an intermediate-pace shot, and test whether this changes perceived pacing.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Pacing trend drops sharply in second half",
+   "t_start_s": 15.0,
+   "t_end_s": 30.1,
+   "observation": "pacing_trend of 0.4 (8th percentile) shows cut rate falls steeply after the midpoint, consistent with bins showing 0-1 cuts per 5s window from 10-25s versus 4-5 cuts in 0-10s.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "pacing_trend",
+     "value": "0.4"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:20.0",
+     "value": "0"
+    }
+   ],
+   "recommendation": "If the intent is a deliberate slow-down for gravitas, this is consistent; if not, consider adding a cutaway or b-roll insert around 19-24s to test whether maintaining some visual movement affects engagement with the message.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 15.44,
+   "t_in_range": true
+  },
+  {
+   "title": "Brightness drops far below category norm",
+   "t_start_s": 0.0,
+   "t_end_s": 30.1,
+   "observation": "brightness_mean of 0.155 sits at the 8th percentile for ads, likely driven by the dark red-carpet footage and black text cards dominating runtime.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "brightness_mean",
+     "value": "0.155"
+    }
+   ],
+   "recommendation": "Test whether lifting exposure slightly in the b-roll segment (0-9s) improves legibility of faces and wardrobe detail without losing the moody tone.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Dead audio gap during statistic reveal",
+   "t_start_s": 10.0,
+   "t_end_s": 15.0,
+   "observation": "Loudness drops to -49.4dB with 0 wpm and 0 cuts in the 10-15s bin, creating a near-total silence during the key statistic text card.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:10.0",
+     "value": "-49.4"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:10.0",
+     "value": "0.0"
+    }
+   ],
+   "recommendation": "Consider testing a subtle ambient tone or heartbeat-style sound under the '1 in 8 women' card instead of full silence, to see whether it sustains attention through the statistic without undercutting its gravity.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 8.93,
+   "t_in_range": true
+  },
+  {
+   "title": "CTA appears only once, late in runtime",
+   "t_start_s": 26.2,
+   "t_end_s": 27.9,
+   "observation": "cta_count is 1 with first_cta_pos at 0.811 (50th percentile for ads), meaning the single call to action arrives only in the final quarter of a 30s spot.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "1"
+    },
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.811"
+    }
+   ],
+   "recommendation": "Test reinforcing the URL as a small persistent text overlay earlier, e.g. during the talking-head segment from 15.5s, in case viewers drop off before the final card.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 26.2,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 16,
+  "evidence_verified": 14,
+  "evidence_rate": 0.875,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    11,
+    12
+   ],
+   "quote": [
+    1,
+    2
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "shot_len_cv",
+    "value": "1.19",
+    "verified": true,
+    "note": "actual=1.19"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "pacing_trend",
+    "value": "0.4",
+    "verified": true,
+    "note": "actual=0.4"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:20.0",
+    "value": "0",
+    "verified": true,
+    "note": "bin={'start': 20.0, 'end': 25.0, 'cuts': 0, 'wpm': 192.0, 'loud_db': -27.5, 'motion': 0.021}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "brightness_mean",
+    "value": "0.155",
+    "verified": true,
+    "note": "actual=0.155"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:10.0",
+    "value": "-49.4",
+    "verified": true,
+    "note": "bin={'start': 10.0, 'end': 15.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -49.4, 'motion': 0.01}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:10.0",
+    "value": "0.0",
+    "verified": true,
+    "note": "bin={'start': 10.0, 'end': 15.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -49.4, 'motion': 0.01}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "1",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.811",
+    "verified": true,
+    "note": "actual=0.811"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "1.41",
+    "verified": true,
+    "note": "actual=1.41"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "9",
+    "verified": true,
+    "note": "actual=9.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "bin:10.0",
+    "value": "-49.4",
+    "verified": true,
+    "note": "bin={'start': 10.0, 'end': 15.0, 'cuts': 0, 'wpm': 0.0, 'loud_db': -49.4, 'motion': 0.01}"
+   },
+   {
+    "owner": "str1",
+    "kind": "visual",
+    "ref": "9.1",
+    "value": "graphics_text segment with no face visible, text 'SO MUCH ATTENTION. YET SO IGNORED.'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "you_rate",
+    "value": "7.69",
+    "verified": false,
+    "note": "actual=8.47"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "Let's start paying attention to our breasts when it matters most",
+    "verified": true,
+    "note": "match=1.00 at 15.44"
+   },
+   {
+    "owner": "str3",
+    "kind": "visual",
+    "ref": "25.8",
+    "value": "graphics_text segment reading 'YOUR ATTENTION PLEASE .COM'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Go to yourattentionplease.com",
+    "verified": false,
+    "note": "match=0.67 at 25.3"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 16,
+  "evidence_verified": 16,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    12
+   ],
+   "quote": [
+    2,
+    2
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  }
+ }
+}

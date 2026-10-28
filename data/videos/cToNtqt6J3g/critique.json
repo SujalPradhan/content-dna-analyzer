@@ -1,0 +1,418 @@
+{
+ "summary": "A home-shot Hindi cooking tutorial that opens with a close-up preview of the finished masala pasta before walking through boiling, tempering, and assembling the dish in long, static b-roll shots with on-screen ingredient text. Pacing is slow and steady through most of the runtime, speech is nearly continuous, and the single branding/recipe demo structure is interrupted only by a brief animated intro and a late cluster of CTAs.",
+ "dna_tags": [
+  "preview-then-process recipe",
+  "static overhead b-roll",
+  "continuous voiceover narration",
+  "ingredient text overlays",
+  "slow-paced home cooking demo",
+  "late-stacked CTAs"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 16.8,
+   "role": "hook",
+   "label": "Finished-dish preview with voiceover promise"
+  },
+  {
+   "start_s": 16.8,
+   "end_s": 20.8,
+   "role": "intro_setup",
+   "label": "Channel branding animation"
+  },
+  {
+   "start_s": 20.8,
+   "end_s": 60.0,
+   "role": "context",
+   "label": "Product/ingredient claims about pasta brand"
+  },
+  {
+   "start_s": 60.0,
+   "end_s": 114.0,
+   "role": "demonstration",
+   "label": "Boiling pasta"
+  },
+  {
+   "start_s": 114.0,
+   "end_s": 291.3,
+   "role": "demonstration",
+   "label": "Cooking masala base, vegetables, sauce"
+  },
+  {
+   "start_s": 291.3,
+   "end_s": 330.2,
+   "role": "payoff_reveal",
+   "label": "Combining pasta with masala, final mix"
+  },
+  {
+   "start_s": 330.2,
+   "end_s": 348.4,
+   "role": "cta",
+   "label": "Link, comment and subscribe asks"
+  }
+ ],
+ "hook": {
+  "what_happens": "The video opens on a tight close-up of the already-cooked masala pasta being stirred and plated, while the narrator verbally promises a special, tasty, kid-and-adult-friendly recipe.",
+  "promise": "A very special, tasty, and loved-by-all masala pasta recipe",
+  "strengths": [
+   "Immediate visual payoff before any setup, showing the viewer the result up front",
+   "High motion and cut rate versus the rest of the video, signalling energy right away"
+  ],
+  "weaknesses": [
+   "No on-screen text overlay in the first 3 seconds despite promising claims being spoken",
+   "Hook relies entirely on voiceover promise with no text reinforcement of the dish name or benefit"
+  ]
+ },
+ "devices": [
+  {
+   "name": "preview_of_payoff",
+   "t_s": 0.0,
+   "quote": "Close-up shot of cooked masala pasta being stirred in a pan."
+  },
+  {
+   "name": "product_endorsement",
+   "t_s": 20.8,
+   "quote": "\u0906\u091c \u0939\u092e \u092f\u0947 \u092e\u0938\u093e\u0932\u093e \u092a\u093e\u0938\u094d\u0924\u093e \u092c\u0928\u093e\u090f\u0902\u0917\u0947 \u0921\u093f\u0938\u093e\u0928\u094b\u0902 \u0915\u0947 \u092a\u0948\u0928\u0940 \u092a\u093e\u0938\u094d\u0924\u093e \u0915\u0947 \u0938\u093e\u0925"
+  },
+  {
+   "name": "health_claims_stack",
+   "t_s": 45.8,
+   "quote": "\u0936\u094b\u0930\u094d\u0938 \u0905\u092b \u092a\u094d\u0930\u094b\u091f\u0940\u0928 \u0939\u0948, \u091c\u0940\u0930\u094b \u0915\u094b\u0932\u093f\u0938\u094d\u091f\u0930\u094b\u0932 \u0939\u0948 \u0914\u0930 \u0907\u0938\u092e\u0947\u0902 \u0928\u094b \u091f\u094d\u0930\u093e\u0902\u0938 \u092b\u0948\u091f \u0939\u0948"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Hook opens with a strong, high-motion visual of the finished dish, well above the video's own baseline motion.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "1.45"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "4"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "Speech starts instantly with no dead air, keeping the opening tight.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "0.0"
+    }
+   ]
+  },
+  {
+   "t_s": 60.0,
+   "point": "Near-total b-roll coverage with persistent on-screen ingredient text supports a hands-free, followable cooking demo typical of the category.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "broll_share",
+     "value": "0.989"
+    },
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.952"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "Speech coverage is very high, meaning the narrator talks through almost the entire video, reinforcing instructional clarity.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.843"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Move first CTA earlier",
+   "t_start_s": 330.2,
+   "t_end_s": 343.0,
+   "observation": "All three CTAs (product link, comment ask, subscribe ask) are stacked in the final 18 seconds of a 348s video, at a first_cta_pos of 0.948, which sits toward the later end of the cooking category's own benchmark distribution.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.948"
+    },
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "3"
+    }
+   ],
+   "recommendation": "Test placing one lightweight CTA (e.g. subscribe ask) earlier, such as right after the hook around 20s, so viewers who drop off before the end still encounter it.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 330.2,
+   "t_in_range": true
+  },
+  {
+   "title": "Loudness is unusually hot",
+   "t_start_s": 0.0,
+   "t_end_s": 348.4,
+   "observation": "Mean loudness of -9.6 dBFS sits at the 92nd percentile for the cooking category, well above the typical range, which can feel harsh or clipped on playback.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "loudness_db",
+     "value": "-9.6"
+    }
+   ],
+   "recommendation": "Consider pulling the master gain down a few dB to bring loudness closer to the category median for a less fatiguing listen.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Static b-roll with minimal camera motion",
+   "t_start_s": 60.0,
+   "t_end_s": 336.5,
+   "observation": "motion_mean of 0.0574 is at the 8th percentile for cooking videos, and most 10s bins between 70s-320s show very low cut counts (often 0 cuts) and motion under 0.06.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "motion_mean",
+     "value": "0.0574"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:150.0",
+     "value": "cuts 0, motion 0.055"
+    }
+   ],
+   "recommendation": "Try adding occasional cutaways (close-up texture shots, different angles) every few minutes during long cooking stretches like 114s-291s to vary the visual rhythm, while keeping the calm pace appropriate to the genre.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 60.02,
+   "t_in_range": true
+  },
+  {
+   "title": "Extended sponsor/ingredient claims before cooking begins",
+   "t_start_s": 20.8,
+   "t_end_s": 60.0,
+   "observation": "Nearly 40 seconds (20.8s-60s, roughly 11% of runtime) is spent on brand and health claims about the pasta product before any actual cooking action starts, delaying the demonstration promised in the hook.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "\u091c\u0940\u0930\u094b \u0915\u094b\u0932\u093f\u0938\u094d\u091f\u0930\u094b\u0932 \u0939\u0948 \u0914\u0930 \u0907\u0938\u092e\u0947\u0902 \u0928\u094b \u091f\u094d\u0930\u093e\u0902\u0938 \u092b\u0948\u091f \u0939\u0948"
+    },
+    {
+     "kind": "visual",
+     "ref": "20.8",
+     "value": "product_closeup segment with on-screen text '1 bowl of penne pasta'"
+    }
+   ],
+   "recommendation": "Consider trimming the ingredient/health claims block or interweaving it with the first cooking step (boiling water) so the payoff promised in the hook arrives sooner.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 20.8,
+   "t_in_range": true
+  },
+  {
+   "title": "Zero questions and no direct audience address",
+   "t_start_s": 0.0,
+   "t_end_s": 348.4,
+   "observation": "questions_per_min and you_rate are both 0.0, at the 25th percentile for the category, meaning the narration never directly engages the viewer with questions or second-person phrasing beyond instructions.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "questions_per_min",
+     "value": "0.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "you_rate",
+     "value": "0.0"
+    }
+   ],
+   "recommendation": "Test adding a direct question or two (e.g. asking what vegetables viewers prefer) to see if it changes engagement in comments, while keeping the instructional tone.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 15,
+  "evidence_verified": 15,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    13,
+    13
+   ],
+   "quote": [
+    1,
+    1
+   ],
+   "visual": [
+    1,
+    1
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.948",
+    "verified": true,
+    "note": "actual=0.948"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "3",
+    "verified": true,
+    "note": "actual=3.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "loudness_db",
+    "value": "-9.6",
+    "verified": true,
+    "note": "actual=-9.6"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "motion_mean",
+    "value": "0.0574",
+    "verified": true,
+    "note": "actual=0.0574"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "bin:150.0",
+    "value": "cuts 0, motion 0.055",
+    "verified": true,
+    "note": "bin={'start': 150.0, 'end': 160.0, 'cuts': 0, 'wpm': 174.0, 'loud_db': -9.8, 'motion': 0.055}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "\u091c\u0940\u0930\u094b \u0915\u094b\u0932\u093f\u0938\u094d\u091f\u0930\u094b\u0932 \u0939\u0948 \u0914\u0930 \u0907\u0938\u092e\u0947\u0902 \u0928\u094b \u091f\u094d\u0930\u093e\u0902\u0938 \u092b\u0948\u091f \u0939\u0948",
+    "verified": true,
+    "note": "match=1.00 at 50.46"
+   },
+   {
+    "owner": "rec3",
+    "kind": "visual",
+    "ref": "20.8",
+    "value": "product_closeup segment with on-screen text '1 bowl of penne pasta'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "questions_per_min",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "you_rate",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "1.45",
+    "verified": true,
+    "note": "actual=1.45"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "4",
+    "verified": true,
+    "note": "actual=4.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "broll_share",
+    "value": "0.989",
+    "verified": true,
+    "note": "actual=0.989"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.952",
+    "verified": true,
+    "note": "actual=0.952"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.843",
+    "verified": true,
+    "note": "actual=0.843"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 15,
+  "evidence_verified": 13,
+  "evidence_rate": 0.867,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    13
+   ],
+   "quote": [
+    0,
+    1
+   ],
+   "visual": [
+    1,
+    1
+   ]
+  }
+ }
+}

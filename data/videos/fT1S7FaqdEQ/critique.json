@@ -1,0 +1,470 @@
+{
+ "summary": "A long-form budget-cooking video built as a single continuous voiceover-over-b-roll block: a cold-open problem statement and grocery haul (0-211s) followed by five back-to-back recipe demonstrations, each marked by on-screen price overlays and almost unbroken narration, closing with a single subscribe CTA in the last 5 seconds. Pacing is driven by speech density rather than cuts, with long uninterrupted b-roll segments and minimal music.",
+ "dna_tags": [
+  "budget-challenge format",
+  "grocery-haul cold open",
+  "price-overlay transparency",
+  "recipe-block structure",
+  "dense nonstop narration",
+  "minimal-music b-roll"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 5.8,
+   "role": "hook",
+   "label": "Montage of cart/food with '$5 Budget Dinners!' text overlay"
+  },
+  {
+   "start_s": 5.8,
+   "end_s": 30.3,
+   "role": "intro_setup",
+   "label": "Talking-head sets up the $5-dinner problem and promise"
+  },
+  {
+   "start_s": 30.3,
+   "end_s": 211.4,
+   "role": "context",
+   "label": "Walmart grocery shop-with-me, price call-outs"
+  },
+  {
+   "start_s": 211.4,
+   "end_s": 335.3,
+   "role": "demonstration",
+   "label": "Broccoli Cheese Chicken & Rice Casserole"
+  },
+  {
+   "start_s": 335.3,
+   "end_s": 442.7,
+   "role": "demonstration",
+   "label": "Chicken & Vegetable Soup"
+  },
+  {
+   "start_s": 442.7,
+   "end_s": 526.0,
+   "role": "demonstration",
+   "label": "Chili Cornbread Casserole"
+  },
+  {
+   "start_s": 526.0,
+   "end_s": 615.9,
+   "role": "demonstration",
+   "label": "Sausage Cheddar Broccoli Rice"
+  },
+  {
+   "start_s": 615.9,
+   "end_s": 740.3,
+   "role": "demonstration",
+   "label": "Ham Fried Rice"
+  },
+  {
+   "start_s": 740.3,
+   "end_s": 745.7,
+   "role": "cta",
+   "label": "Subscribe call-to-action and sign-off"
+  }
+ ],
+ "hook": {
+  "what_happens": "A fast montage of a grocery cart and a plated dish appears under bold '$5 Budget Dinners!' text, then cuts to the creator on camera stating the grocery-price problem before promising five $5 dinners.",
+  "promise": "Five complete, protein-rich family dinners that can each be made for about $5.",
+  "strengths": [
+   "Text overlay appears in the first 3 seconds, immediately stating the value proposition",
+   "Problem-statement opening ('grocery prices... don't come down') is relatable to the target audience",
+   "Hook cuts (3) and hook_wpm (136) are within/near category norms, keeping the opener brisk"
+  ],
+  "weaknesses": [
+   "time_to_first_word_s is 5.38s, slower than the cooking-category median of 3.19s, delaying the verbal promise",
+   "hook_motion is 0.84, below the category p25 of 0.787-0.91 range, meaning the opening visuals move less than the rest of the video despite being a 'fast montage' framing"
+  ]
+ },
+ "devices": [
+  {
+   "name": "problem_statement_hook",
+   "t_s": 5.4,
+   "quote": "An issue that we are all faced with right now is that we keep hoping grocery prices"
+  },
+  {
+   "name": "price_overlay_transparency",
+   "t_s": 211.4,
+   "quote": "Broccoli $0.94 Cheese $1.87 Canned Chicken $1.32 Cream Of Chicken $0.74 Rice $0.96 Total $5.83"
+  },
+  {
+   "name": "direct_address",
+   "t_s": 17.1,
+   "quote": "These dinners will feed your entire family."
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 211.4,
+   "point": "Running price/total overlays on every recipe segment reinforce the budget premise with concrete evidence rather than just claims.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "211.4",
+     "value": "On-screen text listing each ingredient price and a running total ($5.83)"
+    },
+    {
+     "kind": "metric",
+     "ref": "text_overlay_share",
+     "value": "0.967"
+    }
+   ]
+  },
+  {
+   "t_s": 0,
+   "point": "Speech coverage is nearly continuous, giving the tutorial a dense, information-rich narration track typical of recipe content.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.972"
+    },
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "203.4"
+    }
+   ]
+  },
+  {
+   "t_s": 30.3,
+   "point": "High motion_mean relative to category suggests active, hands-on b-roll (chopping, stirring, pouring) rather than static shots.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "motion_mean",
+     "value": "0.128"
+    },
+    {
+     "kind": "visual",
+     "ref": "211.4",
+     "value": "Close b-roll of casserole prep with price overlay text"
+    }
+   ]
+  },
+  {
+   "t_s": 5.4,
+   "point": "The opening problem statement creates a clear, low-friction promise that frames the rest of the video's structure (five $5 dinners).",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "today I'm going to be sharing five different dinners with you that you can make for only about $5"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Single CTA arrives at the very last second of runtime",
+   "t_start_s": 740.9,
+   "t_end_s": 744.7,
+   "observation": "The only call-to-action in the whole video sits at first_cta_pos 0.994, far later than the cooking-category median of 0.964 and the all-category median of 0.797.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.994"
+    },
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "1"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Make sure you're subscribed down below the video so you don't miss the next one like this."
+    }
+   ],
+   "recommendation": "Test adding a brief reminder CTA earlier, e.g. after the first recipe wraps around 330s, so viewers who drop off before the end still encounter the ask.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 740.94,
+   "t_in_range": true
+  },
+  {
+   "title": "Almost no breathing room in the narration",
+   "t_start_s": 0,
+   "t_end_s": 745.7,
+   "observation": "long_pauses_per_min is 0.08, far below the cooking-category median of 0.97, and speech_coverage of 0.972 is an extreme outlier versus the category median of 0.776 \u2014 the voiceover almost never stops.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "long_pauses_per_min",
+     "value": "0.08"
+    },
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.972"
+    }
+   ],
+   "recommendation": "Consider leaving a few 1-2s silent/music-only beats between recipe transitions (e.g. at 335.3s, 442.7s, 526.0s chapter boundaries) to let visuals and cozy tone breathe before the next segment starts talking.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Near-silent non-speech audio bed despite a 'cozy' framing",
+   "t_start_s": 0,
+   "t_end_s": 745.7,
+   "observation": "nonspeech_audio_share is 0.017, well under the cooking-category p25 of 0.089, meaning music/ambient sound is almost absent even though the narration repeatedly calls the dishes 'cozy' and 'warm'.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "nonspeech_audio_share",
+     "value": "0.017"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Doesn't that sound so cozy, warm, and delicious?"
+    }
+   ],
+   "recommendation": "Test layering a subtle background music bed under the cooking segments (211s-740s) to match the stated cozy/seasonal mood, since the current audio is essentially dry voiceover.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Long static visual blocks with very low format switching",
+   "t_start_s": 30.3,
+   "t_end_s": 740.3,
+   "observation": "format_switches_per_min is 0.24, in the bottom quartile for cooking (p25 0.352), and individual b-roll segments run 85-185 seconds (e.g. 211.4-335.3s, 442.7-526.0s) without a format change.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "0.24"
+    },
+    {
+     "kind": "visual",
+     "ref": "211.4",
+     "value": "Single continuous b-roll segment from 211.4s to 335.3s"
+    }
+   ],
+   "recommendation": "Insert occasional talking-head cutaways or reaction shots mid-recipe (e.g. around 270s or 400s) to break up the long uninterrupted b-roll stretches, since talking_head_share is only 0.04 across a 12-minute video.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 30.18,
+   "t_in_range": true
+  },
+  {
+   "title": "Fast, dense delivery may undercut the 'cozy, slow' tone implied by the content",
+   "t_start_s": 0,
+   "t_end_s": 745.7,
+   "observation": "wpm of 203.4 sits at the 92nd percentile for cooking videos (category median 141.45), and you_rate of 3.36 is also at the 92nd percentile, giving a rapid, high-address-frequency delivery atop comfort-food content.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "203.4"
+    },
+    {
+     "kind": "metric",
+     "ref": "you_rate",
+     "value": "3.36"
+    }
+   ],
+   "recommendation": "If a slower, more relaxed cooking-show feel is desired, test trimming narration slightly or adding brief pauses during visually-driven steps (e.g. stirring/simmering shots around 420-520s) rather than narrating every action.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 18,
+  "evidence_verified": 18,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    12
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    3,
+    3
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.994",
+    "verified": true,
+    "note": "actual=0.994"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "1",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Make sure you're subscribed down below the video so you don't miss the next one like this.",
+    "verified": true,
+    "note": "match=1.00 at 740.94"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "long_pauses_per_min",
+    "value": "0.08",
+    "verified": true,
+    "note": "actual=0.08"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.972",
+    "verified": true,
+    "note": "actual=0.972"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "nonspeech_audio_share",
+    "value": "0.017",
+    "verified": true,
+    "note": "actual=0.017"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "Doesn't that sound so cozy, warm, and delicious?",
+    "verified": true,
+    "note": "match=1.00 at 215.56"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "0.24",
+    "verified": true,
+    "note": "actual=0.24"
+   },
+   {
+    "owner": "rec3",
+    "kind": "visual",
+    "ref": "211.4",
+    "value": "Single continuous b-roll segment from 211.4s to 335.3s",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "203.4",
+    "verified": true,
+    "note": "actual=203.4"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "you_rate",
+    "value": "3.36",
+    "verified": true,
+    "note": "actual=3.36"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "211.4",
+    "value": "On-screen text listing each ingredient price and a running total ($5.83)",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "text_overlay_share",
+    "value": "0.967",
+    "verified": true,
+    "note": "actual=0.967"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.972",
+    "verified": true,
+    "note": "actual=0.972"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "203.4",
+    "verified": true,
+    "note": "actual=203.4"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "motion_mean",
+    "value": "0.128",
+    "verified": true,
+    "note": "actual=0.128"
+   },
+   {
+    "owner": "str2",
+    "kind": "visual",
+    "ref": "211.4",
+    "value": "Close b-roll of casserole prep with price overlay text",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "today I'm going to be sharing five different dinners with you that you can make for only about $5",
+    "verified": true,
+    "note": "match=1.00 at 13.6"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 18,
+  "evidence_verified": 18,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    12,
+    12
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    3,
+    3
+   ]
+  }
+ }
+}

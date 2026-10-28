@@ -1,0 +1,344 @@
+{
+ "summary": "A mockumentary-style Super Bowl ad builds an absurdist 'conspiracy theory' that football was invented to sell food, stacking rapid historical-sounding gags (pigskin=bacon, Packers=meat packers, Super Bowl=food vessel) before breaking the fourth wall with Matthew McConaughey pitching the 'movie' to a producer, then landing on the Uber Eats tagline punchline.",
+ "dna_tags": [
+  "mockumentary parody",
+  "celebrity cameo",
+  "rapid-fire gag structure",
+  "brand punchline ending",
+  "wordplay/pun humor",
+  "Super Bowl ad format"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 17.4,
+   "role": "hook",
+   "label": "Conspiracy premise introduced with NFL/Foodball pun"
+  },
+  {
+   "start_s": 17.8,
+   "end_s": 36.6,
+   "role": "context",
+   "label": "Early 'evidence' gags: ice cream Saturdays, Packers, Cheeseheads"
+  },
+  {
+   "start_s": 36.6,
+   "end_s": 49.8,
+   "role": "main_content",
+   "label": "Buffalo wings and Super Bowl/cup/bowl naming gags"
+  },
+  {
+   "start_s": 50.3,
+   "end_s": 65.3,
+   "role": "main_content",
+   "label": "Appliance player names and beef salesman Peyton bit"
+  },
+  {
+   "start_s": 65.5,
+   "end_s": 78.4,
+   "role": "demonstration",
+   "label": "Escalation: Super Bowl licks, Apple halftime, stallion stadium"
+  },
+  {
+   "start_s": 78.4,
+   "end_s": 90.2,
+   "role": "payoff_reveal",
+   "label": "Reveal of framing device: McConaughey pitching the conspiracy movie"
+  },
+  {
+   "start_s": 91.0,
+   "end_s": 94.8,
+   "role": "recap",
+   "label": "Narrator dismisses the conspiracy as unbelievable"
+  },
+  {
+   "start_s": 95.2,
+   "end_s": 97.8,
+   "role": "cta",
+   "label": "Brand tagline: order Uber Eats when football makes you hungry"
+  }
+ ],
+ "hook": {
+  "what_happens": "The narrator opens with a pun ('National Foodball League') and immediately asserts football was built as a conspiracy to make people hungry, citing the word 'pigskin' as proof.",
+  "promise": "Promises a string of absurd 'evidence' connecting football history to food, implying a payoff explaining why.",
+  "strengths": [
+   "Pun-based opening creates immediate comedic hook",
+   "States the central conceit explicitly within first 10 seconds"
+  ],
+  "weaknesses": [
+   "Premise is told rather than shown with a scene, relying on narration to set stakes before any character or visual gag appears"
+  ]
+ },
+ "devices": [
+  {
+   "name": "recurring pun escalation",
+   "t_s": 10.4,
+   "quote": "And we'll call this a pigskin, to make people crave bacon."
+  },
+  {
+   "name": "callback repetition",
+   "t_s": 15.8,
+   "quote": "They'd do anything to sell food."
+  },
+  {
+   "name": "fourth-wall break/reveal",
+   "t_s": 82.2,
+   "quote": "You want me to make a movie about a football conspiracy?"
+  },
+  {
+   "name": "brand tagline punchline",
+   "t_s": 95.2,
+   "quote": "When football makes you hungry, order Uber Eats."
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 10.4,
+   "point": "Uses wordplay chain (pigskin, Packers, Cheeseheads, Super Bowl) to build a cohesive comedic logic across many short scenes.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "So the Packers were named after meat packers."
+    }
+   ]
+  },
+  {
+   "t_s": 82.2,
+   "point": "Late reveal that the whole piece is a pitch meeting reframes earlier vignettes as a movie-within-the-ad, adding a twist before the brand message.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "You want me to make a movie about a football conspiracy?"
+    }
+   ]
+  },
+  {
+   "t_s": 91.0,
+   "point": "Narrator undercuts the absurd premise right before the CTA, using self-aware humor to transition smoothly into the brand message.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "No one believes that football is just some conspiracy to sell food."
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Clarify the framing device earlier",
+   "t_start_s": 0.0,
+   "t_end_s": 78.4,
+   "observation": "The McConaughey pitch-meeting frame that recontextualizes the preceding 78 seconds only appears at 77.9-78.4, meaning most of the runtime plays as straight narration without viewers knowing it's a pitched movie concept.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Matthew?"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "You want me to make a movie about a football conspiracy?"
+    }
+   ],
+   "recommendation": "Consider whether an earlier hint of the pitch-meeting frame would change how the long gag sequence reads to viewers encountering it without context.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Dense pun sequence may require close listening",
+   "t_start_s": 17.8,
+   "t_end_s": 65.3,
+   "observation": "Many gags rely on quick verbal puns (Cheeseheads, Buffalo Bill, Super Cup to Super Bowl, refrigerator, Omaha steak) delivered in rapid single-line exchanges with minimal pause.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "How about a Super Bowl?"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Hey, Coach, do I have to be called refrigerator?"
+    }
+   ],
+   "recommendation": "Note that the pacing of pun delivery leaves little breathing room between jokes, which could affect how clearly each gag lands for a viewer hearing it once.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 17.78,
+   "t_in_range": true
+  },
+  {
+   "title": "Brand connection arrives only in final 3 seconds",
+   "t_start_s": 95.2,
+   "t_end_s": 97.8,
+   "observation": "The Uber Eats brand name and call-to-action appear only in the last line of a 97.8-second video.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "When football makes you hungry, order Uber Eats."
+    }
+   ],
+   "recommendation": "Consider whether earlier subtle brand presence during the long gag sequence would reinforce the sponsor connection before the final line.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 95.18,
+   "t_in_range": true
+  },
+  {
+   "title": "Reveal character identity is unclear without visual context",
+   "t_start_s": 77.9,
+   "t_end_s": 90.2,
+   "observation": "The transcript shows dialogue between 'Matthew' and a producer-like figure ('Greta') but the narration text alone does not establish who is speaking or why, relying entirely on visual casting to communicate the celebrity cameo.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Come on, Greta."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Bacon's in. Everybody loves bacon."
+    }
+   ],
+   "recommendation": "Consider whether transcript-only review undersells this segment, since the reveal's comedic value depends heavily on visual recognition of McConaughey rather than dialogue alone.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 77.88,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 10,
+  "evidence_verified": 9,
+  "evidence_rate": 0.9,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    9,
+    10
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Matthew?",
+    "verified": true,
+    "note": "match=1.00 at 77.88"
+   },
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "",
+    "value": "You want me to make a movie about a football conspiracy?",
+    "verified": true,
+    "note": "match=1.00 at 82.16"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "How about a Super Bowl?",
+    "verified": true,
+    "note": "match=1.00 at 47.58"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Hey, Coach, do I have to be called refrigerator?",
+    "verified": true,
+    "note": "match=1.00 at 53.62"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "When football makes you hungry, order Uber Eats.",
+    "verified": true,
+    "note": "match=1.00 at 95.18"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Come on, Greta.",
+    "verified": true,
+    "note": "match=1.00 at 87.36"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Bacon's in. Everybody loves bacon.",
+    "verified": true,
+    "note": "match=1.00 at 88.42"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "So the Packers were named after meat packers.",
+    "verified": false,
+    "note": "match=0.12 at 0.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "You want me to make a movie about a football conspiracy?",
+    "verified": true,
+    "note": "match=1.00 at 82.16"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "No one believes that football is just some conspiracy to sell food.",
+    "verified": true,
+    "note": "match=1.00 at 91.04"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 10,
+  "evidence_verified": 9,
+  "evidence_rate": 0.9,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    9,
+    10
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  }
+ }
+}

@@ -1,0 +1,105 @@
+{
+ "video_id": "TJ7I3_QHtac",
+ "category": "ad",
+ "title": "UMH Properties TV Commercial 2025",
+ "channel": "UMH Properties, Inc.",
+ "url": "https://www.youtube.com/watch?v=TJ7I3_QHtac",
+ "views": 15854,
+ "likes": 23,
+ "comments": null,
+ "subscribers": 1100,
+ "upload_date": "20250904",
+ "full_duration": 30,
+ "is_short": false,
+ "fingerprint": {
+  "duration_s": 30.1,
+  "shots_per_min": 25.92,
+  "median_shot_s": 1.99,
+  "shot_len_cv": 0.35,
+  "pacing_trend": 0.88,
+  "hook_cuts": 7,
+  "time_to_first_word_s": 1.38,
+  "hook_wpm": 172.0,
+  "hook_text_overlay": 1.0,
+  "hook_motion": 0.92,
+  "wpm": 183.4,
+  "speech_coverage": 0.87,
+  "long_pauses_per_min": 0.0,
+  "questions_per_min": 0.0,
+  "you_rate": 0.0,
+  "loudness_db": -25.5,
+  "loudness_range_db": 13.0,
+  "energy_slope": -1.19,
+  "nonspeech_audio_share": 0.066,
+  "motion_mean": 0.1225,
+  "brightness_mean": 0.35,
+  "colorfulness_mean": 30.5,
+  "talking_head_share": 0.0,
+  "broll_share": 0.867,
+  "screen_share": 0.133,
+  "face_share": 0.867,
+  "text_overlay_share": 1.0,
+  "format_switches_per_min": 1.99,
+  "cta_count": 2,
+  "first_cta_pos": 0.0
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 5.0,
+   "cuts": 3,
+   "wpm": 156.0,
+   "loud_db": -28.3,
+   "motion": 0.103
+  },
+  {
+   "start": 5.0,
+   "end": 10.0,
+   "cuts": 2,
+   "wpm": 168.0,
+   "loud_db": -25.1,
+   "motion": 0.119
+  },
+  {
+   "start": 10.0,
+   "end": 15.0,
+   "cuts": 2,
+   "wpm": 192.0,
+   "loud_db": -23.1,
+   "motion": 0.115
+  },
+  {
+   "start": 15.0,
+   "end": 20.0,
+   "cuts": 3,
+   "wpm": 168.0,
+   "loud_db": -24.1,
+   "motion": 0.147
+  },
+  {
+   "start": 20.0,
+   "end": 25.0,
+   "cuts": 2,
+   "wpm": 192.0,
+   "loud_db": -24.5,
+   "motion": 0.135
+  },
+  {
+   "start": 25.0,
+   "end": 30.0,
+   "cuts": 1,
+   "wpm": 144.0,
+   "loud_db": -28.3,
+   "motion": 0.116
+  },
+  {
+   "start": 30.0,
+   "end": 30.1,
+   "cuts": 0,
+   "wpm": 4200.0,
+   "loud_db": -43.0,
+   "motion": null
+  }
+ ],
+ "perception_done": true
+}

@@ -1,0 +1,209 @@
+{
+ "video_id": "s83EB_OtaEo",
+ "category": "ad",
+ "title": "Uber Eats Super Bowl Commercial (2025) Featuring Matthew McConaughey",
+ "channel": "ZHENG WEN",
+ "url": "https://www.youtube.com/watch?v=s83EB_OtaEo",
+ "views": 73476,
+ "likes": 368,
+ "comments": 37,
+ "subscribers": 5370,
+ "upload_date": "20250205",
+ "full_duration": 98,
+ "is_short": false,
+ "fingerprint": {
+  "duration_s": 97.8,
+  "shots_per_min": 36.82,
+  "median_shot_s": 1.25,
+  "shot_len_cv": 0.59,
+  "pacing_trend": 1.07,
+  "hook_cuts": 7,
+  "time_to_first_word_s": 0.0,
+  "hook_wpm": 200.0,
+  "hook_text_overlay": 0.0,
+  "hook_motion": 0.96,
+  "wpm": 157.7,
+  "speech_coverage": 0.795,
+  "long_pauses_per_min": 1.84,
+  "questions_per_min": 6.75,
+  "you_rate": 1.17,
+  "loudness_db": -19.4,
+  "loudness_range_db": 12.5,
+  "energy_slope": 0.7,
+  "nonspeech_audio_share": 0.102,
+  "motion_mean": 0.0694,
+  "brightness_mean": 0.252,
+  "colorfulness_mean": 25.0,
+  "talking_head_share": 0.467,
+  "broll_share": 0.441,
+  "screen_share": 0.041,
+  "face_share": 0.959,
+  "text_overlay_share": 0.278,
+  "format_switches_per_min": 4.3,
+  "cta_count": 1,
+  "first_cta_pos": 0.977
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 5.0,
+   "cuts": 1,
+   "wpm": 228.0,
+   "loud_db": -22.6,
+   "motion": 0.053
+  },
+  {
+   "start": 5.0,
+   "end": 10.0,
+   "cuts": 2,
+   "wpm": 168.0,
+   "loud_db": -19.2,
+   "motion": 0.078
+  },
+  {
+   "start": 10.0,
+   "end": 15.0,
+   "cuts": 4,
+   "wpm": 204.0,
+   "loud_db": -18.6,
+   "motion": 0.069
+  },
+  {
+   "start": 15.0,
+   "end": 20.0,
+   "cuts": 3,
+   "wpm": 228.0,
+   "loud_db": -18.0,
+   "motion": 0.073
+  },
+  {
+   "start": 20.0,
+   "end": 25.0,
+   "cuts": 2,
+   "wpm": 156.0,
+   "loud_db": -19.7,
+   "motion": 0.058
+  },
+  {
+   "start": 25.0,
+   "end": 30.0,
+   "cuts": 3,
+   "wpm": 132.0,
+   "loud_db": -22.3,
+   "motion": 0.055
+  },
+  {
+   "start": 30.0,
+   "end": 35.0,
+   "cuts": 3,
+   "wpm": 204.0,
+   "loud_db": -20.7,
+   "motion": 0.043
+  },
+  {
+   "start": 35.0,
+   "end": 40.0,
+   "cuts": 4,
+   "wpm": 144.0,
+   "loud_db": -18.3,
+   "motion": 0.039
+  },
+  {
+   "start": 40.0,
+   "end": 45.0,
+   "cuts": 4,
+   "wpm": 180.0,
+   "loud_db": -18.5,
+   "motion": 0.074
+  },
+  {
+   "start": 45.0,
+   "end": 50.0,
+   "cuts": 3,
+   "wpm": 120.0,
+   "loud_db": -20.3,
+   "motion": 0.074
+  },
+  {
+   "start": 50.0,
+   "end": 55.0,
+   "cuts": 2,
+   "wpm": 168.0,
+   "loud_db": -15.3,
+   "motion": 0.083
+  },
+  {
+   "start": 55.0,
+   "end": 60.0,
+   "cuts": 3,
+   "wpm": 144.0,
+   "loud_db": -19.0,
+   "motion": 0.082
+  },
+  {
+   "start": 60.0,
+   "end": 65.0,
+   "cuts": 1,
+   "wpm": 168.0,
+   "loud_db": -17.8,
+   "motion": 0.066
+  },
+  {
+   "start": 65.0,
+   "end": 70.0,
+   "cuts": 4,
+   "wpm": 156.0,
+   "loud_db": -23.0,
+   "motion": 0.057
+  },
+  {
+   "start": 70.0,
+   "end": 75.0,
+   "cuts": 3,
+   "wpm": 96.0,
+   "loud_db": -18.2,
+   "motion": 0.07
+  },
+  {
+   "start": 75.0,
+   "end": 80.0,
+   "cuts": 9,
+   "wpm": 48.0,
+   "loud_db": -14.5,
+   "motion": 0.131
+  },
+  {
+   "start": 80.0,
+   "end": 85.0,
+   "cuts": 2,
+   "wpm": 180.0,
+   "loud_db": -21.8,
+   "motion": 0.071
+  },
+  {
+   "start": 85.0,
+   "end": 90.0,
+   "cuts": 4,
+   "wpm": 120.0,
+   "loud_db": -20.1,
+   "motion": 0.089
+  },
+  {
+   "start": 90.0,
+   "end": 95.0,
+   "cuts": 3,
+   "wpm": 144.0,
+   "loud_db": -20.3,
+   "motion": 0.077
+  },
+  {
+   "start": 95.0,
+   "end": 97.8,
+   "cuts": 0,
+   "wpm": 171.0,
+   "loud_db": -20.4,
+   "motion": 0.032
+  }
+ ],
+ "perception_done": true
+}

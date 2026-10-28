@@ -1,0 +1,121 @@
+category,category_label,bin,pct_runtime,db
+tech_review,Tech reviews,0,2.5,0.07
+tech_review,Tech reviews,1,7.5,0.32
+tech_review,Tech reviews,2,12.5,0.35
+tech_review,Tech reviews,3,17.5,0.28
+tech_review,Tech reviews,4,22.5,-0.25
+tech_review,Tech reviews,5,27.5,0.24
+tech_review,Tech reviews,6,32.5,0.41
+tech_review,Tech reviews,7,37.5,0.22
+tech_review,Tech reviews,8,42.5,0.28
+tech_review,Tech reviews,9,47.5,-0.16
+tech_review,Tech reviews,10,52.5,-0.03
+tech_review,Tech reviews,11,57.5,-0.39
+tech_review,Tech reviews,12,62.5,-0.2
+tech_review,Tech reviews,13,67.5,-0.48
+tech_review,Tech reviews,14,72.5,-0.12
+tech_review,Tech reviews,15,77.5,-0.5
+tech_review,Tech reviews,16,82.5,0.75
+tech_review,Tech reviews,17,87.5,0.05
+tech_review,Tech reviews,18,92.5,-0.04
+tech_review,Tech reviews,19,97.5,0.02
+ad,Ads,0,2.5,-6.33
+ad,Ads,1,7.5,0.07
+ad,Ads,2,12.5,1.23
+ad,Ads,3,17.5,1.88
+ad,Ads,4,22.5,-0.77
+ad,Ads,5,27.5,0.26
+ad,Ads,6,32.5,0.82
+ad,Ads,7,37.5,-0.06
+ad,Ads,8,42.5,-0.49
+ad,Ads,9,47.5,-1.72
+ad,Ads,10,52.5,4.28
+ad,Ads,11,57.5,2.87
+ad,Ads,12,62.5,2.0
+ad,Ads,13,67.5,2.44
+ad,Ads,14,72.5,2.72
+ad,Ads,15,77.5,3.5
+ad,Ads,16,82.5,1.83
+ad,Ads,17,87.5,2.4
+ad,Ads,18,92.5,1.94
+ad,Ads,19,97.5,-2.02
+explainer,Explainers,0,2.5,-0.02
+explainer,Explainers,1,7.5,-0.11
+explainer,Explainers,2,12.5,0.14
+explainer,Explainers,3,17.5,0.0
+explainer,Explainers,4,22.5,0.37
+explainer,Explainers,5,27.5,0.5
+explainer,Explainers,6,32.5,-0.07
+explainer,Explainers,7,37.5,0.27
+explainer,Explainers,8,42.5,0.32
+explainer,Explainers,9,47.5,0.31
+explainer,Explainers,10,52.5,-0.05
+explainer,Explainers,11,57.5,0.8
+explainer,Explainers,12,62.5,-0.16
+explainer,Explainers,13,67.5,-0.47
+explainer,Explainers,14,72.5,0.25
+explainer,Explainers,15,77.5,-0.32
+explainer,Explainers,16,82.5,0.27
+explainer,Explainers,17,87.5,-0.11
+explainer,Explainers,18,92.5,0.55
+explainer,Explainers,19,97.5,-0.51
+vlog,Vlogs,0,2.5,1.72
+vlog,Vlogs,1,7.5,1.54
+vlog,Vlogs,2,12.5,2.09
+vlog,Vlogs,3,17.5,1.19
+vlog,Vlogs,4,22.5,0.27
+vlog,Vlogs,5,27.5,-0.34
+vlog,Vlogs,6,32.5,-1.25
+vlog,Vlogs,7,37.5,-3.2
+vlog,Vlogs,8,42.5,-2.78
+vlog,Vlogs,9,47.5,0.33
+vlog,Vlogs,10,52.5,0.61
+vlog,Vlogs,11,57.5,-0.78
+vlog,Vlogs,12,62.5,0.24
+vlog,Vlogs,13,67.5,-0.03
+vlog,Vlogs,14,72.5,-1.81
+vlog,Vlogs,15,77.5,-0.68
+vlog,Vlogs,16,82.5,0.69
+vlog,Vlogs,17,87.5,-0.04
+vlog,Vlogs,18,92.5,1.28
+vlog,Vlogs,19,97.5,0.95
+shorts,Shorts,0,2.5,-11.9
+shorts,Shorts,1,7.5,1.29
+shorts,Shorts,2,12.5,0.31
+shorts,Shorts,3,17.5,-4.8
+shorts,Shorts,4,22.5,-0.31
+shorts,Shorts,5,27.5,-1.14
+shorts,Shorts,6,32.5,0.51
+shorts,Shorts,7,37.5,0.11
+shorts,Shorts,8,42.5,-0.39
+shorts,Shorts,9,47.5,-0.01
+shorts,Shorts,10,52.5,0.86
+shorts,Shorts,11,57.5,-0.24
+shorts,Shorts,12,62.5,-1.25
+shorts,Shorts,13,67.5,2.14
+shorts,Shorts,14,72.5,2.39
+shorts,Shorts,15,77.5,3.47
+shorts,Shorts,16,82.5,2.87
+shorts,Shorts,17,87.5,3.76
+shorts,Shorts,18,92.5,2.97
+shorts,Shorts,19,97.5,-2.51
+cooking,Cooking,0,2.5,1.78
+cooking,Cooking,1,7.5,2.55
+cooking,Cooking,2,12.5,1.87
+cooking,Cooking,3,17.5,1.75
+cooking,Cooking,4,22.5,0.1
+cooking,Cooking,5,27.5,0.1
+cooking,Cooking,6,32.5,0.52
+cooking,Cooking,7,37.5,1.95
+cooking,Cooking,8,42.5,0.39
+cooking,Cooking,9,47.5,0.52
+cooking,Cooking,10,52.5,0.21
+cooking,Cooking,11,57.5,-1.14
+cooking,Cooking,12,62.5,-0.52
+cooking,Cooking,13,67.5,0.41
+cooking,Cooking,14,72.5,-0.29
+cooking,Cooking,15,77.5,-1.17
+cooking,Cooking,16,82.5,-0.49
+cooking,Cooking,17,87.5,-0.48
+cooking,Cooking,18,92.5,-2.32
+cooking,Cooking,19,97.5,0.28

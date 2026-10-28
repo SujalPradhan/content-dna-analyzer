@@ -1,0 +1,308 @@
+{
+ "summary": "This is a short 30-second product TV ad for Blinds2Go that opens with 11.5 seconds of silence/visual-only setup before the voiceover kicks in to pitch the product's key benefits: drill-free, quick installation, and a free measuring guarantee, closing with a direct search call-to-action.",
+ "dna_tags": [
+  "TV commercial",
+  "direct response CTA",
+  "product benefit pitch",
+  "voiceover-led",
+  "drill-free installation",
+  "guarantee-driven"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 11.5,
+   "role": "hook",
+   "label": "Silent visual open before voiceover begins"
+  },
+  {
+   "start_s": 11.5,
+   "end_s": 21.9,
+   "role": "main_content",
+   "label": "Core product pitch: no drill needed, install in minutes"
+  },
+  {
+   "start_s": 22.6,
+   "end_s": 26.3,
+   "role": "payoff_reveal",
+   "label": "Sure size measuring guarantee mentioned"
+  },
+  {
+   "start_s": 26.3,
+   "end_s": 30.2,
+   "role": "cta",
+   "label": "Search Blinds2Go online today"
+  }
+ ],
+ "hook": {
+  "what_happens": "The transcript shows no spoken words until 11.5 seconds, meaning the first third of the ad relies entirely on visuals to capture attention before any verbal pitch begins.",
+  "promise": "The eventual spoken hook promises an easy, drill-free, fast installation experience.",
+  "strengths": [
+   "The verbal pitch, once it starts, is concise and benefit-focused"
+  ],
+  "weaknesses": [
+   "No spoken hook for the first 11.5 seconds leaves the opening unverified from transcript alone",
+   "Delayed verbal engagement could mean the core selling proposition isn't stated until over a third of the ad has elapsed"
+  ]
+ },
+ "devices": [
+  {
+   "name": "benefit stacking",
+   "t_s": 11.5,
+   "quote": "Put up your blinds the easy way with Blinds2Go, because with no need for a drill, you can"
+  },
+  {
+   "name": "guarantee as trust device",
+   "t_s": 22.6,
+   "quote": "you can only get it right with our complimentary sure size measuring guarantee"
+  },
+  {
+   "name": "direct action CTA",
+   "t_s": 26.3,
+   "quote": "Search Blinds2Go online today and discover the perfect fit"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 11.5,
+   "point": "The ad clearly states a concrete, tangible benefit (no drill required) rather than vague branding language.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "with no need for a drill, you can"
+    }
+   ]
+  },
+  {
+   "t_s": 21.0,
+   "point": "A specific time-based claim is used to make the benefit feel fast and low-effort.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "install in minutes"
+    }
+   ]
+  },
+  {
+   "t_s": 22.6,
+   "point": "The guarantee is framed as removing risk, pairing the ease claim with an accuracy/trust claim.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "our complimentary sure size measuring guarantee"
+    }
+   ]
+  },
+  {
+   "t_s": 26.3,
+   "point": "The CTA is simple, specific, and actionable, naming the exact search action to take.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Search Blinds2Go online today and discover the perfect fit"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Clarify what happens in the opening silence",
+   "t_start_s": 0,
+   "t_end_s": 11.5,
+   "observation": "The transcript contains no dialogue for the first 11.5 seconds of a 30.6 second ad, which is over a third of the total runtime with no verbal content captured.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "[11.5-21.0] Put up your blinds the easy way"
+    }
+   ],
+   "recommendation": "Consider whether the opening visual sequence before 11.5 seconds is doing enough work on its own to justify its length, since the transcript shows it carries no spoken reinforcement of the product message.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Consider when the core promise is introduced",
+   "t_start_s": 11.5,
+   "t_end_s": 21.9,
+   "observation": "The main selling point, drill-free easy installation, is not spoken until 11.5 seconds into a 30.6 second ad.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Put up your blinds the easy way with Blinds2Go, because with no need for a drill, you can"
+    }
+   ],
+   "recommendation": "Review whether the core benefit could be referenced earlier in the spoken content to reinforce it alongside whatever visual hook occupies the first 11.5 seconds.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 11.48,
+   "t_in_range": true
+  },
+  {
+   "title": "Examine the phrase construction around the guarantee",
+   "t_start_s": 22.6,
+   "t_end_s": 26.3,
+   "observation": "The line 'you can only get it right with our complimentary sure size measuring guarantee' uses somewhat indirect phrasing to introduce the guarantee.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "you can only get it right with our complimentary sure size measuring guarantee"
+    }
+   ],
+   "recommendation": "Consider whether a more direct statement of the guarantee's benefit (e.g., what 'getting it right' means for the customer) would make the claim easier to parse on a single listen.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 22.58,
+   "t_in_range": true
+  },
+  {
+   "title": "Assess pacing of two separate benefit claims close together",
+   "t_start_s": 21.0,
+   "t_end_s": 26.3,
+   "observation": "Two distinct claims, fast installation and measuring guarantee, are delivered within a roughly 5 second window with a short pause between them per the timestamps.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "install in minutes."
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Plus, you can only get it right with our complimentary sure size measuring guarantee."
+    }
+   ],
+   "recommendation": "Review whether the transition word 'Plus' sufficiently separates these two claims for a viewer to register both distinctly within the short runtime.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 20.96,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 9,
+  "evidence_verified": 9,
+  "evidence_rate": 1.0,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    9,
+    9
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "",
+    "value": "[11.5-21.0] Put up your blinds the easy way",
+    "verified": true,
+    "note": "match=0.88 at 11.48"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Put up your blinds the easy way with Blinds2Go, because with no need for a drill, you can",
+    "verified": true,
+    "note": "match=1.00 at 11.48"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "you can only get it right with our complimentary sure size measuring guarantee",
+    "verified": true,
+    "note": "match=1.00 at 22.82"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "install in minutes.",
+    "verified": true,
+    "note": "match=1.00 at 20.96"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Plus, you can only get it right with our complimentary sure size measuring guarantee.",
+    "verified": true,
+    "note": "match=1.00 at 22.58"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "with no need for a drill, you can",
+    "verified": true,
+    "note": "match=1.00 at 19.22"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "install in minutes",
+    "verified": true,
+    "note": "match=1.00 at 20.96"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "our complimentary sure size measuring guarantee",
+    "verified": true,
+    "note": "match=1.00 at 24.16"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "Search Blinds2Go online today and discover the perfect fit",
+    "verified": true,
+    "note": "match=1.00 at 26.3"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 9,
+  "evidence_verified": 9,
+  "evidence_rate": 1.0,
+  "recs": 4,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    9,
+    9
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  }
+ }
+}

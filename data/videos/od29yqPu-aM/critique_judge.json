@@ -1,0 +1,17 @@
+{
+ "full": {
+  "specificity": 5,
+  "accuracy": 5,
+  "actionability": 5,
+  "insight": 5
+ },
+ "baseline": {
+  "specificity": 1,
+  "accuracy": 2,
+  "actionability": 1,
+  "insight": 1
+ },
+ "winner": "full",
+ "reason": "Critique A punts on nearly everything citing missing transcript, offers generic inferred structure and no concrete evidence; its main recommendation is meta-advice about capturing transcripts. Critique B correctly reads the silent/music-only b-roll format, cites real metrics (shots_per_min 2.7, text_overlay_share 0.857, loudness_range 3.4, colorfulness 27.5), names specific timestamps for cutaway trims and SFX accents, and explains why the construction works and where it falls short. B is far superior on all axes.",
+ "full_was": "B"
+}

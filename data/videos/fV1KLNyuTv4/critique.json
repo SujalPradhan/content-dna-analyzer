@@ -1,0 +1,498 @@
+{
+ "summary": "A 13-minute explainer about mobile networks constructed almost entirely from slide/graphics panels and looping stock animation, narrated continuously at a brisk, steady pace with no host face and no CTA until the very end (if at all). Pacing accelerates slightly in the back half, with two dense visual-format spikes around 380-420s coinciding with the handover/synchronization chapters, while most of the runtime sits on long static slides paired with dense technical narration.",
+ "dna_tags": [
+  "slide-driven explainer",
+  "continuous voiceover narration",
+  "no-talking-head screen-share format",
+  "steady technical pacing",
+  "terminology-dense scripting"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 22.2,
+   "role": "hook",
+   "label": "Everyday scenario + rhetorical question over globe animation"
+  },
+  {
+   "start_s": 22.2,
+   "end_s": 70.7,
+   "role": "intro_setup",
+   "label": "Defining the mobile network and BTS/cells"
+  },
+  {
+   "start_s": 70.7,
+   "end_s": 136.3,
+   "role": "main_content",
+   "label": "Cellular division and handover basics"
+  },
+  {
+   "start_s": 136.8,
+   "end_s": 207.5,
+   "role": "main_content",
+   "label": "Voice-to-data journey in detail"
+  },
+  {
+   "start_s": 208.0,
+   "end_s": 290.6,
+   "role": "context",
+   "label": "GSM/2G history and LTE/4G data era"
+  },
+  {
+   "start_s": 291.1,
+   "end_s": 355.3,
+   "role": "main_content",
+   "label": "5G capabilities and mmWave"
+  },
+  {
+   "start_s": 356.2,
+   "end_s": 431.1,
+   "role": "demonstration",
+   "label": "Handover mechanics and types"
+  },
+  {
+   "start_s": 432.0,
+   "end_s": 479.3,
+   "role": "main_content",
+   "label": "Roaming and authentication"
+  },
+  {
+   "start_s": 480.6,
+   "end_s": 560.1,
+   "role": "main_content",
+   "label": "Encryption, security, synchronization"
+  },
+  {
+   "start_s": 561.0,
+   "end_s": 660.7,
+   "role": "main_content",
+   "label": "Data routing, CDN, QoS"
+  },
+  {
+   "start_s": 661.6,
+   "end_s": 703.5,
+   "role": "main_content",
+   "label": "Cloud and edge computing"
+  },
+  {
+   "start_s": 705.3,
+   "end_s": 755.7,
+   "role": "payoff_reveal",
+   "label": "6G future vision"
+  },
+  {
+   "start_s": 756.1,
+   "end_s": 798.4,
+   "role": "recap",
+   "label": "Closing 'circulatory system' metaphor and outro"
+  }
+ ],
+ "hook": {
+  "what_happens": "Narration opens over a looping animated globe with orbiting network lines, posing the everyday scenario of calls/streaming and the question of how signals travel invisibly.",
+  "promise": "Promises to explain the invisible, complex system behind instant global communication.",
+  "strengths": [
+   "Uses a relatable everyday framing ('Every day, billions of people make calls, send messages, and stream videos') before the technical question",
+   "Visual matches the conceptual topic (global network globe) immediately"
+  ],
+  "weaknesses": [
+   "Only 1 cut in first 15s (pct 30 vs category) makes the opening visually static relative to peers",
+   "No on-screen text in the first 3s (hook_text_overlay=0.0, pct 20), missing a common explainer convention of reinforcing the question in text",
+   "Hook motion is below category median (0.82, pct 30), so the globe loop reads as low-energy for an opening"
+  ]
+ },
+ "devices": [
+  {
+   "name": "rhetorical_question",
+   "t_s": 5.6,
+   "quote": "Yet few stop to ask, how does it actually work?"
+  },
+  {
+   "name": "analogy",
+   "t_s": 124.6,
+   "quote": "A mobile network functions like a living organism"
+  },
+  {
+   "name": "callback_analogy",
+   "t_s": 780.0,
+   "quote": "The mobile network is the circulatory system of modern civilization."
+  },
+  {
+   "name": "chaptered_jargon_intro",
+   "t_s": 208.8,
+   "quote": "GSM, the digital revolution, the first digital mobile standard"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0,
+   "point": "Clear conceptual visual throughline: the orbiting globe motif recurs at open and close, bookending the narrative.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "Animated digital globe with glowing network connection lines orbiting Earth"
+    },
+    {
+     "kind": "visual",
+     "ref": "757.4",
+     "value": "EARTH/12 PLANET EARTH STATS MISSION graphics_text segment near outro"
+    }
+   ]
+  },
+  {
+   "t_s": 388.0,
+   "point": "Visual cadence intensifies exactly where the explanation turns to handovers/synchronization, aligning cuts with conceptual complexity.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:380.0",
+     "value": "16"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:400.0",
+     "value": "18"
+    },
+    {
+     "kind": "quote",
+     "ref": "395.5",
+     "value": "it measures parameters like RSSI, Received Signal Strength Indicator"
+    }
+   ]
+  },
+  {
+   "t_s": 0,
+   "point": "Loudness range is wide for the category (90th pct), giving the narration dynamic emphasis across the long runtime rather than flat delivery.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "loudness_range_db",
+     "value": "14.3"
+    }
+   ]
+  },
+  {
+   "t_s": 0,
+   "point": "Energy trend rises across the runtime instead of fading, unusual for a 13-minute explainer (90th pct energy_slope), suggesting sustained engagement effort by the editor.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "0.25"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "No explicit call to action anywhere in the video",
+   "t_start_s": 0,
+   "t_end_s": 798.4,
+   "observation": "cta_count is 0, far below the category median of 1 and the all-corpus p25 of 1.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "0"
+    }
+   ],
+   "recommendation": "Test adding a single CTA (e.g., subscribe or 'watch the 5G deep-dive next') near the recap/outro around 780-798s.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Long static stretches with zero cuts",
+   "t_start_s": 80,
+   "t_end_s": 100,
+   "observation": "The 80-100s bin and the 180-200s bin both show 0 cuts while wpm stays high (132 and 144 wpm), meaning dense narration plays over an unchanging frame.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:80.0",
+     "value": "0"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:180.0",
+     "value": "0"
+    }
+   ],
+   "recommendation": "Consider inserting a secondary visual beat (zoom, highlight, or cutaway) partway through these long slide holds to match the information density of the narration.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 79.98,
+   "t_in_range": true
+  },
+  {
+   "title": "Hook has minimal visual movement and no on-screen text cue",
+   "t_start_s": 0,
+   "t_end_s": 15,
+   "observation": "Hook cuts (1) and hook_motion (0.82) sit at the 30th percentile for explainers, and hook_text_overlay is 0 (20th pct), while hook_wpm is already above median.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "1"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "0.82"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "0.0"
+    }
+   ],
+   "recommendation": "Test adding a short on-screen text overlay of the core question ('How does your voice travel in milliseconds?') within the first 3 seconds to reinforce the spoken hook visually.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Zero questions-per-minute across most of the runtime despite an interrogative hook",
+   "t_start_s": 22,
+   "t_end_s": 755,
+   "observation": "questions_per_min is 0.15, far below the category p75 of 0.61, meaning after the opening question the script rarely re-engages the audience with direct questions despite 13 minutes of dense exposition.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "questions_per_min",
+     "value": "0.15"
+    },
+    {
+     "kind": "quote",
+     "ref": "136.8",
+     "value": "The mobile network might seem simple. You speak, someone listens"
+    }
+   ],
+   "recommendation": "Test seeding a few rhetorical questions at chapter transitions (e.g., before the 5G or 6G sections) to echo the hook's question-driven style throughout.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 21.72,
+   "t_in_range": true
+  },
+  {
+   "title": "Terminology density without pacing variation in the mid-section",
+   "t_start_s": 480,
+   "t_end_s": 560,
+   "observation": "The security/synchronization segment (480-560s) stacks many acronyms (AES, SUCI, IMEI, GPS timing) over slides/graphics_text with motion mostly below 0.1 and cuts around 2-3 per 20s bin, similar to less jargon-heavy sections.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "505.5",
+     "value": "a new system called SUCI, Subscription Concealed Identifier"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:500.0",
+     "value": "2"
+    },
+    {
+     "kind": "metric",
+     "ref": "motion_mean",
+     "value": "0.0583"
+    }
+   ],
+   "recommendation": "Consider slowing narration or adding brief visual pauses/recaps after dense acronym clusters so viewers can process terms before the next concept starts.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 480.1,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 18,
+  "evidence_verified": 18,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    13,
+    13
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:80.0",
+    "value": "0",
+    "verified": true,
+    "note": "bin={'start': 80.0, 'end': 100.0, 'cuts': 0, 'wpm': 132.0, 'loud_db': -20.2, 'motion': 0.009}"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "bin:180.0",
+    "value": "0",
+    "verified": true,
+    "note": "bin={'start': 180.0, 'end': 200.0, 'cuts': 0, 'wpm': 144.0, 'loud_db': -19.2, 'motion': 0.0}"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "1",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "0.82",
+    "verified": true,
+    "note": "actual=0.82"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "questions_per_min",
+    "value": "0.15",
+    "verified": true,
+    "note": "actual=0.15"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "136.8",
+    "value": "The mobile network might seem simple. You speak, someone listens",
+    "verified": true,
+    "note": "match=1.00 at 136.78"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "505.5",
+    "value": "a new system called SUCI, Subscription Concealed Identifier",
+    "verified": true,
+    "note": "match=1.00 at 506.58"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:500.0",
+    "value": "2",
+    "verified": true,
+    "note": "bin={'start': 500.0, 'end': 520.0, 'cuts': 2, 'wpm': 129.0, 'loud_db': -20.7, 'motion': 0.052}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "motion_mean",
+    "value": "0.0583",
+    "verified": true,
+    "note": "actual=0.0583"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "Animated digital globe with glowing network connection lines orbiting Earth",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "757.4",
+    "value": "EARTH/12 PLANET EARTH STATS MISSION graphics_text segment near outro",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "bin:380.0",
+    "value": "16",
+    "verified": true,
+    "note": "bin={'start': 380.0, 'end': 400.0, 'cuts': 16, 'wpm': 135.0, 'loud_db': -19.7, 'motion': 0.065}"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "bin:400.0",
+    "value": "18",
+    "verified": true,
+    "note": "bin={'start': 400.0, 'end': 420.0, 'cuts': 18, 'wpm': 129.0, 'loud_db': -20.1, 'motion': 0.109}"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "395.5",
+    "value": "it measures parameters like RSSI, Received Signal Strength Indicator",
+    "verified": true,
+    "note": "match=1.00 at 385.86"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "loudness_range_db",
+    "value": "14.3",
+    "verified": true,
+    "note": "actual=14.3"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "0.25",
+    "verified": true,
+    "note": "actual=0.25"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 18,
+  "evidence_verified": 18,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    13,
+    13
+   ],
+   "quote": [
+    3,
+    3
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  }
+ }
+}

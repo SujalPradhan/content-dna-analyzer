@@ -1,0 +1,17 @@
+{
+ "full": {
+  "specificity": 5,
+  "accuracy": 5,
+  "actionability": 5,
+  "insight": 4
+ },
+ "baseline": {
+  "specificity": 3,
+  "accuracy": 4,
+  "actionability": 2,
+  "insight": 3
+ },
+ "winner": "full",
+ "reason": "A consistently ties points to concrete metrics and timestamps (motion_mean percentile, 9-cut spike at 75-80s with wpm drop to 48, first_cta_pos 0.977, brightness/colorfulness) and gives directly actionable editor tests. B offers reasonable structural/comedic observations but its recommendations are hedged ('consider whether...') and non-actionable, and several points lean on transcript-review caveats rather than craft guidance. A's accuracy checks out against the data; B is accurate but thinner on concrete numeric grounding.",
+ "full_was": "A"
+}

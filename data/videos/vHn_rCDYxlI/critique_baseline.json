@@ -1,0 +1,321 @@
+{
+ "summary": "This weekend vlog opens with an extended pop-song montage over home clips before Jess speaks to camera to explain the plan (cleaning before leaving, heading to Sovereign Hill's Winter Wonderlights with friends). The middle of the video is a loosely narrated travel log\u2014packing goodbyes, the drive, arriving at the cabin, a room tour, and getting ready for dinner\u2014stitched together with casual family banter rather than a tight narrative arc.",
+ "dna_tags": [
+  "family vlog",
+  "weekend getaway",
+  "cabin tour",
+  "kid banter",
+  "travel prep",
+  "slice-of-life"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 119.2,
+   "role": "hook",
+   "label": "Pop song montage with no direct narration"
+  },
+  {
+   "start_s": 121.2,
+   "end_s": 168.2,
+   "role": "intro_setup",
+   "label": "Jess greets viewers and explains the weekend plan"
+  },
+  {
+   "start_s": 168.2,
+   "end_s": 229.0,
+   "role": "context",
+   "label": "Explaining what Sovereign Hill and Winter Wonderlights are"
+  },
+  {
+   "start_s": 229.0,
+   "end_s": 259.3,
+   "role": "intro_setup",
+   "label": "Setting up the trip, reasons for small getaways"
+  },
+  {
+   "start_s": 260.5,
+   "end_s": 357.6,
+   "role": "demonstration",
+   "label": "Goodbyes, loading up, driving, arriving"
+  },
+  {
+   "start_s": 357.6,
+   "end_s": 470.2,
+   "role": "main_content",
+   "label": "Cabin tour and room exploration with kids"
+  },
+  {
+   "start_s": 504.4,
+   "end_s": 598.1,
+   "role": "main_content",
+   "label": "Getting ready for dinner, discussing pool and plans"
+  }
+ ],
+ "hook": {
+  "what_happens": "The video opens with over 100 seconds of a pop song playing over footage before any spoken narration begins.",
+  "promise": "There is no verbal promise in the hook itself; the implicit promise comes later at 121.2s when Jess says 'welcome to the weekend vlog' and explains the trip.",
+  "strengths": [
+   "Music-led opening sets a light, upbeat mood before dialogue starts"
+  ],
+  "weaknesses": [
+   "No spoken hook or preview of the destination/activities in the first two minutes",
+   "Viewers must wait until 121.2s for any explanation of what the video is about",
+   "The long song intro delays the context that could orient a viewer early (e.g. 'we're heading to Sovereign Hill')"
+  ]
+ },
+ "devices": [
+  {
+   "name": "on-camera googling for context",
+   "t_s": 176.2,
+   "quote": "I'm going to look up exactly what it is"
+  },
+  {
+   "name": "direct address to camera",
+   "t_s": 123.4,
+   "quote": "I hope you're all doing amazing"
+  },
+  {
+   "name": "kid interaction for charm",
+   "t_s": 260.5,
+   "quote": "Prepare yourself for Kaisi's moonwalking abilities"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 178.1,
+   "point": "Jess provides clear factual context about the destination by reading a description aloud, helping viewers unfamiliar with the location understand it.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Sovereign Hill is an award winning open air living museum in Ballarat"
+    }
+   ]
+  },
+  {
+   "t_s": 358.7,
+   "point": "The cabin arrival is narrated with specific sensory detail that grounds the viewer in the setting.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "We've just arrived at such a cute little cedar cabin"
+    }
+   ]
+  },
+  {
+   "t_s": 241.3,
+   "point": "Jess explicitly reflects on why they take these smaller trips, giving the vlog a bit of personal motivation rather than just showing activities.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "I'm loving these little road trips we've been doing lately"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Shorten the wordless song intro before narration begins",
+   "t_start_s": 10.0,
+   "t_end_s": 119.2,
+   "observation": "The video plays a full pop song with no spoken context for nearly two minutes before Jess begins talking at 121.2s.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Hey friends, welcome to the weekend vlog"
+    }
+   ],
+   "recommendation": "Consider trimming the music-only opening so spoken context arrives sooner.",
+   "basis": "craft_heuristic",
+   "priority": "medium",
+   "t_snapped_s": 10.04,
+   "t_in_range": true
+  },
+  {
+   "title": "Clarify the destination earlier",
+   "t_start_s": 121.2,
+   "t_end_s": 153.8,
+   "observation": "Jess mentions 'heading away' and 'staying at a caravan park' before naming Sovereign Hill, and takes time mid-explanation to look up what it is.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "Hang on a sec, I'm going to look up exactly what it is"
+    }
+   ],
+   "recommendation": "Having the destination details prepared beforehand could make the explanation flow without the on-camera search pause.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 121.16,
+   "t_in_range": true
+  },
+  {
+   "title": "Tighten the mid-section banter during cabin tour",
+   "t_start_s": 357.6,
+   "t_end_s": 470.2,
+   "observation": "The cabin tour includes several overlapping, inconclusive exchanges about bedroom choices and a non-working radio that don't move the narrative forward.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "I don't think she works"
+    }
+   ],
+   "recommendation": "Trimming exchanges that end without resolution, like the radio bit, could streamline this section.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 357.68,
+   "t_in_range": true
+  },
+  {
+   "title": "Address long silent/low-dialogue gaps",
+   "t_start_s": 281.6,
+   "t_end_s": 357.6,
+   "observation": "There is a large transcript gap between 281.6s and 311.2s, and again until 338.8s and 353.7s, suggesting long stretches of driving footage with minimal spoken content.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "I love you so much, you have fun"
+    }
+   ],
+   "recommendation": "These quiet driving segments could be supplemented with narration or trimmed to maintain spoken continuity.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 280.92,
+   "t_in_range": true
+  },
+  {
+   "title": "Resolve dangling plans mentioned near the end",
+   "t_start_s": 504.4,
+   "t_end_s": 598.1,
+   "observation": "The video ends mid-plan, discussing dinner and a possible swim afterward, without showing or concluding either activity before the transcript stops at 598.1s despite a runtime of 630.7s.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "And come back and maybe go for a swim"
+    }
+   ],
+   "recommendation": "If the video continues past 598s with little dialogue, consider a clearer sign-off or recap to close the vlog's arc.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 504.38,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 8,
+  "evidence_verified": 7,
+  "evidence_rate": 0.875,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    7,
+    8
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Hey friends, welcome to the weekend vlog",
+    "verified": true,
+    "note": "match=1.00 at 121.16"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "Hang on a sec, I'm going to look up exactly what it is",
+    "verified": false,
+    "note": "match=0.23 at 148.68"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "",
+    "value": "I don't think she works",
+    "verified": true,
+    "note": "match=1.00 at 454.82"
+   },
+   {
+    "owner": "rec3",
+    "kind": "quote",
+    "ref": "",
+    "value": "I love you so much, you have fun",
+    "verified": true,
+    "note": "match=1.00 at 311.24"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "",
+    "value": "And come back and maybe go for a swim",
+    "verified": true,
+    "note": "match=1.00 at 512.64"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "Sovereign Hill is an award winning open air living museum in Ballarat",
+    "verified": true,
+    "note": "match=0.83 at 185.58"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "We've just arrived at such a cute little cedar cabin",
+    "verified": true,
+    "note": "match=1.00 at 358.7"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "I'm loving these little road trips we've been doing lately",
+    "verified": true,
+    "note": "match=1.00 at 241.32"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 8,
+  "evidence_verified": 7,
+  "evidence_rate": 0.875,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    0,
+    0
+   ],
+   "quote": [
+    7,
+    8
+   ],
+   "visual": [
+    0,
+    0
+   ]
+  }
+ }
+}

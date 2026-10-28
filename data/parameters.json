@@ -1,0 +1,1374 @@
+{
+  "version": 1,
+  "generated": "2026-10-28",
+  "notes": "Evidence strengths: platform-official = published by YouTube/Google/TikTok/Meta (often correlational or modelled, and self-interested); experimental = controlled or field studies in peer-reviewed venues; observational = correlational data; practitioner = creator/agency guidance. rules[].heuristic=true means no source gives that number. Genre ranges reference results/benchmarks.json (n~6 videos per genre, descriptive only, not linked to outcomes).",
+  "parameters": [
+    {
+      "id": "hook_visual_change",
+      "name": "Hook: visual change in the opening seconds",
+      "goal": "both",
+      "summary": "Google's ABCD guide recommends more than two frames (shots) in the first five seconds, surprising visuals and tightly framed people/product at the start; TikTok says the opening 2-6 s carry most ad-recall impact. YouTube's 'intro' metric (share still watching at 30 s) is the official yardstick for long-form openings.",
+      "evidence_strength": "platform-official",
+      "signals": [
+        "hook_cuts",
+        "hook_motion",
+        "face_share",
+        "timeline"
+      ],
+      "rules": [
+        {
+          "signal": "timeline",
+          "direction": "higher_better",
+          "threshold": 3,
+          "unit": "shots in first 5 s",
+          "heuristic": false,
+          "applies_to": [
+            "ad"
+          ],
+          "note": "ABCD: 'Have more than two frames in the first five seconds' (Awareness, Consideration). Count shot starts with t < 5 s, including the first shot."
+        },
+        {
+          "signal": "timeline",
+          "direction": "higher_better",
+          "threshold": 3,
+          "unit": "shots in first 5 s",
+          "heuristic": true,
+          "applies_to": [
+            "shorts",
+            "vlog",
+            "tech_review",
+            "explainer",
+            "cooking"
+          ],
+          "note": "ABCD threshold transferred from ads to organic content; untested outside ads."
+        },
+        {
+          "signal": "hook_motion",
+          "direction": "higher_better",
+          "threshold": 1.0,
+          "unit": "ratio vs video mean",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Opening at least as visually active as the rest of the video. No source gives a number."
+        },
+        {
+          "signal": "hook_cuts",
+          "direction": "range",
+          "threshold": null,
+          "unit": "cuts in first 15 s",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Compare to the genre's corpus p25-p75 in results/benchmarks.json (descriptive, n~6 per genre)."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "static_open",
+          "description": "Opening shot runs too long with little motion",
+          "rule": "First shot lasts > 5 s AND motion in that shot is below the video's median motion (heuristic; ABCD basis for ads)."
+        },
+        {
+          "kind": "no_face_open",
+          "description": "People are in the video but not in the opening",
+          "rule": "face visible somewhere in the video (face_share > 0.2) but not in any 0-3 s segment. ABCD: 'If your video features people, open with them on-screen.'"
+        }
+      ],
+      "genre_notes": {
+        "ad": "Apply the ABCD rule directly: >2 shots in first 5 s, tightly framed person/product, surprising visual.",
+        "shorts": "TikTok: first 2 s reportedly carry ~50% of ad impact and first 6 s ~90% of recall impact (ad data). Treat the first 1-2 s as the swipe decision.",
+        "vlog": "A slower atmospheric open is common; compensate with a spoken/text promise within a few seconds (see clear_promise_early).",
+        "explainer": "A talking-head open is fine if the question/promise is stated immediately.",
+        "tech_review": "Open on the product close-up or the verdict tease.",
+        "cooking": "Open on the finished dish (payoff preview) rather than ingredients."
+      },
+      "sources": [
+        {
+          "title": "YouTube and Google ABCD Reference Guide",
+          "url": "https://services.google.com/fh/files/misc/youtube_google_abcd_reference_guide_en.pdf",
+          "publisher": "Google / YouTube Ads",
+          "date": "2019-11-26 (PDF metadata)"
+        },
+        {
+          "title": "Validating Google's ABCD framework with the power of artificial intelligence (11,000 ads, 180 features; +30% short-term sales likelihood, +17% long-term brand contribution, modelled)",
+          "url": "https://www.kantar.com/industries/technology-and-telecoms/validating-googles-abcd-framework-with-the-power-of-artificial-intelligence",
+          "publisher": "Kantar",
+          "date": "study cited by Google as Apr 2021"
+        },
+        {
+          "title": "TikTok Creative Codes (first 6 s capture ~90% of ad-recall impact; footnoted to TikTok 'Value of View' analysis 2020)",
+          "url": "https://www.tiktok.com/business/library/Creative_Codes_May_2023.pdf",
+          "publisher": "TikTok for Business",
+          "date": "2023-05"
+        },
+        {
+          "title": "TikTok Shares New Notes on Maximizing Ad Effectiveness (first 2 s ~50% of impact; people +9%, trend remix +14%, storytelling +16% watch time)",
+          "url": "https://www.socialmediatoday.com/news/tiktok-shares-new-notes-on-how-to-maximize-ad-effectiveness-in-the-app/694989/",
+          "publisher": "Social Media Today (reporting TikTok Marketing Science)",
+          "date": "2023-09-27"
+        },
+        {
+          "title": "Measure key moments for audience retention (intro = % still watching at 30 s; top moments, spikes, dips)",
+          "url": "https://support.google.com/youtube/answer/9314415?hl=en",
+          "publisher": "YouTube Help (Google)",
+          "date": "accessed 2026-10-28 (undated help page)"
+        }
+      ]
+    },
+    {
+      "id": "clear_promise_early",
+      "name": "Clear promise / value proposition early",
+      "goal": "retention",
+      "summary": "TikTok advises introducing the content proposition in the first 3 s and the hook within 6 s; YouTube says a weak intro (first 30 s) often means the opening does not match what the title/thumbnail promised. Curiosity-gap theory (Loewenstein 1994) explains why an explicit open question holds attention.",
+      "evidence_strength": "platform-official",
+      "signals": [
+        "questions_per_min",
+        "you_rate",
+        "hook_text_overlay",
+        "timeline"
+      ],
+      "rules": [
+        {
+          "signal": "timeline",
+          "direction": "event",
+          "threshold": 3,
+          "unit": "s (short-form: promise stated by)",
+          "heuristic": false,
+          "applies_to": [
+            "shorts",
+            "ad"
+          ],
+          "note": "TikTok: 'Introduce your content proposition in the first 3 seconds'. Detected from transcript words / on-screen text in hook beat."
+        },
+        {
+          "signal": "timeline",
+          "direction": "event",
+          "threshold": 15,
+          "unit": "s (long-form: promise stated by)",
+          "heuristic": true,
+          "applies_to": [
+            "vlog",
+            "tech_review",
+            "explainer",
+            "cooking"
+          ],
+          "note": "YouTube only defines the 30 s intro window; 15 s is our heuristic to leave room before the 30 s checkpoint."
+        },
+        {
+          "signal": "timeline",
+          "direction": "event",
+          "threshold": null,
+          "unit": "",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Hook story beat should contain a question, a stated outcome ('by the end you'll...'), or a payoff preview."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "no_promise",
+          "description": "No stated promise or question in the opening",
+          "rule": "No question mark, outcome statement or payoff preview in transcript/on-screen text before 15 s (long-form) or 3 s (short-form)."
+        },
+        {
+          "kind": "long_preamble",
+          "description": "Intro/setup runs long before the main content",
+          "rule": "Setup story beat ends after 30 s (long-form) or after 20% of runtime (short-form). Heuristic."
+        }
+      ],
+      "genre_notes": {
+        "explainer": "State the question being answered in the first sentence.",
+        "tech_review": "Tease the verdict or the one surprising finding up front.",
+        "cooking": "Show the finished dish and say what makes this recipe different.",
+        "vlog": "Say where we are going / what happens today.",
+        "shorts": "Promise must land in 1-3 s, usually as on-screen text plus first line.",
+        "ad": "Proposition in first 3 s (TikTok); brand rules are separate (brand_timing)."
+      },
+      "sources": [
+        {
+          "title": "Creative best practices for performance ads (content proposition in first 3 s; hook in first 6 s; captions/text overlays, 5-10 words per second)",
+          "url": "https://ads.tiktok.com/help/article/creative-best-practices",
+          "publisher": "TikTok Ads Help Center",
+          "date": "reported last updated 2025-06; page could not be fetched directly, wording taken from search snippets"
+        },
+        {
+          "title": "TikTok Creative Codes (first 6 s capture ~90% of ad-recall impact; footnoted to TikTok 'Value of View' analysis 2020)",
+          "url": "https://www.tiktok.com/business/library/Creative_Codes_May_2023.pdf",
+          "publisher": "TikTok for Business",
+          "date": "2023-05"
+        },
+        {
+          "title": "Measure key moments for audience retention (intro = % still watching at 30 s; top moments, spikes, dips)",
+          "url": "https://support.google.com/youtube/answer/9314415?hl=en",
+          "publisher": "YouTube Help (Google)",
+          "date": "accessed 2026-10-28 (undated help page)"
+        },
+        {
+          "title": "Loewenstein, The Psychology of Curiosity: A Review and Reinterpretation. Psychological Bulletin 116(1):75-98",
+          "url": "https://stafforini.com/works/loewenstein-1994-psychology-curiosity-review/",
+          "publisher": "Psychological Bulletin (APA)",
+          "date": "1994"
+        },
+        {
+          "title": "How to succeed in MrBeast production (leaked internal onboarding document; text as reproduced)",
+          "url": "https://www.alexanderjarvis.com/?p=90492",
+          "publisher": "Practitioner document (Beast Industries), reproduced by third party",
+          "date": "leaked 2024-09"
+        }
+      ]
+    },
+    {
+      "id": "time_to_first_voice",
+      "name": "Time to first voice / cold-open dead air",
+      "goal": "retention",
+      "summary": "ABCD notes that having people on-screen speak directly to the audience can help in the opening. No platform gives a numeric limit on silence before the first word; the threshold here is a heuristic.",
+      "evidence_strength": "practitioner",
+      "signals": [
+        "time_to_first_word_s",
+        "hook_wpm",
+        "nonspeech_audio_share"
+      ],
+      "rules": [
+        {
+          "signal": "time_to_first_word_s",
+          "direction": "lower_better",
+          "threshold": 2.0,
+          "unit": "s",
+          "heuristic": true,
+          "applies_to": [
+            "explainer",
+            "tech_review",
+            "ad"
+          ],
+          "note": "Heuristic. Corpus medians: explainer 0.0 s, tech_review 0.0 s, ad 0.7 s."
+        },
+        {
+          "signal": "time_to_first_word_s",
+          "direction": "lower_better",
+          "threshold": 3.0,
+          "unit": "s",
+          "heuristic": true,
+          "applies_to": [
+            "shorts",
+            "cooking"
+          ],
+          "note": "Heuristic; acceptable if on-screen text and motion carry the hook instead."
+        },
+        {
+          "signal": "time_to_first_word_s",
+          "direction": "lower_better",
+          "threshold": null,
+          "unit": "s",
+          "heuristic": true,
+          "applies_to": [
+            "vlog"
+          ],
+          "note": "No threshold: vlog corpus median is ~17 s (music-led cold opens). Flag only if the opening also lacks text and motion."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "silent_open",
+          "description": "Silence or music-only before first word",
+          "rule": "time_to_first_word_s > genre threshold AND no on-screen text in the same window."
+        }
+      ],
+      "genre_notes": {
+        "vlog": "Music-led cold opens are normal; pair with text or strong motion.",
+        "cooking": "Sizzle/ASMR audio can substitute for voice if it starts at 0 s.",
+        "explainer": "Speak from frame one.",
+        "tech_review": "Speak from frame one.",
+        "ad": "Voice or sound cue from frame one; ABCD favours on-screen speakers over plain voice-over for brand mentions.",
+        "shorts": "Voice, text or a loud sound from frame one."
+      },
+      "sources": [
+        {
+          "title": "YouTube and Google ABCD Reference Guide",
+          "url": "https://services.google.com/fh/files/misc/youtube_google_abcd_reference_guide_en.pdf",
+          "publisher": "Google / YouTube Ads",
+          "date": "2019-11-26 (PDF metadata)"
+        },
+        {
+          "title": "Kantar report: How brands are making noise and driving impact with sound on TikTok (88% of users say sound is essential)",
+          "url": "https://ads.tiktok.com/business/tr/blog/kantar-report-how-brands-are-making-noise-and-driving-impact-with-sound-on-tiktok",
+          "publisher": "TikTok for Business blog",
+          "date": "2021 (Kantar study, June 2021)"
+        }
+      ]
+    },
+    {
+      "id": "pacing",
+      "name": "Pacing (cut rate and shot length)",
+      "goal": "retention",
+      "summary": "Cutting et al. (2011) measured Hollywood average shot length falling from ~10 s (1930s-40s) to <4 s after 2000 alongside more motion, and argue this reflects filmmakers' control of attention; this is descriptive, not causal, and film-specific. ABCD lists pacing among the opening levers. No source gives a causal optimum cut rate for online video.",
+      "evidence_strength": "observational",
+      "signals": [
+        "shots_per_min",
+        "median_shot_s",
+        "shot_len_cv",
+        "pacing_trend"
+      ],
+      "rules": [
+        {
+          "signal": "shots_per_min",
+          "direction": "range",
+          "threshold": null,
+          "unit": "/min",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Use the genre's p25-p75 from results/benchmarks.json (corpus medians: ad 33, tech_review 12.6, shorts 12.7, explainer 10.2, vlog 7.9, cooking 5.0). Descriptive reference, not an outcome-validated target."
+        },
+        {
+          "signal": "median_shot_s",
+          "direction": "range",
+          "threshold": null,
+          "unit": "s",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Same corpus-range approach. Report median not mean (skewed distributions)."
+        },
+        {
+          "signal": "pacing_trend",
+          "direction": "range",
+          "threshold": [
+            0.8,
+            1.5
+          ],
+          "unit": "ratio",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Heuristic: a second half much slower than the first (ratio < 0.8) can feel like the video is running out of steam."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "long_shot",
+          "description": "Unusually long shot",
+          "rule": "A shot longer than max(3 x genre median_shot_s, 8 s) with no format change, on-screen text change or speech-topic change inside it. Heuristic."
+        },
+        {
+          "kind": "pace_drop",
+          "description": "Pacing slows sharply",
+          "rule": "Rolling 30 s cut rate drops below 50% of the video's own median cut rate for > 30 s. Heuristic."
+        }
+      ],
+      "genre_notes": {
+        "ad": "Fastest genre in our corpus (median shot ~1.35 s).",
+        "cooking": "Slowest; long process shots are expected - vary angle/close-ups rather than cutting faster.",
+        "explainer": "Pacing is carried by speech and graphics as much as by cuts.",
+        "vlog": "Moderate; long takes acceptable when something is happening.",
+        "tech_review": "Interleave talking head with product b-roll.",
+        "shorts": "Fast but not necessarily the fastest; text and motion carry pace."
+      },
+      "sources": [
+        {
+          "title": "Cutting, Brunick, DeLong, Iricinschi & Candan, Quicker, faster, darker: Changes in Hollywood film over 75 years. i-Perception 2(6):569-576",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3485803/",
+          "publisher": "i-Perception (SAGE)",
+          "date": "2011"
+        },
+        {
+          "title": "YouTube and Google ABCD Reference Guide",
+          "url": "https://services.google.com/fh/files/misc/youtube_google_abcd_reference_guide_en.pdf",
+          "publisher": "Google / YouTube Ads",
+          "date": "2019-11-26 (PDF metadata)"
+        }
+      ]
+    },
+    {
+      "id": "visual_variety",
+      "name": "Visual variety / pattern interrupts",
+      "goal": "retention",
+      "summary": "Guo et al. (2014, 6.9M MOOC sessions) found videos interspersing the speaker's talking head with slides were more engaging than slides alone. MrBeast's production document (practitioner) stresses re-engaging viewers so they don't 'get bored ... and click off'. Thresholds for 'too long without change' are heuristics.",
+      "evidence_strength": "observational",
+      "signals": [
+        "format_switches_per_min",
+        "talking_head_share",
+        "broll_share",
+        "screen_share",
+        "text_overlay_share",
+        "timeline"
+      ],
+      "rules": [
+        {
+          "signal": "format_switches_per_min",
+          "direction": "range",
+          "threshold": null,
+          "unit": "/min",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Genre p25-p75 from benchmarks.json (corpus medians: tech_review 5.1, ad 3.1, explainer 2.1, vlog 2.1, cooking 1.7, shorts 1.0)."
+        },
+        {
+          "signal": "talking_head_share",
+          "direction": "range",
+          "threshold": [
+            0.0,
+            0.7
+          ],
+          "unit": "share",
+          "heuristic": true,
+          "applies_to": [
+            "explainer",
+            "tech_review"
+          ],
+          "note": "Heuristic: avoid a single format (e.g. only talking head or only slides) for nearly the whole video, per Guo et al.'s talking-head + slides finding."
+        },
+        {
+          "signal": "screen_share",
+          "direction": "range",
+          "threshold": [
+            0.0,
+            0.85
+          ],
+          "unit": "share",
+          "heuristic": true,
+          "applies_to": [
+            "explainer"
+          ],
+          "note": "Heuristic: slides-only is the weakest format in Guo et al."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "visual_stall",
+          "description": "No visual change for too long",
+          "rule": "No cut, format switch, or on-screen text change for > 8 s (long-form) or > 3 s (shorts/ad). Heuristic."
+        },
+        {
+          "kind": "single_format_run",
+          "description": "Same format for a long stretch",
+          "rule": "Same on-screen format (talking head / b-roll / screen / text) uninterrupted for > 60 s in long-form. Heuristic."
+        }
+      ],
+      "genre_notes": {
+        "explainer": "Mix speaker and visuals (Guo et al. finding is from educational video, the closest genre).",
+        "tech_review": "Alternate talking head, product b-roll and screen/benchmarks.",
+        "cooking": "Variety comes from angle changes and close-ups of the process.",
+        "vlog": "B-roll cutaways break up long talking stretches.",
+        "shorts": "Change something every few seconds (heuristic).",
+        "ad": "Already high-variety by default; check for stalls on the end card."
+      },
+      "sources": [
+        {
+          "title": "Guo, Kim & Rubin, How Video Production Affects Student Engagement: An Empirical Study of MOOC Videos. Proc. ACM Learning@Scale (6.9M sessions)",
+          "url": "https://www.cs.rochester.edu/hci/pubs/pdfs/edX-MOOC-video-production-and-engagement_LAS-2014.pdf",
+          "publisher": "ACM L@S",
+          "date": "2014"
+        },
+        {
+          "title": "How to succeed in MrBeast production (leaked internal onboarding document; text as reproduced)",
+          "url": "https://www.alexanderjarvis.com/?p=90492",
+          "publisher": "Practitioner document (Beast Industries), reproduced by third party",
+          "date": "leaked 2024-09"
+        },
+        {
+          "title": "Cutting, Brunick, DeLong, Iricinschi & Candan, Quicker, faster, darker: Changes in Hollywood film over 75 years. i-Perception 2(6):569-576",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3485803/",
+          "publisher": "i-Perception (SAGE)",
+          "date": "2011"
+        }
+      ]
+    },
+    {
+      "id": "dead_air",
+      "name": "Dead air (long pauses, low speech coverage)",
+      "goal": "retention",
+      "summary": "No platform publishes a pause threshold. Guo et al. found engagement generally rose with speaking rate, which argues against slack delivery in talk-led formats. YouTube's dips report shows where viewers skip or leave, which creators can line up with pauses. The 1.5-2 s thresholds are heuristics.",
+      "evidence_strength": "observational",
+      "signals": [
+        "long_pauses_per_min",
+        "speech_coverage",
+        "nonspeech_audio_share",
+        "loudness_db",
+        "timeline"
+      ],
+      "rules": [
+        {
+          "signal": "long_pauses_per_min",
+          "direction": "lower_better",
+          "threshold": 1.0,
+          "unit": "/min",
+          "heuristic": true,
+          "applies_to": [
+            "explainer",
+            "tech_review",
+            "ad"
+          ],
+          "note": "Heuristic. Corpus medians: explainer 0.0, tech_review 0.08."
+        },
+        {
+          "signal": "long_pauses_per_min",
+          "direction": "lower_better",
+          "threshold": null,
+          "unit": "/min",
+          "heuristic": true,
+          "applies_to": [
+            "vlog",
+            "cooking",
+            "shorts"
+          ],
+          "note": "No threshold: pauses filled by music, ambient or process audio are normal here. Only flag silent pauses (see flags)."
+        },
+        {
+          "signal": "speech_coverage",
+          "direction": "higher_better",
+          "threshold": 0.6,
+          "unit": "share",
+          "heuristic": true,
+          "applies_to": [
+            "explainer",
+            "tech_review"
+          ],
+          "note": "Heuristic for talk-led formats."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "silence_in_hook",
+          "description": "Silence in the first 15 s",
+          "rule": "A gap > 2 s between words before 15 s with loudness below -45 dBFS (no music/SFX) and no on-screen text. Heuristic."
+        },
+        {
+          "kind": "dead_air",
+          "description": "Dead air mid-video",
+          "rule": "A gap > 1.5 s between words where audio is near silent (< -45 dBFS) AND no cut/format change occurs in the gap. Heuristic."
+        }
+      ],
+      "genre_notes": {
+        "explainer": "Trim breaths and 'umm' gaps; jump-cut pauses.",
+        "tech_review": "Trim pauses; cover thinking time with b-roll.",
+        "cooking": "Process audio (sizzle, chopping) counts as non-dead air.",
+        "vlog": "Ambient/music pauses are part of the format; silent ones are not.",
+        "shorts": "Any silent second is costly at this length.",
+        "ad": "Every second is paid; pauses should be intentional beats."
+      },
+      "sources": [
+        {
+          "title": "Guo, Kim & Rubin, How Video Production Affects Student Engagement: An Empirical Study of MOOC Videos. Proc. ACM Learning@Scale (6.9M sessions)",
+          "url": "https://www.cs.rochester.edu/hci/pubs/pdfs/edX-MOOC-video-production-and-engagement_LAS-2014.pdf",
+          "publisher": "ACM L@S",
+          "date": "2014"
+        },
+        {
+          "title": "Measure key moments for audience retention (intro = % still watching at 30 s; top moments, spikes, dips)",
+          "url": "https://support.google.com/youtube/answer/9314415?hl=en",
+          "publisher": "YouTube Help (Google)",
+          "date": "accessed 2026-10-28 (undated help page)"
+        }
+      ]
+    },
+    {
+      "id": "speaking_rate",
+      "name": "Speaking rate and delivery energy",
+      "goal": "retention",
+      "summary": "In Guo et al. (2014) speaking rates ranged 48-254 wpm (mean 156) and, within a length bucket, engagement usually increased (up to 2x) with speaking rate; the authors recommend coaching enthusiasm and not slowing down deliberately. Evidence is from educational video only.",
+      "evidence_strength": "observational",
+      "signals": [
+        "wpm",
+        "hook_wpm"
+      ],
+      "rules": [
+        {
+          "signal": "wpm",
+          "direction": "higher_better",
+          "threshold": 150,
+          "unit": "wpm",
+          "heuristic": true,
+          "applies_to": [
+            "explainer",
+            "tech_review"
+          ],
+          "note": "Guo et al. mean was 156 wpm with engagement rising with rate; 150 is our heuristic floor, not a published cut-off. Corpus medians: tech_review 176, explainer 152."
+        },
+        {
+          "signal": "hook_wpm",
+          "direction": "higher_better",
+          "threshold": null,
+          "unit": "wpm",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Hook should not be slower than the body (compare hook_wpm to wpm). Heuristic."
+        },
+        {
+          "signal": "wpm",
+          "direction": "range",
+          "threshold": null,
+          "unit": "wpm",
+          "heuristic": true,
+          "applies_to": [
+            "vlog",
+            "cooking",
+            "shorts",
+            "ad"
+          ],
+          "note": "No evidence-based target; music-led formats legitimately have low wpm (corpus vlog 55, shorts 67)."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "slow_stretch",
+          "description": "Delivery slows",
+          "rule": "Rolling 30 s wpm in talk-led sections falls below 110 wpm (heuristic) while speech is present."
+        }
+      ],
+      "genre_notes": {
+        "explainer": "Closest match to Guo et al.'s setting; faster, enthusiastic delivery is supported.",
+        "tech_review": "Fast delivery is the norm (corpus median ~176 wpm).",
+        "cooking": "Instruction pace must match the action on screen; do not optimise wpm alone.",
+        "vlog": "Not applicable as a target.",
+        "shorts": "Often text/music-led; applies only to talking Shorts.",
+        "ad": "Driven by script length; check legibility rather than speed."
+      },
+      "sources": [
+        {
+          "title": "Guo, Kim & Rubin, How Video Production Affects Student Engagement: An Empirical Study of MOOC Videos. Proc. ACM Learning@Scale (6.9M sessions)",
+          "url": "https://www.cs.rochester.edu/hci/pubs/pdfs/edX-MOOC-video-production-and-engagement_LAS-2014.pdf",
+          "publisher": "ACM L@S",
+          "date": "2014"
+        }
+      ]
+    },
+    {
+      "id": "captions_text",
+      "name": "On-screen text and captions",
+      "goal": "both",
+      "summary": "TikTok's creative best practices recommend captions or text overlays for context and about 5-10 words per second when using text (official page, retrieved via search snippets). Meta guidance on captions for Reels could only be found in third-party summaries. ABCD recommends audible and visible CTAs and offers (text cards).",
+      "evidence_strength": "platform-official",
+      "signals": [
+        "hook_text_overlay",
+        "text_overlay_share"
+      ],
+      "rules": [
+        {
+          "signal": "hook_text_overlay",
+          "direction": "higher_better",
+          "threshold": 1,
+          "unit": "bool",
+          "heuristic": false,
+          "applies_to": [
+            "shorts",
+            "ad"
+          ],
+          "note": "TikTok recommends captions/text overlays; first-3 s timing is our application of the 3 s proposition guidance."
+        },
+        {
+          "signal": "hook_text_overlay",
+          "direction": "higher_better",
+          "threshold": 1,
+          "unit": "bool",
+          "heuristic": true,
+          "applies_to": [
+            "vlog",
+            "cooking",
+            "tech_review",
+            "explainer"
+          ],
+          "note": "Heuristic for long-form (feed previews may play muted)."
+        },
+        {
+          "signal": "text_overlay_share",
+          "direction": "range",
+          "threshold": null,
+          "unit": "share",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Genre p25-p75 from benchmarks.json; no source gives a target share."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "no_hook_text",
+          "description": "No on-screen text in first 3 s",
+          "rule": "hook_text_overlay is false for shorts/ad."
+        },
+        {
+          "kind": "key_line_no_text",
+          "description": "Key claim is spoken only",
+          "rule": "Promise, verdict, offer or CTA is spoken but no on-screen text appears within +/-2 s. Heuristic (ABCD 'audible and visible')."
+        }
+      ],
+      "genre_notes": {
+        "shorts": "Text overlay in the first frame is the strongest-supported practice.",
+        "ad": "Make offer and CTA both audible and visible (ABCD).",
+        "cooking": "Ingredient quantities and steps as text (corpus median text share 0.81).",
+        "explainer": "Label key terms and numbers.",
+        "tech_review": "Show specs, prices and the verdict as text.",
+        "vlog": "Location/context captions."
+      },
+      "sources": [
+        {
+          "title": "Creative best practices for performance ads (content proposition in first 3 s; hook in first 6 s; captions/text overlays, 5-10 words per second)",
+          "url": "https://ads.tiktok.com/help/article/creative-best-practices",
+          "publisher": "TikTok Ads Help Center",
+          "date": "reported last updated 2025-06; page could not be fetched directly, wording taken from search snippets"
+        },
+        {
+          "title": "YouTube and Google ABCD Reference Guide",
+          "url": "https://services.google.com/fh/files/misc/youtube_google_abcd_reference_guide_en.pdf",
+          "publisher": "Google / YouTube Ads",
+          "date": "2019-11-26 (PDF metadata)"
+        }
+      ]
+    },
+    {
+      "id": "audio_energy",
+      "name": "Audio presence and energy arc",
+      "goal": "retention",
+      "summary": "TikTok-commissioned Kantar research (2021) reports 88% of users say sound is essential to the TikTok experience (survey, platform-funded). ABCD names audio among the opening levers. Cutting et al. speculate that faster cutting and motion raise arousal. No source gives loudness or energy-slope targets; all thresholds are heuristics.",
+      "evidence_strength": "practitioner",
+      "signals": [
+        "loudness_db",
+        "loudness_range_db",
+        "energy_slope",
+        "nonspeech_audio_share",
+        "timeline"
+      ],
+      "rules": [
+        {
+          "signal": "loudness_db",
+          "direction": "range",
+          "threshold": [
+            -26,
+            -14
+          ],
+          "unit": "dBFS (RMS of active audio)",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Heuristic sanity range; corpus p25-p75 is about -24 to -17. Platforms normalise playback loudness, so very quiet masters mainly lose clarity."
+        },
+        {
+          "signal": "energy_slope",
+          "direction": "higher_better",
+          "threshold": -2.0,
+          "unit": "dB/runtime",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Heuristic: flag only strongly falling energy across the video."
+        },
+        {
+          "signal": "loudness_range_db",
+          "direction": "range",
+          "threshold": null,
+          "unit": "dB",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Compare to genre corpus range; very low range can mean monotone delivery, very high range can mean inconsistent mix."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "energy_dip",
+          "description": "Energy drop",
+          "rule": "Loudness falls > 6 dB below the running 30 s median for > 3 s while speech or music is expected. Heuristic."
+        },
+        {
+          "kind": "quiet_open",
+          "description": "Quiet opening",
+          "rule": "Mean loudness over 0-3 s is > 6 dB below the video's mean. Heuristic."
+        }
+      ],
+      "genre_notes": {
+        "shorts": "Sound is part of the format on TikTok/Shorts; music or a sound hook from frame one.",
+        "vlog": "Music beds carry energy (corpus non-speech share ~0.65).",
+        "ad": "Sound cue with brand (ABCD: audio mentions from on-screen people are more impactful than plain voice-over).",
+        "explainer": "Clean, even voice; low music bed.",
+        "tech_review": "Clean voice; avoid long music-only stretches.",
+        "cooking": "Process sound is an asset."
+      },
+      "sources": [
+        {
+          "title": "Kantar report: How brands are making noise and driving impact with sound on TikTok (88% of users say sound is essential)",
+          "url": "https://ads.tiktok.com/business/tr/blog/kantar-report-how-brands-are-making-noise-and-driving-impact-with-sound-on-tiktok",
+          "publisher": "TikTok for Business blog",
+          "date": "2021 (Kantar study, June 2021)"
+        },
+        {
+          "title": "YouTube and Google ABCD Reference Guide",
+          "url": "https://services.google.com/fh/files/misc/youtube_google_abcd_reference_guide_en.pdf",
+          "publisher": "Google / YouTube Ads",
+          "date": "2019-11-26 (PDF metadata)"
+        },
+        {
+          "title": "Cutting, Brunick, DeLong, Iricinschi & Candan, Quicker, faster, darker: Changes in Hollywood film over 75 years. i-Perception 2(6):569-576",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3485803/",
+          "publisher": "i-Perception (SAGE)",
+          "date": "2011"
+        }
+      ]
+    },
+    {
+      "id": "direct_address",
+      "name": "People on screen and direct address",
+      "goal": "both",
+      "summary": "ABCD: 'If your video features people, open with them on-screen. Having them speak to the audience directly can also have a positive effect'; 'People help hook viewers'. TikTok Marketing Science reports featuring real people associated with +9% watch time (ads, 2023). Guo et al. found talking-head interleaving more engaging than slides alone.",
+      "evidence_strength": "platform-official",
+      "signals": [
+        "face_share",
+        "talking_head_share",
+        "you_rate",
+        "questions_per_min"
+      ],
+      "rules": [
+        {
+          "signal": "face_share",
+          "direction": "higher_better",
+          "threshold": null,
+          "unit": "share",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Direction from ABCD/TikTok; no numeric target published. Compare to genre corpus range."
+        },
+        {
+          "signal": "you_rate",
+          "direction": "higher_better",
+          "threshold": null,
+          "unit": "per 100 words",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Heuristic proxy for second-person address; no source gives a target. Corpus median 1.1."
+        },
+        {
+          "signal": "questions_per_min",
+          "direction": "higher_better",
+          "threshold": null,
+          "unit": "/min",
+          "heuristic": true,
+          "applies_to": [
+            "explainer",
+            "tech_review",
+            "vlog"
+          ],
+          "note": "Heuristic proxy for audience engagement and curiosity gaps (Loewenstein)."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "no_address_hook",
+          "description": "Hook does not address the viewer",
+          "rule": "No 'you/your' and no question in the first 15 s of a talk-led video. Heuristic."
+        }
+      ],
+      "genre_notes": {
+        "ad": "Open with the person on screen, speaking to camera (ABCD).",
+        "explainer": "Speak to 'you'; pose the question.",
+        "tech_review": "Address the buyer's decision directly.",
+        "vlog": "Face share is naturally high (corpus 0.83).",
+        "cooking": "Hands-only formats have low face share; voice address matters more.",
+        "shorts": "Faces are optional; text often addresses the viewer."
+      },
+      "sources": [
+        {
+          "title": "YouTube and Google ABCD Reference Guide",
+          "url": "https://services.google.com/fh/files/misc/youtube_google_abcd_reference_guide_en.pdf",
+          "publisher": "Google / YouTube Ads",
+          "date": "2019-11-26 (PDF metadata)"
+        },
+        {
+          "title": "TikTok Shares New Notes on Maximizing Ad Effectiveness (first 2 s ~50% of impact; people +9%, trend remix +14%, storytelling +16% watch time)",
+          "url": "https://www.socialmediatoday.com/news/tiktok-shares-new-notes-on-how-to-maximize-ad-effectiveness-in-the-app/694989/",
+          "publisher": "Social Media Today (reporting TikTok Marketing Science)",
+          "date": "2023-09-27"
+        },
+        {
+          "title": "Guo, Kim & Rubin, How Video Production Affects Student Engagement: An Empirical Study of MOOC Videos. Proc. ACM Learning@Scale (6.9M sessions)",
+          "url": "https://www.cs.rochester.edu/hci/pubs/pdfs/edX-MOOC-video-production-and-engagement_LAS-2014.pdf",
+          "publisher": "ACM L@S",
+          "date": "2014"
+        },
+        {
+          "title": "Loewenstein, The Psychology of Curiosity: A Review and Reinterpretation. Psychological Bulletin 116(1):75-98",
+          "url": "https://stafforini.com/works/loewenstein-1994-psychology-curiosity-review/",
+          "publisher": "Psychological Bulletin (APA)",
+          "date": "1994"
+        }
+      ]
+    },
+    {
+      "id": "reengagement_beats",
+      "name": "Re-engagement beats / payoff spacing",
+      "goal": "retention",
+      "summary": "YouTube advises that if top retention moments come late, move compelling content earlier, since audiences shrink over a video. MrBeast's production document (practitioner, leaked 2024) calls the first minute the most important and describes re-engaging the viewer around minutes 3 and 6. No study gives an optimal interval.",
+      "evidence_strength": "practitioner",
+      "signals": [
+        "timeline",
+        "pacing_trend",
+        "energy_slope"
+      ],
+      "rules": [
+        {
+          "signal": "timeline",
+          "direction": "event",
+          "threshold": 180,
+          "unit": "s max gap between beats (long-form)",
+          "heuristic": true,
+          "applies_to": [
+            "vlog",
+            "tech_review",
+            "explainer",
+            "cooking"
+          ],
+          "note": "Practitioner (MrBeast minute-3/minute-6 re-engagement); interval is our heuristic."
+        },
+        {
+          "signal": "timeline",
+          "direction": "event",
+          "threshold": null,
+          "unit": "",
+          "heuristic": true,
+          "applies_to": [
+            "shorts",
+            "ad"
+          ],
+          "note": "Not applicable: the whole video is one beat."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "beat_gap",
+          "description": "Long stretch without a new beat",
+          "rule": "Long-form: > 180 s within the main story beat without a payoff, reveal, question, new segment or format change. Heuristic."
+        },
+        {
+          "kind": "late_payoff",
+          "description": "Payoff arrives very late",
+          "rule": "First payoff beat starts after 70% of runtime with no earlier preview of it. Heuristic based on YouTube's 'move compelling content earlier' advice."
+        }
+      ],
+      "genre_notes": {
+        "tech_review": "Spread findings; do not save every test result for the end.",
+        "explainer": "Answer sub-questions as you go; tease the next one.",
+        "vlog": "Plan an event or reveal every few minutes.",
+        "cooking": "Intermediate reveals (sauce done, first taste) act as beats.",
+        "shorts": "Not applicable.",
+        "ad": "Not applicable."
+      },
+      "sources": [
+        {
+          "title": "Measure key moments for audience retention (intro = % still watching at 30 s; top moments, spikes, dips)",
+          "url": "https://support.google.com/youtube/answer/9314415?hl=en",
+          "publisher": "YouTube Help (Google)",
+          "date": "accessed 2026-10-28 (undated help page)"
+        },
+        {
+          "title": "How to succeed in MrBeast production (leaked internal onboarding document; text as reproduced)",
+          "url": "https://www.alexanderjarvis.com/?p=90492",
+          "publisher": "Practitioner document (Beast Industries), reproduced by third party",
+          "date": "leaked 2024-09"
+        },
+        {
+          "title": "MrBeast's leaked production guide is a reminder that YouTube's top creator does things his own way",
+          "url": "https://www.tubefilter.com/2024/09/17/mrbeast-internal-production-guide-leaked-key-points/",
+          "publisher": "Tubefilter",
+          "date": "2024-09-17"
+        }
+      ]
+    },
+    {
+      "id": "emotional_arousal",
+      "name": "Emotional arousal (shareability)",
+      "goal": "virality",
+      "summary": "Berger & Milkman (2012) found content evoking high-arousal emotions (awe, anger, anxiety) was more likely to be shared and low-arousal sadness less so. Tellis et al. (2019) found amusement, excitement, inspiration and warmth increased video-ad sharing, while information-focused content reduced it (except in risky contexts); drama elements (surprise, plot, characters) helped. Our pipeline cannot measure emotion directly; signals are weak proxies.",
+      "evidence_strength": "experimental",
+      "signals": [
+        "loudness_range_db",
+        "motion_mean",
+        "energy_slope",
+        "timeline"
+      ],
+      "rules": [
+        {
+          "signal": "timeline",
+          "direction": "event",
+          "threshold": null,
+          "unit": "",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Look for at least one high-arousal peak (surprise/reveal/laugh) via perception model plus loudness/motion peaks. Proxy only; not validated."
+        },
+        {
+          "signal": "loudness_range_db",
+          "direction": "higher_better",
+          "threshold": null,
+          "unit": "dB",
+          "heuristic": true,
+          "applies_to": "all",
+          "note": "Weak proxy for dynamic, arousing delivery. No source links this measure to sharing."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "flat_affect",
+          "description": "No emotional peak",
+          "rule": "No moment where loudness AND motion both exceed their 90th percentile, and no surprise/reveal beat labelled by perception. Heuristic proxy."
+        }
+      ],
+      "genre_notes": {
+        "ad": "Tellis et al.: emotional, drama-led ads are shared more than information-led ones on general platforms.",
+        "explainer": "Information-led content is shared less per Tellis; add awe/surprise in the framing.",
+        "tech_review": "Surprise findings and strong verdicts are the arousal levers.",
+        "vlog": "Story, characters and surprise.",
+        "cooking": "Awe at the reveal; humour.",
+        "shorts": "One clear emotional beat."
+      },
+      "sources": [
+        {
+          "title": "Berger & Milkman, What Makes Online Content Viral? Journal of Marketing Research 49(2):192-205",
+          "url": "https://faculty.wharton.upenn.edu/wp-content/uploads/2011/11/Virality.pdf",
+          "publisher": "Journal of Marketing Research (AMA)",
+          "date": "2012"
+        },
+        {
+          "title": "Tellis, MacInnis, Tirunillai & Zhang, What Drives Virality (Sharing) of Online Digital Content? The Critical Role of Information, Emotion, and Brand Prominence. Journal of Marketing 83(4):1-20",
+          "url": "https://www.ama.org/2020/06/11/what-drives-virality-sharing-of-online-digital-content-the-critical-role-of-information-emotion-and-brand-prominence/",
+          "publisher": "Journal of Marketing (AMA summary page)",
+          "date": "2019 (summary posted 2020-06-11)"
+        },
+        {
+          "title": "Teixeira, Wedel & Pieters, Emotion-Induced Engagement in Internet Video Advertisements. Journal of Marketing Research 49(2)",
+          "url": "https://www.library.hbs.edu/working-knowledge/creating-online-ads-we-want-to-watch",
+          "publisher": "Journal of Marketing Research (HBS Working Knowledge summary)",
+          "date": "2012"
+        },
+        {
+          "title": "On YouTube's recommendation system (Cristos Goodrow)",
+          "url": "https://blog.youtube/inside-youtube/on-youtubes-recommendation-system/",
+          "publisher": "YouTube Official Blog",
+          "date": "2021-09-15"
+        }
+      ]
+    },
+    {
+      "id": "brand_timing",
+      "name": "Brand timing and prominence (ads)",
+      "goal": "both",
+      "summary": "Trade-off. ABCD: introduce the brand in the first five seconds for ad recall (awareness) using visual or audio cues. Tellis et al. (2019): early, long or persistent brand placement hurt sharing. Teixeira et al. (2010): pulsing brand exposure (intermittent) reduced zapping vs. the same total exposure shown continuously. Our pipeline does not detect logos; brand presence must come from transcript brand-name matches or the perception timeline.",
+      "evidence_strength": "experimental",
+      "signals": [
+        "timeline",
+        "broll_share"
+      ],
+      "rules": [
+        {
+          "signal": "timeline",
+          "direction": "event",
+          "threshold": 5,
+          "unit": "s (brand first visible or audible by)",
+          "heuristic": false,
+          "applies_to": [
+            "ad"
+          ],
+          "note": "ABCD (recall goal). Requires brand name from the user or a perception label."
+        },
+        {
+          "signal": "timeline",
+          "direction": "event",
+          "threshold": null,
+          "unit": "",
+          "heuristic": false,
+          "applies_to": [
+            "ad"
+          ],
+          "note": "Prefer intermittent (pulsed) brand appearances over a persistent one (Teixeira et al. 2010; Tellis et al. 2019 for sharing)."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "late_brand",
+          "description": "Brand appears late",
+          "rule": "First brand mention/visual after 5 s in an ad optimised for recall."
+        },
+        {
+          "kind": "persistent_brand",
+          "description": "Brand on screen persistently",
+          "rule": "Brand visible > 80% of runtime or continuously from 0 s; may hurt sharing (Tellis) and raise zapping vs pulsing (Teixeira)."
+        }
+      ],
+      "genre_notes": {
+        "ad": "Pick the goal: recall (brand by 5 s) vs. sharing (lighter, later, pulsed branding).",
+        "tech_review": "Sponsored segments: not covered by these sources.",
+        "vlog": "Not applicable unless sponsored.",
+        "explainer": "Not applicable unless sponsored.",
+        "cooking": "Product placement: not covered by these sources.",
+        "shorts": "For Shorts ads, TikTok's 3 s proposition guidance also applies."
+      },
+      "sources": [
+        {
+          "title": "YouTube and Google ABCD Reference Guide",
+          "url": "https://services.google.com/fh/files/misc/youtube_google_abcd_reference_guide_en.pdf",
+          "publisher": "Google / YouTube Ads",
+          "date": "2019-11-26 (PDF metadata)"
+        },
+        {
+          "title": "Tellis, MacInnis, Tirunillai & Zhang, What Drives Virality (Sharing) of Online Digital Content? The Critical Role of Information, Emotion, and Brand Prominence. Journal of Marketing 83(4):1-20",
+          "url": "https://www.ama.org/2020/06/11/what-drives-virality-sharing-of-online-digital-content-the-critical-role-of-information-emotion-and-brand-prominence/",
+          "publisher": "Journal of Marketing (AMA summary page)",
+          "date": "2019 (summary posted 2020-06-11)"
+        },
+        {
+          "title": "Teixeira, Wedel & Pieters, Moment-to-Moment Optimal Branding in TV Commercials: Preventing Avoidance by Pulsing. Marketing Science 29(5):783-804",
+          "url": "https://econpapers.repec.org/RePEc:inm:ormksc:v:29:y:2010:i:5:p:783-804",
+          "publisher": "Marketing Science (INFORMS)",
+          "date": "2010"
+        }
+      ]
+    },
+    {
+      "id": "cta_timing",
+      "name": "Call to action: clarity and timing",
+      "goal": "both",
+      "summary": "ABCD (Direct): a strong CTA is specific ('visit site', 'sign up', 'buy now') and is more effective when both audible and visible; urgency ('limited') works. No official source gives CTA timing for organic videos; any early-CTA rule is a heuristic.",
+      "evidence_strength": "platform-official",
+      "signals": [
+        "cta_count",
+        "first_cta_pos",
+        "timeline"
+      ],
+      "rules": [
+        {
+          "signal": "cta_count",
+          "direction": "higher_better",
+          "threshold": 1,
+          "unit": "count",
+          "heuristic": false,
+          "applies_to": [
+            "ad"
+          ],
+          "note": "ABCD: direct viewers to take action."
+        },
+        {
+          "signal": "timeline",
+          "direction": "event",
+          "threshold": null,
+          "unit": "",
+          "heuristic": false,
+          "applies_to": [
+            "ad"
+          ],
+          "note": "CTA should be both audible (transcript) and visible (on-screen text) - ABCD."
+        },
+        {
+          "signal": "first_cta_pos",
+          "direction": "higher_better",
+          "threshold": 0.15,
+          "unit": "share of runtime",
+          "heuristic": true,
+          "applies_to": [
+            "vlog",
+            "tech_review",
+            "explainer",
+            "cooking"
+          ],
+          "note": "Heuristic: avoid asking (subscribe/like) before delivering any value. No source found."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "no_cta_ad",
+          "description": "Ad has no call to action",
+          "rule": "cta_count == 0 for genre ad."
+        },
+        {
+          "kind": "cta_audio_only",
+          "description": "CTA not shown on screen",
+          "rule": "CTA detected in transcript with no on-screen text within +/-2 s (ABCD 'audible and visible')."
+        },
+        {
+          "kind": "early_ask",
+          "description": "Ask before value",
+          "rule": "Subscribe/like/follow CTA within the first 15% of runtime of long-form content. Heuristic."
+        }
+      ],
+      "genre_notes": {
+        "ad": "Specific, audible + visible, ideally with urgency (ABCD).",
+        "shorts": "A long outro CTA can break the loop (see loop_ending).",
+        "tech_review": "Affiliate/price CTA near the verdict.",
+        "explainer": "CTA after the payoff.",
+        "cooking": "Recipe link CTA after the reveal.",
+        "vlog": "End-of-video CTA is the norm (corpus median position 0.94)."
+      },
+      "sources": [
+        {
+          "title": "YouTube and Google ABCD Reference Guide",
+          "url": "https://services.google.com/fh/files/misc/youtube_google_abcd_reference_guide_en.pdf",
+          "publisher": "Google / YouTube Ads",
+          "date": "2019-11-26 (PDF metadata)"
+        }
+      ]
+    },
+    {
+      "id": "length_fit",
+      "name": "Length fit for genre and platform",
+      "goal": "both",
+      "summary": "Guo et al. (2014): shorter educational videos were much more engaging; they recommend chunks under 6 minutes. Tellis et al. (2019): ad sharing peaked at moderate length, 1.2-1.7 minutes. Wistia (vendor, 2020) reports the early drop-off grows with length: 4.9% of viewers lost in the first 2% of 1-2 min videos vs 17.3% for 5-10 min videos. YouTube Shorts may be up to 3 minutes (since Oct 2024). These are observational and context-specific; YouTube's own guidance is about retention, not length.",
+      "evidence_strength": "observational",
+      "signals": [
+        "duration_s"
+      ],
+      "rules": [
+        {
+          "signal": "duration_s",
+          "direction": "range",
+          "threshold": [
+            72,
+            102
+          ],
+          "unit": "s",
+          "heuristic": false,
+          "applies_to": [
+            "ad"
+          ],
+          "note": "Tellis et al.: sharing peaked at 1.2-1.7 min ad length (sharing goal only; recall-driven bumper/15 s ads differ)."
+        },
+        {
+          "signal": "duration_s",
+          "direction": "lower_better",
+          "threshold": 360,
+          "unit": "s per segment",
+          "heuristic": true,
+          "applies_to": [
+            "explainer"
+          ],
+          "note": "Guo et al. (<6 min chunks) is MOOC data; applying it to YouTube explainers is an extrapolation."
+        },
+        {
+          "signal": "duration_s",
+          "direction": "lower_better",
+          "threshold": 180,
+          "unit": "s",
+          "heuristic": false,
+          "applies_to": [
+            "shorts"
+          ],
+          "note": "YouTube Shorts maximum length (platform limit, not an optimum)."
+        },
+        {
+          "signal": "duration_s",
+          "direction": "range",
+          "threshold": null,
+          "unit": "s",
+          "heuristic": true,
+          "applies_to": [
+            "vlog",
+            "tech_review",
+            "cooking"
+          ],
+          "note": "No source supports a target; use genre corpus range and judge by retention signals instead."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "over_length",
+          "description": "Length outside genre norm",
+          "rule": "duration_s outside genre p10-p90 of corpus, or > 180 s for shorts. Heuristic except the Shorts limit."
+        }
+      ],
+      "genre_notes": {
+        "ad": "Sharing goal: ~1.2-1.7 min (Tellis). Recall goal: brand by 5 s matters more than length.",
+        "explainer": "Chunk into < 6 min segments or chapters (Guo).",
+        "shorts": "Hard limit 3 min on YouTube; shorter makes loops cheaper.",
+        "tech_review": "No evidence-based target.",
+        "vlog": "No evidence-based target.",
+        "cooking": "No evidence-based target."
+      },
+      "sources": [
+        {
+          "title": "Guo, Kim & Rubin, How Video Production Affects Student Engagement: An Empirical Study of MOOC Videos. Proc. ACM Learning@Scale (6.9M sessions)",
+          "url": "https://www.cs.rochester.edu/hci/pubs/pdfs/edX-MOOC-video-production-and-engagement_LAS-2014.pdf",
+          "publisher": "ACM L@S",
+          "date": "2014"
+        },
+        {
+          "title": "Tellis, MacInnis, Tirunillai & Zhang, What Drives Virality (Sharing) of Online Digital Content? The Critical Role of Information, Emotion, and Brand Prominence. Journal of Marketing 83(4):1-20",
+          "url": "https://www.ama.org/2020/06/11/what-drives-virality-sharing-of-online-digital-content-the-critical-role-of-information-emotion-and-brand-prominence/",
+          "publisher": "Journal of Marketing (AMA summary page)",
+          "date": "2019 (summary posted 2020-06-11)"
+        },
+        {
+          "title": "Understanding Audience Retention (average drop in first 2% of video: 4.9% for 1-2 min videos vs 17.3% for 5-10 min)",
+          "url": "https://wistia.com/library/understanding-audience-retention",
+          "publisher": "Wistia (vendor, own hosted videos)",
+          "date": "2020-01-03"
+        },
+        {
+          "title": "Tall updates coming to Shorts (Shorts up to 3 minutes from 2024-10-15)",
+          "url": "https://blog.youtube/news-and-events/tall-updates-coming-to-shorts/",
+          "publisher": "YouTube Official Blog",
+          "date": "2024-10-03"
+        }
+      ]
+    },
+    {
+      "id": "loop_ending",
+      "name": "Ending and loop (short-form)",
+      "goal": "retention",
+      "summary": "Since 31 March 2025 YouTube counts a Shorts view when a Short starts or replays (the previous metric was renamed 'engaged views'), and replays add watch time; third-party analytics guides note average percentage viewed can exceed 100% on loops. No official source recommends designing seamless loops; this is practitioner advice and the thresholds are heuristics.",
+      "evidence_strength": "practitioner",
+      "signals": [
+        "duration_s",
+        "first_cta_pos",
+        "timeline"
+      ],
+      "rules": [
+        {
+          "signal": "timeline",
+          "direction": "event",
+          "threshold": null,
+          "unit": "",
+          "heuristic": true,
+          "applies_to": [
+            "shorts"
+          ],
+          "note": "Heuristic: last 1-2 s should not be a static end card, silence or 'thanks for watching'; ideally visually/audio continuous with the first frame."
+        },
+        {
+          "signal": "timeline",
+          "direction": "event",
+          "threshold": null,
+          "unit": "",
+          "heuristic": true,
+          "applies_to": [
+            "vlog",
+            "tech_review",
+            "explainer",
+            "cooking"
+          ],
+          "note": "Long-form: avoid long outros after the payoff (dips after payoff are common in YouTube's retention report)."
+        }
+      ],
+      "flags": [
+        {
+          "kind": "dead_end",
+          "description": "Ending stalls",
+          "rule": "Shorts: final 2 s are silent (< -45 dBFS) or a static frame (no motion) or an end card. Heuristic."
+        },
+        {
+          "kind": "long_outro",
+          "description": "Long outro after payoff",
+          "rule": "Long-form: > 20 s between the end of the payoff beat and the end of the video. Heuristic."
+        }
+      ],
+      "genre_notes": {
+        "shorts": "End on the punchline/reveal; cut immediately; consider matching last and first frames.",
+        "ad": "End card with brand + CTA is expected (ABCD) - loop logic does not apply to ads.",
+        "vlog": "Keep sign-offs short.",
+        "tech_review": "Verdict then end.",
+        "explainer": "Answer then end.",
+        "cooking": "Taste/reveal then end."
+      },
+      "sources": [
+        {
+          "title": "YouTube is changing how Shorts views are counted (views count on start/replay; old metric renamed 'engaged views')",
+          "url": "https://techcrunch.com/2025/03/26/youtube-is-changing-how-youtube-shorts-views-are-counted",
+          "publisher": "TechCrunch (reporting YouTube announcement)",
+          "date": "2025-03-26"
+        },
+        {
+          "title": "Measure key moments for audience retention (intro = % still watching at 30 s; top moments, spikes, dips)",
+          "url": "https://support.google.com/youtube/answer/9314415?hl=en",
+          "publisher": "YouTube Help (Google)",
+          "date": "accessed 2026-10-28 (undated help page)"
+        }
+      ]
+    }
+  ]
+}

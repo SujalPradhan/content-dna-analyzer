@@ -1,0 +1,23 @@
+category,hook_type,n,category_label
+ad,action_visual,4,Ads
+ad,bold_claim,1,Ads
+ad,story_cold_open,1,Ads
+cooking,action_visual,1,Cooking
+cooking,greeting_intro,1,Cooking
+cooking,preview_of_payoff,2,Cooking
+cooking,problem_statement,1,Cooking
+cooking,question,1,Cooking
+explainer,question,4,Explainers
+explainer,story_cold_open,1,Explainers
+shorts,action_visual,3,Shorts
+shorts,bold_claim,1,Shorts
+shorts,brand_logo,1,Shorts
+shorts,problem_statement,1,Shorts
+tech_review,bold_claim,3,Tech reviews
+tech_review,brand_logo,1,Tech reviews
+tech_review,problem_statement,1,Tech reviews
+tech_review,story_cold_open,1,Tech reviews
+vlog,action_visual,2,Vlogs
+vlog,other,2,Vlogs
+vlog,preview_of_payoff,1,Vlogs
+vlog,problem_statement,1,Vlogs

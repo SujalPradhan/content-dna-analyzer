@@ -1,0 +1,17 @@
+{
+ "full": {
+  "specificity": 5,
+  "accuracy": 4,
+  "actionability": 5,
+  "insight": 5
+ },
+ "baseline": {
+  "specificity": 4,
+  "accuracy": 5,
+  "actionability": 4,
+  "insight": 4
+ },
+ "winner": "full",
+ "reason": "A is accurate and well-grounded in transcript quotes, with solid structural analysis, but its recommendations are largely about script/content tightening that could apply to many essay videos. B is more editorially specific, tying concrete timeline bins (100-140s cut collapse, 551-595s static block) and measured metrics (motion_mean 25th percentile, screen_share 0.033, pause rate 0.15/min) to actionable editing changes, and it correctly identifies the visual-vs-verbal CTA gap. B's accuracy is slightly weaker on the hook_motion category-median claim (an assertion that can't be verified from data) but its data citations mostly check out, and its insight into why the construction works (talking density over cuts, face anchoring dense script) exceeds A's. B gives an editor more directly executable, video-specific guidance.",
+ "full_was": "B"
+}

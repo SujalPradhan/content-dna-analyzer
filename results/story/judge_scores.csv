@@ -1,0 +1,9 @@
+system,criterion,score
+Content DNA,specificity,5.0
+Content DNA,accuracy,4.75
+Content DNA,actionability,5.0
+Content DNA,insight,4.58
+Transcript-only baseline,specificity,3.42
+Transcript-only baseline,accuracy,3.92
+Transcript-only baseline,actionability,3.0
+Transcript-only baseline,insight,2.75

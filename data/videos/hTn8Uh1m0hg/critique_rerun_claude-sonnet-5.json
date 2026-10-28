@@ -1,0 +1,410 @@
+{
+ "summary": "A cozy talking-head cooking demo where Jamie Oliver narrates and demonstrates making pasta with his son, cutting frequently between close talking-head shots and tight b-roll of hands and dough. Pacing is brisk for the cooking genre (high cuts/min, fast format switches) while loudness stays low and the frame stays dim, giving it an intimate, home-video feel rather than a polished studio look.",
+ "dna_tags": [
+  "talking-head cooking demo",
+  "parent-child demonstration",
+  "rapid format switching",
+  "low-light intimate kitchen",
+  "step-by-step craft narration"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 15.8,
+   "role": "hook",
+   "label": "Intro: Jamie and Buddy introduce making egg pasta"
+  },
+  {
+   "start_s": 15.8,
+   "end_s": 54,
+   "role": "intro_setup",
+   "label": "Dough ratio and mixing explanation"
+  },
+  {
+   "start_s": 54,
+   "end_s": 91,
+   "role": "demonstration",
+   "label": "Buddy kneads the dough"
+  },
+  {
+   "start_s": 91,
+   "end_s": 108,
+   "role": "context",
+   "label": "Resting dough, pre-made sheet shown"
+  },
+  {
+   "start_s": 108,
+   "end_s": 160,
+   "role": "main_content",
+   "label": "Feeding pasta through roller, shaping sheets"
+  },
+  {
+   "start_s": 160,
+   "end_s": 207,
+   "role": "demonstration",
+   "label": "Cutting tagliolini and tagliatelle"
+  },
+  {
+   "start_s": 207,
+   "end_s": 249.8,
+   "role": "demonstration",
+   "label": "Lasagna, cannelloni, and fafali shaping"
+  },
+  {
+   "start_s": 249.8,
+   "end_s": 262.6,
+   "role": "outro",
+   "label": "Wrap-up with Buddy, closing branding"
+  }
+ ],
+ "hook": {
+  "what_happens": "Opens on a close b-roll shot of a pasta machine extruding dough with title text overlay, then cuts to Jamie and Buddy at the kitchen island as Jamie states they're making pasta together.",
+  "promise": "A simple, fun father-son pasta-making demonstration using basic ingredients.",
+  "strengths": [
+   "Visual b-roll opener (pasta machine shot) creates immediate sensory interest before dialogue starts",
+   "Text overlay appears in first 3s, aiding brand/channel recognition quickly"
+  ],
+  "weaknesses": [
+   "Hook motion (0.66) is low vs category (8th percentile), meaning the opening visual is relatively static compared to typical cooking hooks",
+   "Only 1 cut in first 15s (17th percentile), slower hook cadence than most cooking videos in this corpus despite the video's overall fast pacing"
+  ]
+ },
+ "devices": [
+  {
+   "name": "second-person address to child/viewer",
+   "t_s": 28.1,
+   "quote": "how many eggs do we need, Buds?"
+  },
+  {
+   "name": "direct question to engage viewer-like character",
+   "t_s": 119.8,
+   "quote": "what do you love most about making pasta?"
+  },
+  {
+   "name": "repetition for emphasis",
+   "t_s": 113.5,
+   "quote": "it gets longer. Longer and longer, and thinner and thinner"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 28.1,
+   "point": "Clear, simple ratio instruction makes the recipe easy to follow",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "a hundred grams of flour, one egg"
+    }
+   ]
+  },
+  {
+   "t_s": 0,
+   "point": "High shots-per-minute and frequent talking-head/b-roll switching keeps visual variety unusually high for the cooking category",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "shots_per_min",
+     "value": "13.48"
+    },
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "10.97"
+    }
+   ]
+  },
+  {
+   "t_s": 2.8,
+   "point": "Strong speech coverage and conversational pacing keep narration almost continuous throughout",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "0.876"
+    }
+   ]
+  },
+  {
+   "t_s": 119.8,
+   "point": "Including the child's voice and reactions (questions_per_min is unusually high for cooking) adds warmth and authenticity",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "questions_per_min",
+     "value": "1.83"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "what do you love most about making pasta?"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Brighten the visual presentation",
+   "t_start_s": 0,
+   "t_end_s": 262.6,
+   "observation": "Brightness is at the 8th percentile for the cooking category, making the kitchen look notably dimmer than comparable videos.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "brightness_mean",
+     "value": "0.298"
+    }
+   ],
+   "recommendation": "Test increasing key/fill lighting on the counter area to better showcase the dough and hands, since cooking demos typically benefit from brighter visibility of the food.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Raise the overall loudness level",
+   "t_start_s": 0,
+   "t_end_s": 262.6,
+   "observation": "Mean loudness (-26.8 dBFS) sits at the 17th percentile for cooking videos, and the energy slope is strongly negative (-6.88), meaning the track gets noticeably quieter as it progresses.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "loudness_db",
+     "value": "-26.8"
+    },
+    {
+     "kind": "metric",
+     "ref": "energy_slope",
+     "value": "-6.88"
+    }
+   ],
+   "recommendation": "Consider normalizing audio levels or adding a slight loudness/music lift in the back half (from ~160s onward where bins dip to -29 to -32 dB) to keep the track consistent with the earlier portion.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Low-motion, long hook opening",
+   "t_start_s": 0,
+   "t_end_s": 15.8,
+   "observation": "Only 1 cut occurs in the first 15 seconds (17th percentile) and hook_motion (0.66) is well below both category and overall benchmarks, while the rest of the video cuts much faster (13.48 shots/min).",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "1"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "0.66"
+    },
+    {
+     "kind": "visual",
+     "ref": "0.0",
+     "value": "Pasta sheet feeding through a pasta machine with title text overlay"
+    }
+   ],
+   "recommendation": "Test trimming the opening static talking-head stretch or inserting an early close-up cut of the dough/egg to better match the brisker pace established later in the video.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Extended quiet stretch near the end",
+   "t_start_s": 260,
+   "t_end_s": 262.6,
+   "observation": "The final bin shows loudness dropping sharply to -53.7 dB alongside a spike in motion (0.192), suggesting an abrupt audio cutoff paired with visual movement at the very end.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:260.0",
+     "value": "{\"cuts\": 0, \"wpm\": 92.0, \"loud_db\": -53.7, \"motion\": 0.192}"
+    }
+   ],
+   "recommendation": "Review the final 2-3 seconds to confirm the audio fade/cut doesn't feel abrupt against the closing visual; consider a smoother audio fade-out to match the closing b-roll.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 259.86,
+   "t_in_range": true
+  },
+  {
+   "title": "No explicit call to action",
+   "t_start_s": 0,
+   "t_end_s": 262.6,
+   "observation": "cta_count is 0, while most videos in the cooking category (and overall corpus) include at least one CTA.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "0"
+    }
+   ],
+   "recommendation": "Consider testing a simple closing CTA (e.g., prompting viewers to try the recipe or subscribe) in the final outro segment, since this is standard for the category though its effect is untested here.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 14,
+  "evidence_verified": 13,
+  "evidence_rate": 0.929,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    10,
+    11
+   ],
+   "quote": [
+    2,
+    2
+   ],
+   "visual": [
+    1,
+    1
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "brightness_mean",
+    "value": "0.298",
+    "verified": true,
+    "note": "actual=0.298"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "loudness_db",
+    "value": "-26.8",
+    "verified": true,
+    "note": "actual=-26.8"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "energy_slope",
+    "value": "-6.88",
+    "verified": true,
+    "note": "actual=-6.88"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "1",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "0.66",
+    "verified": true,
+    "note": "actual=0.66"
+   },
+   {
+    "owner": "rec2",
+    "kind": "visual",
+    "ref": "0.0",
+    "value": "Pasta sheet feeding through a pasta machine with title text overlay",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:260.0",
+    "value": "{\"cuts\": 0, \"wpm\": 92.0, \"loud_db\": -53.7, \"motion\": 0.192}",
+    "verified": false,
+    "note": "unparseable value"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "str0",
+    "kind": "quote",
+    "ref": "",
+    "value": "a hundred grams of flour, one egg",
+    "verified": true,
+    "note": "match=1.00 at 32.8"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "shots_per_min",
+    "value": "13.48",
+    "verified": true,
+    "note": "actual=13.48"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "10.97",
+    "verified": true,
+    "note": "actual=10.97"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "0.876",
+    "verified": true,
+    "note": "actual=0.876"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "questions_per_min",
+    "value": "1.83",
+    "verified": true,
+    "note": "actual=1.83"
+   },
+   {
+    "owner": "str3",
+    "kind": "quote",
+    "ref": "",
+    "value": "what do you love most about making pasta?",
+    "verified": true,
+    "note": "match=1.00 at 123.08"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 14,
+  "evidence_verified": 13,
+  "evidence_rate": 0.929,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    10,
+    11
+   ],
+   "quote": [
+    2,
+    2
+   ],
+   "visual": [
+    1,
+    1
+   ]
+  }
+ }
+}

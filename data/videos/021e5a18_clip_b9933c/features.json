@@ -1,0 +1,78 @@
+{
+ "video_id": "021e5a18_clip_b9933c",
+ "category": "shorts",
+ "genre_inference": {
+  "genre": "shorts",
+  "confidence": 0.273,
+  "method": "nearest centroid over corpus fingerprints",
+  "scores": {
+   "shorts": 0.273,
+   "explainer": 0.204,
+   "cooking": 0.177,
+   "ad": 0.153,
+   "tech_review": 0.142,
+   "vlog": 0.052
+  }
+ },
+ "title": "021e5a18_clip",
+ "channel": null,
+ "url": null,
+ "views": null,
+ "likes": null,
+ "comments": null,
+ "subscribers": null,
+ "upload_date": null,
+ "full_duration": null,
+ "is_short": false,
+ "fingerprint": {
+  "duration_s": 6.0,
+  "shots_per_min": 10.0,
+  "median_shot_s": 3.0,
+  "shot_len_cv": 0.0,
+  "pacing_trend": 2.0,
+  "hook_cuts": 1,
+  "time_to_first_word_s": 0.0,
+  "hook_wpm": 140.0,
+  "hook_text_overlay": 0.0,
+  "hook_motion": 1.0,
+  "wpm": 140.0,
+  "speech_coverage": 0.843,
+  "long_pauses_per_min": 0.0,
+  "questions_per_min": 0.0,
+  "you_rate": 0.0,
+  "loudness_db": -21.0,
+  "loudness_range_db": 6.7,
+  "energy_slope": -2.88,
+  "nonspeech_audio_share": 0.083,
+  "motion_mean": 0.0339,
+  "brightness_mean": 0.394,
+  "colorfulness_mean": 159.9,
+  "talking_head_share": 0.0,
+  "broll_share": 0.0,
+  "screen_share": 0.0,
+  "face_share": 0.0,
+  "text_overlay_share": 0.0,
+  "format_switches_per_min": 0.0,
+  "cta_count": 0,
+  "first_cta_pos": NaN
+ },
+ "bins": [
+  {
+   "start": 0.0,
+   "end": 5.0,
+   "cuts": 1,
+   "wpm": 144.0,
+   "loud_db": -20.4,
+   "motion": 0.041
+  },
+  {
+   "start": 5.0,
+   "end": 6.0,
+   "cuts": 0,
+   "wpm": 120.0,
+   "loud_db": -23.8,
+   "motion": 0.0
+  }
+ ],
+ "perception_done": true
+}

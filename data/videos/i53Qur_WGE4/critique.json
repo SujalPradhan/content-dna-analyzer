@@ -1,0 +1,499 @@
+{
+ "summary": "A long-form tech review built as a chaptered monologue that alternates talking-head delivery with dense B-roll, screen recordings, and graphic overlays to illustrate pricing math and performance claims. Pacing is steady-to-slightly-rising across the runtime (pacing_trend 1.05) with frequent format switches rather than big tonal shifts, and a mid-roll sponsor segment is woven into the performance chapter rather than bolted onto the front or back.",
+ "dna_tags": [
+  "chaptered review monologue",
+  "b-roll-and-graphics overlay pacing",
+  "mid-roll sponsor embed",
+  "price-math demonstration",
+  "talking-head anchor with cutaways"
+ ],
+ "structure": [
+  {
+   "start_s": 0,
+   "end_s": 13.5,
+   "role": "hook",
+   "label": "Bold claim: 'almost perfect' M5 Air"
+  },
+  {
+   "start_s": 13.5,
+   "end_s": 50,
+   "role": "intro_setup",
+   "label": "Context: why this sounds strange given minimal design change"
+  },
+  {
+   "start_s": 50,
+   "end_s": 210,
+   "role": "main_content",
+   "label": "Price and value breakdown (RAM/storage history, inflation math)"
+  },
+  {
+   "start_s": 210,
+   "end_s": 322,
+   "role": "main_content",
+   "label": "Being a laptop: build, ports, battery, performance intro"
+  },
+  {
+   "start_s": 322,
+   "end_s": 413,
+   "role": "sponsor_ad_read",
+   "label": "Wispr Flow dictation sponsor segment"
+  },
+  {
+   "start_s": 413,
+   "end_s": 512,
+   "role": "demonstration",
+   "label": "M5 performance: video editing, coding, AI workflows"
+  },
+  {
+   "start_s": 512,
+   "end_s": 644,
+   "role": "main_content",
+   "label": "MacBook Neo comparison / disruption discussion"
+  },
+  {
+   "start_s": 644,
+   "end_s": 693,
+   "role": "main_content",
+   "label": "MacBook Pro comparison"
+  },
+  {
+   "start_s": 693,
+   "end_s": 797,
+   "role": "payoff_reveal",
+   "label": "The '60Hz screen' negative revealed and explained"
+  },
+  {
+   "start_s": 797,
+   "end_s": 840,
+   "role": "recap",
+   "label": "Softening the negative: context on when it matters"
+  },
+  {
+   "start_s": 840,
+   "end_s": 860.5,
+   "role": "cta",
+   "label": "Closing opinion request and comment prompt"
+  }
+ ],
+ "hook": {
+  "what_happens": "Host stands holding the MacBook Air and states he's used it daily and concluded it's 'almost perfect,' teasing one flaw to be revealed later, before cutting to B-roll of it in use.",
+  "promise": "A single held-back negative about an otherwise near-perfect laptop, to be revealed later in the video.",
+  "strengths": [
+   "Immediate bold claim stated in the first 2.3s with zero delay to first word (time_to_first_word_s 0.0)",
+   "Explicit open-loop ('I'll get into that a little bit later') creates a reason to keep watching",
+   "Hook speech rate is fast at 200 wpm, pct 75 in category, signalling energy right away"
+  ],
+  "weaknesses": [
+   "Hook section has only 4 cuts (pct 50) and hook_motion is 1.03 (pct 25 in category), meaning visually it's not more dynamic than the rest of the video despite the big verbal claim",
+   "No on-screen text in the first 3 seconds (hook_text_overlay 0.0, pct 25) to reinforce the claim visually"
+  ]
+ },
+ "devices": [
+  {
+   "name": "open loop / teased reveal",
+   "t_s": 9.9,
+   "quote": "Well, apart from maybe one thing, I'll get into that a little bit later."
+  },
+  {
+   "name": "rhetorical question list",
+   "t_s": 218.8,
+   "quote": "Like seriously, think about it. What can realistically improve, right?"
+  },
+  {
+   "name": "direct address reassurance before pivot",
+   "t_s": 716.0,
+   "quote": "Now, just hear me out here. I promise this is gonna make sense."
+  },
+  {
+   "name": "self-deprecating hedge on stakes",
+   "t_s": 800.8,
+   "quote": "I have to be honest, I'm really scraping the bottom of the barrel here."
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 50.1,
+   "point": "Abstract pricing claims are immediately paired with concrete on-screen graphics (dollar figures, inflation calculator), which keeps a numbers-heavy chapter visually anchored.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "117.4",
+     "value": "graphics_text segment showing '$999 +[$200] 16GB Unified Memory Upgrade $1399'"
+    },
+    {
+     "kind": "metric",
+     "ref": "screen_share",
+     "value": "0.29"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "The video opens with a clear, singular promise rather than a meandering intro, and speech starts instantly.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "time_to_first_word_s",
+     "value": "0.0"
+    },
+    {
+     "kind": "quote",
+     "ref": "0.0",
+     "value": "So this is my M5 MacBook Air, and I've been using it every day"
+    }
+   ]
+  },
+  {
+   "t_s": 322.0,
+   "point": "The sponsor read is placed mid-video attached thematically to a relevant topic (typing/dictation) rather than inserted arbitrarily, and the first CTA lands near the midpoint.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "first_cta_pos",
+     "value": "0.472"
+    },
+    {
+     "kind": "quote",
+     "ref": "328.2",
+     "value": "speaking of taking performance to another level, most of you watching this spend a long time typing"
+    }
+   ]
+  },
+  {
+   "t_s": 0.0,
+   "point": "Format variety (talking head, product closeups, screen recordings, graphics) is used throughout at a rate higher than the category median, keeping a single-speaker monologue visually textured.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "format_switches_per_min",
+     "value": "6.9"
+    },
+    {
+     "kind": "metric",
+     "ref": "broll_share",
+     "value": "0.432"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Brighten the visual palette",
+   "t_start_s": 0.0,
+   "t_end_s": 860.5,
+   "observation": "Mean brightness sits at the 8th percentile for tech_review, among the darkest in the category, while the studio setup itself (dark backdrop, pendant light) reinforces a dim, moody look.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "brightness_mean",
+     "value": "0.384"
+    },
+    {
+     "kind": "visual",
+     "ref": "1.2",
+     "value": "Host in dim studio lighting with dark pendant lamp and shadowed background"
+    }
+   ],
+   "recommendation": "Test raising key/fill light levels or widening aperture in post to lift overall exposure, and compare viewer comments/retention on a brighter cut as an experiment.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Hook visuals lag behind the hook's verbal energy",
+   "t_start_s": 0.0,
+   "t_end_s": 15.0,
+   "observation": "The opening claim is delivered at a fast 200 wpm, but cut count (4) and motion (1.03x) in the first 15s sit only at the 50th and 25th percentile respectively for the category, and there is no on-screen text to echo the claim.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "hook_cuts",
+     "value": "4"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_motion",
+     "value": "1.03"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_text_overlay",
+     "value": "0.0"
+    }
+   ],
+   "recommendation": "Consider testing a text overlay restating the 'almost perfect / one flaw' hook within the first 3 seconds, or adding a quick cutaway during the opening line, to match the pace of the verbal promise.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "CTA count is low for a 14-minute review",
+   "t_start_s": 406.0,
+   "t_end_s": 858.0,
+   "observation": "Only 2 CTAs appear across 860s of runtime, which is at the 17th percentile for the tech_review category where reviewers typically place 2-4.5 CTAs.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "2"
+    },
+    {
+     "kind": "quote",
+     "ref": "406.9",
+     "value": "use my link in the video description and pinned comment to get a one month free trial"
+    }
+   ],
+   "recommendation": "If there are other owned assets to promote (the linked Neo vs Air or Pro vs Air comparison videos mentioned at 577.0 and 656.3), test adding a brief on-screen CTA card or verbal pointer at those moments rather than only mentioning them in passing.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "low",
+   "t_snapped_s": 406.1,
+   "t_in_range": true
+  },
+  {
+   "title": "Long single-topic chapter lacks pacing variation",
+   "t_start_s": 160.0,
+   "t_end_s": 210.0,
+   "observation": "The 160-200s bins show cuts dropping to 3 and wpm falling to 138-150, the slowest stretch in the video, coinciding with dense inflation-math narration.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "bin:160.0",
+     "value": "cuts 3, wpm 150"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:180.0",
+     "value": "cuts 3, wpm 138"
+    }
+   ],
+   "recommendation": "Consider trimming or visually punctuating the inflation-calculation explanation (e.g., a simplified summary graphic) since this is the slowest pacing stretch in an otherwise brisk video, to test whether it holds attention better.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 159.98,
+   "t_in_range": true
+  },
+  {
+   "title": "Final CTA is a single generic comment prompt",
+   "t_start_s": 851.0,
+   "t_end_s": 860.5,
+   "observation": "The outro CTA is one open-ended question cluster ('Is this thing perfect? What would you change?') with no repeated or varied call to action, and loudness drops sharply at the very end.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "853.5",
+     "value": "Is this thing perfect? Is there anything that can be improved? What would you change?"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:860.0",
+     "value": "loud_db -29.3"
+    }
+   ],
+   "recommendation": "Test tightening the outro audio level to match the rest of the video's loudness (around -22dB) so the closing CTA doesn't trail off quieter than the rest of the piece.",
+   "basis": "internal_inconsistency",
+   "priority": "low",
+   "t_snapped_s": 851.02,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 19,
+  "evidence_verified": 19,
+  "evidence_rate": 1.0,
+  "recs": 5,
+  "recs_grounded": 5,
+  "rec_grounded_rate": 1.0,
+  "by_kind": {
+   "metric": [
+    13,
+    13
+   ],
+   "quote": [
+    4,
+    4
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "brightness_mean",
+    "value": "0.384",
+    "verified": true,
+    "note": "actual=0.384"
+   },
+   {
+    "owner": "rec0",
+    "kind": "visual",
+    "ref": "1.2",
+    "value": "Host in dim studio lighting with dark pendant lamp and shadowed background",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_cuts",
+    "value": "4",
+    "verified": true,
+    "note": "actual=4.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_motion",
+    "value": "1.03",
+    "verified": true,
+    "note": "actual=1.03"
+   },
+   {
+    "owner": "rec1",
+    "kind": "metric",
+    "ref": "hook_text_overlay",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "2",
+    "verified": true,
+    "note": "actual=2.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "quote",
+    "ref": "406.9",
+    "value": "use my link in the video description and pinned comment to get a one month free trial",
+    "verified": true,
+    "note": "match=1.00 at 406.94"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:160.0",
+    "value": "cuts 3, wpm 150",
+    "verified": true,
+    "note": "bin={'start': 160.0, 'end': 180.0, 'cuts': 3, 'wpm': 147.0, 'loud_db': -23.0, 'motion': 0.04}"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:180.0",
+    "value": "cuts 3, wpm 138",
+    "verified": true,
+    "note": "bin={'start': 180.0, 'end': 200.0, 'cuts': 3, 'wpm': 138.0, 'loud_db': -22.2, 'motion': 0.047}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "853.5",
+    "value": "Is this thing perfect? Is there anything that can be improved? What would you change?",
+    "verified": true,
+    "note": "match=1.00 at 853.41"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "bin:860.0",
+    "value": "loud_db -29.3",
+    "verified": true,
+    "note": "bin={'start': 860.0, 'end': 860.5, 'cuts': 0, 'wpm': 120.0, 'loud_db': -29.3, 'motion': 0.061}"
+   },
+   {
+    "owner": "str0",
+    "kind": "visual",
+    "ref": "117.4",
+    "value": "graphics_text segment showing '$999 +[$200] 16GB Unified Memory Upgrade $1399'",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "screen_share",
+    "value": "0.29",
+    "verified": true,
+    "note": "actual=0.29"
+   },
+   {
+    "owner": "str1",
+    "kind": "metric",
+    "ref": "time_to_first_word_s",
+    "value": "0.0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "0.0",
+    "value": "So this is my M5 MacBook Air, and I've been using it every day",
+    "verified": true,
+    "note": "match=1.00 at 0.0"
+   },
+   {
+    "owner": "str2",
+    "kind": "metric",
+    "ref": "first_cta_pos",
+    "value": "0.472",
+    "verified": true,
+    "note": "actual=0.472"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "328.2",
+    "value": "speaking of taking performance to another level, most of you watching this spend a long time typing",
+    "verified": true,
+    "note": "match=1.00 at 325.92"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "format_switches_per_min",
+    "value": "6.9",
+    "verified": true,
+    "note": "actual=6.9"
+   },
+   {
+    "owner": "str3",
+    "kind": "metric",
+    "ref": "broll_share",
+    "value": "0.432",
+    "verified": true,
+    "note": "actual=0.432"
+   }
+  ]
+ },
+ "grounding_v1": {
+  "evidence_items": 19,
+  "evidence_verified": 16,
+  "evidence_rate": 0.842,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    10,
+    13
+   ],
+   "quote": [
+    4,
+    4
+   ],
+   "visual": [
+    2,
+    2
+   ]
+  }
+ }
+}

@@ -1,0 +1,358 @@
+{
+ "summary": "A fast-spoken, flat-animation explainer that opens mid-sentence with no cold-open hook, relying entirely on dense narration over simple rotating-cog graphics and persistent on-screen text to teach gear ratios in under a minute. Pacing is driven almost entirely by speech rate rather than cuts, with shot lengths far longer and cut rate far lower than typical explainers, while vocabulary-dense voiceover runs at a corpus-topping wpm throughout.",
+ "dna_tags": [
+  "flat-animation explainer",
+  "voiceover-driven pacing",
+  "minimal-cut diagram video",
+  "text-overlay saturation",
+  "rapid-fire narration"
+ ],
+ "structure": [
+  {
+   "start_s": 0.0,
+   "end_s": 14.3,
+   "role": "hook",
+   "label": "9-speed bike intro with rotating cog animation"
+  },
+  {
+   "start_s": 14.3,
+   "end_s": 18.0,
+   "role": "intro_setup",
+   "label": "Transition to gear ratios topic"
+  },
+  {
+   "start_s": 18.0,
+   "end_s": 45.9,
+   "role": "main_content",
+   "label": "Explaining gear ratio calculation (52/12 example)"
+  },
+  {
+   "start_s": 45.9,
+   "end_s": 60.0,
+   "role": "demonstration",
+   "label": "Applying ratio to biggest/smallest gear scenarios"
+  }
+ ],
+ "hook": {
+  "what_happens": "Video opens mid-sentence ('means a nine-speed bike and so on') over an animated rotating cog with bold text overlay '9 SPEED BIKE', immediately describing derailleur mechanics.",
+  "promise": "Implicit promise to explain how bike gears and shifters work, per the opening_visual and preview_of_payoff hook type.",
+  "strengths": [
+   "Text overlay present in first 3 seconds reinforcing the topic",
+   "Speech starts at 0.0s with no dead air before content begins"
+  ],
+  "weaknesses": [
+   "Opens on an incomplete sentence fragment ('means a nine-speed bike') suggesting the true cold open was cut, confusing first-time viewers",
+   "Hook word rate of 244 wpm sits at the 100th percentile for the explainer category, likely too dense for a first-watch hook"
+  ]
+ },
+ "devices": [
+  {
+   "name": "on-screen text label reinforcement",
+   "t_s": 0.0,
+   "quote": "9 SPEED BIKE"
+  },
+  {
+   "name": "worked numeric example",
+   "t_s": 30.0,
+   "quote": "let's say it's a 52 and the smallest cog on the back let's say a 12"
+  },
+  {
+   "name": "direct rhetorical question",
+   "t_s": 14.8,
+   "quote": "but what about gear ratios?"
+  }
+ ],
+ "strengths": [
+  {
+   "t_s": 0.0,
+   "point": "Speech coverage is total, meaning there is no dead time; the explanation runs continuously without gaps.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "speech_coverage",
+     "value": "1.0"
+    }
+   ]
+  },
+  {
+   "t_s": 18.0,
+   "point": "Visual aids (on-screen text, diagrams) stay locked to the exact ratio being discussed, keeping graphic and narration synced.",
+   "evidence": [
+    {
+     "kind": "visual",
+     "ref": "18.0",
+     "value": "on-screen text '52 / 12 = 4.3' displayed during the ratio explanation"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "the ratio is 52 to 12"
+    }
+   ]
+  },
+  {
+   "t_s": 30.0,
+   "point": "The script uses a single concrete worked example (52/12) to anchor an abstract ratio concept, aiding comprehension.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "52 divided by 12 to give you the number of rotations"
+    }
+   ]
+  }
+ ],
+ "recommendations": [
+  {
+   "title": "Slow the narration pace or add visual breathing room",
+   "t_start_s": 0.0,
+   "t_end_s": 60.0,
+   "observation": "Overall wpm of 241 and hook_wpm of 244 both sit at the 100th percentile versus the explainer corpus (median 151.9 wpm overall, 176 hook_wpm), suggesting unusually dense speech delivery for this genre.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "wpm",
+     "value": "241.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "hook_wpm",
+     "value": "244.0"
+    }
+   ],
+   "recommendation": "Test trimming word count per sentence or inserting brief visual pauses (0.5-1s) between concept beats so viewers have time to process each ratio step.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "high",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Fix the truncated opening line",
+   "t_start_s": 0.0,
+   "t_end_s": 3.9,
+   "observation": "The transcript's first words are a sentence fragment ('means a nine-speed bike and so on'), implying the actual topic sentence was cut before the clip starts.",
+   "evidence": [
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "means a nine-speed bike and so on"
+    }
+   ],
+   "recommendation": "Add a complete opening sentence that states the full premise (e.g., 'Each cog combination means a nine-speed bike...') so new viewers aren't dropped mid-thought.",
+   "basis": "internal_inconsistency",
+   "priority": "high",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Introduce more visual variety across the runtime",
+   "t_start_s": 0.0,
+   "t_end_s": 60.0,
+   "observation": "Motion_mean (0.0515) and colorfulness_mean (15.0) both sit at the 0th percentile in category, and shots_per_min (3.0) is at the 20th percentile, indicating a visually static, low-saturation presentation compared to peer explainers.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "motion_mean",
+     "value": "0.0515"
+    },
+    {
+     "kind": "metric",
+     "ref": "colorfulness_mean",
+     "value": "15.0"
+    },
+    {
+     "kind": "metric",
+     "ref": "shots_per_min",
+     "value": "3.0"
+    }
+   ],
+   "recommendation": "Consider adding occasional camera moves, color accents, or secondary illustrative angles (e.g., side-view chain movement) to break up the single flat animation style, while keeping the clean diagram aesthetic.",
+   "basis": "measured_outlier_vs_corpus",
+   "priority": "medium",
+   "t_snapped_s": 0.0,
+   "t_in_range": true
+  },
+  {
+   "title": "Address the accelerating pacing_trend",
+   "t_start_s": 30.0,
+   "t_end_s": 60.0,
+   "observation": "pacing_trend of 1.5 sits at the 100th percentile, meaning cut rate and bin wpm actually increase in the second half (e.g., 312 wpm in the 30-35s bin) rather than settling, which could compound fatigue after a dense first half.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "pacing_trend",
+     "value": "1.5"
+    },
+    {
+     "kind": "metric",
+     "ref": "bin:30.0",
+     "value": "312.0 wpm"
+    }
+   ],
+   "recommendation": "Test redistributing the densest explanation (the 52/12 ratio math around 30-45s) earlier or splitting it with a brief recap beat, so the back half doesn't spike faster than the opening.",
+   "basis": "internal_inconsistency",
+   "priority": "medium",
+   "t_snapped_s": 30.14,
+   "t_in_range": true
+  },
+  {
+   "title": "Consider adding a closing CTA or recap",
+   "t_start_s": 55.0,
+   "t_end_s": 60.0,
+   "observation": "cta_count is 0, sitting at the 10th percentile versus the explainer category (median 1), and the video ends mid-explanation ('the biggest cog') with no wrap-up.",
+   "evidence": [
+    {
+     "kind": "metric",
+     "ref": "cta_count",
+     "value": "0"
+    },
+    {
+     "kind": "quote",
+     "ref": "",
+     "value": "a 36 for example on the front and the biggest cog"
+    }
+   ],
+   "recommendation": "If this 60s clip is a standalone cut, add a brief recap line or pointer to the next chapter ('Cassettes and derailleurs') so it doesn't feel like it stops abruptly.",
+   "basis": "craft_heuristic",
+   "priority": "low",
+   "t_snapped_s": 55.14,
+   "t_in_range": true
+  }
+ ],
+ "grounding": {
+  "evidence_items": 14,
+  "evidence_verified": 11,
+  "evidence_rate": 0.786,
+  "recs": 5,
+  "recs_grounded": 4,
+  "rec_grounded_rate": 0.8,
+  "by_kind": {
+   "metric": [
+    9,
+    9
+   ],
+   "quote": [
+    1,
+    4
+   ],
+   "visual": [
+    1,
+    1
+   ]
+  },
+  "checks": [
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "wpm",
+    "value": "241.0",
+    "verified": true,
+    "note": "actual=241.0"
+   },
+   {
+    "owner": "rec0",
+    "kind": "metric",
+    "ref": "hook_wpm",
+    "value": "244.0",
+    "verified": true,
+    "note": "actual=244.0"
+   },
+   {
+    "owner": "rec1",
+    "kind": "quote",
+    "ref": "",
+    "value": "means a nine-speed bike and so on",
+    "verified": false,
+    "note": "match=0.71 at 0.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "motion_mean",
+    "value": "0.0515",
+    "verified": true,
+    "note": "actual=0.0515"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "colorfulness_mean",
+    "value": "15.0",
+    "verified": true,
+    "note": "actual=15.0"
+   },
+   {
+    "owner": "rec2",
+    "kind": "metric",
+    "ref": "shots_per_min",
+    "value": "3.0",
+    "verified": true,
+    "note": "actual=3.0"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "pacing_trend",
+    "value": "1.5",
+    "verified": true,
+    "note": "actual=1.5"
+   },
+   {
+    "owner": "rec3",
+    "kind": "metric",
+    "ref": "bin:30.0",
+    "value": "312.0 wpm",
+    "verified": true,
+    "note": "bin={'start': 30.0, 'end': 35.0, 'cuts': 0, 'wpm': 312.0, 'loud_db': -18.4, 'motion': 0.135}"
+   },
+   {
+    "owner": "rec4",
+    "kind": "metric",
+    "ref": "cta_count",
+    "value": "0",
+    "verified": true,
+    "note": "actual=0.0"
+   },
+   {
+    "owner": "rec4",
+    "kind": "quote",
+    "ref": "",
+    "value": "a 36 for example on the front and the biggest cog",
+    "verified": true,
+    "note": "match=1.00 at 56.58"
+   },
+   {
+    "owner": "str0",
+    "kind": "metric",
+    "ref": "speech_coverage",
+    "value": "1.0",
+    "verified": true,
+    "note": "actual=1.0"
+   },
+   {
+    "owner": "str1",
+    "kind": "visual",
+    "ref": "18.0",
+    "value": "on-screen text '52 / 12 = 4.3' displayed during the ratio explanation",
+    "verified": true,
+    "note": "segment starts at ref"
+   },
+   {
+    "owner": "str1",
+    "kind": "quote",
+    "ref": "",
+    "value": "the ratio is 52 to 12",
+    "verified": false,
+    "note": "match=0.33 at 9.4"
+   },
+   {
+    "owner": "str2",
+    "kind": "quote",
+    "ref": "",
+    "value": "52 divided by 12 to give you the number of rotations",
+    "verified": false,
+    "note": "match=0.73 at 39.4"
+   }
+  ]
+ }
+}

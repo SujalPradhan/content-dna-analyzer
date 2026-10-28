@@ -1,0 +1,17 @@
+{
+ "full": {
+  "specificity": 5,
+  "accuracy": 5,
+  "actionability": 5,
+  "insight": 4
+ },
+ "baseline": {
+  "specificity": 4,
+  "accuracy": 4,
+  "actionability": 3,
+  "insight": 3
+ },
+ "winner": "full",
+ "reason": "A ties concrete timestamps to measured metrics and category percentiles (median shot 28.1s/92nd pct, pacing_trend 1.62, colorfulness 25.7 8th pct, CTA at 0.259) and gives directly testable fixes, explaining why the construction deviates from vlog norms. B is reasonable and transcript-grounded but leans on qualitative observations with vaguer recommendations ('consider trimming'), and has a minor inaccuracy framing the hook as 'nearly two minutes'/'full pop song' when speech begins at 121s but the music montage is the intent. A's metric-anchored specificity and actionability clearly outscore B.",
+ "full_was": "A"
+}
