@@ -44,7 +44,7 @@
     mode = b.dataset.tab;
     document.querySelectorAll('.tabs button').forEach((x) => x.setAttribute('aria-selected', String(x === b)));
     $('f-demo').hidden = mode !== 'demo'; $('f-file').hidden = mode !== 'file'; $('f-url').hidden = mode !== 'url';
-    $('crit-row').hidden = mode === 'demo'; $('demo-note').hidden = mode !== 'demo'; $('api-note').hidden = mode === 'demo' || apiReady;
+    $('crit-row').hidden = mode === 'demo'; $('demo-note').hidden = mode !== 'demo'; $('api-note').hidden = mode === 'demo' || !$('api-note').textContent;
     if (mode !== 'demo' && genre === null) genre = 'auto';
     drawGenres(); drawParams();
   }));
@@ -130,8 +130,8 @@
         let s;
         try { s = await api(`/api/jobs/${job.job_id}`); } catch (err) { setTimeout(poll, 3000); return; }
         drawJob(s, stages);
-        if (s.status === 'done') { $('go').disabled = false; show(s.result, params); }
-        else if (s.status === 'error') $('go').disabled = false;
+        if (s.status === 'done') { $('go').disabled = false; show(s.result, params); connectApi(); }
+        else if (s.status === 'error') { $('go').disabled = false; connectApi(); }
         else setTimeout(poll, 2000);
       };
       poll();
@@ -214,10 +214,13 @@
   async function connectApi(tries = 0) {
     try {
       const cfg = await api('/api/config');
-      apiReady = true; $('api-note').hidden = true;
+      apiReady = true;
+      const left = cfg.videos_left_today;
+      $('api-note').textContent = cfg.daily_videos && left != null ? `${left} of ${cfg.daily_videos} free video analyses left today (shared by all visitors).` : '';
+      $('api-note').hidden = mode === 'demo' || !$('api-note').textContent;
       if (cfg.access_code_required && !store.get('dna-code')) $('f-code').hidden = false;
       $('upload-hint').textContent = `(up to ${cfg.max_upload_mb} MB)`;
-      if (cfg.paid_per_visitor_per_hour) $('crit-hint').textContent = `(~1–2 min · ${cfg.paid_per_visitor_per_hour} new videos per hour per visitor)`;
+      $('crit-hint').textContent = '(~1–2 min)';
     } catch (err) {
       $('api-note').textContent = tries < 12 ? 'Waking up the analysis server for uploads and YouTube links…' : 'The analysis server is unavailable right now. The demos still work.';
       $('api-note').hidden = mode === 'demo';

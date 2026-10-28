@@ -41,7 +41,6 @@ PRICES = {
 }
 
 BUDGET_USD = float(os.environ.get("DNA_BUDGET_USD", "10"))
-DAILY_BUDGET_USD = float(os.environ.get("DNA_DAILY_BUDGET_USD", "0"))  # 0 = no daily cap (public demos set one)
 
 
 class BudgetExceeded(RuntimeError):
@@ -107,8 +106,7 @@ def _record(stage: str, model: str, usage: dict, usd: float, video_id: str = "")
 def _guard() -> None:
     if spent_usd() >= BUDGET_USD:
         raise BudgetExceeded(f"Estimated spend {spent_usd():.2f} >= budget {BUDGET_USD:.2f} USD")
-    if DAILY_BUDGET_USD and spent_today() >= DAILY_BUDGET_USD:
-        raise BudgetExceeded(f"Today's analysis budget (${DAILY_BUDGET_USD:.2f}) is used up; demos still work")
+
 
 
 def _cost(model: str, u: dict) -> float:

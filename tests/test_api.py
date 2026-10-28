@@ -78,18 +78,36 @@ def test_spending_endpoints_need_the_access_code(monkeypatch):
     monkeypatch.setattr(server, "ACCESS_CODE", "secret")
     assert client.post("/api/videos/s83EB_OtaEo/rerun", json={"critique": True}).status_code == 401
     assert client.post("/api/videos/s83EB_OtaEo/rerun", json={"critique": False}).status_code == 202  # re-scoring is free
-    assert client.post("/api/analyze", json={"url": "https://youtu.be/x"}).status_code == 401
+    assert client.post("/api/analyze", json={"url": "https://youtu.be/jNQXAC9IVRw"}).status_code == 401
 
 
-def test_public_demo_caps_spending_per_visitor_and_per_day(monkeypatch):
-    from content_dna import llm, server
+def test_public_demo_caps_spending_per_visitor_and_per_day(monkeypatch, tmp_path):
+    from content_dna import quota, server
     monkeypatch.setattr(server, "ACCESS_CODE", None)
+    monkeypatch.setattr(quota, "LOCAL", tmp_path / "quota.json")
     monkeypatch.setattr(server, "PAID_PER_IP_HOUR", 1)
-    monkeypatch.setitem(server._paid_hits, "testclient", [time.time()])  # this visitor already spent once this hour
+    monkeypatch.setitem(server._paid_hits, "testclient", [time.time()])  # this visitor already ran one this hour
     assert client.post("/api/videos/s83EB_OtaEo/rerun", json={"critique": True}).status_code == 429
-    assert client.post("/api/videos/s83EB_OtaEo/rerun", json={"critique": False}).status_code == 202
-    monkeypatch.setitem(server._paid_hits, "testclient", [])
-    monkeypatch.setattr(llm, "DAILY_BUDGET_USD", 0.01)
-    monkeypatch.setattr(llm, "spent_today", lambda: 1.0)
-    r = client.post("/api/analyze", json={"url": "https://youtu.be/x"})
-    assert r.status_code == 429 and "Today" in r.json()["detail"]
+    assert client.post("/api/videos/s83EB_OtaEo/rerun", json={"critique": False}).status_code == 202  # free
+    monkeypatch.setattr(server, "PAID_PER_IP_HOUR", 0)
+    monkeypatch.setattr(quota, "DAILY_VIDEOS", 5)
+    monkeypatch.setattr(quota, "DAILY_BUDGET_USD", 1.0)
+    monkeypatch.setattr(quota, "EST_RUN_USD", 0.2)
+    days = [quota.admit() for _ in range(5)]  # five worst-case runs fit the dollar budget exactly
+    r = client.post("/api/analyze", json={"url": "https://youtu.be/jNQXAC9IVRw"})
+    assert r.status_code == 429 and "5 free video analyses" in r.json()["detail"]
+    quota.settle(days[0], 0.0, refund=True)  # a run that failed before spending gives its slot back
+    assert quota.status()["videos_left_today"] == 1
+
+
+def test_quota_reserves_worst_case_cost_up_front(monkeypatch, tmp_path):
+    from content_dna import quota
+    monkeypatch.setattr(quota, "LOCAL", tmp_path / "quota.json")
+    monkeypatch.setattr(quota, "DAILY_VIDEOS", 0)
+    monkeypatch.setattr(quota, "DAILY_BUDGET_USD", 0.5)
+    monkeypatch.setattr(quota, "EST_RUN_USD", 0.2)
+    a, b = quota.admit(), quota.admit()  # 0.4 reserved
+    with pytest.raises(quota.QuotaExceeded):
+        quota.admit()  # a third could overrun mid-way, so it is refused before it starts
+    quota.settle(a, 0.05)  # real cost far below the reservation frees room
+    quota.admit()

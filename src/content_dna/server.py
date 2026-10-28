@@ -12,8 +12,8 @@ GET  /api/videos/{id}/frames                              one keyframe per shot,
 GET  /api/demos            ready-made demo videos
 GET  /api/videos           analysed library;   GET /api/videos/{id}  full report for one video
 GET  /api/genres           genres + how well 'auto' works (leave-one-out accuracy)
-Spending (new analyses, critiques) is protected by DNA_DAILY_BUDGET_USD and DNA_PAID_PER_IP_HOUR; a private
-deployment can instead set DNA_ACCESS_CODE and require the header X-Access-Code.
+Spending (new analyses, critiques) is admitted up front by quota.py (DNA_DAILY_VIDEOS, DNA_DAILY_BUDGET_USD) plus
+DNA_PAID_PER_IP_HOUR, so an admitted run always finishes; a private deployment can set DNA_ACCESS_CODE instead.
 GET  /                     analyzer app;  /story  data story;  /reports/{id}  per-video HTML report
 """
 from __future__ import annotations
@@ -34,7 +34,7 @@ from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from . import audio, fingerprint, genre, ingest, llm, perception, pipeline, report, scorecard, visual
+from . import audio, fingerprint, genre, ingest, llm, perception, pipeline, quota, report, scorecard, visual
 
 ROOT = Path(__file__).resolve().parents[2]
 WEB = ROOT / "web"
@@ -68,28 +68,40 @@ def _client_ip(request: Request) -> str:
     return fwd.split(",")[0].strip() if fwd else (request.client.host if request.client else "?")
 
 
-def guard_paid(request: Request, x_access_code: str | None) -> str:
-    """Gate anything that spends LLM credit. With DNA_ACCESS_CODE set, only code holders may spend. Without it (the
-    public demo), spending is capped per day and per visitor; runs answered from the cache don't count."""
+def guard_paid(request: Request, x_access_code: str | None) -> dict:
+    """Admit a run that spends LLM credit, before any of it is spent, so an admitted run never stops halfway. With
+    DNA_ACCESS_CODE set, only code holders may spend. Otherwise (the public demo) each visitor gets
+    DNA_PAID_PER_IP_HOUR runs an hour, and quota.admit enforces the daily video count and budget."""
+    ip = _client_ip(request)
     if ACCESS_CODE:
         if x_access_code != ACCESS_CODE:
             raise HTTPException(401, "This endpoint needs the demo access code (header X-Access-Code)")
-        return _client_ip(request)
-    if llm.DAILY_BUDGET_USD and llm.spent_today() >= llm.DAILY_BUDGET_USD:
-        raise HTTPException(429, "Today's free analyses are used up. The demo videos still work: untick 'Write focused fixes' or try tomorrow.")
-    ip = _client_ip(request)
+        return {"ip": ip}
     with _lock:
         recent = [t for t in _paid_hits.get(ip, []) if t > time.time() - 3600]
         _paid_hits[ip] = recent
     if PAID_PER_IP_HOUR and len(recent) >= PAID_PER_IP_HOUR:
-        raise HTTPException(429, f"You've used your {PAID_PER_IP_HOUR} analyses for this hour. Demos without new fixes still work.")
-    return ip
+        raise HTTPException(429, f"You've used your {PAID_PER_IP_HOUR} analyses for this hour. The demos still work.")
+    try:
+        day = quota.admit()
+    except quota.QuotaExceeded as e:
+        raise HTTPException(429, str(e))
+    with _lock:
+        _paid_hits.setdefault(ip, []).append(time.time())
+    return {"ip": ip, "quota_day": day}
 
 
-def _count_if_spent(job: dict) -> None:
-    if job.get("ip") and job.get("video_id") and llm.spent_since(job["created"], job["video_id"]) > 0:
-        with _lock:
-            _paid_hits.setdefault(job["ip"], []).append(time.time())
+def _settle(job: dict) -> None:
+    """Swap the run's reservation for what it really cost; a run that failed before spending gets its slot back."""
+    if not job.get("quota_day") or job.get("settled"):
+        return
+    job["settled"] = True
+    spent = llm.spent_since(job["created"], job.get("video_id")) if job.get("video_id") else 0.0
+    try:
+        quota.settle(job["quota_day"], spent, refund=job["status"] == "error" and spent == 0)
+    except Exception:
+        traceback.print_exc()  # the run itself is done; never fail it over bookkeeping
+
 
 _jobs: dict[str, dict] = {}
 _lock = threading.Lock()
@@ -123,7 +135,7 @@ def _set(job_id: str, **kw):
         _jobs[job_id].update(kw, updated=time.time())
         _save(job_id)
     if kw.get("status") in ("done", "error"):
-        _count_if_spent(_jobs[job_id])
+        _settle(_jobs[job_id])
 
 
 def _score_and_critique(job_id: str, video_id: str, target: str, goal: str, params: list[str] | None, do_critique: bool):
@@ -189,14 +201,14 @@ def _run(job_id: str, source: str, genre_in: str, do_critique: bool, start: floa
 
 
 def _new_job(source: str, genre_in: str, do_critique: bool, start: float, seconds: float, title: str | None = None,
-             goal: str = "both", params: list[str] | None = None, rerun: str | None = None, ip: str | None = None) -> dict:
+             goal: str = "both", params: list[str] | None = None, rerun: str | None = None, gate: dict | None = None) -> dict:
     with _lock:
         if sum(j["status"] in ("queued", "running") for j in _jobs.values()) >= MAX_ACTIVE:
             raise HTTPException(429, f"{MAX_ACTIVE} analyses are already queued or running; try again when one finishes")
         job_id = uuid.uuid4().hex[:12]
         _jobs[job_id] = {"job_id": job_id, "status": "queued", "stage": "queued", "source": source, "title": title,
                          "genre": genre_in, "start": start, "seconds": seconds, "critique": do_critique,
-                         "goal": goal, "parameters": params, "ip": ip, "created": time.time(), "updated": time.time()}
+                         "goal": goal, "parameters": params, **(gate or {}), "created": time.time(), "updated": time.time()}
         _save(job_id)
     if rerun:
         _pool.submit(_rerun, job_id, rerun, genre_in, goal, params, do_critique)
@@ -216,23 +228,23 @@ def _check_params(params: list[str] | None) -> list[str] | None:
 
 @app.post("/api/analyze", status_code=202, summary="Analyze a YouTube URL (or a file path on the server)")
 def analyze(req: AnalyzeRequest, request: Request, x_access_code: Annotated[str | None, Header()] = None):
-    ip = guard_paid(request, x_access_code)
     if not ingest.youtube_id(req.url) and not Path(req.url).expanduser().exists():
         raise HTTPException(400, "url must be a YouTube URL or an existing local file path")
-    return _new_job(req.url, req.genre, req.critique, req.start, req.seconds, goal=req.goal,
-                    params=_check_params(req.parameters), ip=ip)
+    params = _check_params(req.parameters)
+    gate = guard_paid(request, x_access_code)  # last, so a rejected request never uses up a slot
+    return _new_job(req.url, req.genre, req.critique, req.start, req.seconds, goal=req.goal, params=params, gate=gate)
 
 
 @app.post("/api/videos/{video_id}/rerun", status_code=202,
           summary="Re-score an analysed video for a target genre, goal and parameters (optionally a focused critique)")
 def rerun(video_id: str, req: RerunRequest, request: Request, x_access_code: Annotated[str | None, Header()] = None):
     # re-scoring is free; only the critique can spend LLM credit (and not when it is already cached)
-    ip = guard_paid(request, x_access_code) if req.critique else None
     video_id = _safe_id(video_id)
     if not (ingest.VIDEOS / video_id / "features.json").exists():
         raise HTTPException(404, "unknown video")
-    return _new_job(video_id, req.genre, req.critique, 0, 0, goal=req.goal, params=_check_params(req.parameters),
-                    rerun=video_id, ip=ip)
+    params = _check_params(req.parameters)
+    gate = guard_paid(request, x_access_code) if req.critique else None
+    return _new_job(video_id, req.genre, req.critique, 0, 0, goal=req.goal, params=params, rerun=video_id, gate=gate)
 
 
 @app.post("/api/analyze/upload", status_code=202, summary="Analyze an uploaded video file")
@@ -240,7 +252,6 @@ async def analyze_upload(request: Request, file: Annotated[UploadFile, File()], 
                          start: Annotated[float, Form(ge=0)] = 0, seconds: Annotated[float, Form(gt=0, le=900)] = 900,
                          critique: Annotated[bool, Form()] = True, goal: Annotated[Goal, Form()] = "both",
                          parameters: Annotated[str, Form()] = "", x_access_code: Annotated[str | None, Header()] = None):
-    ip = guard_paid(request, x_access_code)
     params = _check_params(parameters.split(","))
     UPLOADS.mkdir(parents=True, exist_ok=True)
     safe = "".join(c if c.isalnum() or c in "._-" else "_" for c in (file.filename or "upload.mp4"))[-80:]
@@ -258,8 +269,13 @@ async def analyze_upload(request: Request, file: Annotated[UploadFile, File()], 
         raise
     finally:
         await file.close()
+    try:
+        gate = guard_paid(request, x_access_code)
+    except HTTPException:
+        dest.unlink(missing_ok=True)
+        raise
     return _new_job(str(dest), genre, critique, start, seconds, title=Path(file.filename or "upload").stem, goal=goal,
-                    params=params, ip=ip)
+                    params=params, gate=gate)
 
 
 @app.get("/api/jobs/{job_id}", summary="Job status and, when done, the report")
@@ -268,7 +284,7 @@ def get_job(job_id: str):
         raise HTTPException(404, "unknown job")
     job = _jobs.get(job_id)
     if job:
-        return {k: v for k, v in job.items() if k != "ip"}  # never echo visitors' addresses
+        return {k: v for k, v in job.items() if k not in ("ip", "quota_day", "settled")}  # never echo visitors' addresses
     p = JOBS / f"{job_id}.json"  # survives server restarts
     if not p.exists():
         raise HTTPException(404, "unknown job")
@@ -279,7 +295,8 @@ def get_job(job_id: str):
         wd = ingest.VIDEOS / job["video_id"]
         job["result"] = {**video_report(job["video_id"], focus=(wd / "critique_focus.json").exists()),
                          "scorecard": _j(wd / "scorecard.json")}
-    job.pop("ip", None)
+    for k in ("ip", "quota_day", "settled"):
+        job.pop(k, None)
     return job
 
 
@@ -417,9 +434,7 @@ def demos():
 @app.get("/api/config", summary="What this deployment allows")
 def config():
     return {"access_code_required": bool(ACCESS_CODE), "max_upload_mb": MAX_UPLOAD // 2**20,
-            "paid_per_visitor_per_hour": PAID_PER_IP_HOUR or None,
-            "daily_budget_usd": llm.DAILY_BUDGET_USD or None,
-            "daily_budget_left": round(max(0.0, llm.DAILY_BUDGET_USD - llm.spent_today()), 2) if llm.DAILY_BUDGET_USD else None}
+            "paid_per_visitor_per_hour": PAID_PER_IP_HOUR or None, **quota.status()}
 
 
 @app.get("/media/{video_id}/playback.mp4", include_in_schema=False)
