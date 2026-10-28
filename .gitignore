@@ -3,7 +3,11 @@
 __pycache__/
 *.pyc
 data/raw/
-data/cache/
+data/cache/llm/*
+# pre-generated fixes for the three demo videos (default settings), so demo clicks stay free after a fresh deploy
+!data/cache/llm/a1d0074139d5ece65e3cfa82d2439f31fbb6aaf2c48134c4f6dcef5319343c77.json
+!data/cache/llm/b182459d96d655faa447531a028fd8af9917e04b831a3acbb5eb0beeff7c3b41.json
+!data/cache/llm/b69316fafa051d7393ba91ef32416dcce5f33cd266330190f5e3415a9b846ca8.json
 .DS_Store
 .pytest_cache/
 data/videos/*/audio.mp3
