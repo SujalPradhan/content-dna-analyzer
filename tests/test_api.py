@@ -127,3 +127,4 @@ def test_jobs_record_wall_time_per_stage_and_cost_page_is_served(monkeypatch, tm
     del server._jobs["tstage"]
     assert "Where the time goes" in client.get("/cost").text
     assert "moments to fix" in client.get("/show").text
+    assert "The pipeline" in client.get("/how").text

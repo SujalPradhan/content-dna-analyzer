@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How It Works</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/app.css">
+<style>
+:root { --ai: #9085e9; }
+.arch { max-width: 64rem; margin: 0 auto; padding: 1.5rem max(16px, 2.5vw) 3rem; display: grid; gap: 1.5rem; }
+.arch > * { min-width: 0; }
+.arch h1 { font-family: var(--font-anthropic-serif); font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.15; margin: 0; }
+.arch h2 { font-size: 16px; margin: 0 0 .6rem; }
+.lede { color: var(--color-fg-muted); margin: .4rem 0 0; max-width: 46rem; }
+.key { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; font-size: 12.5px; color: var(--color-fg-muted); }
+.key span { display: inline-flex; align-items: center; gap: .4rem; }
+.key i { width: .75rem; height: .75rem; border-radius: 3px; border: 1px solid var(--color-border-line); background: var(--color-panel); }
+.key i.ai { background: color-mix(in srgb, var(--ai) 22%, var(--color-panel)); border-color: var(--ai); }
+.flow { display: grid; gap: .5rem; justify-items: center; }
+.lane { display: grid; gap: .6rem; width: 100%; }
+.lane.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 760px) { .lane.three { grid-template-columns: 1fr; } }
+.box { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: 12px; padding: .8rem .95rem; display: grid; gap: .25rem; width: 100%; max-width: 40rem; justify-self: center; }
+.lane.three .box { max-width: none; }
+.box.ai { border-color: var(--ai); background: color-mix(in srgb, var(--ai) 10%, var(--color-panel)); }
+.box.end { border-color: var(--accent); }
+.box .t { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; font-weight: 700; font-size: 15px; }
+.box .n { color: var(--color-fg-muted); font-weight: 600; font-size: 12px; font-variant-numeric: tabular-nums; }
+.box .tag { margin-left: auto; font-size: 11px; font-weight: 600; color: var(--color-fg-muted); border: 1px solid var(--color-border-line); border-radius: 999px; padding: .05rem .5rem; white-space: nowrap; }
+.box.ai .tag { color: var(--color-fg); border-color: var(--ai); }
+.box p { margin: 0; font-size: 13.5px; color: var(--color-fg-muted); line-height: 1.5; }
+.arrow { color: var(--color-fg-muted); font-size: 18px; line-height: 1; }
+.where { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .75rem; }
+@media (max-width: 760px) { .where { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .where { grid-template-columns: 1fr; } }
+.where .box { max-width: none; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+@media (max-width: 760px) { .facts { grid-template-columns: 1fr; } }
+.fact { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: 12px; padding: .9rem 1rem; }
+.fact b { display: block; font-family: var(--font-anthropic-serif); font-size: 1.6rem; line-height: 1.15; }
+.fact span { font-size: 13px; color: var(--color-fg-muted); }
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../"><span class="dot"></span>Content DNA</a>
+  <nav aria-label="Main"><a href="../show/">Quick view</a><a href="../">Analyzer</a><a href="../story/">Data story</a><a href="../cost/">Cost &amp; time</a><a class="active" href="./">How</a><a id="nav-docs" href="../docs">API</a></nav>
+</header>
+
+<main class="arch">
+  <section>
+    <h1>How it works</h1>
+    <p class="lede">A video goes in. Three sets of signals are pulled out of every second, compared with research and with typical videos in its genre, and turned into timestamped fixes whose evidence is checked against the video.</p>
+  </section>
+
+  <section class="facts" aria-label="At a glance">
+    <div class="fact"><b>3 AI calls</b><span>per video: transcript, screen description, fixes. Everything else is plain code.</span></div>
+    <div class="fact"><b>7–15¢</b><span>per video with fixes, measured on 30 s to 10 min videos.</span></div>
+    <div class="fact"><b>1–2 min</b><span>per video with fixes, mostly waiting on the models.</span></div>
+  </section>
+
+  <section>
+    <h2>The pipeline</h2>
+    <div class="key" aria-hidden="true"><span><i></i>Plain code, free and repeatable</span><span><i class="ai"></i>AI model call</span></div>
+    <div class="flow" style="margin-top:.8rem">
+      <div class="box end"><div class="t">Video file or YouTube link</div><p>Up to 15 minutes are analysed.</p></div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="box"><div class="t"><span class="n">1</span>Ingest<span class="tag">plain code</span></div><p>Downloads at 480p (yt-dlp), cuts the window and extracts the audio (ffmpeg).</p></div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="lane three">
+        <div class="box"><div class="t"><span class="n">2</span>Visual<span class="tag">plain code</span></div><p>Shot cuts and one frame per shot (PySceneDetect); motion, brightness and colour (OpenCV).</p></div>
+        <div class="box ai"><div class="t"><span class="n">3</span>Audio and speech<span class="tag">Whisper</span></div><p>Word-timed transcript, plus loudness, silence and tempo (librosa) for words per minute and pauses.</p></div>
+        <div class="box ai"><div class="t"><span class="n">4</span>Vision<span class="tag">Gemini Flash</span></div><p>Watches at 1 frame per second: type of footage, faces, exact on-screen text, a description of each scene, the hook.</p></div>
+      </div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="box"><div class="t"><span class="n">5</span>Fingerprint<span class="tag">plain code</span></div><p>About 20 numbers per video (cuts per minute, time to first word, on-screen text share…) plus a second-by-second timeline.</p></div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="box"><div class="t"><span class="n">6</span>Compare<span class="tag">plain code</span></div><p>Against 16 researched parameters, each with its source, and the range of 35 real videos in 6 genres. 25 detectors mark problem moments: slow hook, static stretch, dead air.</p></div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="box ai"><div class="t"><span class="n">7</span>Fixes<span class="tag">Claude Sonnet</span></div><p>Reads the measurements and problem moments and writes timestamped fixes. Every fix must cite its evidence.</p></div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="box"><div class="t"><span class="n">8</span>Check the evidence<span class="tag">plain code</span></div><p>Re-checks every cited number, quote and timestamp against the measured data. Anything that doesn't match is flagged, not shown as verified.</p></div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="box end"><div class="t">Report</div><p>Timeline, pain points, fixes with verified evidence, frames, and a second-by-second log of what's on screen and what's said.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where it runs</h2>
+    <div class="where">
+      <div class="box"><div class="t">Website</div><p>GitHub Pages. The demos are pre-computed files, so they need no server.</p></div>
+      <div class="box"><div class="t">API</div><p>Google Cloud Run, one small container that scales to zero.</p></div>
+      <div class="box"><div class="t">AI models</div><p>Whisper, Gemini and Claude through one gateway (LLM Foundry).</p></div>
+      <div class="box"><div class="t">Usage limits</div><p>A daily budget in Cloud Storage; each run reserves its worst-case cost before starting.</p></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

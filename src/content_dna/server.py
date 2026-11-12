@@ -14,7 +14,7 @@ GET  /api/videos           analysed library;   GET /api/videos/{id}  full report
 GET  /api/genres           genres + how well 'auto' works (leave-one-out accuracy)
 Spending (new analyses, critiques) is admitted up front by quota.py (DNA_DAILY_VIDEOS, DNA_DAILY_BUDGET_USD) plus
 DNA_PAID_PER_IP_HOUR, so an admitted run always finishes; a private deployment can set DNA_ACCESS_CODE instead.
-GET  /                     analyzer app;  /story  data story;  /cost  cost and time per video length;  /show  presenter view of the demos;  /reports/{id}  per-video HTML report
+GET  /                     analyzer app;  /story  data story;  /cost  cost and time per video length;  /show  presenter view of the demos;  /how  architecture;  /reports/{id}  per-video HTML report
 """
 from __future__ import annotations
 
@@ -484,6 +484,12 @@ def show_page():
 @app.get("/cost", response_class=HTMLResponse, include_in_schema=False)
 def cost_page():
     return FileResponse(WEB / "cost.html")
+
+
+@app.get("/how/", response_class=HTMLResponse, include_in_schema=False)
+@app.get("/how", response_class=HTMLResponse, include_in_schema=False)
+def how_page():
+    return FileResponse(WEB / "how.html")
 
 
 @app.get("/story/", response_class=HTMLResponse, include_in_schema=False)
