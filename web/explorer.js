@@ -42,6 +42,16 @@ font-family:var(--font-anthropic-sans,system-ui,sans-serif);color:var(--dx-ink)}
 .dx-legend span{display:inline-flex;align-items:center;gap:.3rem}.dx-legend i{width:.65rem;height:.65rem;border-radius:2px;display:inline-block}
 .dx-tip{position:absolute;pointer-events:none;background:var(--cds-surface-popover,var(--dx-panel));border:1px solid var(--dx-line);border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.14);padding:.35rem .55rem;font-size:12px;max-width:20rem;z-index:5}
 .dx-tip .t{color:var(--dx-muted)}
+.dx-moment{margin-top:.75rem;border:1px solid var(--dx-line);border-radius:8px;background:var(--dx-panel);padding:.75rem .9rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.4rem 1.25rem;font-size:13px;line-height:1.45}
+.dx-moment .mt{grid-column:1/-1;display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap}
+.dx-moment .mt b{font-size:15px;font-variant-numeric:tabular-nums}.dx-moment .mt span{color:var(--dx-muted)}
+.dx-moment h5{margin:.1rem 0 .35rem;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dx-muted);font-weight:600}
+.dx-moment .row{display:grid;grid-template-columns:5.5rem 1fr;gap:.5rem;margin-bottom:.2rem}.dx-moment .k{color:var(--dx-muted);font-size:12px}
+.dx-moment .pic{display:flex;gap:.6rem;align-items:flex-start;margin-bottom:.35rem}.dx-moment img{width:7.5rem;aspect-ratio:16/9;object-fit:cover;border-radius:4px;flex:none;background:#000}
+.dx-moment .pain{color:var(--dx-bad);margin-bottom:.2rem}.dx-moment .fix{border-left:3px solid var(--dx-r0);padding:.1rem 0 .1rem .55rem;margin:.35rem 0}
+.dx-moment .fix.high{border-left-color:var(--dx-r1)}.dx-moment .fix.medium{border-left-color:var(--dx-r6)}
+.dx-moment .fix b{display:block}.dx-moment .fix .ok{color:var(--dx-ok);font-size:12px}.dx-moment .none{color:var(--dx-muted)}
+@media (max-width:760px){.dx-moment{grid-template-columns:1fr}.dx-moment .row{grid-template-columns:4.5rem 1fr}}
 .dx-cols{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:1rem;margin-top:1rem}
 @media (max-width:760px){.dx-cols{grid-template-columns:1fr}}
 .dx h4{font-size:15px;margin:0 0 .5rem;font-weight:600}
@@ -180,7 +190,12 @@ font-family:var(--font-anthropic-sans,system-ui,sans-serif);color:var(--dx-ink)}
     });
     const struct = c.structure || [];
     blocks(0, struct, (s) => `--dx-${(ROLE[s.role] || ['', 'r0'])[1]}`);
-    struct.forEach((s) => { const w = x(s.end_s) - x(s.start_s); if (w > 60) { const t = S('text', { x: x(s.start_s) + 5, y: y(0) + 15, style: 'fill:#fff;font-weight:600' }); t.textContent = (ROLE[s.role] || [s.role])[0]; svg.append(t); } });
+    struct.forEach((s, k) => {
+      const w = x(s.end_s) - x(s.start_s);
+      if (w < 30 || (k && struct[k - 1].role === s.role)) return;
+      const t = S('text', { x: x(s.start_s) + 5, y: y(0) + 15, style: 'fill:#fff;font-weight:600' }); t.textContent = (ROLE[s.role] || [s.role])[0]; svg.append(t);
+      if (t.getComputedTextLength && t.getComputedTextLength() > w - 10) t.remove();
+    });
     blocks(1, v.formats || [], (s) => `--dx-${(FMT[s.format] || ['', 'f0'])[1]}`);
     (v.cuts || []).forEach((t) => svg.append(S('line', { x1: x(t), x2: x(t), y1: y(2) + 3, y2: y(2) + laneH - 3, stroke: varc(box, '--dx-ink'), 'stroke-width': 1, 'stroke-opacity': .7 })));
     (v.transcript || []).forEach((s) => svg.append(S('rect', { x: x(s.s), y: y(3) + 5, width: Math.max(1, x(s.e) - x(s.s)), height: laneH - 10, rx: 2, fill: varc(box, '--dx-r6') })));
@@ -195,30 +210,58 @@ font-family:var(--font-anthropic-sans,system-ui,sans-serif);color:var(--dx-ink)}
       svg.append(S('rect', { x: x0, y: y(li('pain')) + 3, width: w, height: laneH - 6, rx: 3, fill: varc(box, '--dx-bad'), 'fill-opacity': .8 }));
     });
     const recs = c.recommendations || [];
-    recs.forEach((r, k) => {
-      const cx = x(r.t);
-      svg.append(S('circle', { cx, cy: y(li('recs')) + laneH / 2, r: 8, fill: varc(box, r.priority === 'high' ? '--dx-r1' : r.priority === 'medium' ? '--dx-r6' : '--dx-r0') }));
-      const t = S('text', { x: cx, y: y(li('recs')) + laneH / 2 + 4, 'text-anchor': 'middle', style: 'fill:#fff;font-weight:700;font-size:10px' }); t.textContent = k + 1; svg.append(t);
+    let lastX = -Infinity;
+    recs.map((r, k) => [r, k]).sort((a, b) => a[0].t - b[0].t || a[1] - b[1]).forEach(([r, k]) => {
+      const cx = Math.max(x(r.t) + 8, lastX + 18); lastX = cx;
+      const pin = S('g', { style: 'cursor:pointer' });
+      const tt = S('title', {}); tt.textContent = `#${k + 1} at ${mmss(r.t)}: ${r.title}`; pin.append(tt);
+      pin.append(S('circle', { cx, cy: y(li('recs')) + laneH / 2, r: 8, fill: varc(box, r.priority === 'high' ? '--dx-r1' : r.priority === 'medium' ? '--dx-r6' : '--dx-r0') }));
+      const t = S('text', { x: cx, y: y(li('recs')) + laneH / 2 + 4, 'text-anchor': 'middle', style: 'fill:#fff;font-weight:700;font-size:10px' }); t.textContent = k + 1; pin.append(t);
+      pin.addEventListener('click', (ev) => { ev.stopPropagation(); if (player) seek(r.t, ev); else setTime(r.t); });
+      svg.append(pin);
     });
     const axisY = lanes.length * (laneH + gap) + 12;
     for (let k = 0; k <= 6; k++) { const t = (dur * k) / 6; const tx = S('text', { x: x(t), y: axisY, 'text-anchor': k === 0 ? 'start' : k === 6 ? 'end' : 'middle' }); tx.textContent = mmss(t); svg.append(tx); }
     const head = S('line', { x1: x(0), x2: x(0), y1: 0, y2: H - 18, stroke: varc(box, '--dx-ink'), 'stroke-width': 2 }); svg.append(head);
     const tAt = (ev) => { const r = svg.getBoundingClientRect(); const px = ((ev.clientX - r.left) / r.width) * W; return Math.min(dur, Math.max(0, ((px - mL) / (W - mL - mR)) * dur)); };
     svg.addEventListener('pointermove', (ev) => {
-      const t = tAt(ev); const s = at(struct, t); const f = at(v.formats || [], t); const sp = at(v.transcript || [], t, 's', 'e');
-      tip.replaceChildren(...[el('div', { class: 't' }, mmss(t) + (s ? ` · ${(ROLE[s.role] || [s.role])[0]}` : '')),
-        f ? el('div', {}, (FMT[f.format] || [f.format])[0]) : null, sp ? el('div', {}, `“${sp.text.slice(0, 90)}${sp.text.length > 90 ? '…' : ''}”`) : null,
-        ...painAt(t).slice(0, 2).map((p) => el('div', { style: 'color:var(--dx-bad)' }, `⚠ ${p.description}`))].filter(Boolean));
+      const t = tAt(ev); const s = at(struct, t); const f = at(v.formats || [], t);
+      tip.replaceChildren(el('div', {}, mmss(t) + (s ? ` · ${(ROLE[s.role] || [s.role])[0]}` : '') + (f ? ` · ${(FMT[f.format] || [f.format])[0]}` : '')));
       tip.hidden = false; const r = lanesWrap.getBoundingClientRect(); let lx = ev.clientX - r.left + 12; if (lx + 240 > r.width) lx = ev.clientX - r.left - 252;
       tip.style.left = Math.max(0, lx) + 'px'; tip.style.top = (ev.clientY - r.top + 14) + 'px';
+      hovering = true; moment(t);
     });
-    svg.addEventListener('pointerleave', () => { tip.hidden = true; });
+    svg.addEventListener('pointerleave', () => { tip.hidden = true; hovering = false; moment(cur); });
     svg.addEventListener('click', (ev) => { const t = tAt(ev); if (player) seek(t, ev); else { setTime(t); const u = ytUrl(t); if (u && opts.openOnClick) window.open(u, '_blank', 'noopener'); } });
     const legend = el('div', { class: 'dx-legend' },
       [...new Map(struct.map((s) => [(ROLE[s.role] || [s.role, 'r0'])[0], (ROLE[s.role] || [s.role, 'r0'])[1]])).entries()].map(([n, k]) => el('span', {}, el('i', { style: `background:var(--dx-${k})` }), n)),
       el('span', {}, '·'),
       [...new Map((v.formats || []).map((s) => [(FMT[s.format] || [s.format, 'f0'])[0], (FMT[s.format] || [s.format, 'f0'])[1]])).entries()].map(([n, k]) => el('span', {}, el('i', { style: `background:var(--dx-${k})` }), n)));
     lanesWrap.append(legend);
+
+    const momentBox = el('div', { class: 'dx-moment', 'aria-live': 'polite' }); lanesWrap.append(momentBox);
+    let hovering = false;
+    const firstSentence = (s) => { const m = String(s || '').replace(/\b(e\.g|i\.e|vs|approx)\./gi, '$1\u2024').match(/^.*?[.!?](\s|$)/); return (m ? m[0] : String(s || '')).replace(/\u2024/g, '.').trim(); };
+    const row = (k, val) => el('div', { class: 'row' }, el('span', { class: 'k' }, k), val);
+    function moment(t) {
+      const s = at(struct, t), f = at(v.formats || [], t), sp = at(v.transcript || [], t, 's', 'e'), img = opts.frameAt ? opts.frameAt(t) : null;
+      const fixes = recs.map((r, k) => [r, k]).filter(([r]) => r.t - 1 <= t && t <= Math.max(r.t_end_s ?? r.t, r.t) + 1)
+        .sort((a, b) => ({ high: 0, medium: 1, low: 2 }[a[0].priority] ?? 3) - ({ high: 0, medium: 1, low: 2 }[b[0].priority] ?? 3));
+      const pains = painAt(t);
+      const seen = el('div', {}, el('h5', {}, 'What it pulled out'),
+        el('div', { class: 'pic' }, img ? el('img', { src: img, alt: `Frame at ${mmss(t)}` }) : null,
+          el('div', {}, f ? el('b', {}, (FMT[f.format] || [f.format])[0]) : '—', f && f.on_screen_text ? el('div', {}, `Text on screen: “${f.on_screen_text}”`) : el('div', { class: 'none' }, 'No text on screen'),
+            f && f.description ? el('div', {}, f.description) : null)),
+        row('Said', sp ? `“${sp.text}”` : el('span', { class: 'none' }, 'No speech here')),
+        row('Story beat', s ? `${(ROLE[s.role] || [s.role])[0]}${s.label ? ` · ${s.label}` : ''}` : '—'));
+      const todo = el('div', {}, el('h5', {}, 'What to fix here'),
+        pains.map((p) => el('div', { class: 'pain' }, `⚠ ${p.description}`)),
+        fixes.slice(0, 3).map(([r, k]) => el('div', { class: `fix ${r.priority}` }, el('b', {}, `#${k + 1} ${r.title}`), `Try: ${firstSentence(r.recommendation)} `,
+          r.evidence.length ? el('span', { class: 'ok' }, `✓ ${r.evidence.filter((e) => e.verified).length}/${r.evidence.length} evidence checked`) : null)),
+        fixes.length > 3 ? el('div', { class: 'none' }, `+${fixes.length - 3} more in the list below`) : null,
+        !pains.length && !fixes.length ? el('div', { class: 'none' }, 'Nothing flagged at this moment.') : null);
+      momentBox.replaceChildren(el('div', { class: 'mt' }, el('b', {}, `At ${mmss(t)}`), el('span', {}, hovering ? 'hover · click to play from here' : 'move along the timeline to read any moment')), seen, todo);
+    }
 
     // ----- recommendations + side
     // compact: one line per recommendation (time, title, evidence count); the detail opens on click
@@ -257,6 +300,7 @@ font-family:var(--font-anthropic-sans,system-ui,sans-serif);color:var(--dx-ink)}
         el('div', { class: 'row' }, el('span', { class: 'k' }, 'Said'), sp ? `“${sp.text}”` : 'No speech here'),
         near.length ? el('div', { class: 'row' }, el('span', { class: 'k' }, 'Recommendation'), near.map(([r, k]) => `#${k + 1} ${r.title}`).join('; ')) : null,
         painAt(t).length ? el('div', { class: 'row', style: 'color:var(--dx-bad)' }, el('span', { class: 'k' }, 'Pain point'), painAt(t).map((p) => p.description).join('; ')) : null].filter(Boolean));
+      if (!hovering) moment(t);
     }
     setTime(0);
     return { seek, setTime };

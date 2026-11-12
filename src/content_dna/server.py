@@ -342,7 +342,7 @@ def video_report(video_id: str, focus: bool = False) -> dict:
            "bins": feats["bins"], "cuts": [round(s, 2) for s, _ in vis["shots"][1:]],
            "loudness": {"t": L["t"][::step], "db": L["db"][::step]},
            "transcript": aud["transcript"]["segments"],
-           "formats": [{k: s[k] for k in ("start_s", "end_s", "format", "face_visible", "on_screen_text")}
+           "formats": [{k: s.get(k) for k in ("start_s", "end_s", "format", "face_visible", "on_screen_text", "description")}
                        for s in (per or {}).get("segments", [])],
            "ctas": ((per or {}).get("overall") or {}).get("cta_moments", []),
            "hook_type": ((per or {}).get("hook") or {}).get("hook_type")}

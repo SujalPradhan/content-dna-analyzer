@@ -151,7 +151,8 @@
     $('r-title').textContent = r.title || r.video_id;
     $('tally').replaceChildren(...['problem', 'watch', 'good'].map((k) => el('div', { class: `t t-${k}` }, el('b', {}, sc.counts[k] || 0), STATUS[k][1])));
     const v = { ...r, pain_points: sc.pain_points, media_url: r.media_url ? API + r.media_url : null };
-    ex = DNAExplorer.render($('explorer'), v, { player: true, compact: true });
+    frames = [];
+    ex = DNAExplorer.render($('explorer'), v, { player: true, compact: true, frameAt: (t) => { const f = frames.find((s) => s.start <= t && t < s.end) || frames[frames.length - 1]; return f && f.image ? f.base + f.image : null; } });
     drawCards(sc);
     drawFrames(r, sc, params);
     const links = $('links'); links.replaceChildren();
@@ -198,6 +199,7 @@
       .then((f) => renderShots(f.shots, API)).catch((err) => $('frames').replaceChildren(el('p', { class: 'err' }, err.message)));
   }
   function renderShots(shots, base) {
+    frames = shots.map((s) => ({ ...s, base }));
     const box = $('frames');
     box.replaceChildren(...shots.map((s) => {
         const bad = s.pain_points.length > 0;
@@ -206,6 +208,7 @@
           el('span', { class: 'cap' }, `${mmss(s.start)} · ${s.length.toFixed(1)} s`, bad ? el('b', {}, ` ⚠ ${s.pain_points[0].description}`) : null));
     }));
   }
+  let frames = [];
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => last && show(last.r, last.params), 300); });
 
   // ---------------------------------------------------------------- boot
