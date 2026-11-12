@@ -209,3 +209,4 @@ ts,video_id,stage,model,in,out,cache_read,cache_write,usd
 1793207158,3B3B9eSgMV0@0-600,whisper,whisper-1,0,0,0,0,0.060000
 1793207180,3B3B9eSgMV0@0-600,perception,gemini-3.5-flash,28629,3036,26209,0,0.024733
 1793207215,3B3B9eSgMV0@0-600,critique,claude-sonnet-5,14342,3466,8263,0,0.064997
+1794471600,7LItwuSZ8ag,critique,claude-sonnet-5,8642,3387,0,8263,0.071812

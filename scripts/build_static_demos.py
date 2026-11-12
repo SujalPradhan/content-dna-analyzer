@@ -38,7 +38,8 @@ def main():
             shots.append({"shot": i, "start": round(s, 2), "end": round(e, 2), "length": round(e - s, 2),
                           "image": f"assets/demo/{vid}/{name}" if name else None})
         cards = {g: scorecard.evaluate(vid, g, None, "both") for g in scorecard.GENRES}
-        body = {"report": video_report(vid, focus=True), "scorecards": cards, "shots": shots,
+        segments = json.loads((wd / "perception.json").read_text())["segments"]
+        body = {"report": video_report(vid, focus=True), "scorecards": cards, "shots": shots, "segments": segments,
                 "fixes_for": {"genre": d["genre"], "goal": "both"}}
         (OUT / f"{vid}.json").write_text(json.dumps(_clean(body), allow_nan=False))
         print(vid, len(shots), "shots", sum(len(c["parameters"]) for c in cards.values()), "parameter scores")

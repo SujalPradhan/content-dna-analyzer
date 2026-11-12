@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Content DNA Quick View</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/app.css">
+<style>
+:root { --f-talking_head: #3987e5; --f-b_roll: #d95926; --f-animation: #199e70; --f-screen_recording: #c98500; --f-graphics_text: #d55181; --f-product: #9085e9; --f-other: #6b7682; --fix: #ff8a7a; }
+.qv { max-width: 92rem; margin: 0 auto; padding: 1rem max(16px, 2.5vw) 3rem; display: grid; gap: .9rem; }
+.qv > * { min-width: 0; }
+.hero h1 { font-family: var(--font-anthropic-serif); font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.1; margin: 0; letter-spacing: -.01em; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p { color: var(--color-fg-muted); margin: .35rem 0 0; max-width: 60rem; font-size: 15px; }
+.pick { display: flex; flex-wrap: wrap; gap: .5rem; }
+.pick button { font: inherit; font-size: 14px; padding: .5rem .9rem; border-radius: 999px; border: 1px solid var(--color-border-line); background: var(--color-panel); color: var(--color-fg); cursor: pointer; display: inline-flex; gap: .5rem; align-items: center; }
+.pick button kbd { font: inherit; font-size: 11px; color: var(--color-fg-muted); border: 1px solid var(--color-border-line); border-radius: 4px; padding: 0 .3rem; }
+.pick button[aria-pressed="true"] { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--color-panel)); }
+.grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 1.1rem; align-items: start; }
+@media (max-width: 1000px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+.stage { display: grid; grid-template-columns: minmax(0, 1fr); gap: .8rem; }
+.title { display: flex; gap: .6rem; align-items: baseline; flex-wrap: wrap; }
+.title h2 { margin: 0; font-size: 18px; }
+.title span { color: var(--color-fg-muted); font-size: 13px; }
+.player { aspect-ratio: 16 / 9; width: 100%; background: #000; border-radius: 12px; overflow: hidden; }
+.player iframe, .player > div { width: 100%; height: 100%; border: 0; display: block; }
+.tl { position: relative; padding: .2rem 0 1.3rem; cursor: pointer; user-select: none; }
+.tl .lab { font-size: 11.5px; color: var(--color-fg-muted); margin: 0 0 .25rem; display: flex; justify-content: space-between; }
+.band { display: flex; gap: 2px; height: 1.6rem; }
+.band div:not(:empty) { padding: 0 .35rem; }
+.band div { height: 100%; border-radius: 4px; min-width: 0; font-size: 11px; color: #0b0d10; font-weight: 600; padding: 0; display: flex; align-items: center; overflow: hidden; white-space: nowrap; }
+.pains { position: relative; height: 1.7rem; margin-top: .4rem; background: var(--color-panel-2); border-radius: 4px; }
+.pains .p.long { background: color-mix(in srgb, var(--fix) 16%, transparent); }
+.pains .p { position: absolute; top: 0; height: 100%; background: color-mix(in srgb, var(--fix) 45%, transparent); border-left: 2px solid var(--fix); min-width: 4px; }
+.pins { position: absolute; left: 0; right: 0; top: 50%; height: 0; z-index: 1; }
+.pin { position: absolute; transform: translate(-50%, -50%); width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--fix); color: #200; font-weight: 700; font-size: 12px; display: grid; place-items: center; border: 2px solid var(--color-bg); }
+.head-line { position: absolute; top: 0; bottom: 1.1rem; width: 2px; background: var(--color-fg); pointer-events: none; transition: left .2s linear; }
+.ticks { position: absolute; left: 0; right: 0; bottom: 0; height: 1rem; font-size: 11px; color: var(--color-fg-muted); }
+.ticks span { position: absolute; transform: translateX(-50%); }
+.ticks span:first-child { transform: none; }
+.legend { display: flex; flex-wrap: wrap; gap: .3rem .9rem; font-size: 12px; color: var(--color-fg-muted); }
+.legend span { display: inline-flex; gap: .35rem; align-items: center; }
+.legend i { width: .7rem; height: .7rem; border-radius: 3px; display: inline-block; }
+.fixes { display: grid; gap: .7rem; }
+.fixes h2 { margin: 0; font-family: var(--font-anthropic-serif); font-size: 1.6rem; }
+.fixes .sub { margin: -.3rem 0 .1rem; color: var(--color-fg-muted); font-size: 13.5px; }
+.card { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: .75rem; background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: 12px; padding: .75rem; cursor: pointer; text-align: left; font: inherit; color: inherit; width: 100%; }
+.card:hover, .card.on { border-color: var(--fix); }
+.card .thumb { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 9; background: #000; align-self: start; }
+.card .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card .thumb b { position: absolute; left: .3rem; top: .3rem; width: 1.4rem; height: 1.4rem; border-radius: 50%; background: var(--fix); color: #200; font-size: 12px; display: grid; place-items: center; }
+.card .when { font-size: 12.5px; font-weight: 700; color: var(--fix); }
+.card h3 { margin: .1rem 0 .3rem; font-size: 15px; line-height: 1.3; }
+.card p { margin: 0; font-size: 13px; color: var(--color-fg-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card p + p { margin-top: .3rem; }
+.card p strong { color: var(--color-fg); font-weight: 600; }
+.proof { font-size: 12.5px; color: var(--color-ok); margin-top: .35rem; }
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .7rem; }
+@media (max-width: 760px) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.fact { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: 12px; padding: .7rem .9rem; }
+.fact b { display: block; font-family: var(--font-anthropic-serif); font-size: 1.5rem; }
+.fact span { font-size: 12.5px; color: var(--color-fg-muted); }
+details.panel > summary { cursor: pointer; font-weight: 600; font-size: 15px; }
+details.panel[open] > summary { margin-bottom: .7rem; }
+.log { width: 100%; border-collapse: collapse; font-size: 13px; }
+.log td, .log th { text-align: left; padding: .45rem .5rem; border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.log th { font-size: 12px; color: var(--color-fg-muted); font-weight: 600; }
+.log tr { cursor: pointer; } .log tbody tr:hover { background: var(--color-panel-2); }
+.log img { width: 6rem; border-radius: 6px; display: block; }
+.log .t { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--color-fg-muted); }
+.log .ost { font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+.wrap { overflow-x: auto; }
+.how { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
+@media (max-width: 760px) { .how { grid-template-columns: 1fr; } }
+.how div { background: var(--color-bg); border-radius: 10px; padding: .8rem; }
+.how b { display: block; margin-bottom: .2rem; }
+.how span { font-size: 13px; color: var(--color-fg-muted); }
+.tip { position: fixed; pointer-events: none; z-index: 20; background: var(--cds-surface-popover); border: 1px solid var(--color-border-line); border-radius: 8px; padding: .45rem .6rem; font-size: 12.5px; max-width: 18rem; box-shadow: 0 6px 20px #0008; }
+.foot { font-size: 12.5px; color: var(--color-fg-muted); }
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="./"><span class="dot"></span>Content DNA</a>
+  <nav aria-label="Main"><a class="active" href="./">Quick view</a><a href="../">Analyzer</a><a href="../story/">Data story</a><a href="../cost/">Cost &amp; time</a></nav>
+</header>
+
+<main class="qv">
+  <section class="hero">
+    <h1>Find the <em>exact second</em> a video loses its audience, and why.</h1>
+    <p>It measures every shot, word and frame, compares them with what works in that genre, and points to the moments to fix. Each point links to its second in the video and to the measurement behind it.</p>
+  </section>
+
+  <div class="pick" id="pick" role="group" aria-label="Choose a video"></div>
+
+  <section class="grid">
+    <div class="stage">
+      <div class="title"><span id="vmeta"></span></div>
+      <div class="player"><div id="yt"></div></div>
+      <div class="tl" id="tl" aria-label="Timeline: click to jump">
+        <p class="lab"><span>What's on screen</span><span>Click anywhere to jump</span></p>
+        <div class="band" id="band"></div>
+        <div class="pains" id="pains"><div class="pins" id="pins"></div></div>
+        <div class="head-line" id="playhead" style="left:0"></div>
+        <div class="ticks" id="ticks"></div>
+      </div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div class="fixes">
+      <h2 id="fixcount"></h2>
+      <p class="sub">Click a moment to play it. Red on the timeline is where each problem sits.</p>
+      <div id="cards" class="fixes"></div>
+    </div>
+  </section>
+
+  <section class="facts" id="facts"></section>
+
+  <details class="panel" id="logbox">
+    <summary>What's on screen, moment by moment</summary>
+    <p class="hint">Extracted automatically: the type of footage, any text on screen, and a description, with timestamps. Click a row to jump.</p>
+    <div class="wrap"><table class="log" id="log"></table></div>
+  </details>
+
+  <details class="panel">
+    <summary>How it works</summary>
+    <div class="how">
+      <div><b>1 · Measure</b><span>Shot cuts, one frame per shot, motion and loudness are measured on our server. Whisper writes a word-timed transcript; Gemini describes what is on screen.</span></div>
+      <div><b>2 · Compare</b><span>About 20 measurements are checked against researched guidance and against the typical range for the genre in a corpus of real YouTube videos.</span></div>
+      <div><b>3 · Fix</b><span>Claude writes timestamped fixes that must cite the measurements. A checker verifies every cited number, quote and frame before it is shown.</span></div>
+    </div>
+  </details>
+
+  <p class="foot">Fixes are suggestions to test, not predictions of views. Results for these videos are pre-computed, so this page needs no server. <a href="../">Analyze your own video</a> · <a href="../cost/">Cost and time per video</a></p>
+</main>
+<div class="tip" id="tip" hidden></div>
+<script>
+(async () => {
+  const $ = id => document.getElementById(id);
+  const el = (tag, attrs = {}, ...kids) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (k === 'style') n.style.cssText = v; else if (k.startsWith('on')) n.addEventListener(k.slice(2), v); else n.setAttribute(k, v);
+    }
+    n.append(...kids.flat().filter(k => k != null));
+    return n;
+  };
+  const mmss = t => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
+  const plain = s => (s || '').replace(/\b[a-z]+(?:_[a-z]+)+\b/g, m => m.replace(/_/g, ' '));
+  const firstSentence = s => {
+    const t = plain(s).replace(/\b(e\.g|i\.e|vs|approx)\./g, '$1\u2024');
+    return (t.match(/^.*?[.!?](?=\s+[A-Z]|\s*$)/)?.[0] || t).replace(/\u2024/g, '.');
+  };
+  const FORMAT = { talking_head: 'Person talking', b_roll: 'Footage', animation: 'Animation', screen_recording: 'Screen recording',
+                   graphics_text: 'Text / graphics', product: 'Product', other: 'Other' };
+  const PRI = { high: 0, medium: 1, low: 2 };
+
+  const tip = $('tip');
+  const hover = (node, html) => {
+    const move = e => { const r = tip.getBoundingClientRect(); tip.style.left = Math.min(e.clientX + 14, innerWidth - r.width - 8) + 'px'; tip.style.top = Math.max(8, e.clientY - r.height - 12) + 'px'; };
+    node.addEventListener('pointerenter', e => { tip.innerHTML = html; tip.hidden = false; move(e); });
+    node.addEventListener('pointermove', move);
+    node.addEventListener('pointerleave', () => { tip.hidden = true; });
+  };
+
+  const index = await (await fetch('../assets/demo/index.json')).json();
+  const demos = index.demos;
+  let player = null, ytReady = null, dur = 1, cur = null;
+
+  const loadYT = () => ytReady || (ytReady = new Promise(res => {
+    window.onYouTubeIframeAPIReady = () => res(window.YT);
+    document.head.append(el('script', { src: 'https://www.youtube.com/iframe_api' }));
+  }));
+  const seek = t => {
+    if (player && player.seekTo) { player.seekTo(t, true); player.playVideo(); }
+    setHead(t);
+  };
+  const setHead = t => { $('playhead').style.left = `${Math.max(0, Math.min(1, t / dur)) * 100}%`; };
+  setInterval(() => { if (player && player.getCurrentTime) setHead(player.getCurrentTime()); }, 250);
+
+  demos.forEach((d, i) => $('pick').append(el('button', { type: 'button', 'aria-pressed': 'false', 'data-id': d.video_id, onclick: () => show(d.video_id) },
+    d.label.split(' · ')[0], el('kbd', {}, String(i + 1)))));
+  addEventListener('keydown', e => {
+    if (e.target.closest('input, textarea')) return;
+    const d = demos[+e.key - 1];
+    if (d) show(d.video_id);
+  });
+
+  async function show(id) {
+    if (cur === id) return;
+    cur = id;
+    history.replaceState(null, '', '#v=' + id);
+    document.querySelectorAll('#pick button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === id)));
+    const d = await (await fetch(`../assets/demo/${id}.json`)).json();
+    if (cur !== id) return;
+    const r = d.report, crit = r.critique || {}, card = d.scorecards[r.genre] || {};
+    dur = r.duration;
+    $('vmeta').textContent = `${r.title} · ${r.channel} · ${mmss(dur)}`;
+
+    const YT = await loadYT();
+    if (player && player.loadVideoById) player.cueVideoById(r.youtube_id);
+    else player = new YT.Player('yt', { videoId: r.youtube_id, playerVars: { rel: 0, modestbranding: 1, playsinline: 1 } });
+    setHead(0);
+
+    const shotAt = t => d.shots.find(s => t >= s.start && t < s.end) || d.shots[d.shots.length - 1];
+    const img = t => { const s = shotAt(t); return s && s.image ? '../' + s.image : ''; };
+
+    // Format band
+    $('band').replaceChildren(...d.segments.map(s => {
+      const w = (s.end_s - s.start_s) / dur * 100;
+      const n = el('div', { style: `flex:0 1 calc(${w}% - 2px);background:var(--f-${FORMAT[s.format] ? s.format : 'other'})` }, w > 9 ? FORMAT[s.format] || s.format : '');
+      hover(n, `<b>${mmss(s.start_s)}–${mmss(s.end_s)} · ${FORMAT[s.format] || s.format}</b><br>${s.description}${s.on_screen_text ? `<br><i>On screen: “${s.on_screen_text}”</i>` : ''}`);
+      return n;
+    }));
+    const used = [...new Set(d.segments.map(s => FORMAT[s.format] ? s.format : 'other'))];
+    $('legend').replaceChildren(...used.map(f => el('span', {}, el('i', { style: `background:var(--f-${f})` }), FORMAT[f])),
+      el('span', {}, el('i', { style: 'background:var(--fix)' }), 'Problem'));
+
+    // Pain points
+    const pains = card.pain_points || [];
+    $('pains').replaceChildren($('pins'), ...pains.map(p => {
+      const end = p.t_end != null ? p.t_end : p.t + dur * 0.012;
+      const n = el('div', { class: (end - p.t) / dur > 0.25 ? 'p long' : 'p', style: `left:${p.t / dur * 100}%;width:${Math.max(0.6, (end - p.t) / dur * 100)}%` });
+      hover(n, `<b>${mmss(p.t)} · ${p.description}</b><br>${p.detail || ''}`);
+      return n;
+    }));
+
+    // Top three fixes: by priority, then shown in time order
+    const recs = (crit.recommendations || []).map((x, i) => ({ ...x, i })).sort((a, b) => PRI[a.priority] - PRI[b.priority] || a.i - b.i).slice(0, 3).sort((a, b) => a.t - b.t);
+    const nrec = (crit.recommendations || []).length;
+    $('fixcount').textContent = nrec > recs.length ? `Top ${recs.length} of ${nrec} moments to fix` : `${recs.length} moments to fix`;
+    let prev = -1, nudge = 0;
+    $('pins').replaceChildren(...recs.map((x, k) => {
+      const at = x.t / dur * 100;
+      nudge = at - prev < 3 ? nudge + 1 : 0;
+      prev = at;
+      return el('div', { class: 'pin', style: `left:calc(${at}% + ${nudge * 1.6}rem)` }, String(k + 1));
+    }));
+    $('cards').replaceChildren(...recs.map((x, k) => {
+      const ok = (x.evidence || []).filter(e => e.verified).length, all = (x.evidence || []).length;
+      const range = x.t_end_s && x.t_end_s - x.t > 2 ? `${mmss(x.t)}–${mmss(x.t_end_s)}` : mmss(x.t);
+      return el('button', { class: 'card', type: 'button', onclick: e => { document.querySelectorAll('.card').forEach(c => c.classList.remove('on')); e.currentTarget.classList.add('on'); seek(x.t); } },
+        el('div', { class: 'thumb' }, el('img', { src: img(x.t + 0.5), alt: '', loading: 'lazy' }), el('b', {}, String(k + 1))),
+        el('div', {},
+          el('span', { class: 'when' }, `▶ ${range}`),
+          el('h3', {}, x.title),
+          el('p', {}, el('strong', {}, 'Seen: '), firstSentence(x.observation)),
+          el('p', {}, el('strong', {}, 'Try: '), firstSentence(x.recommendation)),
+          all ? el('div', { class: 'proof' }, `✓ ${ok} of ${all} cited measurements checked against the video`) : null));
+    }));
+
+    // Facts
+    const fp = r.fingerprint, g = crit.grounding || {};
+    $('facts').replaceChildren(
+      el('div', { class: 'fact' }, el('b', {}, String(d.shots.length)), el('span', {}, 'shots found, one frame kept from each')),
+      el('div', { class: 'fact' }, el('b', {}, String(Math.round(fp.wpm))), el('span', {}, 'words per minute, from the transcript')),
+      el('div', { class: 'fact' }, el('b', {}, String(pains.length)), el('span', {}, 'problem moments flagged on the timeline')),
+      el('div', { class: 'fact' }, el('b', {}, g.evidence_items ? `${g.evidence_verified}/${g.evidence_items}` : '–'), el('span', {}, 'cited measurements verified against the video')));
+
+    // Moment log
+    $('log').replaceChildren(el('thead', {}, el('tr', {}, el('th', {}, 'Time'), el('th', {}, 'Frame'), el('th', {}, 'Type'), el('th', {}, 'Text on screen'), el('th', {}, 'What happens'))),
+      el('tbody', {}, d.segments.map(s => el('tr', { onclick: () => { seek(s.start_s); scrollTo({ top: 0, behavior: 'smooth' }); } },
+        el('td', { class: 't' }, `${mmss(s.start_s)}–${mmss(s.end_s)}`),
+        el('td', {}, el('img', { src: img(s.start_s + 0.5), alt: '', loading: 'lazy' })),
+        el('td', {}, FORMAT[s.format] || s.format),
+        el('td', { class: 'ost' }, s.on_screen_text || '–'),
+        el('td', {}, s.description)))));
+
+    // Timeline ticks
+    const step = dur > 180 ? 60 : dur > 60 ? 30 : 10;
+    const ticks = []; for (let t = 0; t <= dur - step / 3; t += step) ticks.push(el('span', { style: `left:${t / dur * 100}%` }, mmss(t)));
+    $('ticks').replaceChildren(...ticks);
+  }
+
+  $('tl').addEventListener('click', e => {
+    const b = $('band').getBoundingClientRect();
+    seek(Math.max(0, Math.min(1, (e.clientX - b.left) / b.width)) * dur);
+  });
+
+  const want = new URLSearchParams(location.hash.slice(1)).get('v');
+  show(demos.some(d => d.video_id === want) ? want : demos[0].video_id);
+})();
+</script>
+</body>
+</html>

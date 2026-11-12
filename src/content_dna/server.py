@@ -14,7 +14,7 @@ GET  /api/videos           analysed library;   GET /api/videos/{id}  full report
 GET  /api/genres           genres + how well 'auto' works (leave-one-out accuracy)
 Spending (new analyses, critiques) is admitted up front by quota.py (DNA_DAILY_VIDEOS, DNA_DAILY_BUDGET_USD) plus
 DNA_PAID_PER_IP_HOUR, so an admitted run always finishes; a private deployment can set DNA_ACCESS_CODE instead.
-GET  /                     analyzer app;  /story  data story;  /cost  cost and time per video length;  /reports/{id}  per-video HTML report
+GET  /                     analyzer app;  /story  data story;  /cost  cost and time per video length;  /show  presenter view of the demos;  /reports/{id}  per-video HTML report
 """
 from __future__ import annotations
 
@@ -47,6 +47,7 @@ PAID_PER_IP_HOUR = int(os.environ.get("DNA_PAID_PER_IP_HOUR", "0"))  # 0 = unlim
 Genre = Literal["auto", "ad", "cooking", "explainer", "shorts", "tech_review", "vlog"]
 Goal = Literal["retention", "virality", "both"]
 DEMOS = [  # analysed corpus videos with frames committed, so the demo works on a fresh deployment
+    {"video_id": "7LItwuSZ8ag", "genre": "explainer", "label": "School science lesson · 4:06"},
     {"video_id": "s83EB_OtaEo", "genre": "ad", "label": "Super Bowl ad · 1:38"},
     {"video_id": "Ml9Ojbl2uaw", "genre": "explainer", "label": "Explainer · 3:04"},
     {"video_id": "KWuFpi7j4_0", "genre": "shorts", "label": "YouTube Short · 0:41"},
@@ -471,6 +472,12 @@ def spend():
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 def index():
     return FileResponse(WEB / "index.html")
+
+
+@app.get("/show/", response_class=HTMLResponse, include_in_schema=False)
+@app.get("/show", response_class=HTMLResponse, include_in_schema=False)
+def show_page():
+    return FileResponse(WEB / "show.html")
 
 
 @app.get("/cost/", response_class=HTMLResponse, include_in_schema=False)
