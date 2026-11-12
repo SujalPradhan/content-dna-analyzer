@@ -384,7 +384,7 @@ def get_video(video_id: str):
 @app.get("/api/parameters", summary="The researched retention/reach parameters and their sources")
 def parameters():
     cat = scorecard.catalogue()
-    keep = ("id", "name", "goal", "summary", "evidence_strength", "genre_notes", "sources")
+    keep = ("id", "name", "goal", "summary", "evidence_strength", "genre_notes", "sources", "signals")
     return {"version": cat.get("version"), "generated": cat.get("generated"),
             "parameters": [{**{k: p.get(k) for k in keep},
                             "genres": sorted({g for r in p["rules"] for g in (scorecard.GENRES if r["applies_to"] == "all" else r["applies_to"])})}

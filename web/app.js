@@ -152,7 +152,7 @@
     $('tally').replaceChildren(...['problem', 'watch', 'good'].map((k) => el('div', { class: `t t-${k}` }, el('b', {}, sc.counts[k] || 0), STATUS[k][1])));
     const v = { ...r, pain_points: sc.pain_points, media_url: r.media_url ? API + r.media_url : null };
     frames = [];
-    ex = DNAExplorer.render($('explorer'), v, { player: true, compact: true, frameAt: (t) => { const f = frames.find((s) => s.start <= t && t < s.end) || frames[frames.length - 1]; return f && f.image ? f.base + f.image : null; } });
+    ex = DNAExplorer.render($('explorer'), v, { player: true, compact: true, sourcesFor: (rec) => sourcesFor(rec, sc), frameAt: (t) => { const f = frames.find((s) => s.start <= t && t < s.end) || frames[frames.length - 1]; return f && f.image ? f.base + f.image : null; } });
     drawCards(sc);
     drawFrames(r, sc, params);
     const links = $('links'); links.replaceChildren();
@@ -164,6 +164,18 @@
     $('view').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   const jump = (t) => { if (ex) ex.seek(t); $('explorer').scrollIntoView({ behavior: 'smooth', block: 'center' }); };
+
+  function sourcesFor(rec, sc) {
+    const metrics = rec.evidence.filter((e) => e.kind === 'metric').map((e) => e.ref);
+    const signals = (p) => (catalogue.find((c) => c.id === p.id) || {}).signals || p.checks.map((c) => c.signal);
+    const end = Math.max(rec.t_end_s ?? rec.t, rec.t);
+    let ps = sc.parameters.filter((p) => signals(p).some((s) => metrics.includes(s)));
+    if (!ps.length) ps = sc.parameters.filter((p) => p.flags.some((f) => f.t <= end && (f.t_end ?? f.t) >= rec.t));
+    const basis = { measured_outlier_vs_corpus: `Measured: an outlier against typical ${(GENRE[sc.genre] || sc.genre).toLowerCase()} videos in our 35-video corpus.`,
+      internal_inconsistency: 'Measured: this video contradicts itself at this point.',
+      craft_heuristic: 'Craft heuristic: a common editing practice, not a measured outlier.' }[rec.basis];
+    return { basis, groups: ps.map((p) => ({ name: p.name, strength: (EVIDENCE[p.evidence_strength] || [p.evidence_strength])[0], sources: p.sources })) };
+  }
 
   function drawCards(sc) {
     const box = $('cards'); box.replaceChildren();

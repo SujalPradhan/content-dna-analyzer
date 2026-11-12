@@ -52,6 +52,10 @@ font-family:var(--font-anthropic-sans,system-ui,sans-serif);color:var(--dx-ink)}
 .dx-moment .fix.high{border-left-color:var(--dx-r1)}.dx-moment .fix.medium{border-left-color:var(--dx-r6)}
 .dx-moment .fix b{display:block}.dx-moment .fix .ok{color:var(--dx-ok);font-size:12px}.dx-moment .none{color:var(--dx-muted)}
 @media (max-width:760px){.dx-moment{grid-template-columns:1fr}.dx-moment .row{grid-template-columns:4.5rem 1fr}}
+.dx-src{margin-top:.45rem;border-top:1px solid var(--dx-line);padding-top:.4rem;font-size:12.5px}
+.dx-src summary{cursor:pointer;font-weight:600;color:var(--dx-ink)}.dx-src[open] summary{margin-bottom:.35rem}
+.dx-src .basis{color:var(--dx-muted);margin:.2rem 0 .4rem}.dx-src .grp{margin:.35rem 0}.dx-src .grp b{font-size:12.5px}.dx-src .grp span{color:var(--dx-muted)}
+.dx-src ul{margin:.2rem 0 0;padding-left:1.1rem;display:grid;gap:.15rem}.dx-src a{color:var(--dx-ink);overflow-wrap:anywhere}.dx-src small{color:var(--dx-muted)}
 .dx-cols{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:1rem;margin-top:1rem}
 @media (max-width:760px){.dx-cols{grid-template-columns:1fr}}
 .dx h4{font-size:15px;margin:0 0 .5rem;font-weight:600}
@@ -265,13 +269,24 @@ font-family:var(--font-anthropic-sans,system-ui,sans-serif);color:var(--dx-ink)}
 
     // ----- recommendations + side
     // compact: one line per recommendation (time, title, evidence count); the detail opens on click
+    const sourcesBox = (r) => {
+      const src = opts.sourcesFor ? opts.sourcesFor(r) : null;
+      if (!src) return null;
+      const n = new Set(src.groups.flatMap((g) => g.sources.map((x) => x.url))).size;
+      return el('details', { class: 'dx-src' }, el('summary', {}, n ? `Sources (${n})` : 'Sources'),
+        src.basis ? el('p', { class: 'basis' }, src.basis) : null,
+        src.groups.length ? el('p', { class: 'basis' }, 'Research behind the measures this fix cites:') : null,
+        src.groups.length ? src.groups.map((g) => el('div', { class: 'grp' }, el('b', {}, g.name), el('span', {}, ` · ${g.strength}`),
+          el('ul', {}, g.sources.map((x) => el('li', {}, el('a', { href: x.url, target: '_blank', rel: 'noopener' }, x.title || x.publisher), x.publisher && x.title ? el('small', {}, ` · ${x.publisher}${/^accessed/i.test(x.date || '') ? ', undated' : (String(x.date || '').match(/\b(19|20)\d{2}\b/) || [''])[0] ? `, ${String(x.date).match(/\b(19|20)\d{2}\b/)[0]}` : ''}`) : null)))))
+          : el('p', { class: 'basis' }, 'No published source backs this fix directly.'));
+    };
     const evCount = (r) => `${r.evidence.filter((e) => e.verified).length}/${r.evidence.length} verified`;
     const recList = el('div', {}, el('h4', {}, 'Recommendations'),
       recs.length && opts.compact ? recs.map((r, k) => el('details', { class: `dx-rec dx-mini ${r.priority}` },
         el('summary', {}, el('b', {}, `#${k + 1}`), ts(r.t), el('span', { class: 'title' }, r.title), el('span', { class: 'dx-chip' }, evCount(r))),
         el('p', {}, r.observation), el('p', {}, el('b', {}, 'Try: '), r.recommendation),
         el('div', { class: 'dx-ev' }, r.evidence.map((e) => el('div', {}, el('span', { class: e.verified ? 'ok' : 'bad' }, e.verified ? '✓ ' : '✗ unverified '),
-          `${e.kind}${e.ref ? ' ' + e.ref : ''}: ${String(e.value).slice(0, 140)}`)))))
+          `${e.kind}${e.ref ? ' ' + e.ref : ''}: ${String(e.value).slice(0, 140)}`))), sourcesBox(r)))
       : recs.length ? recs.map((r, k) => el('div', { class: `dx-rec ${r.priority}` },
         el('div', { class: 'meta' }, el('b', {}, `#${k + 1}`), ts(r.t), el('span', { class: 'dx-chip' }, BASIS[r.basis] || r.basis), el('span', { class: 'dx-chip' }, `${r.priority} priority`),
           el('span', { class: 'dx-chip' }, `${r.evidence.filter((e) => e.verified).length}/${r.evidence.length} evidence verified`)),
